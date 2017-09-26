@@ -15,12 +15,17 @@
 
 * terminal-plus
 
+* AutoComplete
+    * css-snippets (CSS片段支持)
+    * autocomplete-html-entities 
+
 * Git
     * git-projects (在Atom中列出git的本地项目)
     * merge-conflicts (再也不怕 git 的合并冲突了，分分钟解决 conflicts)
 * Languages 
     * language-vue （Vuejs支持）
     * language-SCSS (SCSS支持)
-
+* OtherTools
+    * atom-beautify （代码格式化）
 
 
