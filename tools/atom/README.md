@@ -14,7 +14,6 @@
 ## 插件
 
 * Markdown
-    * terminal-plus
     * `markdown-preview`（Markdown支持）
     * `qiniu-uploader`（七牛云上传）
     * `markdown-assistant`（粘贴图片直接转成 md 文本）
