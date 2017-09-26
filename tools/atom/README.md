@@ -39,12 +39,12 @@
 
 
 * Code hits
-    * linter
-    * jshint（JS提示）
-    * jsonlint（JS提示）
-    * csslint（CSS提示）
-    * htmlhint(HTML提示)
-    * linter-php（PHP提示）
+    * `linter`
+    * `jshint`（JS提示）
+    * `jsonlint`（JS提示）
+    * `csslint`（CSS提示）
+    * `htmlhint`（HTML提示）
+    * `linter-php`（PHP提示）
 
 
 * UI
