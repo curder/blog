@@ -41,5 +41,6 @@
 * OtherTools
     * `atom-beautify`（代码格式化）
     * `pretty-json`（JSON格式化）
+    * `copy-filename`（复制文件名）
 
 
