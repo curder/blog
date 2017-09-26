@@ -39,13 +39,14 @@ language-bladelanguage-bladelanguage-blade# Atom的简单使用
 
 
 * Code hits
+    * `emmet`（代码快速编辑片段）
     * `linter`
     * `jshint`（JS提示）
     * `jsonlint`（JSON提示）
     * `csslint`（CSS提示）
     * `htmlhint`（HTML提示）
     * `linter-php`（PHP提示）
-
+    * `emmet`（代码快速编辑）
 
 * UI
     * `minimap` (小地图)
