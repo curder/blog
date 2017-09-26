@@ -42,5 +42,6 @@
     * `atom-beautify`（代码格式化）
     * `pretty-json`（JSON格式化）
     * `copy-filename`（复制文件名）
+    * `tree-view-git-status`（展示git状态）
 
 
