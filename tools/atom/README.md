@@ -33,8 +33,9 @@
 
 
 * Languages 
-    * `language-vue`（Vuejs支持）
-    * `language-sass` (SCSS支持)
+    * `language-vue`（VueJs支持）
+    * `language-sass` (scss支持)
+    * `language-blade`（blade支持）
 
 
 * Code hits
