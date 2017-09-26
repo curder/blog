@@ -1,4 +1,4 @@
-# Atom的简单使用
+language-bladelanguage-bladelanguage-blade# Atom的简单使用
 
 ## Mac下常用操作
 
@@ -41,7 +41,7 @@
 * Code hits
     * `linter`
     * `jshint`（JS提示）
-    * `jsonlint`（JS提示）
+    * `jsonlint`（JSON提示）
     * `csslint`（CSS提示）
     * `htmlhint`（HTML提示）
     * `linter-php`（PHP提示）
