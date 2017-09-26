@@ -48,7 +48,7 @@
 
 
 * UI
-    * minimap (小地图)
+    * `minimap` (小地图)
 
 
 * Other Tools
@@ -58,6 +58,6 @@
     * `tree-view-git-status`（展示git状态）
     * `file-icons`（文件图标）
     * `markdown-preview`（Markdown支持）
-    * terminal-plus（命令行支持）
+    * `terminal-plus`（命令行支持）
 
 
