@@ -13,7 +13,12 @@
 
 ## 插件
 
-* terminal-plus
+* Markdown
+    * terminal-plus
+    * `markdown-preview`（Markdown支持）
+    * `qiniu-uploader`（七牛云上传）
+    * `markdown-assistant`（粘贴图片直接转成 md 文本）
+    
 
 * AutoComplete
     * `css-snippets` (CSS片段支持)
@@ -45,5 +50,6 @@
     * `tree-view-git-status`（展示git状态）
     * `file-icons`（文件图标）
     * `markdown-preview`（Markdown支持）
+    * terminal-plus（命令行支持）
 
 
