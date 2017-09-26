@@ -35,6 +35,9 @@
     * htmlhint(HTML提示)
     * linter-php（PHP提示）
 
+* UI
+    * minimap (小地图)
+
 * OtherTools
     * `atom-beautify`（代码格式化）
 
