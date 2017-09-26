@@ -40,5 +40,6 @@
 
 * OtherTools
     * `atom-beautify`（代码格式化）
+    * `pretty-json`（JSON格式化）
 
 
