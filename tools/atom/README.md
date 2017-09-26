@@ -44,5 +44,6 @@
     * `copy-filename`（复制文件名）
     * `tree-view-git-status`（展示git状态）
     * `file-icons`（文件图标）
+    * `markdown-preview`（Markdown支持）
 
 
