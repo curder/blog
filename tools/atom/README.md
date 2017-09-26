@@ -20,7 +20,7 @@
     * `markdown-assistant`（粘贴图片直接转成 md 文本）
     * `markdown-writer`（markdow快捷键）
     * `markdown-toc`
-    
+
 
 * AutoComplete
     * `css-snippets` (CSS片段支持)
@@ -28,12 +28,17 @@
     * `autocomplete-html-entities` 
     * `autocomplete-modules` (`import/require`自动完成)
 
+
 * Git
     * `git-projects` (在Atom中列出git的本地项目)
     * `merge-conflicts` (再也不怕 git 的合并冲突了，分分钟解决 conflicts)
+
+
 * Languages 
     * `language-vue`（Vuejs支持）
     * `language-SCSS` (SCSS支持)
+
+
 * Code hits
     * linter
     * jshint（JS提示）
@@ -42,8 +47,10 @@
     * htmlhint(HTML提示)
     * linter-php（PHP提示）
 
+
 * UI
     * minimap (小地图)
+
 
 * OtherTools
     * `atom-beautify`（代码格式化）
