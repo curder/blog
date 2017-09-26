@@ -25,7 +25,6 @@
     * `css-snippets` (CSS片段支持)
     * `autocomplete-modules` (`import/require`自动完成)
     * `autocomplete-html-entities` 
-    * `autocomplete-modules` (`import/require`自动完成)
 
 
 * Git
