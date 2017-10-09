@@ -1,4 +1,4 @@
-language-bladelanguage-bladelanguage-blade# Atom的简单使用
+# Atom的简单使用
 
 ## Mac下常用操作
 
