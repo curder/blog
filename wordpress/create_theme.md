@@ -72,7 +72,7 @@ _提醒：主题作者的名字建议与该作者在 _[_wordpress.org_](wordpres
 | `search.php` | 搜索结果模板，显示搜索结果时使用的模板。 | 可选 |
 | `attachment.php` | 附件模板，查看单个附件时使用的模板。 | 可选 |
 | `image.php` | 图片附件模板。当在 WordPress 中查看单个图片时将调用此模板，如果不存在此模板，则调用`attachment.php`模板。 | 可选 |
-| `404.php` | 404 错误页面 模板。当WordPress无法查找到匹配查询的日志或页面时，使用`404.php`文件。 | 可选 |
+| `404.php` | 404 错误页面 模板。当 WordPress 无法查找到匹配查询的日志或页面时，使用`404.php`文件。 | 可选 |
 
 ### 基本模板
 
@@ -141,14 +141,12 @@ h1 {
 
 大部分Action Hooks存在于wp的php核心中，所以你的主题不需要任何多余的特殊标签来让它可以正常运转。但是少数的Action Hooks需要在你的主题中做特殊处理，以使插件能够将头，尾，侧边栏等信息输出到页面中。
 
-
-
 | 方法 | 说明 |
 | :--- | :--- |
 | `wp_head()` | 放在`<head>`标签之内，在`header.php`文件中，大部分插件常在这里导入JavaScript文件。 |
 | `wp_footer()` | 在`footer.php`中，在`</body>`标签之前。使用举例：一些插件会在这里插入要在文档最后执行的PHP代码。更常见的用法是插入网页静态代码，比如Google Analytics。 |
 | `wp_meta()` | 在主题菜单或侧边栏的`<li>Meta</li>`节之中；sidebar.php模板. 插件使用范例: 包含一个旋转广告或标签云。 |
-| `comment_form()` | 在`comments.php`中，在表单闭标签出现之前 (`</form>`)，插件使用范例: 显示评论预览。|
+| `comment_form()` | 在`comments.php`中，在表单闭标签出现之前 \(`</form>`\)，插件使用范例: 显示评论预览。 |
 
 ### 不可靠的数据
 
@@ -159,7 +157,6 @@ h1 {
 * `esc_url()`
 
 * `esc_attr()`
-
 
 更多详情请参考 [WordPress主题开发](https://codex.wordpress.org/zh-cn:主题开发)
 
