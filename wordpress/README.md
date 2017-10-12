@@ -1,1 +1,1 @@
-* [WordPress创建主题](wordpress/create_theme.md)
+[WordPress创建主题](wordpress/create_theme.md)
