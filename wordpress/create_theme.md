@@ -56,23 +56,23 @@ _提醒：主题作者的名字建议与该作者在 _[_wordpress.org_](wordpres
 | :--- | :--- | :--- |
 | `functions.php` | 主样式表，这个文件 必须 位于你的主题里面，而且必须在头部注释处写清楚主题的信息. | 重要 |
 | `rlt.css` | rtl 样式表。如果网站的阅读方向是自右向左的，他会自动被包含进来。你可以使用 [the RTLer](https://wordpress.org/plugins/rtler) 插件来生成这个文件 | 可选 |
-| `index.php` | 主模板。**如果主题使用自己的模板，**`index.php`** 是必须存在。** | 重要 |
+| `index.php` | 主模板。**如果主题使用自己的模板，**`index.php`** 是必须存在。** | 必须 |
 | `comments.php` | 评论模板 | 可选 |
 | `front-page.php` | 首页模版，仅用于开启 **静态首页** 时生效 | 可选 |
 | `home.php` | 主页模板，默认的首页。如果你开启了 **静态首页** 这是展现最新的文章的模板页面。 | 可选 |
 | `single.php` | 单独页面模板。显示单独的一篇文章时被调用。_对于这个以及其他的请求模板，如果模板不存在会使用 index.php_ | 可选 |
-| `single-{post-type}.php` | 自定义单独页面模板。例如， single-books.php 展示自定义文章类型为 books的文章. 如果文章类型未被设置则使用index.php。 |  |
-| `page.php` | 页面模板. 独立页面调用。 |  |
-| `category.php` | 分类模板，分类页面调用。 |  |
-| `tag.php` | 标签模板，标签页面调用。 |  |
-| `taxonomy.php` | 自定义类型模版。 |  |
-| `author.php` | 作者模版，作者页面调用 |  |
-| `date.php` | 日期/时间模板，按时间查询时使用的模板。 |  |
-| `archive.php` | 存档模板。查询分类，作者或日期时使用的模板。需要注意的是，该模板将会分别被`category.php`， author.php， date.php所覆盖（如果存在的话）。 |  |
-| `search.php` |  |  |
-| `attachment.php` |  |  |
-| `image.php` |  |  |
-| `404.php` |  |  |
+| `single-{post-type}.php` | 自定义单独页面模板。例如， single-books.php 展示自定义文章类型为 books的文章. 如果文章类型未被设置则使用index.php。 | 可选 |
+| `page.php` | 页面模板. 独立页面调用。 | 可选 |
+| `category.php` | 分类模板，分类页面调用。 | 可选 |
+| `tag.php` | 标签模板，标签页面调用。 | 可选 |
+| `taxonomy.php` | 自定义类型模版。 | 可选 |
+| `author.php` | 作者模版，作者页面调用 | 可选 |
+| `date.php` | 日期/时间模板，按时间查询时使用的模板。 | 可选 |
+| `archive.php` | 存档模板。查询分类，作者或日期时使用的模板。需要注意的是，该模板将会分别被`category.php`， `author.php`， `date.php`所覆盖（如果存在的话）。 | 可选 |
+| `search.php` | 搜索结果模板，显示搜索结果时使用的模板。 | 可选 |
+| `attachment.php` | 附件模板，查看单个附件时使用的模板。 | 可选 |
+| `image.php` | 图片附件模板。当在 WordPress 中查看单个图片时将调用此模板，如果不存在此模板，则调用`attachment.php`模板。 | 可选 |
+| `404.php` | 404 错误页面 模板。当WordPress无法查找到匹配查询的日志或页面时，使用404.php文件。 | 可选 |
 
 
 
