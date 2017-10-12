@@ -5,7 +5,7 @@ WordPress 主题目录位于`wp-content/themes/`下。
 WordPress 主题除了图片和JavaScript，经常由三种文件构成。
 
 1. 样式表文件 `style.css`， 控制着页面的外观
-2. 函数文件 (`functions.php`)。
+2. 函数文件 \(`functions.php`\)。
 3. 模板文件，它控制着从数据库中调出的数据所呈现的外观。
 
 ## 主题样式表
@@ -31,3 +31,48 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 ```
+
+_提醒：主题作者的名字建议与该作者在 _[_wordpress.org_](wordpress.org)_ 上注册的用户名一致，当然填写作者的真实姓名也没有问题。_
+
+## 函数文件
+
+一个主题可以使用一个函数文件，位于主题的子目录，叫做 `functions.php`。
+
+这个文件就像一个插件，如果它位于你正在使用的主题里的话，他在你的主题初始化的时候就会自动加载\(后台页面和前台页面都一样加载\)。
+
+* 启用主题功能，例如：侧边栏，菜单，文章缩略图，文章格式，自定义标题栏。
+* 定义用于模板文件中的函数。
+* 设置一个选项菜单，让网站拥有者可以自定义颜色，样式，和你的主题的其他特性。
+
+## 模板文件
+
+模板 是一些PHP文件，他可以输出HTML代码呈献给浏览器，决定着主题的外观.下面让我们来看一下主题的模板。
+
+### 模板文件列表
+
+这里是被WordPress确认的主题文件列表
+
+| 文件名称 | 文件释义 | 其他 |
+| :--- | :--- | :--- |
+| `functions.php` | 主样式表，这个文件 必须 位于你的主题里面，而且必须在头部注释处写清楚主题的信息. | 重要 |
+| `rlt.css` | rtl 样式表。如果网站的阅读方向是自右向左的，他会自动被包含进来。你可以使用 [the RTLer](https://wordpress.org/plugins/rtler) 插件来生成这个文件 | 可选 |
+| `index.php` | 主模板。**如果主题使用自己的模板，**`index.php`** 是必须存在。** | 重要 |
+| `comments.php` | 评论模板 | 可选 |
+| `front-page.php` | 首页模版，仅用于开启 **静态首页** 时生效 | 可选 |
+| `home.php` | 主页模板，默认的首页。如果你开启了 **静态首页** 这是展现最新的文章的模板页面。 | 可选 |
+| `single.php` | 单独页面模板。显示单独的一篇文章时被调用。_对于这个以及其他的请求模板，如果模板不存在会使用 index.php_ | 可选 |
+| `single-{post-type}.php` | 自定义单独页面模板。例如， single-books.php 展示自定义文章类型为 books的文章. 如果文章类型未被设置则使用index.php。 |  |
+| `page.php` | 页面模板. 独立页面调用。 |  |
+| `category.php` | 分类模板，分类页面调用。 |  |
+| `tag.php` | 标签模板，标签页面调用。 |  |
+| `taxonomy.php` | 自定义类型模版。 |  |
+| `author.php` | 作者模版，作者页面调用 |  |
+| `date.php` | 日期/时间模板，按时间查询时使用的模板。 |  |
+| `archive.php` | 存档模板。查询分类，作者或日期时使用的模板。需要注意的是，该模板将会分别被`category.php`， author.php， date.php所覆盖（如果存在的话）。 |  |
+| `search.php` |  |  |
+| `attachment.php` |  |  |
+| `image.php` |  |  |
+| `404.php` |  |  |
+
+
+
