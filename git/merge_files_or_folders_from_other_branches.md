@@ -23,7 +23,7 @@ git checkout source_branch <path>...
 ```
 > 使用`git checkout`之前一定要确定当前分支。
 
-## 强制合并
+## 强制合并(不推荐)
 
 我们使用`git checkout`将`article/show`分支上的系统消息功能添加到`article/list`分支上
 
@@ -49,16 +49,16 @@ $ git status
 
 这里新增文件没问题，但是`article/list`分支上原有的other.js会被强行覆盖，如果`article/list`分支上的other.js有修改，在checkout的时候就会将other.js内容强行覆盖，这样肯定是不行的。如何避免不强制覆盖呢？
 
-## 智能合并
+## 智能合并（推荐）
 
-1.使用`git checkout`将根据A分支创建一个`article/list_temp`分支，避免影响`article/list`分支
+* 使用`git checkout`将根据A分支创建一个`article/list_temp`分支，避免影响`article/list`分支
 
 ```
 $ git checkout -b article/list_temp
 Switched to a new branch 'article/list_temp'
 ```
 
-2.将`article/show`分支合并到`article/list_temp`分支
+* 将`article/show`分支合并到`article/list_temp`分支
 
 ```
 $ git merge article/show
@@ -73,7 +73,7 @@ create mode 100644 message.css
 create mode 100644 message.html
 create mode 100644 message.js
 ```
-3.切换到`article/list`分支，并使用`git checkout`将`article/list_temp`分支上的系统消息功能相关文件或文件夹覆盖到`article/list`分支
+* 切换到`article/list`分支，并使用`git checkout`将`article/list_temp`分支上的系统消息功能相关文件或文件夹覆盖到`article/list`分支
 
 ```
 $ git checkout article/list
@@ -90,4 +90,10 @@ $ git status
 #    new file:   message.html
 #    new file:   message.js
 #    modified:   other.js
-```    
+```
+
+## 删除临时的分支
+
+```
+$ git branch -D article/list_temp
+```
