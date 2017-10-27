@@ -42,7 +42,7 @@ git cherry-pick 0fd0075
 git checkout -bnewbranch 5c9cb96
 ```
 
-然后，rebase这个新分支的commit到master（--onto master）。0fd0075^ 指明你想从哪个特定的commit开始。
+然后，rebase这个新分支的commit到master（--onto master）。**0fd0075^** 指明你想从哪个特定的commit开始。
 
 ```
 git rebase --onto master 0fd0075^
