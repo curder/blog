@@ -7,24 +7,27 @@
 首先，用`git log --graph --all --oneline`查看一下想选择哪些commits进行合并，例如：
 
 ```
-* 5c9cb96 (feature) add file3 to feature
-* 0fd0075 add file2 to feature
-* 711b653 add file to feature
-| * 948de1f (HEAD -> master) add file2 to master
+* d83e670 (feature) feature3 file
+* 7118b61 feature2 file
+* 7c5f9e9 feature1 file
+| * 675d29c (HEAD -> master) master4 file
+| * 4433f8a master3 file
+| * 14a30a8 master2 file
+| * 47cbcb8 master1 file
 |/
-* ac6b216 Init
+* 604615a Init
 ```
 
-比如，feature 分支上的commit**0fd0075**非常重要，它含有一个bug的修改，或其他人想访问的内容。
+比如，feature 分支上的commit**7118b61**非常重要，它含有一个bug的修改，或其他人想访问的内容。
 
-无论什么原因，现在只需要将**0fd0075**合并到master，而不合并feature上的其他commits，所以我们用`git cherry-pick`命令来做：
+无论什么原因，现在只需要将**7118b61**合并到master，而不合并feature上的其他commits，所以我们用`git cherry-pick`命令来做：
 
 ```
 git checkout master  
-git cherry-pick 0fd0075
+git cherry-pick 7118b61
 ```
 
-现在**0fd0075**就被合并到master分支，并在master中添加了commit（作为一个新的commit）。
+现在**7118b61**就被合并到master分支，并在master中添加了commit（作为一个新的commit）。
 
 `git cherry-pick`和`git merge`比较类似，如果git不能合并代码改动（比如遇到合并冲突），git需要用户自己来解决冲突并手动添加commit。
 
@@ -34,19 +37,25 @@ git cherry-pick 0fd0075
 
 这种情况下就不要选择`git cherry-pick`了，rebase更适合。
 
-还以上例为例，假设需要合并feature分支的commit **0fd0075** ~ **5c9cb96**到master分支。
+还以上例为例，假设需要合并feature分支的commit **7c5f9e9** ~ **7118b61**到master分支。
 
 首先需要基于feature创建一个新的分支，并指明新分支的最后一个commit：
 
 ```
-git checkout -bnewbranch 5c9cb96
+git checkout -bnewbranch 7118b61
 ```
 
-然后，rebase这个新分支的commit到master（--onto master）。**0fd0075^** 指明你想从哪个特定的commit开始。
+然后，rebase这个新分支的commit到master（--onto master）。7c5f9e9**^** 指明你想从哪个特定的commit开始。
 
 ```
-git rebase --onto master 0fd0075^
+git rebase --onto master 7c5f9e9^
 ```
 
-得到的结果就是feature分支的commit **0fd0075** ~ **5c9cb96** 都被合并到了master分支。
+得到的结果就是feature分支的commit **7c5f9e9** ~ **7118b61** 都被合并到了master分支。
+
+
+
+> 其实更加建议在新的功能开发时新增一些特性的分支，比如 `feature/send_email`、`feature/register` 分支。  这样可以做到从容面对一些合并要求
+
+
 
