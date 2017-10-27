@@ -51,9 +51,7 @@ git checkout -bnewbranch 7118b61
 git rebase --onto master 7c5f9e9^
 ```
 
-得到的结果就是feature分支的commit **7c5f9e9** ~ **7118b61** 都被合并到了master分支。
-
-
+得到的结果就是feature分支的commit **7c5f9e9** ~ **7118b61** 都被合并到了newbranch分支。
 
 > 其实更加建议在新的功能开发时新增一些特性的分支，比如 `feature/send_email`、`feature/register` 分支。  这样可以做到从容面对一些合并要求
 
