@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [介绍](README.md)
 * [开发工具](tools/README.md)
   * [Atom的基本使用](tools/atom/normal.md)
   * [PHPStorm快捷键](tools/phpstorm/keymap.md)
