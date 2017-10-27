@@ -97,3 +97,7 @@ $ git status
 ```
 $ git branch -D article/list_temp
 ```
+
+## 参考
+
+[git小技巧--如何从其他分支merge个别文件或文件夹](https://segmentfault.com/a/1190000008360855)
