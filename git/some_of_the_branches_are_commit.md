@@ -56,4 +56,6 @@ git rebase --onto master 7c5f9e9^
 > 其实更加建议在新的功能开发时新增一些特性的分支，比如 `feature/send_email`、`feature/register` 分支。  这样可以做到从容面对一些合并要求
 
 
+## 参考
 
+[英文原文](https://ariejan.net/2010/06/10/cherry-picking-specific-commits-from-another-branch/)
