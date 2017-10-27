@@ -7,9 +7,10 @@
 首先，用`git log --graph --all --oneline`查看一下想选择哪些commits进行合并，例如：
 
 ```
-* 948de1f (HEAD -> master) add file2 to master
-| * 0fd0075 (feature) add file2 to feature
-| * 711b653 add file to feature
+* f25765e (feature) add file3 to master
+* 0fd0075 add file2 to feature
+* 711b653 add file to feature
+| * 948de1f (HEAD -> master) add file2 to master
 |/
 * ac6b216 Init
 ```
@@ -26,3 +27,27 @@ git cherry-pick 0fd0075
 现在**0fd0075**就被合并到master分支，并在master中添加了commit（作为一个新的commit）。
 
 `git cherry-pick`和`git merge`比较类似，如果git不能合并代码改动（比如遇到合并冲突），git需要用户自己来解决冲突并手动添加commit。
+
+## 合并某个分支上的一系列commits
+
+在一些特性情况下，合并单个commit并不够，可能需要合并一系列相连的commits。
+
+这种情况下就不要选择`git cherry-pick`了，rebase更适合。
+
+还以上例为例，假设需要合并feature分支的commit **0fd0075** ~ **5c9cb96**到master分支。
+
+
+首先需要基于feature创建一个新的分支，并指明新分支的最后一个commit：
+
+```
+git checkout -bnewbranch 5c9cb96
+```
+
+然后，rebase这个新分支的commit到master（--ontomaster）。0fd0075^ 指明你想从哪个特定的commit开始。
+
+```
+git rebase --ontomaster 0fd0075^  
+```
+
+得到的结果就是feature分支的commit **0fd0075** ~ **5c9cb96** 都被合并到了master分支。
+
