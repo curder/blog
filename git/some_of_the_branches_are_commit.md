@@ -7,7 +7,7 @@
 首先，用`git log --graph --all --oneline`查看一下想选择哪些commits进行合并，例如：
 
 ```
-* f25765e (feature) add file3 to master
+* 5c9cb96 (feature) add file3 to feature
 * 0fd0075 add file2 to feature
 * 711b653 add file to feature
 | * 948de1f (HEAD -> master) add file2 to master
@@ -36,7 +36,6 @@ git cherry-pick 0fd0075
 
 还以上例为例，假设需要合并feature分支的commit **0fd0075** ~ **5c9cb96**到master分支。
 
-
 首先需要基于feature创建一个新的分支，并指明新分支的最后一个commit：
 
 ```
@@ -46,7 +45,7 @@ git checkout -bnewbranch 5c9cb96
 然后，rebase这个新分支的commit到master（--ontomaster）。0fd0075^ 指明你想从哪个特定的commit开始。
 
 ```
-git rebase --ontomaster 0fd0075^  
+git rebase --onto master 0fd0075^
 ```
 
 得到的结果就是feature分支的commit **0fd0075** ~ **5c9cb96** 都被合并到了master分支。
