@@ -20,7 +20,7 @@ git fetch origin master:temp
 ```
 git diff temp
 ```
-> 比较本地`master`仓库和远程`master`仓库的区别
+> 比较本地`master`分支和远程`master`分支的区别
 
 * 合并分支
 
