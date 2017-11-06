@@ -1,61 +1,41 @@
-# Git合并特定commits到另一个分支
+# Git拉取远程分支到本地
 
-经常被问到如何从一个分支合并特定的commits到另一个分支。有时候在项目中需要这样做，只合并需要的那些commits，不需要的commits就不合并进去了。
+Git拉取远程分支其实只需要 `git fetch origin xxx`、 `git pull origin xxx`两步即可。
 
-## 合并某个分支上的单个commit
+比如，拉取GitHub上面的仓库中的`step1`分支。
 
-首先，用`git log --graph --all --oneline`查看一下想选择哪些commits进行合并，例如：
-
+1. 确保本地分支和远程`origin master`建立了连接：
 ```
-* d83e670 (feature) feature3 file
-* 7118b61 feature2 file
-* 7c5f9e9 feature1 file
-| * 675d29c (HEAD -> master) master4 file
-| * 4433f8a master3 file
-| * 14a30a8 master2 file
-| * 47cbcb8 master1 file
-|/
-* 604615a Init
+git remote add origin git@github.com:xxxxxx.git // （你的远程仓库）
 ```
 
-比如，feature 分支上的commit**7118b61**非常重要，它含有一个bug的修改，或其他人想访问的内容。
-
-无论什么原因，现在只需要将**7118b61**合并到master，而不合并feature上的其他commits，所以我们用`git cherry-pick`命令来做：
+2. 切换分支
 
 ```
-git checkout master  
-git cherry-pick 7118b61
+git checkout -b step1 origin/step1
 ```
 
-现在**7118b61**就被合并到master分支，并在master中添加了commit（作为一个新的commit）。
+如果遇到这种情况：
+> **fatal:** Cannot update paths and switch to branch 'dev' at the same time.
+Did you intend to checkout 'origin/dev' which can not be resolved as commit?
 
-`git cherry-pick`和`git merge`比较类似，如果git不能合并代码改动（比如遇到合并冲突），git需要用户自己来解决冲突并手动添加commit。
+原因是本地仓库并没有`step1`这个分支。
 
-## 合并某个分支上的一系列commits
+这时可以用`git branch -a`命令来检查本地是否具有`step1`分支
 
-在一些特性情况下，合并单个commit并不够，可能需要合并一系列相连的commits。
 
-这种情况下就不要选择`git cherry-pick`了，rebase更适合。
-
-还以上例为例，假设需要合并feature分支的commit **7c5f9e9** ~ **7118b61**到master分支。
-
-首先需要基于feature创建一个新的分支，并指明新分支的最后一个commit：
+* 拉取远程分支到本地
 
 ```
-git checkout -bnewbranch 7118b61
+git fetch origin step1 
 ```
 
-然后，rebase这个新分支的commit到master（--onto master）。7c5f9e9**^** 指明你想从哪个特定的commit开始。
-
+* 本地创建并切换到分支
 ```
-git rebase --onto master 7c5f9e9^
+git checkout -b step1 origin/step
 ```
 
-得到的结果就是feature分支的commit **7c5f9e9** ~ **7118b61** 都被合并到了newbranch分支。
-
-> 其实更加建议在新的功能开发时新增一些特性的分支，比如 `feature/send_email`、`feature/register` 分支。  这样可以做到从容面对一些合并要求
-
-
-## 参考
-
-[英文原文](https://ariejan.net/2010/06/10/cherry-picking-specific-commits-from-another-branch/)
+* 拉取远程分支到本地
+```
+git pull origin step1
+```
