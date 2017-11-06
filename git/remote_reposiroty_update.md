@@ -2,34 +2,34 @@
 
 使用Git协同开发时，除了往服务器推送本地的代码也会经常从服务器上拉取代码，在拉取代码的还是除了使用`git pull`推送，还可以使用`git fetch`和`git merge`命令。
 
-1 查看远程仓库
+* 查看远程仓库
 
 ```
 git remote -v
 ```
 > 默认清空下会有一个origin的远程仓库名
 
-2. 从远程获取最新版本到本地新建的分支
+* 从远程获取最新版本到本地新建的分支
 
 ```
 git fetch origin master:temp
 ```
 
-3. 比较区别
+* 比较区别
 
 ```
 git diff temp
 ```
 > 比较本地`master`仓库和远程`master`仓库的区别
 
-4. 合并分支
+* 合并分支
 
 ```
 git merge temp
 ```
 > 合并`temp`分支到`master`。
 
-5. 删除临时分支
+* 删除临时分支
 
 ```
 git branch -d temp
