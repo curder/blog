@@ -2,7 +2,7 @@
 
 Git拉取远程分支其实只需要 `git fetch origin xxx`、 `git pull origin xxx`两步即可。
 
-比如，拉取github上面的仓库中的`step1`分支。
+比如，拉取GitHub上面的仓库中的`step1`分支。
 
 1. 确保本地分支和远程`origin master`建立了连接：
 ```
