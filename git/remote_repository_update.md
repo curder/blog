@@ -2,6 +2,8 @@
 
 使用Git协同开发时，除了往服务器推送本地的代码也会经常从服务器上拉取代码，在拉取代码的还是除了使用`git pull`推送，还可以使用`git fetch`和`git merge`命令。
 
+使用`git fetch`操作的好处是，`git fetch` 并没更改本地仓库的代码，只是拉取了远程 `commit` 数据，将远程仓库的 `commit id` 更新为`latest`。
+
 * 查看远程仓库
 
 ```
