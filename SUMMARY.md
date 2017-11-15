@@ -4,7 +4,7 @@
 * [开发工具](tools/README.md)
   * [Atom的基本使用](tools/atom/normal.md)
   * [PHPStorm快捷键](tools/phpstorm/keymap.md)
-  * [安装Valet开发环境](tools/install_valet.md)
+  * [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
 * [WordPress相关](wordpress/README.md)
   * [WordPress创建主题](wordpress/create_theme.md)
 * [Git相关](git/README.md)

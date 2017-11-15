@@ -1,0 +1,1 @@
+## 让Valet支持ThinkPHP
