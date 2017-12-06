@@ -13,3 +13,5 @@
   * [Git更新远程代码到本地仓库](git/remote_repository_update.md)
   * [Git拉取远程分支到本地](git/remote_repository_pull.md)
 
+*[Laravel系列](laravel/README.md)
+  * [Laravel5.5 - 动态地隐藏API字段](laravel/api/hiding-api-fields-dynamically-laravel-5-5.md)
