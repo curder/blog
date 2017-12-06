@@ -1,3 +1,4 @@
+![](/assets/hiding-api-fields-dynamically-laravel-5-5.jpg)
 # Laravel5.5 - 动态的隐藏API字段
 
 > 本文原址：[hackernoon.com](https://hackernoon.com/hiding-api-fields-dynamically-laravel-5-5-82744f1dd15a)
