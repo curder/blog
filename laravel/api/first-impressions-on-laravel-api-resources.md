@@ -142,12 +142,47 @@ class UsersWithPostsResource extends Resource
     }
 }
 ```
+## Posts 资源
 
+```
+<?php
 
+namespace App\Http\Resources;
 
+use Illuminate\Http\Resources\Json\Resource;
 
+class PostsResource extends Resource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request
+     * @return array
+     */
+    public function toArray($request)
+    {
+        return $this->resource->map(function ($item) {
+            return [
+                'title' => $item->title
+            ];
+        });
+    }
+}
+```
 
+## 结论
+与**Fractal**相比，第一个明显的区别是资源可以轻松直接访问整个集合，而不是以每个对象为基础。
 
+这意味着，在转换一组用户时，您可以轻松地加载每个Posts，而不需要N+1个查询。
 
+嵌套转换也很简单，因为您可以生成一个新的Resource类，根据需要转换数据。
 
+一旦我开始深入挖掘可能性，我希望写一篇更详细的文章。
 
+## 跟进
+
+这是第一篇关于Laravel 5.5 API资源的文章。
+
+你可以在这里找到关于这个主题的第二篇文章：
+
+[具有嵌套关系的API资源](/laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
