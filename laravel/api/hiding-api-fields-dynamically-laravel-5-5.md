@@ -34,4 +34,10 @@ class UsersResource extends Resource
 
 * [对API资源的第一印象](https://hackernoon.com/first-impressions-on-laravel-api-resources-4869b73b7847)
 
-* 具有嵌套关系的API资源
+* [具有嵌套关系的API资源](https://hackernoon.com/reusable-api-resource-with-nested-relationship-laravel-5-5-c654c7243869)
+
+
+
+
+
+
