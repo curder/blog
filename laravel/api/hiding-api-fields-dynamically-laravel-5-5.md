@@ -164,13 +164,171 @@ class UsersResource extends Resource
 }
 ```
 
+完成！在这一点上，我们应该能够访问`http://api.dev/api/users/1` 并选择一个没有`id`字段的响应。
+
+```
+{
+ "data": {
+  "name": "Mr. Frederik Morar",
+  "email": "darryl.wilkinson@example.org"
+ }
+}
+```
+
+## UsersResourceCollection类
+
+对于`index`方法中的项目集合，我们需要执行一些更改，具体如下：
+
+1. 确保`UsersResource::collection`返回`UsersResourceCollection`的一个实例
+
+2. 在`UsersResourceCollection`上公开`hide`方法
+
+3. 将需要隐藏的字段传递给`UsersResource`
+
+对于第1点，我们只需要重写`UsersResource`上的收集方法
+
+```
+<?php
+namespace App\Http\Resources;
+use Illuminate\Http\Resources\Json\Resource;
+class UsersResource extends Resource
+{
+    public static function collection($resource)
+    {
+        return tap(new UsersResourceCollection($resource), function ($collection) {
+            $collection->collects = __CLASS__;
+        });
+    }
+    
+    /**
+     * @var array
+     */
+    protected $withoutFields = [];
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request
+     * @return array
+     */
+    public function toArray($request)
+    {
+        return $this->filterFields([
+            'id' => $this->id,
+            'name' => $this->name,
+            'email' => $this->email
+        ]);
+    }
+    /**
+     * Set the keys that are supposed to be filtered out.
+     *
+     * @param array $fields
+     * @return $this
+     */
+    public function hide(array $fields)
+    {
+        $this->withoutFields = $fields;
+        return $this;
+    }
+    /**
+     * Remove the filtered keys.
+     *
+     * @param $array
+     * @return array
+     */
+    protected function filterFields($array)
+    {
+        return collect($array)->forget($this->withoutFields)->toArray();
+    }
+}
+```
+
+对于第2步和第3步我们需要改变`UsersResourceCollection`文件。
+
+让我们公开`hide`方法，并使用隐藏字段处理集合。
+
+```
+<?php
+namespace App\Http\Resources;
+use Illuminate\Http\Resources\Json\ResourceCollection;
+class UsersResourceCollection extends ResourceCollection
+{
+    /**
+     * @var array
+     */
+    protected $withoutFields = [];
+    /**
+     * Transform the resource collection into an array.
+     *
+     * @param  \Illuminate\Http\Request
+     * @return array
+     */
+    public function toArray($request)
+    {
+        return $this->processCollection($request);
+    }
+    public function hide(array $fields)
+    {
+        $this->withoutFields = $fields;
+        return $this;
+    }
+    /**
+     * Send fields to hide to UsersResource while processing the collection.
+     * 
+     * @param $request
+     * @return array
+     */
+    protected function processCollection($request)
+    {
+        return $this->collection->map(function (UsersResource $resource) use ($request) {
+            return $resource->hide($this->withoutFields)->toArray($request);
+        })->all();
+    }
+}
+```
+
+就是这样！现在，如果我们调用`http://api.dev/api/users`，我们可以看到没有`id`和`email`字段的响应，如指定的`UsersController`。
+
+```
+{
+ "data": [{
+  "name": "Mr. Frederik Morar"
+ }, {
+  "name": "Angel Daniel"
+ }, {
+  "name": "Brianne Mueller"
+ }],
+ "links": {
+  "first": "http://lab.php71/api-fields-2/public/api/users?page=1",
+  "last": "http://lab.php71/api-fields-2/public/api/users?page=7",
+  "prev": null,
+  "next": "http://lab.php71/api-fields-2/public/api/users?page=2"
+ },
+ "meta": {
+  "current_page": 1,
+  "from": 1,
+  "last_page": 7,
+  "path": "http://api-fields.lab.php71/api/users",
+  "per_page": 3,
+  "to": 3,
+  "total": 20
+ }
+}
+```
+
+## 结论
+
+目标是通过允许隐藏另一个地方可能暴露的一些字段来使`Resource`类有一点灵活性。
+
+这个实现的一个实际例子是不包括`avatar`字段属性的`/users`，但是当通过`/users/99`请求特定`avatar`字段时，我们可能希望将该头像包括在响应中。
+
+我不建议重复使用API​​资源太多，因为它可能容易增加一层简单的复杂性。
+
+这样说，因为实现的简单性在列表和特定记录的请求之间隐藏一些特定的字段似乎是一个合理的请求。
 
 
+## 下一步是什么
 
-
-
-
-
+在下一篇文章中，我将尝试将`hide`方法提取为特征，并使其在所有API资源中都可重用。请关注Medium敬请期待！
 
 
 
