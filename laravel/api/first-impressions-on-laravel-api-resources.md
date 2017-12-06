@@ -2,7 +2,7 @@
 
 > 本文原址：[hackernoon.com](https://hackernoon.com/first-impressions-on-laravel-api-resources-4869b73b7847)
 
-上周[Taylor Otwell](https://medium.com/@taylorotwell)最后介绍了在Laravel 5.5上开发API时可以取代[Fractal](http://fractal.thephpleague.com/transformers/)的开始，这是作者第一次试运行。
+上周[Taylor Otwell](https://medium.com/@taylorotwell)最后介绍了在Laravel 5.5上开发API时可以取代[Fractal](http://fractal.thephpleague.com/transformers/)的开始，这篇文章是作者第一次试运行。
 
 ## 安装干净的Laravel 5.5项目
 
@@ -36,7 +36,6 @@ Schema::create('posts', function (Blueprint $table) {
 });
 ```
 
-
 * Post Factory `database/factories/PostFactory.php`
 
 ```
@@ -54,7 +53,6 @@ $factory->define(App\Post::class, function (Faker $faker) {
     ];
 });
 ```
-
 
 * 用户有 Posts 关联关系`app/User.php`
 
@@ -142,6 +140,7 @@ class UsersWithPostsResource extends Resource
     }
 }
 ```
+
 ## Posts 资源
 
 ```
@@ -171,6 +170,7 @@ class PostsResource extends Resource
 ```
 
 ## 结论
+
 与**Fractal**相比，第一个明显的区别是资源可以轻松直接访问整个集合，而不是以每个对象为基础。
 
 这意味着，在转换一组用户时，您可以轻松地加载每个Posts，而不需要N+1个查询。
@@ -186,3 +186,4 @@ class PostsResource extends Resource
 你可以在这里找到关于这个主题的第二篇文章：
 
 [具有嵌套关系的API资源](/laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
+
