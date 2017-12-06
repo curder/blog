@@ -34,7 +34,7 @@ class UsersResource extends Resource
 
 * [对API资源的第一印象 - Laravel5.5](/laravel/api/first-impressions-on-laravel-api-resources.md)
 
-* [具有嵌套关系的API资源 - Laravel5.5](/laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
+* [嵌套关系的可重用API资源 - Laravel5.5](/laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
 
 
 ## 建立项目
