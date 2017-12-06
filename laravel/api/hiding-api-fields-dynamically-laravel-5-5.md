@@ -32,9 +32,9 @@ class UsersResource extends Resource
 
 如果你还不知道什么是API资源，可以看看作者以前的文章关于这个问题。
 
-* [对API资源的第一印象](https://hackernoon.com/first-impressions-on-laravel-api-resources-4869b73b7847)
+* [对API资源的第一印象](/laravel/api/first-impressions-on-laravel-api-resources.md)
 
-* [具有嵌套关系的API资源](https://hackernoon.com/reusable-api-resource-with-nested-relationship-laravel-5-5-c654c7243869)
+* [具有嵌套关系的API资源](/laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
 
 
 ## 建立项目
