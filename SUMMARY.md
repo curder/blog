@@ -8,7 +8,7 @@
 * [WordPress相关](wordpress/README.md)
   * [WordPress创建主题](wordpress/create_theme.md)
 * [Git相关](git/README.md)
-  * [Git命令清单](git/gitming-ling-qing-dan.md)
+  * [Git命令清单](git/git_command_list.md)
   * [Git合并特定commits到另一个分支](git/some_of_the_branches_are_commit.md)
   * [Git合并其他分支的个别文件或文件夹](git/merge_files_or_folders_from_other_branches.md)
   * [Git更新远程代码到本地仓库](git/remote_repository_update.md)
