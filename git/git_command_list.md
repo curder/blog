@@ -25,7 +25,7 @@ Git的设置文件为`.gitconfig`，它可以在用户主目录下（全局配�
 // 显示当前的Git配置
 $ git config --list
 
-// 编辑Git配置文件
+// 编辑Git配置文件，不指定默认是 --local
 $ git config -e [--system|--global|--local]
 
 // 设置提交代码时的用户信息
