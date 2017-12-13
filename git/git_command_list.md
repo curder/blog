@@ -330,6 +330,8 @@ git stash pop
 
 ```
  git archive [options] <tree-ish> [<path>...]
+ --format <fmt>        archive format
+ --prefix <prefix>     prepend prefix to each pathname in the archive
  -o, --output <file>   write the archive to this file
  -0                    store only
  -1                    compress faster
@@ -347,6 +349,13 @@ git archive --list
 
 ### 导出
 
+创建一个包含当前最新提交内容的`tar.gz`归档文件分支，并将其解压到`/tmp/projectName`目录中。
+
+```
+git archive --format=tar.gz --prefix=projectName/ HEAD | (cd /tmp/ && tar xf -)
+```
+
+
 
 ```
 // 导出最新的版本库
@@ -359,7 +368,7 @@ git archive -o ../git-1.4.0.tar hashCode
 git archive -o ../git-1.4.0-docs.zip  HEAD:Documentation/
 
 // 导出为tar.gz格式
-git archive   8996b47 | gzip > ../git-1.4.0.tar.gz
+git archive 8996b47 | gzip > ../git-1.4.0.tar.gz
 
 // 导出最后一次提交修改过的文件
 git archive -o ../updated.zip HEAD $(git diff --name-only HEAD^)
