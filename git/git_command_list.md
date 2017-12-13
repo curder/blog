@@ -321,9 +321,43 @@ $ git stash
 $ git stash pop
 ```
 
-## 其他操作
+## 文件打包
+
+### 查看帮助
 
 ```
-// 生成一个可供发布的压缩包
-$ git archive
+ git archive [options] <tree-ish> [<path>...]
+ -o, --output <file>   write the archive to this file
+ -0                    store only
+ -1                    compress faster
+ -9                    compress better
+ -l, --list            list supported archive formats
+```
+
+### 查看支持的归档格式
+
+```
+git archive --list
+```
+
+运行完上面的命令，可以看到支持的归档格式有：`tar`、`tgz`、`tar.gz`和`zip`。
+
+### 导出
+
+
+```
+// 导出最新的版本库
+git archive -o ../latest.zip HEAD
+
+// 通过hash值导出指定提交记录
+git archive -o ../git-1.4.0.tar hashCode
+
+// 导出一个目录
+git archive -o ../git-1.4.0-docs.zip  HEAD:Documentation/
+
+// 导出为tar.gz格式
+git archive   8996b47 | gzip > ../git-1.4.0.tar.gz
+
+// 导出最后一次提交修改过的文件
+git archive -o ../updated.zip HEAD $(git diff --name-only HEAD^)
 ```
