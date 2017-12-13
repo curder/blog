@@ -19,7 +19,7 @@ Git作为常用的版本控制工具之一，我们应该在平时的开发中�
 
 Git的设置文件为`.gitconfig`，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。
 
-配置文件的优先级是：`/etc/gitconfig`、`~/.gitconfig`和 当前项目目录的config文件（即`.git/config`文件），这三个文件的优先级依次增高，每个级别重写前一个级别的值。因此，在.git/config中的值覆盖了在/etc/gitconfig中的同一个值。
+配置文件的优先级是：`/etc/gitconfig`、`~/.gitconfig`和 当前项目目录的config文件（即`.git/config`文件），这三个文件的优先级依次增高，每个级别重写前一个级别的值。因此，在`.git/config`中的值覆盖了在`/etc/gitconfig`中的同一个值。
 
 ```
 // 显示当前的Git配置
