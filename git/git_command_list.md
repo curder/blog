@@ -372,4 +372,7 @@ git archive 8996b47 | gzip > ../git-1.4.0.tar.gz
 
 // 导出最后一次提交修改过的文件
 git archive -o ../updated.zip HEAD $(git diff --name-only HEAD^)
+
+// 导出tag
+git archive --format=tar.gz 1.0 | gzip > v1.0.tar.gz
 ```
