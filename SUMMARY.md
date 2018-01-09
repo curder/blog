@@ -1,7 +1,10 @@
 # Summary
 
 * [介绍](README.md)
-* [开发工具](tools/README.md)
+* [开发工具](/tools/README.md)
+  * [SublimeText](/tools/sublime/README.md)
+    * [安装和Material主题配置](/tools/sublime/install.md)
+    * [修改Sublime Text 3 的侧边栏字体大小](/tools/sublime/change_sidebar_label_font_size.md)
   * [Atom的基本使用](tools/atom/normal.md)
   * [PHPStorm快捷键](tools/phpstorm/keymap.md)
   * [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
