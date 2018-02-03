@@ -1,6 +1,6 @@
 # Summary
 
-* [介绍](/README.md)
+* [介绍](README.md)
 * [开发工具](/tools/README.md)
   * [SublimeText](/tools/sublime/README.md)
     * [安装和Material主题配置](/tools/sublime/install.md)
@@ -16,8 +16,6 @@
   * [Git合并其他分支的个别文件或文件夹](git/merge_files_or_folders_from_other_branches.md)
   * [Git更新远程代码到本地仓库](git/remote_repository_update.md)
   * [Git拉取远程分支到本地](git/remote_repository_pull.md)
-  * [Git授权SSH协议免密操作开放平台](git/git_authorizes_the_SSH_protocol_to_be_used_as_an_open_platform.md)
-  * [Git 从其它分支提取指定文件](git/git-extracts-the-specified-file-from-other-branches.md)
 * [Laravel开发](laravel/README.md)
   * [对API资源的第一印象 - Laravel5.5](laravel/api/first-impressions-on-laravel-api-resources.md)
   * [嵌套关系的可重用API资源 - Laravel5.5](laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
