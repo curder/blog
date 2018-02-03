@@ -12,13 +12,13 @@
 * 快捷键 `⌘(command)+⇧(shift)+P` 打开 命令匹配
 * 输入 `PackageResourceViewer: Open Resource` 回车，
 
-* 打开包列表选择 `Theme - Default`【这里如果与安装自定义主题就选中自定义主题的名字，比如我安装了`Material`主题，那么选中就可能是`Material - Theme`】
+* 打开包列表选择 `Theme - Default`【这里如果与安装自定义主题就选中自定义主题的名字，比如使用了`Material`主题，那么选中就是`Material - Theme`】
 
-* 再选择 `Default.sublimt-theme` 搜索 `sidebar_label` 配置选项
+* 再选择 `Default.sublimt-theme`【如果自定义`Material Theme`的话，选中`Material-Theme.sublime-theme`】 后搜索 `sidebar_label` 配置选项
 
 * 例如欲将字体大小设置为18，可以在 `"class": "sidebar_label"` 配置选项里面追加一行：`"font.size": 18` 后保存。
 
 
 
-另外，如果觉得行间距太小，可以往上找下，有个`class:"sidebartree"`，调一下里边的`row_padding`配置即可。
+另外，如果觉得行间距太小，可以往上找下，有个`class:"sidebar_tree"`，调一下里边的` "row_padding": [24, 8],`配置即可。
 
