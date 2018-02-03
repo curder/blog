@@ -1,6 +1,6 @@
 # Summary
 
-* [介绍](README.md)
+* [介绍](/README.md)
 * [开发工具](/tools/README.md)
   * [SublimeText](/tools/sublime/README.md)
     * [安装和Material主题配置](/tools/sublime/install.md)
