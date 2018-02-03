@@ -33,9 +33,14 @@ Sublime Text 3 的官方网站在[这里](https://www.sublimetext.com)，找到�
 "highlight_modified_tabs": true,
 ```
 
-> `font_face` 字体配置，可以选择`Fira Code`、`Source Code Pro`、`Roboto Mono`等自己喜欢的字体。
-> `line_padding_bottom` 下边距距离
-> `line_padding_top`上边距距离
-> `font_size` 字体大小
-> `highlight_line` 选中行高亮
-> `highlight_modified_tabs` 高亮改过的文件
+* `font_face` 字体配置，可以选择`Fira Code`、`Source Code Pro`、`Roboto Mono`等自己喜欢的字体。
+
+* `line_padding_bottom` 下边距距离
+
+* `line_padding_top`上边距距离
+
+* `font_size` 字体大小
+
+* `highlight_line` 选中行高亮
+
+* `highlight_modified_tabs` 高亮改过的文件
