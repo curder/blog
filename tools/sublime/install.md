@@ -14,7 +14,7 @@ Sublime Text 3 的官方网站在[这里](https://www.sublimetext.com)，找到�
 
 * 安装主题
 
-在MacOSX机器上按快捷键 `Command + Shift + p`回车后输入`install`再回车，输入`Material`搜索主题进行安装。
+在MacOSX机器上按快捷键 `Command + Shift + p`回车后输入`Package Control:Install`再回车，输入`Material`搜索主题进行安装。
 
 * 启用主题
 
