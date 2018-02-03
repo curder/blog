@@ -38,3 +38,4 @@ Sublime Text 3 的官方网站在[这里](https://www.sublimetext.com)，找到�
 > `line_padding_top`上边距距离
 > `font_size` 字体大小
 > `highlight_line` 选中行高亮
+> `highlight_modified_tabs` 高亮改过的文件
