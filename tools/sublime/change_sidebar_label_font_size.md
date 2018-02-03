@@ -12,7 +12,7 @@
 * 快捷键 `⌘(command)+⇧(shift)+P` 打开 命令匹配
 * 输入 `PackageResourceViewer: Open Resource` 回车，
 
-* 打开包列表选择 `Theme - Default`【这里如果与安装自定义主题就选中自定义主题的名字，比如我安装了`Material`主题，那么选中就可能是`Material - Default`】
+* 打开包列表选择 `Theme - Default`【这里如果与安装自定义主题就选中自定义主题的名字，比如我安装了`Material`主题，那么选中就可能是`Material - Theme`】
 
 * 再选择 `Default.sublimt-theme` 搜索 `sidebar_label` 配置选项
 
