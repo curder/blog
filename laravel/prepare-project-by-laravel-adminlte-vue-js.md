@@ -88,4 +88,29 @@ composer require "maatwebsite/excel"
 ];
 ```
 
+## 升级图片管理(可选)
+
+`intervention/image`项目[GitHub地址](https://github.com/Intervention/image)
+
+### 执行命令
+
+```
+composer require "intervention/image"
+```
+
+
+### 编辑`config/app.php`配置文件
+
+```
+'aliases' => [
+...
+'Image' => Intervention\Image\Facades\Image::class,
+];
+```
+
+### 执行命令
+
+```
+php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
+```
 
