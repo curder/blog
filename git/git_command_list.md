@@ -300,14 +300,8 @@ git checkout [commit] [file]
 // 恢复暂存区的所有文件到工作区
 git checkout .
 
-// 提取其他分支的指定文件
-git checkout [branch] -- [file name]
-
 // 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
 git reset [file]
-
-// 重置commit，但是对工作区的文件不变
-git reset --soft
 
 // 重置暂存区与工作区，与上一次commit保持一致
 git reset --hard
