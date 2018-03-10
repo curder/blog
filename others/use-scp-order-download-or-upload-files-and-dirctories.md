@@ -22,6 +22,7 @@ DESCRIPTION :scp copies files between hosts on a network.
 ```
 
 * `-1` 强制scp命令使用协议ssh1
+
 * `-2` 强制scp命令使用协议ssh2
 
 * `-4` 强制scp命令只使用IPv4寻址
@@ -55,12 +56,46 @@ DESCRIPTION :scp copies files between hosts on a network.
 * `-S` program 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。
 
 
+## 使用说明
+
+
+### 从本地服务器复制到远程服务器
+
+
+#### 复制文件
+```
+scp local_file remote_username@remote_ip:remote_folder
+
+scp local_file remote_username@remote_ip:remote_file
+
+scp local_file remote_ip:remote_folder
+
+scp local_file remote_ip:remote_file
+```
+
+指定了用户名，命令执行后需要输入用户密码；
+如果不指定用户名，命令执行后需要输入用户名和密码
+
+#### 复制目录
+
+```
+scp -r local_folder remote_username@remote_ip:remote_folder
+
+scp -r local_folder remote_ip:remote_folder
+```
+
+第1个指定了用户名，命令执行后需要输入用户密码； 
+第2个没有指定用户名，命令执行后需要输入用户名和密码；
+
+> 从远程复制到本地的`scp`命令与上面的命令一样，只要将从本地复制到远程的命令后面2个参数互换顺序就行
+
 
 ## 相关示例
 
 ### 文件拷贝
 
-#### 从服务器下载文件
+#### 从远处复制文件到本地目录
+
 
 ```
 scp username@servername:/server_path/filename /local_path/local_destination
@@ -69,7 +104,8 @@ scp username@servername:/server_path/filename /local_path/local_destination
 例如： `scp luo@192.168.1.1:/home/luo/test/dump.tar.gz /tmp/test`，把`192.168.1.1`上的`/home/luo/test/dump.tar.gz`的文件下载到`/tmp/test`。
 
 
-#### 上传本地文件到服务器
+#### 上传本地文件到远程机器指定目录
+
 
 ```
 scp /path/local_filename username@servername:/server_path
@@ -78,23 +114,24 @@ scp /path/local_filename username@servername:/server_path
 例如： `scp /Users/luo/test/dump.tar.gz  luo@192.168.1.1:/tmp/test/` 把本机`/Users/luo/test/`目录下的`dump.tar.gz`文件上传到`192.168.1.1`这台服务器上的`/tmp/test/`目录中。
 
 
-### 文件夹拷贝
+### 从远处复制目录到本地
+
 
 相比文件的拷贝，在使用`scp`的时候文件夹的拷贝多了一个`-r`参数。
 
 #### 从服务器下载整个目录
 
 ```
-scp -r username@servername:remote_dir/ /tmp/local_dir
+scp -r username@servername:remote_dir /tmp/local_dir
 ```
 
-例如:`scp -r luo@192.168.1.1:/tmp/ /Users/luo/test`，把服务器`192.168.1.1`上的`/tmp`目录下拷贝到本地`/Users/luo/test`目录下。
+例如:`scp -r luo@192.168.1.1:/tmp /Users/luo/test`，把服务器`192.168.1.1`上的`/tmp`目录下拷贝到本地`/Users/luo/test`目录下。
 
 
-#### 上传目录到服务器
+#### 上传本地目录到远程机器指定目录
 
 ```
-scp  -r /tmp/local_dir username@servername:remote_dir
+scp -r /tmp/local_dir username@servername:remote_dir
 ```
 
 例如：`scp -r /Users/luo/test luo@192.168.1.1:/tmp/test/`把当前目录下的`/Users/luo/test`目录上传到服务器的`/tmp/test/` 目录。
