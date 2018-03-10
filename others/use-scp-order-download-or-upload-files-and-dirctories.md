@@ -138,7 +138,11 @@ scp -r /tmp/local_dir username@servername:remote_dir
 
 
 
+## 参考地址
 
+- http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html
+
+- http://www.cnblogs.com/no7dw/archive/2012/07/07/2580307.html
 
 
 
