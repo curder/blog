@@ -83,3 +83,64 @@ server {
 ```
 sudo nginx -t
 ```
+
+如果出现类似 `syntax ok` 这样的语句，就说明 Nginx 的配置文件没有问题。之后就是重新加载 Nginx 的配置文件了
+
+```
+sudo service nginx restart
+```
+
+
+## 签发 SSL 证书
+
+前面的两大步配置完成，就可以使用 Let's Encrypt 签发 SSL 证书了
+
+```
+sudo certbot --nginx -d example.com -d www.example.com
+```
+
+> 注意上面的的 `example.com` 换成您自己的域名。
+
+
+
+如果你第一次运行 certbot 命令的话，你需要在弹出的窗口输入你的邮箱地址还有需要接受 Let's Encrypt 的协议。
+
+```
+Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
+-------------------------------------------------------------------------------
+1: No redirect - Make no further changes to the webserver configuration.
+2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
+new sites, or if you're confident your site works on HTTPS. You can undo this
+change by editing your web server's configuration.
+-------------------------------------------------------------------------------
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
+```
+如果没有特殊情况建议按下2，无论如何都重定向到HTTPS。
+
+
+选择完毕之后，等待 SSL 生成完毕，就会有类似这样的输出：
+
+```
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at
+   /etc/letsencrypt/live/your-domain.com/fullchain.pem. Your cert will
+   expire on 2017-12-29. To obtain a new or tweaked version of this
+   certificate in the future, simply run certbot again with the
+   "certonly" option. To non-interactively renew *all* of your
+   certificates, run "certbot renew"
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le   
+```
+
+
+然后在上面的文字中，这个 `/etc/letsencrypt/live/example.com/fullchain.pem` 路径很重要，就是上面命令生成的 SSL 证书路径。
+
+
+其实到这里，访问 example.com 应该就可以看到 https 的效果了。
