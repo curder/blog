@@ -124,7 +124,7 @@ Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
 IMPORTANT NOTES:
  - Congratulations! Your certificate and chain have been saved at
    /etc/letsencrypt/live/your-domain.com/fullchain.pem. Your cert will
-   expire on 2017-12-29. To obtain a new or tweaked version of this
+   expire on 2011-12-29. To obtain a new or tweaked version of this
    certificate in the future, simply run certbot again with the
    "certonly" option. To non-interactively renew *all* of your
    certificates, run "certbot renew"
