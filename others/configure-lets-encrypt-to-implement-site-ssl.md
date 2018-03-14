@@ -74,3 +74,12 @@ server {
     server_name examlpe.com www.examlpe.com;
 }
 ```
+
+> 注意上面的的 `example.com` 换成您自己的域名。
+
+
+保存退出之后，执行以下命令来检测 Nginx 的配置文件是否有错
+
+```
+sudo nginx -t
+```
