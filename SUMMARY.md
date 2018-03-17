@@ -23,3 +23,4 @@
 
 * [其他](others/README.md)
   * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
+  * [使用docker搞定私有Git服务器部署(Gogs)](others/user-docker-deploy-gogs.md)
