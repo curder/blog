@@ -139,12 +139,13 @@ MYSQL_PASSWORD={password}
 GOGS_IP={ip}
 GOGS_SSH_PORT=10022
 GOGS_HTTP_PORT=10080
+GOGS_SSH_PORT=10022
 ```
 
-执行命令运行
+执行命令运行docker。
 
+> 执行命令前安装[阿里云加速器](https://cr.console.aliyun.com/?spm=5176.100239.blogcont57268.20.ik4KA5#/accelerator)
 ```
 docker-compose up -d
 ```
 
-> 执行命令前安装[阿里云加速器](https://cr.console.aliyun.com/?spm=5176.100239.blogcont57268.20.ik4KA5#/accelerator)
