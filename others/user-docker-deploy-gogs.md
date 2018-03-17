@@ -79,9 +79,8 @@ docker --version
 docker-compose --version
 ```
 
-## HTTP运行Gogs
 
-
+## 配置docker-compose
 
 直接上`docker-compose.yaml`文件内容：
 
@@ -129,7 +128,7 @@ services:
     restart: always
 ```
 
-其中上面的环境变量在`env`文件中
+其中上面使用到的环境变量需要放在在`.env`文件中，保证和`docker-compose.yaml`文件在同一目录下。
 
 ```
 MYSQL_ROOT_PASSWORD={mysql_root_password}
@@ -148,3 +147,5 @@ GOGS_SSH_PORT=10022
 docker-compose up -d
 ```
 
+
+## HTTP运行Gogs
