@@ -2,6 +2,9 @@
 
 服务器环境使用`CentOS Linux release 7.4.1708 (Core)`。
 
+> 不需要在本地提前安装好 `Nginx` 和 `Mysql`，都通过 `Docker` 来完成。
+
+
 ## 目录结构
 
 ```
@@ -79,3 +82,69 @@ docker-compose --version
 ## HTTP运行Gogs
 
 
+
+直接上`docker-compose.yaml`文件内容：
+
+```
+version: '2'
+
+services:
+
+  nginx:
+    container_name: nginx
+    image: nginx:alpine
+    volumes:
+      - "./nginx/:/etc/nginx/conf.d/"
+    ports:
+      - "80:80"
+    restart: always
+
+  mysql:
+    container_name: mysql
+    image: mysql:5.7.13
+    volumes:
+      - "./mysql:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+  gogs:
+    container_name: gogs
+    depends_on:
+      - db
+    image: gogs/gogs
+    volumes:
+      - ./gogs:/data
+    links:
+      - mysql:mysql
+    ports:
+      - "10080:3000"
+      - "10022:22"
+    environment:
+      - Domain=${GOGS_IP}
+      - SSH_PORT=${GOGS_SSH_PORT}
+    restart: always
+```
+
+其中上面的环境变量在`env`文件中
+
+```
+MYSQL_ROOT_PASSWORD={mysql_root_password}
+MYSQL_DATABASE={gogs}
+MYSQL_USER={gogs}
+MYSQL_PASSWORD={password}
+GOGS_IP={ip}
+GOGS_SSH_PORT=10022
+GOGS_HTTP_PORT=10080
+```
+
+执行命令运行
+
+```
+docker-compose up -d
+```
+
+> 执行命令前安装[阿里云加速器](https://cr.console.aliyun.com/?spm=5176.100239.blogcont57268.20.ik4KA5#/accelerator)
