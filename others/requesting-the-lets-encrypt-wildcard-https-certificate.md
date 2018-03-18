@@ -140,7 +140,7 @@ export Ali_Secret="asd213dfas"
 
 **注意, **默认生成的证书都放在安装目录下: `~/.acme.sh/`，不要直接使用此目录下的文件。例如: 不要直接让 `nginx/apache` 的配置文件使用这下面的文件. 这里面的文件都是内部使用, 而且目录结构可能会变化.
 
-正确的使用方法是使用 `--installcert` 命令,并指定目标位置, 然后证书文件会被copy到相应的位置, 例如:
+正确的使用方法是使用 `--installcert` 命令,并指定目标位置, 然后证书文件会被copy到相应的位置，如果 `/etc/nginx/ssl` 不存在需要使用`mkdir`命令创建`mkdir -p /etc/nginx/ssl`， 例如:
 
 ```
 acme.sh --installcert -d <domain>.com \
