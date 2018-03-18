@@ -179,14 +179,14 @@ acme.sh --upgrade
 
 - 如果你不想手动升级, 可以开启自动升级
 ```
-acme.sh  --upgrade  --auto-upgrade
+acme.sh --upgrade --auto-upgrade
 ```
 
 之后, acme.sh 就会自动保持更新了.
 
 - 你也可以随时关闭自动更新
 ```
-acme.sh --upgrade  --auto-upgrade  0
+acme.sh --upgrade --auto-upgrade 0
 ```
 
 ## 参考地址
