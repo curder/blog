@@ -172,7 +172,7 @@ Nginx 的配置 `ssl_certificate` 使用 `/etc/nginx/ssl/fullchain.cer` ，而�
 
 
 
-目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 `acme.sh` 也经常更新以保持同步.
+目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 `acme.sh` 也经常更新以保持同步
 
 - 升级 acme.sh 到最新版
 
