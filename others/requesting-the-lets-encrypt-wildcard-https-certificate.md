@@ -213,6 +213,7 @@ server {
      ssl on;
      ssl_certificate      ../ssl/fullchain.cer;
      ssl_certificate_key  ../ssl/<domain>.com.key;
+     ssl_trusted_certificate  ../cert/<domain>.com/chain.pem;
 
     server_name blog.<domain>.com;
     root        /web_path/public;
