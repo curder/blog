@@ -199,7 +199,7 @@ acme.sh --upgrade --auto-upgrade 0
 ```
 server {
     listen      80; ## listen for ipv4
-    server_name   blog.<domain>.com;
+    server_name   <domain>.com;
     return      301 https://$server_name$request_uri;
 }
 
@@ -213,9 +213,8 @@ server {
      ssl on;
      ssl_certificate      ../ssl/fullchain.cer;
      ssl_certificate_key  ../ssl/<domain>.com.key;
-     ssl_trusted_certificate  ../cert/<domain>.com/chain.pem;
 
-    server_name blog.<domain>.com;
+    server_name <domain>.com;
     root        /web_path/public;
     index       index.php;
 
@@ -223,7 +222,7 @@ server {
 }
 ```
 
-
+更改完之后重启服务器`sudo systemctl nginx reload`，访问`<domain>.com`即可看到效果了。
 
 
 
