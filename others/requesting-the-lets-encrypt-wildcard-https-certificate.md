@@ -213,7 +213,9 @@ server {
 }
 ```
 
-更改完之后重启服务器`sudo systemctl nginx reload`，访问`<domain>.com`即可看到效果了。
+更改完之后重启服务器`sudo systemctl reload nginx`，访问`<domain>.com`即可看到效果了。
+
+> 如果你使用的是aliyun等云服务器，可能还需要配置云服务器的**安全组配置**。
 
 ## 参考地址
 
