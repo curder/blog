@@ -4,7 +4,7 @@
 
 > 不需要在本地提前安装好 `Mysql`，都通过 `Docker` 来完成。
 
-## 安装 Docker 和 Compsoe
+## 安装 docker 和 docker-compsoe
 
 ### 安装Docker
 
