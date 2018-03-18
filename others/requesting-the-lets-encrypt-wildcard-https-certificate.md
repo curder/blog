@@ -12,9 +12,11 @@
 0. 安装依赖
 1. 安装 `acme.sh`
 2. 生成证书
-3. 拷贝安装证书到 `nginx/apache` 或者其他服务
+3. 拷贝安装证书到 `nginx/apache` 或者其他web服务器
 4. 更新证书
 5. 更新 acme.sh
+6. 更改web服务器启用https
+
 
 > 记得在操作具体的命令之前将一些域名变量`<domain>.com`替换成你当前要操作的域名信息。
 
@@ -165,6 +167,7 @@ Nginx 的配置 `ssl_certificate` 使用 `/etc/nginx/ssl/fullchain.cer` ，而�
 
 目前证书在 60 天以后会自动更新, 无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 作为使用者不用关心。
 
+
 ## 更新 acme.sh
 
 
@@ -188,6 +191,41 @@ acme.sh --upgrade --auto-upgrade
 ```
 acme.sh --upgrade --auto-upgrade 0
 ```
+
+## 更改web服务器启用https
+
+这里以Nginx应用为例：
+
+```
+server {
+    listen      80; ## listen for ipv4
+    server_name   blog.<domain>.com;
+    return      301 https://$server_name$request_uri;
+}
+
+server {
+    charset utf-8;
+    client_max_body_size 128M;
+
+    listen 443;
+
+    # SSL support
+     ssl on;
+     ssl_certificate      ../ssl/fullchain.cer;
+     ssl_certificate_key  ../ssl/<domain>.com.key;
+
+    server_name blog.<domain>.com;
+    root        /web_path/public;
+    index       index.php;
+
+... ...
+}
+```
+
+
+
+
+
 
 ## 参考地址
 
