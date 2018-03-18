@@ -6,7 +6,7 @@
 
 ## 安装 docker 和 docker-compsoe
 
-### 安装Docker
+### 安装docker
 
 Docker 软件包和依赖包已经包含在默认的 CentOS-Extras 软件源里，安装命令如下
 
