@@ -171,20 +171,20 @@ Nginx 的配置 `ssl_certificate` 使用 `/etc/nginx/ssl/fullchain.cer` ，而�
 
 目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步.
 
-- 升级 acme.sh 到最新版 :
+- 升级 acme.sh 到最新版
 
 ```
 acme.sh --upgrade
 ```
 
-- 如果你不想手动升级, 可以开启自动升级:
+- 如果你不想手动升级, 可以开启自动升级
 ```
 acme.sh  --upgrade  --auto-upgrade
 ```
 
 之后, acme.sh 就会自动保持更新了.
 
-- 你也可以随时关闭自动更新:
+- 你也可以随时关闭自动更新
 ```
 acme.sh --upgrade  --auto-upgrade  0
 ```
