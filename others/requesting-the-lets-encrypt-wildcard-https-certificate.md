@@ -1,6 +1,7 @@
-# 申请Let's Encrypt通配符HTTPS证书
+#
+申请Let's Encrypt通配符HTTPS证书
 
-通配符证书是一个SSL证书，可用于为给定域上的所有子域提供https，例如，`*.webfsd.com` 意味着任何子域名（如`www.example.com`或`links.example.com`）会使用相同的SSL证书。
+通配符证书是一个SSL证书，可用于为给定域上的所有子域提供https，例如，`*.<domain>.com` 意味着任何子域名（如`www.example.com`或`links.example.com`）会使用相同的SSL证书。
 
 使用通配符证书对于允许用户选择子域的应用程序非常有用，例如，`wordpress.com`子域下的所有博客。
 
@@ -11,11 +12,11 @@
 0. 安装依赖
 1. 安装 `acme.sh`
 2. 生成证书
-3. `copy` 证书到 `nginx/apache` 或者其他服务
+3. 拷贝安装证书到 `nginx/apache` 或者其他服务
 4. 更新证书
 5. 更新 acme.sh
 
-> 记得在操作具体的命令之前将一些域名变量`webfsd.com`替换成你当前要操作的域名信息。
+> 记得在操作具体的命令之前将一些域名变量`<domain>.com`替换成你当前要操作的域名信息。
 
 ## 安装依赖程序
 
@@ -32,18 +33,18 @@ yum install curl -y && yum install cron -y && yum install socat -y
 ## 安装`acme.sh`
 
 ```
-curl  https://get.acme.sh | sh
+curl https://get.acme.sh | sh
 ```
 
 输出如下内容：
 ```
-$ curl  https://get.acme.sh | sh
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   705  100   705    0     0   2426      0 --:--:-- --:--:-- --:--:--  2422
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  163k  100  163k    0     0   400k      0 --:--:-- --:--:-- --:--:--  401k
+$ curl https://get.acme.sh | sh
+% Total % Received % Xferd Average Speed Time Time Time Current
+Dload Upload Total Spent Left Speed
+100 705 100 705 0 0 2426 0 --:--:-- --:--:-- --:--:-- 2422
+% Total % Received % Xferd Average Speed Time Time Time Current
+Dload Upload Total Spent Left Speed
+100 163k 100 163k 0 0 400k 0 --:--:-- --:--:-- --:--:-- 401k
 [Sun Mar 18 20:11:01 CST 2018] Installing from online archive.
 [Sun Mar 18 20:11:01 CST 2018] Downloading https://github.com/Neilpang/acme.sh/archive/master.tar.gz
 [Sun Mar 18 20:11:03 CST 2018] Extracting master.tar.gz
@@ -79,7 +80,7 @@ $ curl  https://get.acme.sh | sh
 `http` 方式需要在你的网站根目录下放置一个文件, 来验证你的域名所有权,完成验证. 然后就可以生成证书了。
 
 ```
-~/.acme.sh/acme.sh --issue  -d webfsd.com -d www.webfsd.com --webroot /home/wwwroot/webfsd.com/
+~/.acme.sh/acme.sh --issue -d <domain>.com -d www.<domain>.com --webroot /home/wwwroot/<domain>.com/
 ```
 
 只需要指定域名, 并指定域名所在的网站根目录。 `acme.sh` 会全自动的生成验证文件, 并放到网站的根目录。然后自动完成验证，最后会聪明的删除验证文件，整个过程没有任何副作用。
@@ -89,7 +90,7 @@ $ curl  https://get.acme.sh | sh
 如果当前使用的是`nginx`服务器或者反代, `acme.sh` 还可以智能的从 `nginx`的配置中自动完成验证, 将不需要指定网站根目录:
 
 ```
-~/.acme.sh/acme.sh --issue  -d webfsd.com --nginx
+~/.acme.sh/acme.sh --issue -d <domain>.com --nginx
 ```
 
 
@@ -98,7 +99,7 @@ $ curl  https://get.acme.sh | sh
 如果你用的 `apache`服务器, `acme.sh` 还可以智能的从 `apache`的配置中自动完成验证, 你不需要指定网站根目录:
 
 ```
-~/.acme.sh/acme.sh --issue  -d webfsd.com --apache
+~/.acme.sh/acme.sh --issue -d <domain>.com --apache
 ```
 
 > 注意：无论是 `apache` 还是 `nginx` 模式, `acme.sh`在完成验证之后, 会恢复到之前的状态, 都不会私自更改你本身的配置. 好处是你不用担心配置被搞坏, 也有一个缺点, 你需要自己配置 `ssl` 的配置, 否则只能成功生成证书, 你的网站还是无法访问`https`。
@@ -108,11 +109,11 @@ $ curl  https://get.acme.sh | sh
 如果你还没有运行任何 web 服务, 80 端口是空闲的, 那么 acme.sh 还能假装自己是一个webserver, 临时听在80 端口, 完成验证:
 
 ```
-~/.acme.sh/acme.sh --issue -d webfsd.com --standalone
+~/.acme.sh/acme.sh --issue -d <domain>.com --standalone
 ```
 
-> 以上命令都将ssl相关数据写入到文件地址`~/USER/.acme.sh/webfsd.com/`下，包含`ca.cer`、`webfsd.com.conf`、`webfsd.com.key`、`fullchain.cer`、`webfsd.com.csr`
-、`webfsd.com.cer`和`webfsd.com.csr.conf`。
+> 以上命令都将ssl相关数据写入到文件地址`~/USER/.acme.sh/<domain>.com/`下，包含`ca.cer`、`<domain>.com.conf`、`<domain>.com.key`、`fullchain.cer`、`<domain>.com.csr`
+、`<domain>.com.cer`和`<domain>.com.csr.conf`。
 
 
 ### DNS验证
@@ -131,11 +132,62 @@ export Ali_Secret="asd213dfas"
 接下来再输入下面命令申请`Let’s Encrypt`泛域名免费SSL证书。
 
 ```
-~/.acme.sh/acme.sh --issue --dns dns_ali -d webfsd.com -d *.webfsd.com
+~/.acme.sh/acme.sh --issue --dns dns_ali -d <domain>.com -d *.<domain>.com
 ```
 
+第一次成功之后，`acme.sh`会记录下`App_Key`和`App_Secret`，并且生成一个定时任务，每天凌晨0：00自动检测过期域名并且自动续期。对这种方式有顾虑的，请慎重，不过也可以自行删掉用户级的定时任务，并且清理掉`~/.acme.sh`文件夹就行。
+
+## 拷贝安装证书
+
+前面证书生成以后, 接下来需要使用命令把证书拷贝到真正需要用它的地方。
+
+**注意, **默认生成的证书都放在安装目录下: `~/.acme.sh/`，不要直接使用此目录下的文件。例如: 不要直接让 `nginx/apache` 的配置文件使用这下面的文件. 这里面的文件都是内部使用, 而且目录结构可能会变化.
+
+正确的使用方法是使用 `--installcert` 命令,并指定目标位置, 然后证书文件会被copy到相应的位置, 例如:
+
+```
+acme.sh --installcert -d <domain>.com \
+--key-file /etc/nginx/ssl/<domain>.key \
+--fullchain-file /etc/nginx/ssl/fullchain.cer \
+--reloadcmd "service nginx force-reload"
+```
+
+Nginx 的配置 `ssl_certificate` 使用 `/etc/nginx/ssl/fullchain.cer` ，而非 `/etc/nginx/ssl/<domain>.cer` ，否则 SSL Labs 的测试会报 Chain issues Incomplete 错误。
+
+`--installcert` 命令可以携带很多参数, 来指定目标文件. 并且可以指定 `reloadcmd`, 当证书更新以后, `reloadcmd`会被自动调用,让服务器生效.
+
+详细参数请参考: https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc
+
+值得注意的是, 这里指定的所有参数都会被自动记录下来, 并在将来证书自动更新以后, 被再次自动调用。
 
 
+## 更新证书
+
+目前证书在 60 天以后会自动更新, 无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 作为使用者不用关心。
+
+## 更新 acme.sh
+
+
+
+目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步.
+
+- 升级 acme.sh 到最新版 :
+
+```
+acme.sh --upgrade
+```
+
+- 如果你不想手动升级, 可以开启自动升级:
+```
+acme.sh  --upgrade  --auto-upgrade
+```
+
+之后, acme.sh 就会自动保持更新了.
+
+- 你也可以随时关闭自动更新:
+```
+acme.sh --upgrade  --auto-upgrade  0
+```
 
 ## 参考地址
 
