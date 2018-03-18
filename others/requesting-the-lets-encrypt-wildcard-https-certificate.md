@@ -1,5 +1,4 @@
-#
-申请Let's Encrypt通配符HTTPS证书
+# 申请Let's Encrypt通配符HTTPS证书
 
 通配符证书是一个SSL证书，可用于为给定域上的所有子域提供https，例如，`*.<domain>.com` 意味着任何子域名（如`www.example.com`或`links.example.com`）会使用相同的SSL证书。
 
@@ -7,30 +6,30 @@
 
 [acme.sh](https://github.com/Neilpang/acme.sh) 实现了 `acme` 协议, 可以从 letsencrypt 生成免费的证书。
 
-
-主要步骤:
-0. 安装依赖
-1. 安装 `acme.sh`
-2. 生成证书
-3. 拷贝安装证书到 `nginx/apache` 或者其他web服务器
-4. 更新证书
-5. 更新 acme.sh
+主要步骤:  
+0. 安装依赖  
+1. 安装 `acme.sh`  
+2. 生成证书  
+3. 拷贝安装证书到 `nginx/apache` 或者其他web服务器  
+4. 更新证书  
+5. 更新 acme.sh  
 6. 更改web服务器启用https
-
 
 > 记得在操作具体的命令之前将一些域名变量`<domain>.com`替换成你当前要操作的域名信息。
 
 ## 安装依赖程序
 
-- `Debian/Ubuntu`
-```
-apt-get install curl -y && apt-get install cron -y && apt-get install socat -y
-```
+* `Debian/Ubuntu`
 
-- `Centos`
-```
-yum install curl -y && yum install cron -y && yum install socat -y
-```
+  ```
+  apt-get install curl -y && apt-get install cron -y && apt-get install socat -y
+  ```
+
+* `Centos`
+
+  ```
+  yum install curl -y && yum install cron -y && yum install socat -y
+  ```
 
 ## 安装`acme.sh`
 
@@ -39,6 +38,7 @@ curl https://get.acme.sh | sh
 ```
 
 输出如下内容：
+
 ```
 $ curl https://get.acme.sh | sh
 % Total % Received % Xferd Average Speed Time Time Time Current
@@ -69,9 +69,7 @@ Dload Upload Total Spent Left Speed
 
 **安装过程不会污染已有的系统任何功能和文件**, 所有的修改都限制在安装目录中: `~/.acme.sh/`
 
-
 ## 生成证书
-
 
 `acme.sh` 实现了 **acme** 协议支持的所有验证协议. 一般有两种方式验证: `http` 和 `dns` 验证.
 
@@ -95,7 +93,6 @@ Dload Upload Total Spent Left Speed
 ~/.acme.sh/acme.sh --issue -d <domain>.com --nginx
 ```
 
-
 #### Apache
 
 如果你用的 `apache`服务器, `acme.sh` 还可以智能的从 `apache`的配置中自动完成验证, 你不需要指定网站根目录:
@@ -114,16 +111,14 @@ Dload Upload Total Spent Left Speed
 ~/.acme.sh/acme.sh --issue -d <domain>.com --standalone
 ```
 
-> 以上命令都将ssl相关数据写入到文件地址`~/USER/.acme.sh/<domain>.com/`下，包含`ca.cer`、`<domain>.com.conf`、`<domain>.com.key`、`fullchain.cer`、`<domain>.com.csr`
-、`<domain>.com.cer`和`<domain>.com.csr.conf`。
-
+> 以上命令都将ssl相关数据写入到文件地址`~/USER/.acme.sh/<domain>.com/`下，包含`ca.cer`、`<domain>.com.conf`、`<domain>.com.key`、`fullchain.cer`、`<domain>.com.csr`  
+> 、`<domain>.com.cer`和`<domain>.com.csr.conf`。
 
 ### DNS验证
 
 `dns` 方式, 在域名上添加一条 `txt` 解析记录, 验证域名所有权。
 
-
-这里以aliyun获取api为例，可以访问此地址获取：[https://ak-console.aliyun.com/#/accesskey](https://ak-console.aliyun.com/#/accesskey)。
+这里以aliyun获取api为例，可以访问此地址获取：[https://ak-console.aliyun.com/\#/accesskey](https://ak-console.aliyun.com/#/accesskey)。  
 然后输入下面命令。其中 `Ali_Key=""`中输入个人在阿里云后台的**Access Key ID**信息，`Ali_Secret=""`输入你的**Access Key Secret**信息。
 
 ```
@@ -158,39 +153,35 @@ Nginx 的配置 `ssl_certificate` 使用 `/etc/nginx/ssl/fullchain.cer` ，而�
 
 `--installcert` 命令可以携带很多参数, 来指定目标文件. 并且可以指定 `reloadcmd`, 当证书更新以后, `reloadcmd`会被自动调用,让服务器生效.
 
-详细参数请参考: https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc
+详细参数请参考: [https://github.com/Neilpang/acme.sh\#3-install-the-issued-cert-to-apachenginx-etc](https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc)
 
 值得注意的是, 这里指定的所有参数都会被自动记录下来, 并在将来证书自动更新以后, 被再次自动调用。
-
 
 ## 更新证书
 
 目前证书在 60 天以后会自动更新, 无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 作为使用者不用关心。
 
-
 ## 更新 acme.sh
-
-
 
 目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 `acme.sh` 也经常更新以保持同步
 
-- 升级 acme.sh 到最新版
+* 升级 acme.sh 到最新版
 
 ```
 acme.sh --upgrade
 ```
 
-- 如果你不想手动升级, 可以开启自动升级
-```
-acme.sh --upgrade --auto-upgrade
-```
+* 如果你不想手动升级, 可以开启自动升级
+  ```
+  acme.sh --upgrade --auto-upgrade
+  ```
 
 之后, acme.sh 就会自动保持更新了.
 
-- 你也可以随时关闭自动更新
-```
-acme.sh --upgrade --auto-upgrade 0
-```
+* 你也可以随时关闭自动更新
+  ```
+  acme.sh --upgrade --auto-upgrade 0
+  ```
 
 ## 更改web服务器启用https
 
@@ -224,15 +215,13 @@ server {
 
 更改完之后重启服务器`sudo systemctl nginx reload`，访问`<domain>.com`即可看到效果了。
 
-
-
-
 ## 参考地址
 
+* [Neilpang/acme.sh](https://github.com/Neilpang/acme.sh/wiki/说明)
 
-- [Neilpang/acme.sh](https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E)
+* [申请Let's Encrypt通配符HTTPS证书](https://my.oschina.net/kimver/blog/1634575#comment-list)
+
+* [使用阿里云域名API申请Let’s Encrypt泛域名免费SSL证书教程](https://www.wn789.com/15510.html)
 
 
-- [申请Let's Encrypt通配符HTTPS证书](https://my.oschina.net/kimver/blog/1634575#comment-list)
 
-- [使用阿里云域名API申请Let’s Encrypt泛域名免费SSL证书教程](https://www.wn789.com/15510.html)
