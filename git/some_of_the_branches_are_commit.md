@@ -6,7 +6,7 @@ Git拉取远程分支其实只需要 `git fetch origin xxx`、 `git pull origin 
 
 1. 确保本地分支和远程`origin master`建立了连接：
 ```
-git remote add origin git@github.com:xxxxxx.git // （你的远程仓库）
+git remote add origin git@github.com:xxxxxx.git //(你的远程仓库)
 ```
 
 2. 切换分支
