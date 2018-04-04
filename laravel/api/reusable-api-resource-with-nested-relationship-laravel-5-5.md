@@ -1,4 +1,4 @@
-![](/assets/reusable-api-resource-with-nested-relationship-laravel-5-5.jpg)
+![](/assets/reusable-api-resource-with-nested-relationship-laravel-5-5.png)
 
 # 嵌套关系的可重用API资源 - Laravel5.5
 
