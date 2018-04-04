@@ -6,7 +6,7 @@
 
 
 
-两天前，我发表了我对Laravel最新的API资源功能的第一印象[原文](https://hackernoon.com/reusable-api-resource-with-nested-relationship-laravel-5-5-c654c7243869)[译文](/laravel/api/first-impressions-on-laravel-api-resources.md)。
+两天前，我发表了我对Laravel最新的API资源功能的第一印象[原文地址](https://hackernoon.com/reusable-api-resource-with-nested-relationship-laravel-5-5-c654c7243869) && [译文地址](/laravel/api/first-impressions-on-laravel-api-resources.md)。
 
 本文将进一步在Transformation层中使用更多的Laravel友好的方法。
 
