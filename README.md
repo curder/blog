@@ -19,7 +19,11 @@
   * [Git合并其他分支的个别文件或文件夹](git/merge_files_or_folders_from_other_branches.md)
   * [Git更新远程代码到本地仓库](git/remote_repository_update.md)
   * [Git拉取远程分支到本地](git/remote_repository_pull.md)
+
+
 * [Laravel开发](laravel/README.md)
+  * [Laravel项目初始化README模版](laravel/laravel-project-initialize-readme-template.md)
+  * [API开发](laravel/api/README.md)
   * [对API资源的第一印象 - Laravel5.5](laravel/api/first-impressions-on-laravel-api-resources.md)
   * [嵌套关系的可重用API资源 - Laravel5.5](laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
   * [动态的隐藏API字段 - Laravel5.5](laravel/api/hiding-api-fields-dynamically-laravel-5-5.md)
