@@ -143,7 +143,7 @@ export Ali_Secret="asd213dfas"
 正确的使用方法是使用 `--installcert` 命令,并指定目标位置, 然后证书文件会被copy到相应的位置，如果 `/etc/nginx/ssl` 不存在需要使用`mkdir`命令创建`mkdir -p /etc/nginx/ssl`， 例如:
 
 ```
-acme.sh --installcert -d <domain>.com \
+~/.acme.sh/acme.sh --installcert -d <domain>.com \
 --key-file /etc/nginx/ssl/<domain>.key \
 --fullchain-file /etc/nginx/ssl/fullchain.cer \
 --reloadcmd "service nginx force-reload"
