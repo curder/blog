@@ -144,7 +144,7 @@ export Ali_Secret="asd213dfas"
 
 ```
 ~/.acme.sh/acme.sh --installcert -d <domain>.com \
---key-file /etc/nginx/ssl/<domain>.key \
+--key-file /etc/nginx/ssl/<domain>.com.key \
 --fullchain-file /etc/nginx/ssl/fullchain.cer \
 --reloadcmd "service nginx force-reload"
 ```
