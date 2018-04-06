@@ -23,3 +23,7 @@
     * [嵌套关系的可重用API资源 - Laravel5.5](laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
     * [动态的隐藏API字段 - Laravel5.5](laravel/api/hiding-api-fields-dynamically-laravel-5-5.md)
 
+* [其他](others/README.md)
+    * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
+    * [使用docker部署私有Gogs服务](others/user-docker-deploy-gogs.md)
+    * [申请Let's Encrypt通配符HTTPS证书](others/requesting-the-lets-encrypt-wildcard-https-certificate.md)
