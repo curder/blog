@@ -4,7 +4,7 @@
 
 
 * [介绍](README.md)
-* [开发工具](tools/README.md)
+* [开发工具](/tools/README.md)
   * [SublimeText](/tools/sublime/README.md)
     * [安装和Material主题配置](/tools/sublime/install.md)
     * [修改Sublime Text 3 的侧边栏字体大小](/tools/sublime/change_sidebar_label_font_size.md)
@@ -19,11 +19,14 @@
   * [Git合并其他分支的个别文件或文件夹](git/merge_files_or_folders_from_other_branches.md)
   * [Git更新远程代码到本地仓库](git/remote_repository_update.md)
   * [Git拉取远程分支到本地](git/remote_repository_pull.md)
-
-
 * [Laravel开发](laravel/README.md)
   * [Laravel项目初始化README模版](laravel/laravel-project-initialize-readme-template.md)
   * [API开发](laravel/api/README.md)
-  * [对API资源的第一印象 - Laravel5.5](laravel/api/first-impressions-on-laravel-api-resources.md)
-  * [嵌套关系的可重用API资源 - Laravel5.5](laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
-  * [动态的隐藏API字段 - Laravel5.5](laravel/api/hiding-api-fields-dynamically-laravel-5-5.md)
+    * [对API资源的第一印象 - Laravel5.5](laravel/api/first-impressions-on-laravel-api-resources.md)
+    * [嵌套关系的可重用API资源 - Laravel5.5](laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
+    * [动态的隐藏API字段 - Laravel5.5](laravel/api/hiding-api-fields-dynamically-laravel-5-5.md)
+
+* [其他](others/README.md)
+    * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
+    * [使用docker部署私有Gogs服务](others/user-docker-deploy-gogs.md)
+    * [申请Let's Encrypt通配符HTTPS证书](others/requesting-the-lets-encrypt-wildcard-https-certificate.md)
