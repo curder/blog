@@ -61,7 +61,7 @@ ssh-copy-id [-h|-?|-f|-n] [-i [identity_file]] [-p port] [[-o <ssh -o options>] 
 ssh-copy-id -i ~/.ssh/id_rsa.pub -p 2200 user_name@your_server_ip_address
 ```
 
-
+> 这里需要注意参数的位置不要弄错了。
 
 ## 参考地址
 
