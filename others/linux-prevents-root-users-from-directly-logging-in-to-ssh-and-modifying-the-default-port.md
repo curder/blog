@@ -77,7 +77,7 @@ service sshd restart
 
 ### 尝试登录
 
-* root用户无法登录
+* root用户使用下面的命令无法登录
 ```
 ssh -p newPort root@ip_address
 ``` 
