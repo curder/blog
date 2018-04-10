@@ -49,19 +49,21 @@ ssh的配置文件在`/etc/ssh/sshd_config`
 
 #### 禁止root用户直接登录
 
-查找`“#PermitRootLogin yes`，将前面的`#`去掉，短尾`yes`改为`no`，并保存文件。
-
+1. 查找`“#PermitRootLogin yes`，将前面的`#`去掉，短尾`yes`改为`no`，并保存文件。
 ```
 PermitRootLogin no
 ```
 
+2. 或者使用**sed**命令操作：`sed -i 's/#PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config`
+
 #### 禁止使用默认22端口
 
-找到`#Port 22`字段删掉`#`，将`22`改为其他不被使用的端口，**注意：服务器端口最大可以开到65536**
+1. 找到`#Port 22`字段删掉`#`，将`22`改为其他不被使用的端口，**注意：服务器端口最大可以开到65536**
+```
+Port newPort
+```
 
-```
-Port xxxx
-```
+2. 或者使用**sed**命令操作：`sed -i 's/#Port 22/Port newPort/g' /etc/ssh/sshd_config`
 
 ### 重启sshd服务
 
@@ -69,10 +71,26 @@ Port xxxx
 service sshd restart
 ```
 
-**提醒** 重启sshd服务后切莫退出服务器。使用刚创建的用户成功地通过ssh进入到服务器的测试之后，打开终端的另一个实例，以新建的用户通过ssh进入到服务器并能成功切换到root用户。要是一切都正常，才可以以root用户身份安全地注销退出服务器。
+> **提醒** 重启sshd服务后切莫退出服务器。使用刚创建的用户成功地通过ssh进入到服务器的测试之后，打开终端的另一个实例，以新建的用户通过ssh进入到服务器并能成功切换到root用户。
+要是一切都正常，才可以以root用户身份安全地注销退出服务器。
 
 
-### 
+### 尝试登录
+
+* root用户无法登录
+```
+ssh -p newPort root@ip_address
+``` 
+
+* 普通用户成功登录
+
+ 1. 使用下面的ssh命令登录到服务器
+ ```
+ ssh -p newPort newUser@ip_address
+ ```
+ 
+ 2. 使用`sudo su -`输入密码后是否成功登录root用户
+
 
 
 ## 参考链接
