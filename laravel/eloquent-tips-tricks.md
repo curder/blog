@@ -1,5 +1,7 @@
 ## 20个Laravel Eloquent的提示和技巧
 
+> 英文原文：[20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks) 
+
 Laravel Eloquent 的ORM看起来像一个简单的机制。
 
 但是有很多半隐藏的功能和不太知名的方式来实现更多。在这篇文章中，我们来回顾一下这些技巧。
