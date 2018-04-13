@@ -1,5 +1,7 @@
 * [Laravel开发](laravel/README.md)
   * [Laravel项目初始化README模版](README.md)
+  * [使用Laravel + adminlte + vue.js构建项目](/laravel/prepare-project-by-laravel-adminlte-vue-js.md)
+
   * [API开发相关](api/README.md)
     * [对API资源的第一印象 - Laravel5.5](laravel/api/first-impressions-on-laravel-api-resources.md)
     * [嵌套关系的可重用API资源 - Laravel5.5](laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
