@@ -83,5 +83,196 @@ class User extends Model
 这里假设您想在那个时候生成[uuid](https://github.com/webpatser/laravel-uuid)字段。
 
 
+```
+public static function boot()
+{
+  parent::boot();
+  self::creating(function ($model) {
+    $model->uuid = (string)Uuid::generate();
+  });
+}
+```
+
+### 关联关系中的条件和排序
+
+您可以在模型中这样定义关系的典型方式
+
+```
+public function users() {
+    return $this->hasMany('App\User');    
+}
+```
+
+但是您知道在这一点上我们已经可以添加位置或命令了吗？
+
+例如，如果您想要某种类型的用户的特定关系，并可以通过电子邮件排序，则可以执行此操作
+
+```
+public function approvedUsers() {
+    return $this->hasMany('App\User')->where('approved', 1)->orderBy('email');
+}
+```
+
+### 模型属性：时间戳，追加等。
+
+有一个Laravel Eloquent Model 的几个参数，以类的属性的形式声明，最常用的可能是下面这些。
 
 
+```
+class User extends Model {
+    protected $table = 'users'; // 当前模型表名
+    protected $fillable = ['email', 'password']; // 定义能够批量填充的字段，比如：使用User::create()来填充数据库数据
+    protected $dates = ['created_at', 'deleted_at']; // 能被Carbon-ized时间转化的字段
+    protected $appends = ['field1', 'field2']; // 在JSON字符串中追加值
+}
+```
+
+下面还有更多
+
+```
+protected $primaryKey = 'uuid'; // 表主键，如果不是默认的id的话
+public $incrementing = false; // 如果不需要自增，将值设置为false
+protected $perPage = 25; // 分页页码数，默认是15
+const CREATED_AT = 'created_at'; // 创建时间字段值，如果不是默认的created_at，需要修改这个常量值
+
+const UPDATED_AT = 'updated_at'; // 更新时间字段值，如果不是默认的updated_at，需要修改这个常量值
+public $timestamps = false; // 如果不使用时间戳需要设置为false值
+```
+
+更多请查看默认[抽象模型类](https://github.com/laravel/framework/blob/5.6/src/Illuminate/Database/Eloquent/Model.php)的代码并查看所有使用的特征。
+
+
+### 找到多个实体
+
+我们都知道`find()`方法。
+
+```
+$user = User::find(1);
+```
+
+但是很少有人知道它可以接受多个ID作为数组：
+
+```
+$users = User::find([1,2,3]);
+```
+
+
+### WhereX
+
+- 您之前可能这样写
+```
+$users = User::where('approved', 1)->get();
+```
+
+- 更优雅的解决示例
+```
+$users = User::whereApproved(1)->get();
+```
+
+您可以更改任何字段的名称，并将其作为后缀追加到“where”，它将按魔术方法帮您达成目标。
+
+
+另外，还有一些预先定义好的与日期/时间相关的方法
+
+```
+User::whereDate('created_at', date('Y-m-d'));
+User::whereDay('created_at', date('d'));
+User::whereMonth('created_at', date('m'));
+User::whereYear('created_at', date('Y'));
+```
+
+### 按关联关系排序
+
+一些更复杂的“技巧”，如果您有论坛话题，但想通过最新的帖子查看它们呢？
+
+首先，描述关于该主题的最新帖子的单独关系
+```
+public function latestPost()
+{
+    return $this->hasOne(\App\Post::class)->latest();
+}
+```
+
+然后，在您的控制器方法中您可以做到这一点“魔术”
+
+```
+$users = Topic::with('latestPost')->get()->sortByDesc('latestPost.created_at');
+```
+
+### 使用`Eloquent::when()`，尽量不使用if-else's
+
+您之前可能用`if-else`编写条件查询，如下所示：
+
+```
+if (request('filter_by') == 'likes') {
+    $query->where('likes', '>', request('likes_amount', 0));
+}
+if (request('filter_by') == 'date') {
+    $query->orderBy('created_at', request('ordering_rule', 'desc'));
+}
+```
+
+但有一个更好的方法 - 使用`when()`：
+
+```
+$query = Author::query();
+$query->when(request('filter_by') == 'likes', function ($q) {
+    return $q->where('likes', '>', request('likes_amount', 0));
+});
+$query->when(request('filter_by') == 'date', function ($q) {
+    return $q->orderBy('created_at', request('ordering_rule', 'desc'));
+});
+```
+
+通过观察您可能会发现，使用`when()`方法可能不会感觉更短或更优雅，但是它的强大之处是传递参数
+
+```
+$query = User::query();
+$query->when(request('role', false), function ($q, $role) { 
+    return $q->where('role_id', $role);
+});
+$authors = $query->get();
+```
+
+### `BelongsTo`默认模型
+
+
+假设您的帖子属于作者，然后是Blade代码
+
+```
+{{ $post->author->name }}
+```
+
+但是如果作者被删除或者由于某种原因没有设置呢？您会得到一个错误，像`property of non-object`。
+
+当然，您可以像这样防止它 `{{ $post->author->name ?? '' }}`
+
+但您可以在Laravel Elequent Model的关联关系层面上做到这一点：
+
+```
+public function author()
+{
+    return $this->belongsTo('App\Author')->withDefault();
+}
+```
+
+在这个例子中，如果没有作者附加到该帖子，`author()`关系将返回一个空的`App\Author`模型。
+
+此外，我们可以将默认属性值分配给该默认模型。
+
+```
+public function author()
+{
+    return $this->belongsTo('App\Author')->withDefault([
+        'name' => 'Guest Author'
+    ]);
+}
+```
+
+
+### 使用变化属性排
+
+假如您
+```
+
+```
