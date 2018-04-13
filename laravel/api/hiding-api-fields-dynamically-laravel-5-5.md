@@ -329,7 +329,7 @@ class UsersResourceCollection extends ResourceCollection
 
 ## 下一步是什么
 
-在下一篇文章中，我将尝试将`hide`方法提取为特征，并使其在所有API资源中都可重用。请关注Medium敬请期待！
+在下一篇文章中，我将尝试将`hide`方法提取为特征，并使其在所有API资源中都可重用。请[关注Medium](https://hackernoon.com/@deleugpn)，敬请期待！
 
 
 
