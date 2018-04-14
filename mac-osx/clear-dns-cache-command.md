@@ -12,4 +12,4 @@ sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;
 
 ## 参考地址
 
-*[How to Clear DNS Cache in MacOS Sierra](http://osxdaily.com/2017/03/08/clear-dns-cache-macos-sierra/)
+* [How to Clear DNS Cache in MacOS Sierra](http://osxdaily.com/2017/03/08/clear-dns-cache-macos-sierra/)
