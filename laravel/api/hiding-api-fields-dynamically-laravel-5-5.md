@@ -1,5 +1,6 @@
 ![](/assets/hiding-api-fields-dynamically-laravel-5-5.png)
-# Laravel5.5 - 动态的隐藏API字段
+# 动态的隐藏API字段 - Laravel5.5
+
 
 > 本文原址：[hackernoon.com](https://hackernoon.com/hiding-api-fields-dynamically-laravel-5-5-82744f1dd15a)
 
@@ -12,12 +13,6 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\Resource;
 class UsersResource extends Resource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  \Illuminate\Http\Request
-     * @return array
-     */
     public function toArray($request)
     {
         return [
@@ -85,23 +80,11 @@ use App\User;
 
 class UsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @param User $user
-     * @return \Illuminate\Http\Response
-     */
     public function index(User $user)
     {
         return UsersResource::collection($user->paginate())->hide(['id', 'email']);
     }
 
-    /**
-     * Display a user.
-     *
-     * @param User $user
-     * @return \Illuminate\Http\Response
-     */
     public function show(User $user)
     {
         return UsersResource::make($user)->hide(['id']);
@@ -123,16 +106,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\Resource;
 class UsersResource extends Resource
 {
-    /**
-     * @var array
-     */
     protected $withoutFields = [];
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  \Illuminate\Http\Request
-     * @return array
-     */
     public function toArray($request)
     {
         return $this->filterFields([
@@ -141,23 +115,13 @@ class UsersResource extends Resource
             'email' => $this->email
         ]);
     }
-    /**
-     * Set the keys that are supposed to be filtered out.
-     *
-     * @param array $fields
-     * @return $this
-     */
+ 
     public function hide(array $fields)
     {
         $this->withoutFields = $fields;
         return $this;
     }
-    /**
-     * Remove the filtered keys.
-     *
-     * @param $array
-     * @return array
-     */
+
     protected function filterFields($array)
     {
         return collect($array)->forget($this->withoutFields)->toArray();
@@ -201,16 +165,9 @@ class UsersResource extends Resource
         });
     }
     
-    /**
-     * @var array
-     */
+    
     protected $withoutFields = [];
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  \Illuminate\Http\Request
-     * @return array
-     */
+  
     public function toArray($request)
     {
         return $this->filterFields([
@@ -219,23 +176,13 @@ class UsersResource extends Resource
             'email' => $this->email
         ]);
     }
-    /**
-     * Set the keys that are supposed to be filtered out.
-     *
-     * @param array $fields
-     * @return $this
-     */
+
     public function hide(array $fields)
     {
         $this->withoutFields = $fields;
         return $this;
     }
-    /**
-     * Remove the filtered keys.
-     *
-     * @param $array
-     * @return array
-     */
+
     protected function filterFields($array)
     {
         return collect($array)->forget($this->withoutFields)->toArray();
@@ -253,16 +200,9 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 class UsersResourceCollection extends ResourceCollection
 {
-    /**
-     * @var array
-     */
+  
     protected $withoutFields = [];
-    /**
-     * Transform the resource collection into an array.
-     *
-     * @param  \Illuminate\Http\Request
-     * @return array
-     */
+
     public function toArray($request)
     {
         return $this->processCollection($request);
@@ -272,12 +212,7 @@ class UsersResourceCollection extends ResourceCollection
         $this->withoutFields = $fields;
         return $this;
     }
-    /**
-     * Send fields to hide to UsersResource while processing the collection.
-     * 
-     * @param $request
-     * @return array
-     */
+  
     protected function processCollection($request)
     {
         return $this->collection->map(function (UsersResource $resource) use ($request) {
@@ -330,11 +265,3 @@ class UsersResourceCollection extends ResourceCollection
 ## 下一步是什么
 
 在下一篇文章中，我将尝试将`hide`方法提取为特征，并使其在所有API资源中都可重用。请[关注Medium](https://hackernoon.com/@deleugpn)，敬请期待！
-
-
-
-
-
-
-
-
