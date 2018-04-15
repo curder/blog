@@ -21,6 +21,7 @@
   * [使用Laravel + adminlte + vue.js构建项目](/laravel/prepare-project-by-laravel-adminlte-vue-js.md)
   * [Laravel Eloquent的提示和技巧一](/laravel/eloquent-tips-tricks-1.md)
   * [Laravel Eloquent的提示和技巧二](/laravel/eloquent-tips-tricks-2.md)
+  * [使用预加载（Eager loading）来优化 Laravel Eloquent 查询](/laravel/using-lazy-loading-to-optimize-laravel-eloquent-queries.md)
   * [API开发](laravel/api/README.md)
     * [对API资源的第一印象 - Laravel5.5](laravel/api/first-impressions-on-laravel-api-resources.md)
     * [嵌套关系的可重用API资源 - Laravel5.5](laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
