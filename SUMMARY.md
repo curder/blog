@@ -16,6 +16,7 @@
   * [Git合并其他分支的个别文件或文件夹](git/merge_files_or_folders_from_other_branches.md)
   * [Git更新远程代码到本地仓库](git/remote_repository_update.md)
   * [Git拉取远程分支到本地](git/remote_repository_pull.md)
+  * [GIT服务器上使用SSH协议授权免密钥登录](git/ssh-server-to-use-keyless-login-on-git-server.md)
 * [Laravel开发](laravel/README.md)
   * [Laravel项目初始化README模版](laravel/laravel-project-initialize-readme-template.md)
   * [使用Laravel + adminlte + vue.js构建项目](/laravel/prepare-project-by-laravel-adminlte-vue-js.md)
