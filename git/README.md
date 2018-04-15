@@ -3,4 +3,4 @@
     * [Git合并其他分支的个别文件或文件夹](/git/merge_files_or_folders_from_other_branches.md)
     * [Git更新远程代码到本地仓库](/git/remote_repository_update.md)
     * [Git拉取远程分支到本地](/git/remote_repository_pull.md)
-    * [GIT服务器上使用SSH协议授权免密钥登录](/git/ssh-server-to-use-keyless-login-on-git-server.md)
+    * [Git服务器上使用SSH协议授权免密码登录](/git/ssh-server-to-use-keyless-login-on-git-server.md)

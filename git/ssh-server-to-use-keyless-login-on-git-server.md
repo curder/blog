@@ -1,10 +1,10 @@
-## GIT服务器上使用SSH协议授权免密钥登录
+# Git服务器上使用SSH协议授权免密码登录
 
 在MaxOSX和CentOS上测试可以通过，Windows系统可以参考思路。
 
-### 基本的SSH配置
+## 基本的SSH配置
 
-#### 使用命令生成SSH公钥和秘钥。
+### 使用命令生成SSH公钥和秘钥。
 
 ```
 ssh-keygen -t rsa -C "your_email@example.com" -f your_email_rsa
@@ -14,9 +14,9 @@ ssh-keygen -t rsa -C "your_email@example.com" -f your_email_rsa
 
 > 其中参数`-C`的作用是提供一个备注，`-f`参数的作用是文件名。更多参数可以使用`ssh-keygen --help`查看。
 
-#### 拷贝内容到第三方GIT平台
+### 拷贝内容到第三方GIT平台
 
-##### 获取SSH公钥内容
+#### 获取SSH公钥内容
 
 通过下面的命令，获取上面使用`ssh-keygen`命令生成的公钥内容并拷贝。
 
@@ -24,7 +24,7 @@ ssh-keygen -t rsa -C "your_email@example.com" -f your_email_rsa
 cat ~/.ssh/your_email_rsa.pub
 ```
 
-##### 将公钥内容复制至代码托管平台上
+#### 将公钥内容复制至代码托管平台上
 
 这里以GitHub为例，进入 [GiHub](https://github.com/) --> [Setting](https://github.com/settings/profile) --> [SSH and GPG keys](https://github.com/settings/keys) ，点击 [New SSH key](https://github.com/settings/ssh/new) 按钮。
 
@@ -33,7 +33,7 @@ cat ~/.ssh/your_email_rsa.pub
 
 ![将公钥内容复制到代码托管平台](/assets/github-save-ssh-key.png)
 
-#### 验证是否成功授权
+### 验证是否成功授权
 
 使用下面的命令验证ssh公钥是否正常。
 
@@ -75,11 +75,11 @@ Host github.com
 
 此时，又应该怎么操作呢？
 
-### 在同一设备上配置多个公钥
+## 在同一设备上配置多个公钥
 
 > 一个公钥只能配置一个账户，一个账户可以关联多个公钥。比如当拥有多个设备，每个设备上可以生成一个公钥和对应的账户相关联，关联后此公钥便不能与其它的账户或项目进行关联。如果需要更换关联账户，请先在公钥设置里解绑公钥。
 
-#### 生成第二个公钥
+### 生成第二个公钥
 
 ```
 ssh-keygen -t rsa -C "your_secondemail@email.com" -f ~/.ssh/second_rsa
@@ -99,7 +99,7 @@ Host second
     IdentityFile ~/.ssh/second_rsa  // 生成的第二个公钥
 ```
 
-#### 克隆代码需要注意的地方
+### 克隆代码需要注意的地方
 
 当克隆 GitHub 上的某个仓库时，之前的 Clone 地址是：
 
