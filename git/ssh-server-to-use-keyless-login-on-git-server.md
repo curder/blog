@@ -31,7 +31,7 @@ cat ~/.ssh/your_email_rsa.pub
 - 在 **Title** 文本框中输入一个标识字符
 - 在 **Key** 文本框粘贴刚才复制的公钥字符串，即`YOUR_NAME.pub`文件内容，按 `Add SSH Key` 按钮完成操作。
 
-![将公钥内容复制到代码托管平台](assets/github-save-ssh-key.png)
+![将公钥内容复制到代码托管平台](/assets/github-save-ssh-key.png)
 
 #### 验证是否成功授权
 
