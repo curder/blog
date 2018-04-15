@@ -1,6 +1,8 @@
 ## 使用预加载（Eager loading）来优化 Laravel Eloquent 查询
 
 
+> 项目GitHub地址: [curder-blog/laravel-eloquent-lazy-loading](https://github.com/curder-blog/laravel-eloquent-lazy-loading)
+>
 > 英文原文：[Optimize Laravel Eloquent Queries with Eager Loading](https://laravel-news.com/eloquent-eager-loading)
 
 在Laravel中对象关系映射（ORM）操作数据库数据非常简单。它以面向对象的方式定义数据库关联关系，可以很容易地查询相关的模型数据。
@@ -56,8 +58,8 @@ Laravel 的 ORM 被称为 Eloquent ，它使得对预加载模型很简单，甚
 
 使用 Laravel 安装程序，我们来创建该项目
 ```bash
-laravel new blog-example
-cd blog-example && touch database/database.sqlite
+laravel new laravel-eloquent-lazy-loading
+cd laravel-eloquent-lazy-loading && touch database/database.sqlite
 ```
 
 编辑项目根目录下的`.env`文件中数据库相关配置。
@@ -211,7 +213,7 @@ class CreateProfilesTable extends Migration
 
 ### 模型
 
-需要定义模型关联来进行更多的预加载测试。当您在之前运行的命令`php artisan make:model`命令时，它已经为创建好了，文件在`app/目录下。
+需要定义模型关联来进行更多的预加载测试。当您在之前运行的命令`php artisan make:model`命令时，它已经为创建好了，文件在`app/`目录下。
 
 - `app/Post.php`
 ```php
@@ -230,7 +232,7 @@ class Post extends Model
 }
 ```
 
-- `app\Author.php`
+- `app/Author.php`
 ```php
 <?php
 
