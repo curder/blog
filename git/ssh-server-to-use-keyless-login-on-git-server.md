@@ -31,7 +31,7 @@ cat ~/.ssh/your_email_rsa.pub
 - 在 **Title** 文本框中输入一个标识字符
 - 在 **Key** 文本框粘贴刚才复制的公钥字符串，即`YOUR_NAME.pub`文件内容，按 `Add SSH Key` 按钮完成操作。
 
-![将公钥内容复制到代码托管平台]()
+![将公钥内容复制到代码托管平台](assets/github-save-ssh-key.png)
 
 #### 验证是否成功授权
 
@@ -41,9 +41,9 @@ cat ~/.ssh/your_email_rsa.pub
 ssh -T git@github.com
 ```
 
-如果正常的情况会提示`Hi curder-blog! You've successfully authenticated, but GitHub does not provide shell access.`
+如果正常的情况会提示 ` Hi curder-blog! You've successfully authenticated, but GitHub does not provide shell access.`
 
-但是在新装的机器上发生了一些问题，报错信息是`Permission denied (publickey).`，很明显是失败了。
+但是在新装的机器上发生了一些问题，报错信息是 `Permission denied (publickey).`很明显是失败了。
 
 修改SSH配置文件，`vim ~/.ssh/config`（如果没有此文件，可以打开终端，输入`touch ~/.ssh/config`生成此文件），配置域名并指定认证文件。
 
