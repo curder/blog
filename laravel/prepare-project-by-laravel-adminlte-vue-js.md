@@ -32,8 +32,6 @@ composer create-project --prefer-dist laravel/laravel adminlte-laravel "5.6.*"
 
 ## 设置admin-lte包
 
-`acacha/adminlte-laravel`项目[GitHub地址](https://github.com/acacha/adminlte-laravel)
-
 在项目`adminlte-laravel`根目录下执行命令
 
 ```
@@ -51,7 +49,6 @@ composer require "acacha/admin-lte-template-laravel" \
 
 ```
 'aliases' => [
-...
 'Html' => Spatie\Menu\Laravel\Html::class,
 'Link' => Spatie\Menu\Laravel\Link::class,
 ];
@@ -64,8 +61,6 @@ php artisan adminlte:menu
 ```
 
 ## 升级Excel包(可选)
-
-`Maatwebsite/Laravel-Excel`项目[GitHub地址](https://github.com/Maatwebsite/Laravel-Excel)
 
 ### 执行命令
 
@@ -82,8 +77,6 @@ composer require "maatwebsite/excel"
 ```
 
 ## 升级图片管理(可选)
-
-`intervention/image`项目[GitHub地址](https://github.com/Intervention/image)
 
 ### 执行命令
 
@@ -108,8 +101,6 @@ php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLa
 
 
 ## 升级jwt-auth包
-
-`tymondesigns/jwt-auth`项目[GitHub地址](https://github.com/tymondesigns/jwt-auth)
 
 
 ### 执行命令
@@ -183,7 +174,7 @@ php artisan migrate --seed
 php artisan serv
 ```
 
-地址: `http://127.0.0.1:8000`
+地址: `http://127.0.0.1:8000/login`
 邮箱: `admin@example.com` 
 密码：`123456`
 
