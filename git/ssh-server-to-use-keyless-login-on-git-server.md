@@ -35,7 +35,7 @@ cat ~/.ssh/your_email_rsa.pub
 
 ### 验证是否成功授权
 
-使用下面的命令验证ssh公钥是否正常。
+在使用 `git` 命令与服务端进行交互之前，可以先验证下客户端和服务器是否握手成功。使用下面的命令验证 SSH 公钥是否正常。
 
 ```
 ssh -T git@github.com
@@ -124,3 +124,4 @@ git clone second:curder/test.git
 
 - [SSH 公钥设置](https://coding.net/help/doc/git/ssh-key.html)
 - [SSH Config 那些你所知道和不知道的事](https://deepzz.com/post/how-to-setup-ssh-config.html)
+- [git/ssh捋不清的几个问题](http://www.cnblogs.com/hustskyking/p/problems-in-git-when-ssh.html)
