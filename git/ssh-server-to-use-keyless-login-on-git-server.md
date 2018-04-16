@@ -1,6 +1,6 @@
 # Git服务器上使用SSH协议授权免密码登录
 
-在MaxOSX和CentOS上测试可以通过，Windows系统可以参考思路。
+在MaxOSX和CentOS上测试可以通过，Windows系统可以参考实现思路。
 
 ## 基本的SSH配置
 
@@ -52,7 +52,9 @@ Host github.com
     HostName github.com
     User git
     IdentityFile ~/.ssh/your_email_rsa
+    Port 22
 ```
+> 如果 git 仓库机器的ssh端口不是默认的`22`，需要配置SSH配置`~/.ssh/config`的**Port**字段
 
 当我们使用ssh连接的时候，使用的认证文件是我们刚刚定义的，特别注意这里的`Host`、`HostName`和`IdentityFile`，不要写错。
 
@@ -92,13 +94,15 @@ Host github.com
     HostName github.com
     User git
     IdentityFile ~/.ssh/YOUR_NAME
+    Port 22
 
 Host second
     HostName github.com
     User git
     IdentityFile ~/.ssh/second_rsa  // 生成的第二个公钥
+    Prot 22
 ```
-
+> 如果 git 仓库机器的ssh端口不是默认的`22`，需要配置SSH配置`~/.ssh/config`的**Port**字段
 ### 克隆代码需要注意的地方
 
 当克隆 GitHub 上的某个仓库时，之前的 Clone 地址是：
