@@ -54,9 +54,9 @@ Host github.com
     IdentityFile ~/.ssh/your_email_rsa
     Port 22
 ```
-> 如果 git 仓库机器的ssh端口不是默认的`22`，需要配置SSH配置`~/.ssh/config`的**Port**字段
+> 如果 git 仓库机器的ssh端口不是默认的`22`，需要配置SSH配置`~/.ssh/config`的**Port**的值为当前环境的值。
 
-当我们使用ssh连接的时候，使用的认证文件是我们刚刚定义的，特别注意这里的`Host`、`HostName`和`IdentityFile`，不要写错。
+当我们使用ssh连接的时候，使用的认证文件是我们刚刚定义的，特别注意这里的`Host`、`HostName`、`Port`和`IdentityFile`，不要写错。
 
 再次执行`ssh -T git@github.com`的时候，报错`Bad owner or permissions on ~/.ssh/config`。
 
@@ -102,7 +102,8 @@ Host second
     IdentityFile ~/.ssh/second_rsa  // 生成的第二个公钥
     Prot 22
 ```
-> 如果 git 仓库机器的ssh端口不是默认的`22`，需要配置SSH配置`~/.ssh/config`的**Port**字段
+> 如果 git 仓库机器的ssh端口不是默认的`22`，需要配置SSH配置`~/.ssh/config`的**Port**的值为当前环境的值。
+
 ### 克隆代码需要注意的地方
 
 当克隆 GitHub 上的某个仓库时，之前的 Clone 地址是：
