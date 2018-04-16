@@ -1,6 +1,6 @@
 # Git服务器上使用SSH协议授权免密码登录
 
-在MaxOSX和CentOS上测试可以通过，Windows系统可以参考思路。
+在MaxOSX和CentOS上测试可以通过，Windows系统可以参考实现思路。
 
 ## 基本的SSH配置
 
@@ -35,7 +35,7 @@ cat ~/.ssh/your_email_rsa.pub
 
 ### 验证是否成功授权
 
-使用下面的命令验证ssh公钥是否正常。
+在使用 `git` 命令与服务端进行交互之前，可以先验证下客户端和服务器是否握手成功。使用下面的命令验证 SSH 公钥是否正常。
 
 ```
 ssh -T git@github.com
@@ -52,9 +52,11 @@ Host github.com
     HostName github.com
     User git
     IdentityFile ~/.ssh/your_email_rsa
+    Port 22
 ```
+> 如果 git 仓库机器的ssh端口不是默认的`22`，需要配置SSH配置`~/.ssh/config`的**Port**的值为当前环境的值。
 
-当我们使用ssh连接的时候，使用的认证文件是我们刚刚定义的，特别注意这里的`Host`、`HostName`和`IdentityFile`，不要写错。
+当我们使用ssh连接的时候，使用的认证文件是我们刚刚定义的，特别注意这里的`Host`、`HostName`、`Port`和`IdentityFile`，不要写错。
 
 再次执行`ssh -T git@github.com`的时候，报错`Bad owner or permissions on ~/.ssh/config`。
 
@@ -92,12 +94,15 @@ Host github.com
     HostName github.com
     User git
     IdentityFile ~/.ssh/YOUR_NAME
+    Port 22
 
 Host second
     HostName github.com
     User git
     IdentityFile ~/.ssh/second_rsa  // 生成的第二个公钥
+    Prot 22
 ```
+> 如果 git 仓库机器的ssh端口不是默认的`22`，需要配置SSH配置`~/.ssh/config`的**Port**的值为当前环境的值。
 
 ### 克隆代码需要注意的地方
 
@@ -119,3 +124,4 @@ git clone second:curder/test.git
 
 - [SSH 公钥设置](https://coding.net/help/doc/git/ssh-key.html)
 - [SSH Config 那些你所知道和不知道的事](https://deepzz.com/post/how-to-setup-ssh-config.html)
+- [git/ssh捋不清的几个问题](http://www.cnblogs.com/hustskyking/p/problems-in-git-when-ssh.html)
