@@ -1,5 +1,7 @@
 # 在 Laravel 应用中使用 pjax 进行页面加速
 
+> 项目代码地址：[curder-blog/laravel-pajx-demo](https://github.com/curder-blog/laravel-pajx-demo.git)
+
 [Pjax](https://github.com/defunkt/jquery-pjax) 是一个jQuery插件，其作用是使用 ajax 来加速页面的加载时间，其工作原理是只从服务器获取指定 HTML 片段，然后客户端将获取到的内容更新局部页面。
 
 ## 介绍
@@ -86,11 +88,15 @@ Route::group([ 'middleware' => 'pjax' ], function() {
 
 运行项目，点击`Login`和`Register`按钮时，不会发生跳转而直接进行刷新。
 
+
+
 > 另外：该扩展包会设置一个`X-AJAX`请求头以区别 pjax 请求和普通的 XHR 请求。在这种情况下，如果请求是 pjax，服务端代码会跳过页面布局部分 HTML，只渲染页面主体部分内容。
 
 ## 优雅的加载动画NProgress
 
 接下来再给项目添加一个页面加载的动画 [rstacruz/nprogress](https://github.com/rstacruz/nprogress)。
+
+![rstacruz/nprogress加载动画](/assets/nprogress-loading.png)
 
 ### 下载CSS和JS
 
