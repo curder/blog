@@ -27,7 +27,6 @@
   * [Laravel Eloquent的提示和技巧二](/laravel/eloquent-tips-tricks-2.md)
   * [使用预加载（Eager loading）来优化 Laravel Eloquent 查询](/laravel/using-lazy-loading-to-optimize-laravel-eloquent-queries.md)
   * [在 Laravel 应用中使用 pjax 进行页面加速](/laravel/using-pjax-for-page-acceleration-in-the-laravel-app.md)
-  
   * [API开发](laravel/api/README.md)
     * [对API资源的第一印象 - Laravel5.5](laravel/api/first-impressions-on-laravel-api-resources.md)
     * [嵌套关系的可重用API资源 - Laravel5.5](laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
@@ -41,3 +40,4 @@
     * [申请Let's Encrypt通配符HTTPS证书](others/requesting-the-lets-encrypt-wildcard-https-certificate.md)
     * [使用ssh-copy-id建立与远端Linux服务器的信任](others/use-ssh-copy-id-to-establish-trust-with-a-remote-linux-server.md)
     * [Linux禁止root用户直接登录sshd并修改默认端口](others/linux-prevents-root-users-from-directly-logging-in-to-ssh-and-modifying-the-default-port.md)
+    * [安装和使用oh-my-zsh](/others/install-and-use-oh-my-zsh.md)
