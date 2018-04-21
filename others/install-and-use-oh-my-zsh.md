@@ -3,7 +3,7 @@
 shell 俗称壳，C语言编写的命令解析器程序，是用户使用 Linux 的桥梁。Linux/Unix 提供了很多种 Shell。常用的 Shell 有这么几种：`sh`、`bash`、`csh`等。
 
 通常来说不管是 Mac 还是 CentOS 或者是 Ubuntu 等类 Unix 系统，默认的 SHELL 都是`bash`。但是真正强大的SHELL是`zsh`，但是由于配置比较繁琐，在出现 Oh My Zsh 之前有比较少的人使用。
-[Oh My Zsh](http://ohmyz.sh/) 的简单配置能让我们快速使用zsh这个SHELL给开发者带来的高效。
+[Oh My Zsh](http://ohmyz.sh/) 的简单配置能让我们快速使用zsh这个SHELL给开发者带来很多愉悦，节省时间。
 
 ## 安装zsh
 
