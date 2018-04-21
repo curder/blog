@@ -146,5 +146,6 @@ upgrade_oh_my_zsh
 
 ## 参考地址
 
-[oh-my-zsh配置你的zsh提高shell逼格终极选择](http://yijiebuyi.com/blog/b9b5e1ebb719f22475c38c4819ab8151.html)
-[centos7 安装zsh和使用oh-my-zsh](http://ju.outofmemory.cn/entry/273093)
+- [oh-my-zsh配置你的zsh提高shell逼格终极选择](http://yijiebuyi.com/blog/b9b5e1ebb719f22475c38c4819ab8151.html)
+
+- [centos7 安装zsh和使用oh-my-zsh](http://ju.outofmemory.cn/entry/273093)
