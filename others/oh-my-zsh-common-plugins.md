@@ -1,7 +1,6 @@
 ## Oh-My-Zsh常用插件
 
-在上一篇文章[安装和使用oh-my-zsh
-](/others/install-and-use-oh-my-zsh.md)中介绍了如何在Mac、CentOS或者Ubuntu操作系统上安装它，这里介绍一些 Oh-My-Zsh 的常用插件。
+在上一篇文章[安装和使用oh-my-zsh](/others/install-and-use-oh-my-zsh.md)中介绍了如何在Mac、CentOS或者Ubuntu操作系统上安装它，这里介绍一些 Oh-My-Zsh 的常用插件。
 
 ## 插件配置
 
@@ -17,10 +16,11 @@ Oh-My-Zsh自带的插件一般放置在目录`~/.oh-my-zsh/plugins`目录下，�
 
 打开插件所在目录可以看到 Oh-My-Zsh 自带了很多的插件，下面介绍一下经常用到的。
 
-插件名称 | 插件GitHub地址 | 详情
+插件名称 | 文章介绍 | 插件GitHub地址
 ---- | ---- | ----
- `autojump` | https://github.com/wting/autojump | [autojump自动跳转](/others/how-to-use-autojump-plugin.md)
- `zsh-autosuggestion` | https://github.com/zsh-users/zsh-autosuggestions | [zsh-autosuggestion终端提示](/others/how-to-use-zsh-autosuggestion-plugin.md)
+`git` | `Oh-My-Zsh` 默认开启了该插件，提供了大量 `git` 别名，具体用法参见 GitHub 地址 | https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
+ `autojump` | [autojump自动跳转](/others/how-to-use-autojump-plugin.md) | https://github.com/wting/autojump
+ `zsh-autosuggestion` | [zsh-autosuggestion终端提示](/others/how-to-use-zsh-autosuggestion-plugin.md) | https://github.com/zsh-users/zsh-autosuggestions
 
 
 ## 参考链接

@@ -1,4 +1,4 @@
-## 安装和使用oh-my-zsh
+## 安装和使用Oh-My-Zsh
 
 shell 俗称壳，C语言编写的命令解析器程序，是用户使用 Linux 的桥梁。Linux/Unix 提供了很多种 Shell。常用的 Shell 有这么几种：`sh`、`bash`、`csh`等。
 
@@ -135,6 +135,12 @@ mv zsh-master/dracula.zsh-theme ~/.oh-my-zsh/themes/ # 将dracula.zsh-theme移�
 > `--no-check-certificate`：忽略 https 验证
 
 安装好以后打开`~/.zshrc`文件修改文件中`ZSH_THEME`的配置为：`dracula`，重新打开一个终端或者使用命令`source ~/.zshrc`重载配置。
+
+
+### 插件相关
+
+Oh-My-Zsh的强大之处是安装各种插件加速我们在命令行终端的体验，更多插件相关的安装和使用请[查看这里](/others/oh-my-zsh-common-plugins.md)。
+
 
 ## 手动升级Oh-My-Zsh
 

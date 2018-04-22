@@ -7,7 +7,7 @@
 
 ### 通过Oh-My-Zsh
 
-1. 克隆资源库到 $ZSH_CUSTOM/plugins (默认是 ~/.oh-my-zsh/custom/plugins)
+1. 克隆资源库到 `$ZSH_CUSTOM/plugins` (默认是 `~/.oh-my-zsh/custom/plugins`)
 ```
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ```
