@@ -1,4 +1,4 @@
-## 20个Laravel Eloquent的提示和技巧
+## Laravel Eloquent的提示和技巧1
 
 > 英文原文：[20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks) 
 
