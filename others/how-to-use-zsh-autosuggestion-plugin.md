@@ -26,7 +26,7 @@ plugins=(git zsh-autosuggestions)
 
 1. 克隆资源库到你的计算机. 假设是 `~/.zsh/plugins/zsh-autosuggestions`
 
-````
+```
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
 ```
 
