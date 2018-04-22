@@ -41,3 +41,6 @@
     * [使用ssh-copy-id建立与远端Linux服务器的信任](others/use-ssh-copy-id-to-establish-trust-with-a-remote-linux-server.md)
     * [Linux禁止root用户直接登录sshd并修改默认端口](others/linux-prevents-root-users-from-directly-logging-in-to-ssh-and-modifying-the-default-port.md)
     * [安装和使用oh-my-zsh](/others/install-and-use-oh-my-zsh.md)
+      - [Oh-My-Zsh常用插件](/others/oh-my-zsh-common-plugins.md)
+        + [autojump自动跳转](/others/how-to-use-autojump-plugin.md)
+        + [zsh-autosuggestion终端提示](/others/how-to-use-zsh-autosuggestion-plugin.md)

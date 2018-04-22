@@ -109,7 +109,7 @@ export UPDATE_ZSH_DAYS=30 # 30天检查更新zsh
 HIST_STAMPS="yyyy-mm-dd"  # 历史记录时间格式
 export LANG=en_US.UTF-8   # 语言
 
-plugins=(git autojump systemd yum wd common-aliases) # 开启常用插件(这些插件都包含在oh-my-zsh中)
+plugins=(git autojump zsh-autosuggestion) # 开启常用插件(这些插件都包含在oh-my-zsh中)
 ```
 
 > `autojump` 命令能够记住我们在命令终端输入的命令，在我们下次使用的时候配合 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)  可以在我们输入命令时给出一些提示，加快我们的命令敲入速度，非常棒。
@@ -143,6 +143,14 @@ mv zsh-master/dracula.zsh-theme ~/.oh-my-zsh/themes/ # 将dracula.zsh-theme移�
 ```
 upgrade_oh_my_zsh
 ```
+
+## 卸载Oh-My-Zsh
+
+如果想卸载 Oh-My-Zsh, 从命令行运行下面的命令， 这将删除本身和恢复系统以前的`bash`或者`zsh`配置。
+```
+uninstall_oh_my_zsh zsh
+```
+
 
 ## 参考地址
 
