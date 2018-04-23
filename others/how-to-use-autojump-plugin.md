@@ -14,14 +14,17 @@ brew install autojump
 ```
 yum -y install autojump
 ```
-> 如果当前使用的是`zsh`，那么请使用`yum install`安装对应的`autojump-zsh`插件。
+> 安装完插件后，在`~/.bash_profile`文件里面添加`. /usr/share/autojump/autojump.bash`；
+> 另外，如果当前使用的是`zsh`，那么请使用`yum install`安装对应的`autojump-zsh`插件。
 
 
 - Ubuntu
 ```
 apt-get -y install autojump
 ```
-安装完插件后，在`~/.zshrc`文件里面添加`. /usr/share/autojump/autojump.zsh`启用autojump插件，内容参考`/usr/share/doc/autojump/README.Debian`文件 。
+> 安装完插件后，在`~/.zshrc`文件里面添加`. /usr/share/autojump/autojump.zsh`启用`autojump`插件；
+> 内容参考`/usr/share/doc/autojump/README.Debian`文件 。
+
 
 安装完以后重启终端后一般执行`j`命令就可以正常工作。
 
