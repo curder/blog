@@ -32,6 +32,9 @@
 * [Mac相关](mac-osx/readme.md)
   * [MacOSX清空DNS缓存命令](mac-osx/clear-dns-cache-command.md)
 
+* [CentOS](/centos/README.md)
+  - [CentOS7中firewalld防火墙的使用](/centos/how-to-use-firewall-package-in-centos7.md)
+
 * [其他](others/README.md)
     * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
     * [使用docker部署私有Gogs服务](others/user-docker-deploy-gogs.md)
