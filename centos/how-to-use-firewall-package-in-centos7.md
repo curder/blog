@@ -18,8 +18,6 @@ zone概念：
 * `home`：类似家庭组
 * `internal`：信任所有连接
 
-[firewalld官方文档](https://access.redhat.com/documentation/zh-cn/red_hat_enterprise_linux/7/html/security_guide/sec-using_firewalls#sec-Introduction_to_firewalld)
-
 ## firewalld管理命令
 
 CentOS 7 和 Fedora 20+ 已经包含了 Firewalld，但是默认没有激活。
@@ -139,5 +137,7 @@ firewall-cmd --remove-rich-rule="rule family='ipv4' source address='114.114.114.
 
 
 ## 参考地址
+
+- [firewalld官方文档](https://access.redhat.com/documentation/zh-cn/red_hat_enterprise_linux/7/html/security_guide/sec-using_firewalls#sec-Introduction_to_firewalld)
 
 - [CentOS 上的 FirewallD 简明指南](https://linux.cn/article-8098-1.html)
