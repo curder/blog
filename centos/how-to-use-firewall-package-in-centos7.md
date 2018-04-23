@@ -123,6 +123,26 @@ sudo firewall-cmd --zone=public --remove-port=12345/tcp --permanent
 > 允许或者禁用 12345 端口的 TCP 流量
 
 
+```
+sudo firewall-cmd --zone=public --add-port=12345/udp --permanent
+sudo firewall-cmd --zone=public --remove-port=12345/udp --permanent
+```
+
+> 允许或禁用 12345 端口的 UDP 流量。
+
+### 查看端口的tcp协议是否被允许
+
+```
+sudo firewall-cmd --zone=public --query-port=8080/tcp
+```
+
+
+### 查看所有打开的端口
+
+```
+sudo firewall-cmd --zone=public --list-ports
+```
+
 ### 屏蔽/解封IP
 
 
@@ -141,3 +161,5 @@ firewall-cmd --remove-rich-rule="rule family='ipv4' source address='114.114.114.
 - [firewalld官方文档](https://access.redhat.com/documentation/zh-cn/red_hat_enterprise_linux/7/html/security_guide/sec-using_firewalls#sec-Introduction_to_firewalld)
 
 - [CentOS 上的 FirewallD 简明指南](https://linux.cn/article-8098-1.html)
+
+- [CentOS 7 下使用 FirewallD防火墙的配置与管理](http://blog.51cto.com/mrxiong2017/2084726)
