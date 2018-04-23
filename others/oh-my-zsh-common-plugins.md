@@ -21,6 +21,7 @@ Oh-My-Zsh自带的插件一般放置在目录`~/.oh-my-zsh/plugins`目录下，�
 `git` | `Oh-My-Zsh` 默认开启了该插件，提供了大量 `git` 别名，具体用法参见 GitHub 地址 | https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
  `autojump` | [autojump自动跳转](/others/how-to-use-autojump-plugin.md) | https://github.com/wting/autojump
  `zsh-autosuggestion` | [zsh-autosuggestion终端提示](/others/how-to-use-zsh-autosuggestion-plugin.md) | https://github.com/zsh-users/zsh-autosuggestions
+ `zsh-syntax-highlighting` | [zsh-syntax-highlighting语法高亮](/others/how-to-use-zsh-syntax-highlighting-plugin.md) | https://github.com/zsh-users/zsh-syntax-highlighting
 
 
 ## 参考链接

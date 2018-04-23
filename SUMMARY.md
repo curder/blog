@@ -45,3 +45,4 @@
       - [Oh-My-Zsh常用插件](/others/oh-my-zsh-common-plugins.md)
         + [autojump自动跳转](/others/how-to-use-autojump-plugin.md)
         + [zsh-autosuggestion终端提示](/others/how-to-use-zsh-autosuggestion-plugin.md)
+        + [zsh-syntax-highlighting语法高亮](/others/how-to-use-zsh-syntax-highlightin g-plugin.md)
