@@ -39,7 +39,7 @@ sudo yum -y install epel-release
 sudo yum repolist
 ```
 
-![]("/assets/yum-epel-repository-list.jpg")
+![](/assets/yum-epel-repository-list.jpg)
 
 ## 安装Nginx
 
