@@ -1,1 +1,2 @@
 - [CentOS7中firewalld防火墙的使用](/centos/how-to-use-firewall-package-in-centos7.md)
+- [CentOS7下LNMP安装配置](/centos/centos-7-lnmp-installation-and-configuration.md)
