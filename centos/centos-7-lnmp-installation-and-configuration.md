@@ -78,7 +78,7 @@ netstat -plntu | grep 80
 
 至此`Nginx`安装完毕。
 
-## 安装php-fpm {#step-install-and-configure-phpfpm-}
+## 安装php-fpm
 
 ### 方式一使用webtatic仓库
 
