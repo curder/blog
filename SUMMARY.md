@@ -34,7 +34,11 @@
 
 * [CentOS](/centos/README.md)
   - [CentOS7中firewalld防火墙的使用](/centos/how-to-use-firewall-package-in-centos7.md)
+
+  - [使用supervisord管理进程](/centos/how-to-use-supervisord-manager-processes.md)
+
   - [CentOS7下LNMP安装配置](/centos/centos-7-lnmp-installation-and-configuration.md)
+    - [CentOS7安装和配置Nginx](/centos/centos-7-nginx-installation-and-configuration.md)
 
 * [其他](others/README.md)
     * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
