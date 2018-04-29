@@ -6,3 +6,5 @@
     - [CentOS7使用yum方式安装和配置Nginx](/centos/centos-7-uses-yum-way-to-install-and-configure-nginx.md)
     - [CentOS7使用yum方式安装和配置php-fpm](/centos/centos-7-uses-yum-way-to-install-and-configure-php-fpm.md)
     - [CentOS7使用yum方式安装和配置MySQL](/centos/centos-7-uses-yum-way-to-install-and-configure-mysql.md)
+
+- [防止远程Linux主机自动断开SSH连接](/centos/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections.md)

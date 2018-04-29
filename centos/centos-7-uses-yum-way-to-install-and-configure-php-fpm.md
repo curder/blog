@@ -64,7 +64,7 @@ sudo yum-config-manager --enable remi-php71
 
 sudo yum install -y php71
 
-sudo yum install -y php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinf php-fpm
+sudo yum install -y php php-mcrypt php-xml php-mbstring php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinf php-fpm
 ```
 
 > 如果执行上面的命令提示：`-bash: wget: command not found`，则使用`sudo yum install -y wget`安装一下`wget`命令。
