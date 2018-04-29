@@ -120,7 +120,7 @@ env[TEMP] = /tmp
 ```
 
 
-### 正常启动php-fpm
+### 系统守护进程方式启动php-fpm
 
 执行下面的命令启动`php-fpm`并使其在CentOS系统启动时运行。
 ```
@@ -146,7 +146,7 @@ grep daemonize /etc/php-fpm.conf
 
 #### php-fpm的supervisord配置文件
 
-默认的 supervisord 的进程文件保存在`/etc/supervisord.d/*.ini`，内容如下：
+默认的 supervisord 的进程文件保存在`/etc/supervisord.d/php.ini`，内容如下：
 
 ```
 [program:php]
@@ -154,6 +154,8 @@ command=/sbin/php-fpm
 user=root
 autostart=true
 autorestart = true
+stdout_logfile=/var/log/php.out.log
+stderr_logfile=/var/log/php.err.log
 ```
 
 #### 重载配置
@@ -169,8 +171,11 @@ php: available
 php: added process group
 ```
 
-至此使用 `supervisord` 管理`php-fpm`进程已经完成。
 
+> 如果在启动`php-fpm`的时候，报错`ERROR: unable to bind listening socket for address '/run/php-fpm/php-fpm.sock': No such file or directory (2)`。
+> 使用命令`mkdir -pv /run/php-fpm/`手动创建目录。
+
+至此使用 `supervisord` 管理`php-fpm`进程已经完成。
 
 ### 检查php-fpm
 

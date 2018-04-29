@@ -8,25 +8,73 @@ Nginx版本：1.12.2
 安装Nginx之前先安装`epel`软件仓库。
 
 ```
-sudo yum -y install epel-release
-sudo yum -y install nginx
+sudo yum -y install epel-release && sudo yum -y install nginx
 ```
 
-### 命令
+## 启动Nginx
 
-- 启动
+### 系统守护进程方式启动Nginx
+
+执行下面的命令启动`nignx`并使其在CentOS系统启动时运行。
 ```
-sudo systemctl start nginx # 启动nginx
-sudo systemctl enable nginx # 设置nginx服务开机启动
+sudo systemctl start nginx && sudo systemctl enable nginx
 ```
 
-- 检查端口
+### 使用supervisord管理进程
+
+[supervisord](/centos/how-to-use-supervisord-manager-processes.md)的进程管理参考这里。
+
+#### nginx的supervisord配置文件
+
+默认的 supervisord 的进程文件保存在`/etc/supervisord.d/nginx.ini`，内容如下：
+```
+[program:nginx]
+command=/sbin/nginx                                   ; 程序路径
+autostart=true
+autorestart=true                                      ; 自动重启
+priority=999                                          ; 优先级
+startsecs=1                                           ; 重启前等待时间
+startretries=100                                      ; 最大重启次数
+stdout_logfile=/var/log/nginx.out.log
+stderr_logfile=/var/log/nginx.err.log
+```
+
+
+#### 重载配置
+
+```
+supervisorctl reread && supervisorctl update
+```
+执行完上面的命令，可以看到控制台会输出如下结果
+
+```
+nginx: available
+nginx: added process group
+```
+
+至此使用 supervisord 管理`nginx`进程已经完成。
+
+
+## 检查Nginx
+
+### 检查进程
+检查系统进程使用ps命令。
+
+
+```
+ps aux |grep nginx
+```
+
+
+### 检查端口
 ```
 sudo yum -y install net-tools
 sudo netstat -tunpl |grep 80
 ```
 
-- 使用curl查看响应
+
+### 使用curl查看服务器响应
+
 ```
 curl -I http://localhost
 ```
@@ -44,3 +92,4 @@ ETag: "5a9e5ebd-e74"
 Accept-Ranges: bytes
 ```
 
+至此，CentOS下安装`nginx`就安装好了。
