@@ -44,8 +44,7 @@ priority=999                                          ; 优先级
 startsecs=1                                           ; 重启前等待时间
 startretries=100                                      ; 最大重启次数
 ```
-> 一定要将被supervisor所管理的进程在前台运行，如果进程正在运行，请先关闭。
-
+> 一定要将被supervisor所管理的进程在**前台**运行，如果进程正在运行，请先关闭。
 
 ## 启动Supervisor服务
 
@@ -122,34 +121,32 @@ password=123               ; (default is no password (open server))
 
 ### 添加systemctl服务
 
-1. 进入`/lib/systemd/system`目录，并创建`supervisor.service`文件
-
-```
-[Unit]
-Description=supervisor
-After=network.target
-
-[Service]
-Type=forking
-ExecStart=/usr/bin/supervisord -c /etc/supervisord.conf
-ExecStop=/usr/bin/supervisorctl $OPTIONS shutdown
-ExecReload=/usr/bin/supervisorctl $OPTIONS reload
-KillMode=process
-Restart=on-failure
-RestartSec=42s
-
-[Install]
-WantedBy=multi-user.target
-```
+1. 创建supervisor.service文件。
+    > 进入`/lib/systemd/system`目录，并创建`supervisor.service`文件，文件内容如下：
+    >```
+    >[Unit]
+    >Description=supervisor
+    >After=network.target
+    >
+    >[Service]
+    >Type=forking
+    >ExecStart=/usr/bin/supervisord -c /etc/supervisord.conf
+    >ExecStop=/usr/bin/supervisorctl $OPTIONS shutdown
+    >ExecReload=/usr/bin/supervisorctl $OPTIONS reload
+    >KillMode=process
+    >Restart=on-failure
+    >RestartSec=42s
+    >
+    >[Install]
+    >WantedBy=multi-user.target
+    >```
 
 2. 修改文件权限
-
 ```
 chmod 766 supervisor.service
 ```
 
 3. 设置开机启动
-
 ```
 systemctl enable supervisor.service
 systemctl daemon-reload
