@@ -1,4 +1,4 @@
-## CentOS7安装和配置Nginx
+## CentOS7使用yum方式安装和配置Nginx
 
 
 Nginx版本：1.12.2
