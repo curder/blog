@@ -8,8 +8,13 @@
   * [Atom的基本使用](tools/atom/normal.md)
   * [PHPStorm快捷键](tools/phpstorm/keymap.md)
   * [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
+
+* [Javascript](/javascript/README.md)
+  * [Ajax文件上传jQuery插件simpleUpload.js的使用](/javascript/ajax-file-upload-using-jquery-plugin-impleupload-js.md)
+
 * [WordPress相关](wordpress/README.md)
   * [WordPress创建主题](wordpress/create_theme.md)
+
 * [Git相关](git/README.md)
   * [Git命令清单](git/git_command_list.md)
   * [Git合并特定commits到另一个分支](git/some_of_the_branches_are_commit.md)
@@ -17,6 +22,7 @@
   * [Git更新远程代码到本地仓库](git/remote_repository_update.md)
   * [Git拉取远程分支到本地](git/remote_repository_pull.md)
   * [Git服务器上使用SSH协议授权免密码登录](git/ssh-server-to-use-keyless-login-on-git-server.md)
+
 * [Laravel开发](laravel/README.md)
   * [Laravel项目初始化README模版](laravel/laravel-project-initialize-readme-template.md)
   * [使用Laravel + adminlte + vue.js构建项目](/laravel/prepare-project-by-laravel-adminlte-vue-js.md)
@@ -35,9 +41,7 @@
 
 * [CentOS](/centos/README.md)
   - [CentOS7中firewalld防火墙的使用](/centos/how-to-use-firewall-package-in-centos7.md)
-
   - [使用supervisord管理进程](/centos/how-to-use-supervisord-manager-processes.md)
-
   - [CentOS7下LNMP安装配置](/centos/centos-7-lnmp-installation-and-configuration.md)
     - [CentOS7安装和配置Nginx](/centos/centos-7-nginx-installation-and-configuration.md)
 
