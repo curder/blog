@@ -27,6 +27,12 @@ yum install -y epel-release supervisor
 - `echo_supervisord_conf`：生成初始配置文件程序
 
 
+## 启动Supervisor服务
+
+```
+supervisord -c /etc/supervisord.conf
+```
+
 ## 配置管理进程文件
 
 使用`yum`安装的`supervisor`默认的主配置文件是`/etc/supervisord.conf`。
@@ -46,11 +52,18 @@ startretries=100                                      ; 最大重启次数
 ```
 > 一定要将被supervisor所管理的进程在**前台**运行，如果进程正在运行，请先关闭。
 
-## 启动Supervisor服务
+### 重载配置
+```
+supervisorctl reread && supervisorctl update
+```
+执行完上面的命令，可以看到控制台会输出如下结果
 
 ```
-supervisord -c /etc/supervisord.conf
+nginx: available
+nginx: added process group
 ```
+
+至此使用 supervisord 管理`nginx`进程已经OK。
 
 
 ## 终端管理进程
@@ -85,7 +98,7 @@ supervisorctl stop nginx
 supervisorctl start nginx
 supervisorctl restart nginx
 supervisorctl reread # 有新的配置文件加入到配置目录`/etc/supervisord.d/`使用命令重新读取配置。
-supervisorctl update
+supervisorctl update # 配合reread使用
 ```
 
 ### WEB管理界面
