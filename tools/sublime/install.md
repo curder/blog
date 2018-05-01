@@ -2,7 +2,7 @@
 
 Sublime Text 3 的官方网站在[这里](https://www.sublimetext.com)，找到适合自己的平台进行下载并安装。
 
-这里以MacOSX系统安装为例。
+这里以MacOSX系统安装为例，在MacOSX平台下可以使用[Homebrew](https://brew.sh/)来管理sublime text软件，执行命令`brew install caskroom/cask/sublime-text`。
 
 
 ## 安装 Package Control
@@ -10,27 +10,63 @@ Sublime Text 3 的官方网站在[这里](https://www.sublimetext.com)，找到�
 在Sublime Text编辑器顶部的`Tools`->`Install Package Control...`，点击它安装Sublime Text的包管理工具，稍等片刻即可安装成功。
 
 
-## 安装并启用 Material 主题
+## 主题
+
+推荐两款常用主题集合：
+
+- [Material](https://github.com/equinusocio/material-theme) 同时提供了许许多多的主题供选择，用户可以根据个人喜欢进行选择。
+
+- [Materialize](https://github.com/saadq/Materialize) 同样也提供了许多的主题供用户选择。
+
+
+### Material 主题
 
 * 安装主题
 
-在MacOSX机器上按快捷键 `Command + Shift + p`回车后输入`Package Control:Install`再回车，输入`Material`搜索主题进行安装。
+快捷键 `Command + Shift + p`回车后输入`Package Control:Install`再回车，输入`Material`搜索主题进行安装。
 
 * 启用主题
 
-选中"Sublime Text"->"Preferences"->"Package Settings"->"Material Theme"->"Activate"来激活主题。
+快捷键`Command + Shift + p`回车后输入`Material Theme: Activate theme`回车后选择自己喜欢的配色方案。
+> 推荐`Material Theme`或者`Material Theme Darker`都相当赞。
 
-* 简单配置
 
-快捷键`command + ,` 呼出`Sublime Text 3`的配置，在右侧JSON数据中写入如下配置。
 
-```
-"font_face": "Operator Mono",
-"line_padding_bottom": 10,
-"line_padding_top": 10,
-"font_size": 24,
-"highlight_line": true,
-"highlight_modified_tabs": true,
+### Materialize 主题
+
+* 安装主题
+
+快捷键 `Command + Shift + p`回车后输入`Package Control:Install`再回车，输入`Materialize`搜索主题进行安装。
+
+* 启用主题
+
+快捷键`Command + Shift + p`回车后输入`Activate Materialize Theme`回车后选择自己喜欢的配色方案。
+> 推荐 `Material Dracula`或者`Material Flatland`
+
+
+## 简单配置
+
+快捷键`command + ,` 呼出`Sublime Text 3`的配置，在右侧用户自定义配置中写入如下配置。
+
+```json
+{
+    "font_face": "Operator Mono",
+    "line_padding_bottom": 10,
+    "line_padding_top": 10,
+    "font_size": 18,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "scroll_past_end": true,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "ensure_newline_at_eof_on_save": true,
+    "save_on_focus_lost": true,
+    "close_windows_when_empty": true,
+    "caret_style": "phase",
+
+    "color_scheme": "Packages/Materialize/schemes/Material Flatland.tmTheme",
+    "theme": "Material Flatland.sublime-theme"
+}
 ```
 
 * `font_face` 字体配置，可以选择`Fira Code`、`Source Code Pro`、`Roboto Mono`等自己喜欢的字体。
@@ -44,3 +80,19 @@ Sublime Text 3 的官方网站在[这里](https://www.sublimetext.com)，找到�
 * `highlight_line` 选中行高亮
 
 * `highlight_modified_tabs` 高亮改过的文件
+
+* `scroll_past_end` 允许拉动到最底部
+
+* `translate_tabs_to_spaces` 将tab转换为空格
+
+* `trim_trailing_white_space_on_save` 保存文件时自动去除尾部的空格
+
+* `ensure_newline_at_eof_on_save` 设置为true以确保保存时文件的最后一行以换行符结尾
+
+* `save_on_focus_lost` 鼠标失去焦点时自动保存
+
+* `close_windows_when_empty` 当最后一个文件被关闭时，同时关闭`sublime`窗口
+
+* `caret_style` 可选值：`smooth`, `phase`, `blink`和`solid`
+
+
