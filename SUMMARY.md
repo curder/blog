@@ -9,7 +9,7 @@
     + [Sublime插件之AdvancedNewFile更快的创建文件或目录](/tools/sublime/sublime-create-files-or-directories-faster.md)
     + [Sublime插件之SnippetMaker自定义代码片段](/tools/sublime/sublime-custom-code-snippet.md)
     + [Sublime插件之SublimeLinter和PHP代码检测与自动修复](/tools/sublime/sublime-linter-detect-your-php-code-and-fix-it.md)
-
+    + [Sublime的项目管理ProjectManager插件](/tools/sublime/sublime-project-management-project-manager-plugin.md)
     
   * [Atom的基本使用](tools/atom/normal.md)
   * [PHPStorm快捷键](tools/phpstorm/keymap.md)
