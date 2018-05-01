@@ -10,7 +10,7 @@
 
 ## 安装
 
-`Command + Shift + p`搜索`PHP Companion`，回车安装好插件。
+用`Package Control`安装`PHP Companion`，回车安装好插件（`⌘ + ⇧ + P` –> 输入 `install`…打开**Package Control** -> 输入`PHP Companion`）。
 
 ## 使用
 
@@ -37,7 +37,7 @@ public function __construct($PROPERTY)
 ## 配置
 
 ### 修改构造函数类型
-默认添加的构造函数是`private`，如果默认需要改成`protected`，可以通过配置修改。
+默认添加的构造函数是`private`，如果默认需要改成`protected`，可以通过修改个人配置来自定义。
 
 ![Companion User Setting Path](/assets/companion_user_setting_path.png)
 
