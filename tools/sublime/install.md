@@ -63,7 +63,7 @@ Sublime Text 3 的官方网站在[这里](https://www.sublimetext.com)，找到�
     "save_on_focus_lost": true,
     "close_windows_when_empty": true,
     "caret_style": "phase",
-
+    "remember_full_screen": true,
     "color_scheme": "Packages/Materialize/schemes/Material Flatland.tmTheme",
     "theme": "Material Flatland.sublime-theme"
 }
