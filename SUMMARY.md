@@ -2,7 +2,7 @@
 
 * [介绍](README.md)
 * [开发工具](/tools/README.md)
-  - [SublimeText](/tools/sublime/README.md)
+  - [SublimeText相关](/tools/sublime/README.md)
     + [安装sublime编辑器和主题以及编辑器配置](/tools/sublime/install.md)
     + [修改Sublime Text 3 的侧边栏字体大小](/tools/sublime/change_sidebar_label_font_size.md)
     + [Sublime插件之PHPCompanion自动补全类命名空间](/tools/sublime/sublime-text-companion-plugin-for-php.md)
@@ -10,10 +10,14 @@
     + [Sublime插件之SnippetMaker自定义代码片段](/tools/sublime/sublime-custom-code-snippet.md)
     + [Sublime插件之SublimeLinter和PHP代码检测与自动修复](/tools/sublime/sublime-linter-detect-your-php-code-and-fix-it.md)
     + [Sublime的项目管理ProjectManager插件](/tools/sublime/sublime-project-management-project-manager-plugin.md)
-    
-  * [Atom的基本使用](tools/atom/normal.md)
-  * [PHPStorm快捷键](tools/phpstorm/keymap.md)
-  * [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
+
+  - [PhpStorm相关](/tools/phpstorm/README.md)
+    + [PhpStorm下载安装和简单配置](/tools/phpstorm/install-and-simple-configure.md)
+    + [PhpStorm快捷键](/tools/phpstorm/keymap.md)
+
+  - [Atom的基本使用](tools/atom/normal.md)
+
+  - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
 
 * [Javascript](/javascript/README.md)
   * [Ajax文件上传jQuery插件simpleUpload.js的使用](/javascript/ajax-file-upload-using-jquery-plugin-impleupload-js.md)
@@ -50,12 +54,12 @@
   - [CentOS7中firewalld防火墙的使用](/centos/how-to-use-firewall-package-in-centos7.md)
   - [使用supervisord管理进程](/centos/how-to-use-supervisord-manager-processes.md)
   - [CentOS7下LNMP安装配置](/centos/centos-7-lnmp-installation-and-configuration.md)
-    - [CentOS7使用yum方式安装和配置Nginx](/centos/centos-7-uses-yum-way-to-install-and-configure-nginx.md)
-    - [CentOS7使用yum方式安装和配置php-fpm](/centos/centos-7-uses-yum-way-to-install-and-configure-php-fpm.md)
-    - [CentOS7使用yum方式安装和配置MySQL](/centos/centos-7-uses-yum-way-to-install-and-configure-mysql.md)
-    - [防止远程Linux主机自动断开SSH连接](/centos/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections.md)
-    - [Linux下使用定时任务每隔N秒钟执行任务](/centos/centos-uses-scheduled-tasks-to-perform-tasks-every-seconds.md)
-
+    + [CentOS7使用yum方式安装和配置Nginx](/centos/centos-7-uses-yum-way-to-install-and-configure-nginx.md)
+    + [CentOS7使用yum方式安装和配置php-fpm](/centos/centos-7-uses-yum-way-to-install-and-configure-php-fpm.md)
+    + [CentOS7使用yum方式安装和配置MySQL](/centos/centos-7-uses-yum-way-to-install-and-configure-mysql.md)
+  - [防止远程Linux主机自动断开SSH连接](/centos/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections.md)
+  - [Linux下使用定时任务每隔N秒钟执行任务](/centos/centos-uses-scheduled-tasks-to-perform-tasks-every-seconds.md)
+  - [CentOS7下安装配置shadowsocks](/centos/installing-configuration-shadowsocks-under-centos-7.md)
 
 * [其他](others/README.md)
     * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
