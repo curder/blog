@@ -38,7 +38,7 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 提供两种方式操作：
 
-1. 使用快捷键`Command + Shift + a` 输入`Toolbar`，点击回车来切换显示和隐藏。
+1. 使用快捷键`Command + Shift + a` 输入`Toolbar`，按回车来切换显示和隐藏。
 
 2. `Views`->`Toolbar`，点击隐藏，再次点击则显示。
 
@@ -47,7 +47,7 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 提供两种方式操作：
 
-1. 使用快捷键`Command + Shift + a` 输入`Tool Buttons`，点击回车来切换显示和隐藏。
+1. 使用快捷键`Command + Shift + a` 输入`Tool Buttons`，按回车来切换显示和隐藏。
 
 2. `Views`->`Tool Buttons`，点击隐藏，再次点击则显示。
 
@@ -57,7 +57,7 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 提供两种方式操作：
 
 
-1. 使用快捷键`Command + Shift + a` 输入`status Bar`，点击回车来切换显示和隐藏。
+1. 使用快捷键`Command + Shift + a` 输入`status Bar`，按回车来切换显示和隐藏。
 
 2. `Views`->`Status Bar`，点击隐藏，再次点击则显示。
 
@@ -65,7 +65,7 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 提供两种方式操作：
 
-1. 使用快捷键`Command + Shift + a` 输入`Navigation Bar`，点击回车来切换显示和隐藏。
+1. 使用快捷键`Command + Shift + a` 输入`Navigation Bar`，按回车来切换显示和隐藏。
 
 2. `Views` -> `Navigation Bar` 点击隐藏，再次点击则显示。
 
@@ -81,3 +81,11 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 ### 显示或隐藏文件标签Tabs Placement
 
 使用快捷键`Command + Shift + a`输入`Tabs Placement`, 点击`Tabs Placement: None`来隐藏，如果需要显示可以根据需要选择左侧`Tabs Placement: Left`，右侧`Tabs Placement: Right`，上面`Tabs Placement: Top`和底部`Tabs Placement: Bottom`。
+
+### 显示或隐藏代码小地图
+
+代码小地图使用插件`CodeGlance`，安装插件这里不介绍，只介绍如何隐藏或显示小地图。
+
+使用快捷键`Command + Shift + a`输入`Toggle CodeGlance`, 按回车来切换显示和隐藏。
+
+或者也可以使用快捷键`Command + Shift + G`来快速切换隐藏和显示。
