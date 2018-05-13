@@ -89,3 +89,7 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 使用快捷键`Command + Shift + a`输入`Toggle CodeGlance`, 按回车来切换显示和隐藏。
 
 或者也可以使用快捷键`Command + Shift + G`来快速切换隐藏和显示。
+
+### 显示或隐藏代码区域的浏览器
+
+使用快捷键`Command + Shift +a`输入`Show browser popup in the editor`，进入`Web Browsers`的切换，将底部的`Show browser popup in the editor`的选项勾选去掉即可。
