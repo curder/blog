@@ -69,6 +69,10 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 2. `Views` -> `Navigation Bar` 点击隐藏，再次点击则显示。
 
+### 显示或者隐藏代码行号
+
+使用快捷键`Command + Shif + a`输入`Show Line Numbers`，按回车来切换显示和隐藏。
+
 ### 显示或隐藏文件导航Breadcrumbs
 
 提供两种方式操作：
