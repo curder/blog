@@ -18,3 +18,5 @@
   - [Atom的基本使用](tools/atom/normal.md)
 
   - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
+  
+  - [在Nginx或者Apache服务器中配置SSI支持](/tools/how-to-configure-ssi-support-in-nginx-or-apache-server.md)
