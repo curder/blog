@@ -64,6 +64,8 @@ server {
 
 ### Apache上启用SSI
 
+官方文档地址：[Introduction to Server Side Includes](https://httpd.apache.org/docs/current/howto/ssi.html)
+
 Apache的主配置文件`httpd.conf`中配置需要支持SSI的后缀（html）
 
 去掉`AddType text/shtml，AddOutputFilter INCLUDES .shtml`前面注释。
