@@ -1,4 +1,4 @@
-## Sublime的项目管理ProjectManager插件
+## Sublime插件之ProjectManager项目管理
 
 在实际的工作中，会经手N个项目。或许目前正在做着某个项目，但在另一个项目上的一个bug需要紧急修复，这个时候常常做的是关掉sublime编辑器或者使用另外的编辑器打开需要fix bug的项目。
 
