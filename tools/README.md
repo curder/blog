@@ -10,7 +10,7 @@
     + [Sublime插件之SublimeLinter和PHP代码检测与自动修复](/tools/sublime/sublime-linter-detect-your-php-code-and-fix-it.md)
     + [Sublime的项目管理ProjectManager插件](/tools/sublime/sublime-project-management-project-manager-plugin.md)
     + [Sublimt插件之Emmet快速编写HTML/CSS](/tools/sublime/sublime-emmet-quickly-write-html-and-css.md)
-
+    + [Sublime Text 3恢复到新安装状态](/tools/sublime/sublime-text-3-revert.md)
 
 
   - [PhpStorm相关](/tools/phpstorm/README.md)
