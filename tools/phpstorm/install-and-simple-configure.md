@@ -97,3 +97,7 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 ### 显示或隐藏代码区域的浏览器
 
 使用快捷键`Command + Shift +a`输入`Show browser popup in the editor`，进入`Web Browsers`的切换，将底部的`Show browser popup in the editor`的选项勾选去掉即可。
+
+## 显示或隐藏空白字符
+
+使用快捷键`Command + Shift + a`输入`Show WhiteSpaces`来快速切换显示和隐藏。
