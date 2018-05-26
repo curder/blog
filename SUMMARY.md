@@ -9,6 +9,7 @@
     + [Sublime插件之SideBarEnhancements右键菜单增强插件](/tools/sublime/sublime-text-side-bar-enhancements-plugin.md)
     + [Sublime插件之GitGutter代码差异管理](/tools/sublime/sublime-plugin-git-gutter-code-difference-management.md)
     + [Sublime插件之PHPCompanion自动补全类命名空间](/tools/sublime/sublime-text-companion-plugin-for-php.md)
+    + [Sublime插件之DocBlockr注释的快速生成](/tools/sublime/sublime-text-3-fast-generation-of-doc-blockr-annotations.md)
     + [Sublime插件之AdvancedNewFile更快的创建文件或目录](/tools/sublime/sublime-create-files-or-directories-faster.md)
     + [Sublime插件之SnippetMaker自定义代码片段](/tools/sublime/sublime-custom-code-snippet.md)
     + [Sublime插件之SublimeLinter和PHP代码检测与自动修复](/tools/sublime/sublime-linter-detect-your-php-code-and-fix-it.md)
