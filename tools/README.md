@@ -5,6 +5,7 @@
     + [Sublime Text 3安装和使用Package Control包管理](/tools/sublime/sublime-text-3-installation-and-use-package-control-package-management.md)
     + [Sublime Text 3主题以及编辑器配置](/tools/sublime/sublime-text-3-theme-and-editor-configuration.md)
     + [修改Sublime Text 3 的侧边栏字体大小](/tools/sublime/change_sidebar_label_font_size.md)
+    + [Sublime插件之SideBarEnhancements右键菜单增强插件](/tools/sublime/sublime-text-side-bar-enhancements-plugin.md)
     + [Sublime插件之PHPCompanion自动补全类命名空间](/tools/sublime/sublime-text-companion-plugin-for-php.md)
     + [Sublime插件之AdvancedNewFile更快的创建文件或目录](/tools/sublime/sublime-create-files-or-directories-faster.md)
     + [Sublime插件之SnippetMaker自定义代码片段](/tools/sublime/sublime-custom-code-snippet.md)
