@@ -10,7 +10,7 @@
 
 ## 安装
 
-用`Package Control`安装`PHP Companion`，回车安装好插件（`⌘ + ⇧ + P` –> 输入 `install`…打开**Package Control** -> 输入`PHP Companion`）。
+用`Package Control`安装`PHP Companion`，回车安装好插件（`⌘(Command) + ⇧(Shift) + P` –> 输入 `install`…打开**Package Control** -> 输入`PHP Companion`）。
 
 ## 使用
 

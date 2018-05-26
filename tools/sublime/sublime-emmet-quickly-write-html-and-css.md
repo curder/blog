@@ -9,7 +9,7 @@
 
 ## 安装
 
-用`Package Control`安装`Emmet`（`⌘ + ⇧ + P` –> 输入 `install`…打开`Package Control` -> 输入`Emmet`后回车进入安装）。
+用`Package Control`安装`Emmet`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `install`…打开`Package Control` -> 输入`Emmet`后回车进入安装）。
 
 
 ## 插件使用

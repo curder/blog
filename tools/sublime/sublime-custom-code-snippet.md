@@ -6,7 +6,7 @@
 
 ## 安装
 
-用`Package Control`安装`SnippetMaker`（`⌘ + ⇧ + P` –> 输入 `install`…打开**Package Control** -> 输入`SnippetMaker`后回车进入安装）。
+用`Package Control`安装`SnippetMaker`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `install`…打开**Package Control** -> 输入`SnippetMaker`后回车进入安装）。
 
 
 ## 新增

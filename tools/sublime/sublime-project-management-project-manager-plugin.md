@@ -6,7 +6,7 @@
 
 ## 安装
 
-用`Package Control`安装`ProjectManager`（`⌘ + ⇧ + P` –> 输入 `install`…打开`Package Control` -> 输入`ProjectManager`后回车进入安装）。
+用`Package Control`安装`ProjectManager`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `Install`…打开`Package Control` -> 输入`ProjectManager`后回车进入安装）。
 
 
 ## 新增项目

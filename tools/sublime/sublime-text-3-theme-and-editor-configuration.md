@@ -14,11 +14,11 @@
 
 * 安装主题
 
-快捷键 `Command + Shift + p`回车后输入`Package Control:Install`再回车，输入`Material`搜索主题进行安装。
+快捷键 `⌘(Command) + ⇧(Shift) + P`回车后输入`Package Control:Install`再回车，输入`Material`搜索主题进行安装。
 
 * 启用主题
 
-快捷键`Command + Shift + p`回车后输入`Material Theme: Activate theme`回车后选择自己喜欢的配色方案。
+快捷键`⌘(Command) + ⇧(Shift) + P`回车后输入`Material Theme: Activate theme`回车后选择自己喜欢的配色方案。
 > 推荐`Material Theme`或者`Material Theme Darker`都相当赞。
 
 
@@ -27,11 +27,11 @@
 
 * 安装主题
 
-快捷键 `Command + Shift + p`回车后输入`Package Control:Install`再回车，输入`Materialize`搜索主题进行安装。
+快捷键 `⌘(Command) + ⇧(Shift) + P`回车后输入`Package Control:Install`再回车，输入`Materialize`搜索主题进行安装。
 
 * 启用主题
 
-快捷键`Command + Shift + p`回车后输入`Activate Materialize Theme`回车后选择自己喜欢的配色方案。
+快捷键`⌘(Command) + ⇧(Shift) + P`回车后输入`Activate Materialize Theme`回车后选择自己喜欢的配色方案。
 > 推荐 `Material Dracula`或者`Material Flatland`
 
 

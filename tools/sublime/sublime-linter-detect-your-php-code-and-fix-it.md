@@ -8,12 +8,12 @@ SublimeLinter支持许多的语言检测，支持 `JavaScript`、`CSS`、`HTML`�
 
 ### 安装SublimeLinter
 
-用`Package Control`安装`SublimeLinter`（`⌘ + ⇧ + P` –> 输入 `install`…打开**Package Control** -> 输入`SublimeLinter`后回车进入安装）。
+用`Package Control`安装`SublimeLinter`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `Install`…打开**Package Control** -> 输入`SublimeLinter`后回车进入安装）。
 
 
 ### 安装SublimeLinter-phpcs
 
-用`Package Control`安装`SublimeLinter-php`（`⌘ + ⇧ + P` –> 输入 `install`…打开**Package Control** -> 输入`sublime linter phpcs`后选择`SublimeLinter-php`回车进入安装）。
+用`Package Control`安装`SublimeLinter-php`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `Install`…打开**Package Control** -> 输入`sublime linter phpcs`后选择`SublimeLinter-php`回车进入安装）。
 
 > 项目[GitHub](https://github.com/SublimeLinter/SublimeLinter-phpcs)地址。需要使用Composer全局安装`composer global require "squizlabs/php_codesniffer=*"`，后面会使用到这个`phpcs`命令。
  
@@ -25,7 +25,7 @@ SublimeLinter支持许多的语言检测，支持 `JavaScript`、`CSS`、`HTML`�
 
 ### 安装自动修复php cs fixer
 
-用`Package Control`安装`PHP CS Fixer`（`⌘ + ⇧ + P` –> 输入 `install`…打开**Package Control** -> 输入`php cs fixer`后回车进入安装）。
+用`Package Control`安装`PHP CS Fixer`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `Install`…打开**Package Control** -> 输入`php cs fixer`后回车进入安装）。
 
 > 项目[GitHub](https://github.com/adael/SublimePhpCsFixer)地址。需要使用Composer全局安装`composer global require friendsofphp/php-cs-fixer`
 
