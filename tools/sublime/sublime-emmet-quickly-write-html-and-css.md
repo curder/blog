@@ -200,3 +200,5 @@ a[href="https://curder.com" title="Curder's Blog"]{Curder's Blog}
 * [前端开发必备！Emmet使用手册](https://www.w3cplus.com/tools/emmet-cheat-sheet.html)
 
 * [HTML/CSS 速写神器：Emmet](http://bubkoo.com/2014/01/04/emmet-a-toolkit-for-improving-html-css-workflow/)
+
+* [Emmet For Faster HTML & CSS Workflow](https://youtu.be/5BIAdWNcr8Y)
