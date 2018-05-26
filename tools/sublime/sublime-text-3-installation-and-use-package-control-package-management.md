@@ -1,4 +1,11 @@
-## 安装和使用Package Control包管理
+## Sublime Text 3安装和使用Package Control包管理
+
+## 安装Sublime Text 3
+
+Sublime Text 3 的官方网站在[这里](https://www.sublimetext.com)，找到适合自己的平台进行下载并安装。
+
+这里以MacOSX系统安装为例，在MacOSX平台下可以使用[Homebrew](https://brew.sh/)来管理sublime text软件，执行命令`brew install caskroom/cask/sublime-text`。
+
 
 简而言之，它是用来管理 Sublime Text 插件的插件，所以首次使用Sublime Text前也是需要安装的。
 

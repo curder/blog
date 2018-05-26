@@ -1,8 +1,4 @@
-## 安装sublime编辑器和主题以及编辑器配置
-
-Sublime Text 3 的官方网站在[这里](https://www.sublimetext.com)，找到适合自己的平台进行下载并安装。
-
-这里以MacOSX系统安装为例，在MacOSX平台下可以使用[Homebrew](https://brew.sh/)来管理sublime text软件，执行命令`brew install caskroom/cask/sublime-text`。
+## Sublime Text 3主题以及编辑器配置
 
 
 ## 主题
