@@ -4,3 +4,4 @@
 
 
 * [调试窗口的切换](/tools/google-developer-tools/debug-window-switching.md)
+* [快速切换 PC 与手机端进行测试](/tools/google-developer-tools/quickly-switch-between-pc-and-mobile-phone-mode.md)
