@@ -23,8 +23,10 @@
     + [PhpStorm配置主题和颜色](/tools/phpstorm/configuration-themes-and-colors.md)
     + [PhpStorm快捷键](/tools/phpstorm/keymap.md)
 
-
   - [Atom的基本使用](tools/atom/normal.md)
+
+  - [Google Deveoloer Tools 必备调试技巧](/tools/google-developer-tools/readme.md)
+    + [调试窗口的切换](/tools/google-developer-tools/debug-window-switching.md)
 
   - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
 
