@@ -41,10 +41,14 @@
 
 ```json
 {
-    "font_face": "Operator Mono",
+    "color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+    "ignored_packages":[],
+    "material_theme_tree_headings": true,
+    "theme": "Material-Theme-Darker.sublime-theme",
+    "font_face": "Operator Mono xlight",
     "line_padding_bottom": 10,
     "line_padding_top": 10,
-    "font_size": 18,
+    "font_size": 26,
     "highlight_line": true,
     "highlight_modified_tabs": true,
     "scroll_past_end": true,
@@ -55,8 +59,6 @@
     "close_windows_when_empty": true,
     "caret_style": "phase",
     "remember_full_screen": true,
-    "color_scheme": "Packages/Materialize/schemes/Material Flatland.tmTheme",
-    "theme": "Material Flatland.sublime-theme"
 }
 ```
 
@@ -85,5 +87,3 @@
 * `close_windows_when_empty` 当最后一个文件被关闭时，同时关闭`sublime`窗口
 
 * `caret_style` 可选值：`smooth`, `phase`, `blink`和`solid`
-
-
