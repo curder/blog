@@ -28,6 +28,7 @@
   - [Google Deveoloer Tools 必备调试技巧](/tools/google-developer-tools/readme.md)
     + [调试窗口的切换](/tools/google-developer-tools/debug-window-switching.md)
     + [快速切换 PC 与手机端进行测试](/tools/google-developer-tools/quickly-switch-between-pc-and-mobile-phone-mode.md)
+    + [页面元素的快速调试技巧](/tools/google-developer-tools/quick-debugging-techniques-for-page-elements.md)
 
   - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
 
