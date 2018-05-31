@@ -33,6 +33,7 @@
     + [快速切换 PC 与手机端进行测试](/tools/google-developer-tools/quickly-switch-between-pc-and-mobile-phone-mode.md)
     + [页面元素的快速调试技巧](/tools/google-developer-tools/quick-debugging-techniques-for-page-elements.md)
     + [如何保持元素的状态](/tools/google-developer-tools/how-to-keep-the-state-of-the-element.md)
+    + [元素状态改变的监控方法](/tools/google-developer-tools/monitoring-of-element-status-changes.md)
 
   - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
 

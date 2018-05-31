@@ -17,7 +17,6 @@
     + [Sublime快捷键](/tools/sublime/sublime-text-3-keymap.md)
     + [Sublime Text 3恢复到新安装状态](/tools/sublime/sublime-text-3-revert.md)
 
-
   - [PhpStorm相关](/tools/phpstorm/README.md)
     + [PhpStorm下载安装和简单配置](/tools/phpstorm/install-and-simple-configure.md)
     + [PhpStorm配置主题和颜色](/tools/phpstorm/configuration-themes-and-colors.md)
@@ -30,7 +29,7 @@
     + [快速切换 PC 与手机端进行测试](/tools/google-developer-tools/quickly-switch-between-pc-and-mobile-phone-mode.md)
     + [页面元素的快速调试技巧](/tools/google-developer-tools/quick-debugging-techniques-for-page-elements.md)
     + [如何保持元素的状态](/tools/google-developer-tools/how-to-keep-the-state-of-the-element.md)
-
+    + [元素状态改变的监控方法](/tools/google-developer-tools/monitoring-of-element-status-changes.md)
   - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
 
   - [在Nginx或者Apache服务器中配置SSI支持](/tools/how-to-configure-ssi-support-in-nginx-or-apache-server.md)
