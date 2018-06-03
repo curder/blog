@@ -1,14 +1,14 @@
 ## 如何在各大平台上免费翻"墙"
 
 * “墙外”账号
-    0. 自建服务器账号 [CentOS7下安装配置shadowsocks](/centos/installing-configuration-shadowsocks-under-centos-7.md)
-    1. 免费账号 [Free-SS](http://free-ss.cf/) [ss.pythonic.life 需翻墙访问](http://ss.pythonic.life)
+    1. 自建服务器账号 [CentOS7下安装配置shadowsocks](/centos/installing-configuration-shadowsocks-under-centos-7.md)
+    2. 免费账号 [Free-SS](http://free-ss.cf/) [ss.pythonic.life 需翻墙访问](http://ss.pythonic.life)
 
 * 各常用平台代理工具
-    0. MacOSX [shadowsocks/ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG)
-    1. Windows [shadowsocks/shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows)
-    2. iOS [Wingy App Store](https://itunes.apple.com/us/app/wingy-http-s-socks5-proxy-utility/id1178584911)
-    3. Android [shadowsocks/shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android/releases)
+    1. MacOSX [shadowsocks/ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG)
+    2. Windows [shadowsocks/shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows)
+    3. iOS [Wingy App Store](https://itunes.apple.com/us/app/wingy-http-s-socks5-proxy-utility/id1178584911)
+    4. Android [shadowsocks/shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android/releases)
 
 ## 下载对应平台下的代理工具
 
