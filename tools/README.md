@@ -34,7 +34,6 @@
     + [查看元素样式的盒模型](/tools/google-developer-tools/check-element-style-box-model.md)
     + [查看元素最终的样式](/tools/google-developer-tools/see-the-final-style-of-the-element.md)
 
-
   - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
 
   - [如何在各大平台上免费翻"墙"](/tools/how-to-be-free-on-all-major-platforms-over-the-fire-wall.md)
