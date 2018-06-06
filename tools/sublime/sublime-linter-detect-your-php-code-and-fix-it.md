@@ -16,7 +16,7 @@ SublimeLinter支持许多的语言检测，支持 `JavaScript`、`CSS`、`HTML`�
 用`Package Control`安装`SublimeLinter-php`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `Install`…打开**Package Control** -> 输入`sublime linter phpcs`后选择`SublimeLinter-php`回车进入安装）。
 
 > 项目[GitHub](https://github.com/SublimeLinter/SublimeLinter-phpcs)地址。需要使用Composer全局安装`composer global require "squizlabs/php_codesniffer=*"`，后面会使用到这个`phpcs`命令。
- 
+
 
 修改之后重启Sublime，如果我们在php代码文件写了不规范的代码，将看到左侧会有红灯标识。
 
@@ -44,16 +44,31 @@ SublimeLinter支持许多的语言检测，支持 `JavaScript`、`CSS`、`HTML`�
 
 ```
 <?php
+$finder = PhpCsFixer\Finder::create()
+          ->exclude('tests/')
+          ->in(__DIR__)
+;
+
 return PhpCsFixer\Config::create()
-->setRules([
-    '@PSR2' => true,
-    'array_syntax' => ['syntax' => 'short'],
-    'no_unused_imports' => true,
-]);
+    ->setRules([
+        '@PSR2' => true,
+        'align_multiline_comment' => true,
+        'no_trailing_whitespace' => true,
+        'no_short_echo_tag'=> true,
+        'array_syntax' => ['syntax' => 'short'],
+        'no_unused_imports' => true,
+        'ordered_imports' => ['sortAlgorithm' => 'length']
+    ])
+    ->setFinder($finder)
+;
 ```
-> `@PSR2`代码满足PSR-2标准
-> `array_syntax` 所有`array()`的定义都转换成`[]`的方式
-> `no_unused_imports` PHP类中没有使用的`use`类自动删除 
+> * `@PSR2` 代码满足PSR-2标准
+> * `align_multiline_comment`
+> * `no_trailing_whitespace` 删除非空行尾部的尾部空白
+> * `no_short_echo_tag` 将长格式`<?php echo`语法替换为简写`<?=`
+> * `array_syntax` 所有`array()`的定义都转换成`[]`的方式
+> * `no_unused_imports` PHP类中没有使用的`use`类自动删除
+> * `ordered_imports` 按照长度排序
 
 
 ### 保存时执行php cs fixer
