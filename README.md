@@ -51,8 +51,9 @@
   - [在Nginx或者Apache服务器中配置SSI支持](/tools/how-to-configure-ssi-support-in-nginx-or-apache-server.md)
 
 * [Javascript](/javascript/README.md)
-  * [Ajax文件上传jQuery插件simpleUpload.js的使用](/javascript/ajax-file-upload-using-jquery-plugin-impleupload-js.md)
-  * [使用bootstrap-fileStyle改变BootStrap默认的文件选择框样式](/javascript/change-the-default-file-select-box-styles-of-the-bootstrap-framework-using-bootstrap-filestyle.md)
+  - [webpack2介绍与安装](/javascript/webpack2/introduce-and-install.md)
+  - [Ajax文件上传jQuery插件simpleUpload.js的使用](/javascript/ajax-file-upload-using-jquery-plugin-impleupload-js.md)
+  - [使用bootstrap-fileStyle改变BootStrap默认的文件选择框样式](/javascript/change-the-default-file-select-box-styles-of-the-bootstrap-framework-using-bootstrap-filestyle.md)
 
 * [WordPress相关](wordpress/README.md)
   * [WordPress创建主题](wordpress/create_theme.md)
