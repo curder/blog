@@ -36,6 +36,7 @@
     + [查看元素最终的样式](/tools/google-developer-tools/see-the-final-style-of-the-element.md)
     + [Console控制台](/tools/google-developer-tools/console.md)
     + [查看被打包压缩的CSS和JS文件](/tools/google-developer-tools/view-packed-css-and-js-files.md)
+    + [编辑源文件并同步到本地文件中](/tools/google-developer-tools/edit-source-files-and-sync-to-local-files.md)
 
   - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
 
