@@ -14,3 +14,4 @@
 * [Console控制台](/tools/google-developer-tools/console.md)
 * [查看被打包压缩的CSS和JS文件](/tools/google-developer-tools/view-packed-css-and-js-files.md)
 * [编辑源文件并同步到本地文件中](/tools/google-developer-tools/edit-source-files-and-sync-to-local-files.md)
+* [如何让浏览器阻止请求某些资源](/tools/google-developer-tools/how-to-make-browsers-block-requests-for-certain-resources.md)
