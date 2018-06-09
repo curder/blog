@@ -2,7 +2,7 @@
 
 在一些开发场景下可能需要模拟一些静态资源不存在的情况，可以使用调试工具的"Request blocking"进行模拟。
 
-如下图打开`Request blocking`的添加界面：
+如下图打开`Request blocking`的添加界面（或者使用`Command Shift P`在提示框中输入`Request blocking`）
 
 ![](/assets/google-developer-tools/how-to-make-browsers-block-requests-for-certain-resources-menu-path.png)
 
