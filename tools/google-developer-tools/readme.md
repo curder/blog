@@ -11,3 +11,4 @@
 * [样式的快速调试和修改](/tools/google-developer-tools/quick-debugging-and-modification-of-styles.md)
 * [查看元素样式的盒模型](/tools/google-developer-tools/check-element-style-box-model.md)
 * [查看元素最终的样式](/tools/google-developer-tools/see-the-final-style-of-the-element.md)
+* [Console控制台](/tools/google-developer-tools/console.md)
