@@ -36,3 +36,18 @@ npm run start
 ```
 
 默认启动的是`http://localhost:8080/`，监听文件变化，并自动构建和刷新浏览器。
+
+## 配置webpack-dev-server
+
+官方文档[参考这里](https://webpack.js.org/configuration/dev-server/)。
+
+```
+module.exports = {
+    //...
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        host: process.env.HOST,
+        port: 9000
+    },
+};
+```
