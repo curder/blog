@@ -7,7 +7,7 @@
 ## 安装webpack-dev-server
 
 ```
-npm i webpack-dev-server
+npm i webpack-dev-server --save-dev
 ```
 
 这里需要注意的是下载的webpack-dev-server的版本与webpack要匹配，例如：
