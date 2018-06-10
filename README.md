@@ -43,7 +43,6 @@
     + [编辑源文件并同步到本地文件中](/tools/google-developer-tools/edit-source-files-and-sync-to-local-files.md)
     + [如何让浏览器阻止请求某些资源](/tools/google-developer-tools/how-to-make-browsers-block-requests-for-certain-resources.md)
     + [如何对站点下所有的资源进行全部搜索](/tools/google-developer-tools/how-to-search-all-the-resources-under-the-site.md)
-    + [生成源代码的SourceMap](/javascript/webpack2/generating-source-code-for-sourcemap.md)
 
   - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
 
