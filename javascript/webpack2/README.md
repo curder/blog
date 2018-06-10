@@ -6,6 +6,7 @@
   - [webpack-dev-server完成代码更改自动刷新](/javascript/webpack2/webpack-dev-server-complete-code-change-automatically-refresh-the-browser.md)
   - [配置ESLint实现代码规范自动测试](/javascript/webpack2/configuring-eslint-to-implement-code-specification-autotest.md)
   - [加载CSS的相关配置](/javascript/webpack2/loading-css-related-configuration.md)
+  - [自动分离CSS到独立文件](/javascript/webpack2/automatically-separate-css-to-independent-file.md)
 
 ## 其他参考
 
