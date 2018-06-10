@@ -52,7 +52,7 @@ npm install webpack@2 --save-dev
 
 ### 生成压缩文件
 
-新建一个文件`src/app.js`，内容如下：
+新建一个文件`app/index.js`，内容如下：
 
 ```
 console.log("hello world");
@@ -61,7 +61,7 @@ console.log("hello world");
 使用webpack命令打包
 
 ```
-./node_modules/.bin/webpack src/app.js dist/bundle.js
+./node_modules/.bin/webpack app/index.js dist/app.js
 ```
 
 输出内容类似如下：
@@ -72,5 +72,7 @@ Version: webpack 2.7.0
 Time: 63ms
     Asset     Size  Chunks             Chunk Names
 bundle.js  2.66 kB       0  [emitted]  main
-   [0] ./src/app.js 21 bytes {0} [built]
+   [0] ./app/index.js 21 bytes {0} [built]
 ```
+
+打开目标文件`dist/app.js`可以看到对应的代码被webpack处理。
