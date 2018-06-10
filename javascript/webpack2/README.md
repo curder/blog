@@ -7,6 +7,7 @@
   - [配置ESLint实现代码规范自动测试](/javascript/webpack2/configuring-eslint-to-implement-code-specification-autotest.md)
   - [加载CSS的相关配置](/javascript/webpack2/loading-css-related-configuration.md)
   - [自动分离CSS到独立文件](/javascript/webpack2/automatically-separate-css-to-independent-file.md)
+  - [文件压缩](/javascript/webpack2/file-compression.md)
 
 ## 其他参考
 
