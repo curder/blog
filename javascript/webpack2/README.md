@@ -9,6 +9,7 @@
   - [自动分离CSS到独立文件](/javascript/webpack2/automatically-separate-css-to-independent-file.md)
   - [文件压缩](/javascript/webpack2/file-compression.md)
   - [生成源代码的SourceMap](/javascript/webpack2/generating-source-code-for-sourcemap.md)
+  - [分离项目代码和组件代码](/javascript/webpack2/separate-project-code-and-component-code.md)
 
 ## 其他参考
 
