@@ -4,7 +4,7 @@
   - [webpack2介绍与安装](/javascript/webpack2/introduce-and-install.md)
   - [配置webpack和命令快捷方式](/javascript/webpack2/configure-webpack-and-command-shortcuts.md)
   - [webpack-dev-server完成代码更改自动刷新](/javascript/webpack2/webpack-dev-server-complete-code-change-automatically-refresh-the-browser.md)
-
+  - [配置ESLint实现代码规范自动测试](/javascript/webpack2/configuring-eslint-to-implement-code-specification-autotest.md)
 
 ## 其他参考
 
