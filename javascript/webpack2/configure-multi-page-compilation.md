@@ -120,3 +120,8 @@ npm run build
 ```
 
 编译后访问文件查看结果。
+
+
+## 参考链接
+
+* [基于webpack的前端工程化开发之多页站点篇（一）](https://github.com/vhtml/webpack-MultiPage-static)
