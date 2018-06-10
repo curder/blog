@@ -61,7 +61,7 @@
     + [文件压缩](/javascript/webpack2/file-compression.md)
     + [生成源代码的SourceMap](/javascript/webpack2/generating-source-code-for-sourcemap.md)
     + [分离项目代码和组件代码](/javascript/webpack2/separate-project-code-and-component-code.md)
-    + [使用可视化图标统计分析打包过程](/javascript/webpack2/statistical-analysis-of-packaging-process-using-visual-chars.md)
+    + [使用可视化图标统计分析打包过程](/javascript/webpack2/statistical-analysis-of-packaging-process-using-visual-charts.md)
 
   - [Ajax文件上传jQuery插件simpleUpload.js的使用](/javascript/ajax-file-upload-using-jquery-plugin-impleupload-js.md)
   - [使用bootstrap-fileStyle改变BootStrap默认的文件选择框样式](/javascript/change-the-default-file-select-box-styles-of-the-bootstrap-framework-using-bootstrap-filestyle.md)
