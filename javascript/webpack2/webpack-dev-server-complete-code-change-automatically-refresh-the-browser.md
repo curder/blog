@@ -32,7 +32,7 @@ npm i webpack-dev-server --save-dev
 配置好快捷命令后，通过命令
 
 ```
-npm run start
+sudo npm run start
 ```
 
 默认启动的是`http://localhost:8080/`，监听文件变化，并自动构建和刷新浏览器。
