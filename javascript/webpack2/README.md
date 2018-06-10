@@ -11,6 +11,7 @@
   - [生成源代码的SourceMap](/javascript/webpack2/generating-source-code-for-sourcemap.md)
   - [分离项目代码和组件代码](/javascript/webpack2/separate-project-code-and-component-code.md)
   - [使用可视化图标统计分析打包过程](/javascript/webpack2/statistical-analysis-of-packaging-process-using-visual-charts.md)
+  - [配置多页面编译](/javascript/webpack2/configure-multi-page-compilation.md)
 
 ## 其他参考
 
