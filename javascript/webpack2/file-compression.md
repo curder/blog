@@ -17,7 +17,7 @@ module.exports = config;
 ## 下载插件
 
 ```
-npm i babili-webpack-plugin --save-dev
+npm i babel-minify-webpack-plugin --save-dev
 ```
 
 或者使用`webpack -p`参数调用webpack自身的文件压缩命令，但是这里推荐使用插件。
@@ -27,12 +27,19 @@ npm i babili-webpack-plugin --save-dev
 修改`webpack.config.js`文件内容：
 
 ```
-const BabiliPlugin = require('babili-webpack-plugin');
+const MinifyPlugin = require("babel-minify-webpack-plugin"); // https://github.com/webpack-contrib/babel-minify-webpack-plugin
 
 const config = {
   plugins: {
     // ...
-    new BabiliPlugin(),
+    new MinifyPlugin(),
   }
 };
+```
+
+## 测试
+
+```
+npm run build
+npm run start
 ```
