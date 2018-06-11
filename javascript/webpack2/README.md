@@ -1,3 +1,4 @@
+> 内容来自[Youtube上的Webpack 2 视频教程](https://www.youtube.com/watch?v=rDxlmAkp-RI&list=PLXbU-2B80FvDu2YTKN42WvAVKWHs6XHRy)，感谢[Parry Qiu](https://www.youtube.com/channel/UCTJl5ok3HDONqcOOavWbhtw)
 
 * [webpack2相关](/javascript/webpack2/README.md)
   - [webpack2介绍与安装](/javascript/webpack2/introduce-and-install.md)
@@ -12,5 +13,6 @@
   - [使用可视化图标统计分析打包过程](/javascript/webpack2/statistical-analysis-of-packaging-process-using-visual-charts.md)
   - [配置多页面编译](/javascript/webpack2/configure-multi-page-compilation.md)
 
-* [Ajax文件上传jQuery插件simpleUpload.js的使用](/javascript/ajax-file-upload-using-jquery-plugin-impleupload-js.md)
-* [使用bootstrap-fileStyle改变BootStrap默认的文件选择框样式](/javascript/change-the-default-file-select-box-styles-of-the-bootstrap-framework-using-bootstrap-filestyle.md)
+## 其他参考
+
+* [webpack 2.2 中文文档](http://www.css88.com/doc/webpack2/)
