@@ -104,6 +104,7 @@
   - [防止远程Linux主机自动断开SSH连接](/centos/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections.md)
   - [Linux下使用定时任务每隔N秒钟执行任务](/centos/centos-uses-scheduled-tasks-to-perform-tasks-every-seconds.md)
   - [CentOS7下安装配置shadowsocks](/centos/installing-configuration-shadowsocks-under-centos-7.md)
+  - [CentOS下安装PHP拓展Swoole](/centos/centos-7-install-php-extension-swoole.md)
 
 * [其他](others/README.md)
     * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
