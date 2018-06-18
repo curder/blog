@@ -89,7 +89,7 @@ netstat -plntu | grep 80
 ```shell
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 ```
->如果执行上面的命令一直报错`curl: (35) Encountered end of file`，可以尝试将上面的`https`协议改成`http`协议获取rpm源。 
+>如果执行上面的命令一直报错`curl: (35) Encountered end of file`，可以尝试将上面的`https`协议改成`http`协议获取rpm源。
 
 其他版本下载可以查看这里：[webtatic仓库](https://webtatic.com/projects/yum-repository/ "webtatic repository")
 
@@ -247,8 +247,18 @@ sudo netstat -plntu |grep 3306
 PHP composer是PHP语言的包管理器。 它创建于2011年，灵感来自于Node.js的“npm”和Ruby的“bundler”安装程序。 使用`curl`命令安装composer。
 
 ```shell
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
 ```
+
+* 配置Packagist 镜像
+
+```
+composer config -g repo.packagist composer https://packagist.phpcomposer.com
+```
+
 
 安装完成后，尝试使用“composer”命令，您将看到以下结果。
 
