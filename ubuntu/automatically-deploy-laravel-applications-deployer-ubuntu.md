@@ -593,3 +593,7 @@ dep deploy
 * [如何在Ubuntu 16.04上使用Deployer自动部署Laravel应用程序](https://www.digitalocean.com/community/tutorials/automatically-deploy-laravel-applications-deployer-ubuntu#conclusion)
 
 * [又一篇 Deployer 的使用攻略](https://laravel-china.org/articles/13242/another-introduction-to-the-use-of-deployer)
+
+* [deployer 实战经验分享](https://juejin.im/entry/5afd3dd051882542821c87d3)
+
+* [少年，是时候换种更优雅的方式部署你的 php 代码了](https://juejin.im/entry/58fd79d961ff4b00666c2e95)
