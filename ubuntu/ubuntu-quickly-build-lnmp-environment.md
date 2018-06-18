@@ -123,6 +123,8 @@ composer config -g repo.packagist composer https://packagist.phpcomposer.com
 ```
 > 可能需要临时切换到其他用户执行上面的配置命令。
 
+更多Composer相关的操作[参看这里](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-16-04)。
+
 ## MySQL
 
 ### 安装
