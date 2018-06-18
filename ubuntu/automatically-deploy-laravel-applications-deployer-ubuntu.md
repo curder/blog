@@ -10,7 +10,7 @@
 * 一个`Ubuntu 16.04`服务器，具有`sudo`特权的非root用户。
 * 按照[Ubuntu下快速搭建LNMP环境](/ubuntu/ubuntu-quickly-build-lnmp-environment.md)配置好的LNMP环境
 * 一个Git服务器。可以选择使用[Gogs](https://gogs.io)、[GitLab](https://about.gitlab.com)，[Bitbucket](https://bitbucket.org)或[GitHub](https://github.com)等服务。`Gogs`、`GitLab`和`Bitbucket`免费提供私人仓库，而`GitHub`提供私人仓库，每月**$7**起。
-* 指向Git服务器的域名。
+* 指向生产服务器的域名。
 * `Composer`和`Git`也安装在本地机器上。例如这里的MacOSX系统。
 
 ## 设置本地开发环境
@@ -23,7 +23,6 @@
 
 在**本地机器**上，打开终端并使用下载部署器安装程序`composer`：
 ```
-sudo apt-get install -y unzip
 composer global require deployer/deployer -vvv
 ```
 
@@ -104,6 +103,7 @@ ssh -T git@mygitserver.com
 部署者使用SSH协议在服务器上安全地执行命令。出于这个原因，我们将向配置生产服务器创建一个用户，Deployer可以使用该用户通过SSH登录并在您的服务器上执行命令。
 使用sudo非root用户登录到生产服务器，并使用以下命令创建一个名为`deployer`的新用户：
 ```
+sudo apt-get install -y unzip
 sudo adduser deployer
 ```
 > 创建一个`deployer`部署用户，上面的命令按回车后输入用户密码和重复密码后直接按回车即可。
