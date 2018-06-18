@@ -108,6 +108,8 @@
   - [CentOS7下安装配置shadowsocks](/centos/installing-configuration-shadowsocks-under-centos-7.md)
   - [CentOS下安装PHP拓展Swoole](/centos/centos-7-install-php-extension-swoole.md)
 
+* [Ubuntu下快速搭建LNMP环境](/ubuntu/ubuntu-quickly-build-lnmp-environment.md)
+
 * [其他](others/README.md)
     * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
     * [使用docker部署私有Gogs服务](others/user-docker-deploy-gogs.md)
