@@ -28,7 +28,7 @@ Siblime Text的所有配置都是可以通过配置文件来保存起来，那�
 
 * 打开包列表选择 `Material - Theme`【这里如果与安装自定义主题就选中当前自定义主题的名字】
 
-* 再选择最终的主题文件`Material-Theme-Palenight.sublime-theme`【如果自定义`Material Theme`的话，选中`Material-Theme.sublime-theme`】 
+* 再选择最终的主题文件`Material-Theme-Palenight.sublime-theme`【如果自定义`Material Theme`的话，选中`Material-Theme.sublime-theme`】
 
 
 ### 修改字体
@@ -56,7 +56,7 @@ Siblime Text的所有配置都是可以通过配置文件来保存起来，那�
 ```
 {
   "class": "sidebar_tree",
-  "row_padding": [24, 10],
+  "row_padding": [24, 12],
   "indent": 16,
   "indent_offset": 0,
   "indent_top_level": false,

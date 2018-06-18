@@ -41,14 +41,14 @@
 
 ```json
 {
-    "color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+    "color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme", // 需要安装Material主题
+    "theme": "Material-Theme-Darker.sublime-theme",
     "ignored_packages":[],
     "material_theme_tree_headings": true,
-    "theme": "Material-Theme-Darker.sublime-theme",
-    "font_face": "Operator Mono xlight",
-    "line_padding_bottom": 10,
-    "line_padding_top": 10,
-    "font_size": 26,
+    "font_face": "Operator Mono xlight", // 需要安装Operator字体
+    "line_padding_bottom": 12,
+    "line_padding_top": 12,
+    "font_size": 18,
     "highlight_line": true,
     "highlight_modified_tabs": true,
     "scroll_past_end": true,

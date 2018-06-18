@@ -19,7 +19,7 @@ Git作为常用的版本控制工具之一，我们应该在平时的开发中�
 
 Git的设置文件为`.gitconfig`，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。
 
-配置文件的优先级是：`/etc/gitconfig`、`~/.gitconfig`和 当前项目目录的config文件（即`.git/config`文件），这三个文件的优先级依次增高，每个级别重写前一个级别的值。因此，在`.git/config`中的值覆盖了在`/etc/gitconfig`中的同一个值。
+配置文件的优先级是：`/etc/gitconfig`、`~/.gitconfig`和 当前项目目录的config文件（即`.git/config`文件），这三个文件的优先级依次增高，每个级别重写前一个级别的值。因此，在`.git/config`中的值覆盖了在`/etc/gitconfig`中的同一个配置值。
 
 ```
 // 显示当前的Git配置
@@ -32,8 +32,6 @@ git config -e [--system|--global|--local]
 git config [--global] user.name "[name]"
 git config [--global] user.email "[email address]"
 ```
-
-
 
 ## 新建代码库
 
@@ -65,7 +63,10 @@ git add .
 git add -p
 
 // 删除工作区文件，并且将这次删除放入暂存区
-git rm [file1] [file2] 
+git rm [file1] [file2]
+
+// 将误删除的文件恢复
+git checkout -- file
 
 // 停止追踪指定文件，但该文件会保留在工作区
 git rm --cached [file]
@@ -73,7 +74,6 @@ git rm --cached [file]
 // 改名文件，并且将这个改名放入暂存区
 git mv [file-original] [file-renamed]
 ```
-
 
 ## 代码提交
 
@@ -95,8 +95,17 @@ git commit -v
 git commit --amend -m [message]
 
 // 重做上一次commit，并包括指定文件的新变化
-git commit --amend [file1] [file2] 
+git commit --amend [file1] [file2]
 ```
+
+## 忽略文件
+
+### 强制添加存在于`.gitignore`的文件
+
+```
+git add -f file.class
+```
+
 
 ## 分支操作
 
@@ -111,6 +120,9 @@ git branch -r
 
 // 列出所有本地分支和远程分支
 git branch -a
+
+// 指定本地work1和远程work1分支的连接关系
+git branch --set-upstream work1 origin/work1
 ```
 
 ### 新建
@@ -195,14 +207,17 @@ git push [remote] --tags
 git checkout -b [branch] [tag]
 ```
 
-## 查看信息
+## 查看日志
 
 ```
-// 显示有变更的文件
-git status
-
 // 显示当前分支的版本历史
 git log
+
+// 简略查看信息
+git log  --pretty=oneline
+
+// 查看分支信息
+git log --graph --pretty=oneline --abbrev-commit
 
 // 显示commit历史，以及每次commit发生变更的文件
 git log --stat
@@ -228,12 +243,16 @@ git log -5 --pretty --oneline
 
 // 显示所有提交过的用户，按提交次数排序
 git shortlog -sn
+```
 
-// 显示指定文件是什么人在什么时间修改过
-git blame [file]
+## 文件差异对比
 
+```
 // 显示暂存区和工作区的差异
 git diff
+
+// 工作区与暂存区比较
+git diff filepath
 
 // 显示暂存区和上一个commit的差异
 git diff --cached [file]
@@ -241,11 +260,33 @@ git diff --cached [file]
 // 显示工作区与当前分支最新commit之间的差异
 git diff HEAD
 
+// 工作区与HEAD ( 当前工作分支) 比较
+git diff HEAD filepath
+
 // 显示两次提交之间的差异
 git diff [first-branch]...[second-branch]
 
-// 显示今天你写了多少行代码
+// 显示当前用户今天写了多少行代码
 git diff --shortstat "@{0 day ago}"
+
+// 暂存区与HEAD比较
+git diff --staged 或 --cached filepath
+
+// 当前分支的文件与branchName 分支的文件进行比较
+git diff branchName filepath
+
+// 与某一次提交进行比较
+git diff commitId filepath
+```
+
+## 查看信息
+
+```
+// 显示有变更的文件
+git status
+
+// 显示指定文件是什么人在什么时间修改过
+git blame [file]
 
 // 显示某次提交的元数据和内容变化
 git show [commit]
@@ -300,11 +341,17 @@ git checkout [commit] [file]
 // 恢复暂存区的所有文件到工作区
 git checkout .
 
+// 撤销添加到暂存区的文件，这样文件就回到了工作区
+git reset HEAD file
+
 // 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
 git reset [file]
 
 // 重置暂存区与工作区，与上一次commit保持一致
 git reset --hard
+
+// 返回上一版本
+git reset --hard HEAD^
 
 // 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
 git reset [commit]
@@ -320,9 +367,51 @@ git reset --keep [commit]
 git revert [commit]
 
 // 暂时将未提交的变化移除，稍后再移入
+
+```
+## 储藏工作区
+
+工作途中，我们在A分支工作，当前任务未完成，没有添加到暂存区，但是需要紧急修复bug，使用
+```
 git stash
+```
+
+储藏现场，然后切换到需要修复bug的分支B。接着，创建修复bug的分支C，完成修复任务，回到B分支，合并C分支，删除C分支。
+
+回到我们正在工作的A分支：
+
+```
+git checkout A
+```
+
+查看工作现场
+
+```
+git stash list
+```
+使用下面的命令恢复工作现场
+
+```
 git stash pop
 ```
+
+此时会恢复并且删除stash的内容。
+
+不删除stash内容？
+
+```
+git stash apply <指定stash，可以多次stash>
+```
+只执行恢复操作。
+
+但是以后想删除？
+
+```
+git stash drop
+```
+
+执行删除stash内容的操作。
+
 
 ## 文件打包
 
@@ -355,8 +444,6 @@ git archive --list
 git archive --format=tar.gz --prefix=projectName/ HEAD | (cd /tmp/ && tar xf -)
 ```
 
-
-
 ```
 // 导出最新的版本库
 git archive -o ../latest.zip HEAD
@@ -376,3 +463,7 @@ git archive -o ../updated.zip HEAD $(git diff --name-only HEAD^)
 // 导出tag
 git archive --format=tar.gz 1.0 | gzip > v1.0.tar.gz
 ```
+
+## 参考链接
+
+* [Git进阶使用笔记](https://www.jianshu.com/p/f19d6b690a7e)
