@@ -25,7 +25,7 @@
 
   - [Atom的基本使用](tools/atom/normal.md)
 
-  - [Google Deveoloer Tools 必备调试技巧](/tools/google-developer-tools/readme.md)
+  - [Google Deveoloer Tools必备调试技巧](/tools/google-developer-tools/readme.md)
     + [调试窗口的切换](/tools/google-developer-tools/debug-window-switching.md)
     + [快速切换 PC 与手机端进行测试](/tools/google-developer-tools/quickly-switch-between-pc-and-mobile-phone-mode.md)
     + [页面元素的快速调试技巧](/tools/google-developer-tools/quick-debugging-techniques-for-page-elements.md)
@@ -39,6 +39,12 @@
     + [编辑源文件并同步到本地文件中](/tools/google-developer-tools/edit-source-files-and-sync-to-local-files.md)
     + [如何让浏览器阻止请求某些资源](/tools/google-developer-tools/how-to-make-browsers-block-requests-for-certain-resources.md)
     + [如何对站点下所有的资源进行全部搜索](/tools/google-developer-tools/how-to-search-all-the-resources-under-the-site.md)
+
+  - [Vagrant相关](/tools/vagrant/README.md)
+    + [Mac系统安装Vagrant](/tools/vagrant/mac-installation-vagrant.md)
+    + [使用Vagrant和LANMP环境搭建](/tools/vagrant/mac-installation-using-vagrant-and-lanmp-environment-to-build.md)
+    + [Vagrant常用命令](/tools/vagrant/vagrant-common-commands.md)
+    + [Vagrant端口转发和文件共享](/tools/vagrant/vagrant-port-forwarding-and-file-sharing.md)
 
   - [Valet开发环境](/tools/valet/README.md)
     + [Mac开发环境Laravel Valet实践](/tools/valet/valet-install.md)

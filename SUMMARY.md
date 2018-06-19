@@ -47,6 +47,12 @@
     + [如何让浏览器阻止请求某些资源](/tools/google-developer-tools/how-to-make-browsers-block-requests-for-certain-resources.md)
     + [如何对站点下所有的资源进行全部搜索](/tools/google-developer-tools/how-to-search-all-the-resources-under-the-site.md)
 
+  - [Vagrant相关](/tools/vagrant/README.md)
+    + [Mac系统安装Vagrant](/tools/vagrant/mac-installation-vagrant.md)
+    + [使用Vagrant和LANMP环境搭建](/tools/vagrant/mac-installation-using-vagrant-and-lanmp-environment-to-build.md)
+    + [Vagrant常用命令](/tools/vagrant/vagrant-common-commands.md)
+    + [Vagrant端口转发和文件共享](/tools/vagrant/vagrant-port-forwarding-and-file-sharing.md)
+
   - [Valet开发环境](/tools/valet/README.md)
     + [Mac开发环境Laravel Valet实践](/tools/valet/valet-install.md)
     + [让Valet支持ThinkPHP3](/tools/valet/valet-support-thinkphp-3.md)
