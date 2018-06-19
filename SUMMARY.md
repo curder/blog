@@ -1,6 +1,12 @@
 # Summary
 
 * [介绍](README.md)
+
+* [Mac相关](mac-osx/readme.md)
+  * [MacOSX清空DNS缓存命令](mac-osx/clear-dns-cache-command.md)
+  * [Mac OSX系统下快速创建大文件](mac-osx/fast-creation-of-large-files-under-mac-osx.md)
+  * [Mac下安装和使用node版本管理工具nvm和smart-npm](/mac-osx/install-and-use-the-node-version-management-tools-nvm-and-smart-npm-under-mac.md)
+
 * [开发工具](/tools/README.md)
   - [SublimeText相关](/tools/sublime/README.md)
     + [Sublime Text 3安装和使用Package Control包管理](/tools/sublime/sublime-text-3-installation-and-use-package-control-package-management.md)
@@ -43,9 +49,7 @@
 
   - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
   - [让Valet支持ThinkPHP5](/tools/valet-support-thinkphp-5.md)
-
   - [如何在各大平台上免费翻"墙"](/tools/how-to-be-free-on-all-major-platforms-over-the-fire-wall.md)
-
   - [在Nginx或者Apache服务器中配置SSI支持](/tools/how-to-configure-ssi-support-in-nginx-or-apache-server.md)
 
 * [Javascript](/javascript/README.md)
@@ -85,15 +89,10 @@
   * [使用预加载（Eager loading）来优化 Laravel Eloquent 查询](/laravel/using-lazy-loading-to-optimize-laravel-eloquent-queries.md)
   * [在 Laravel 应用中使用 pjax 进行页面加速](/laravel/using-pjax-for-page-acceleration-in-the-laravel-app.md)
   * [Laravel5确认框从数据库示例中删除记录](/laravel/laravel5-confirmation-box-to-delete-records-from-mysql-database-example.md)
-
   * [API开发](laravel/api/README.md)
     * [对API资源的第一印象 - Laravel5.5](laravel/api/first-impressions-on-laravel-api-resources.md)
     * [嵌套关系的可重用API资源 - Laravel5.5](laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
     * [动态的隐藏API字段 - Laravel5.5](laravel/api/hiding-api-fields-dynamically-laravel-5-5.md)
-
-* [Mac相关](mac-osx/readme.md)
-  * [MacOSX清空DNS缓存命令](mac-osx/clear-dns-cache-command.md)
-  * [Mac OSX系统下快速创建大文件](mac-osx/fast-creation-of-large-files-under-mac-osx.md)
 
 * [CentOS](/centos/README.md)
   - [CentOS7中firewalld防火墙的使用](/centos/how-to-use-firewall-package-in-centos7.md)
@@ -106,6 +105,11 @@
   - [Linux下使用定时任务每隔N秒钟执行任务](/centos/centos-uses-scheduled-tasks-to-perform-tasks-every-seconds.md)
   - [CentOS7下安装配置shadowsocks](/centos/installing-configuration-shadowsocks-under-centos-7.md)
   - [CentOS下安装PHP拓展Swoole](/centos/centos-7-install-php-extension-swoole.md)
+  - [如何在CentOS上使用Deployer自动部署Laravel应用程序](/centos/automatically-deploy-laravel-applications-deployer-centos.md)
+
+* [Ubuntu](/ubuntu/README.md)
+  - [Ubuntu下快速搭建LNMP环境](/ubuntu/ubuntu-quickly-build-lnmp-environment.md)
+  - [如何在Ubuntu上使用Deployer自动部署Laravel应用程序](/ubuntu/automatically-deploy-laravel-applications-deployer-ubuntu.md)
 
 * [其他](others/README.md)
     * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
