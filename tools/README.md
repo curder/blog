@@ -40,7 +40,8 @@
     + [如何让浏览器阻止请求某些资源](/tools/google-developer-tools/how-to-make-browsers-block-requests-for-certain-resources.md)
     + [如何对站点下所有的资源进行全部搜索](/tools/google-developer-tools/how-to-search-all-the-resources-under-the-site.md)
 
-  - [让Valet支持ThinkPHP](tools/valet_support_thinkphp.md)
+  - [让Valet支持ThinkPHP3](/tools/valet_support_thinkphp.md)
+  - [让Valet支持ThinkPHP5](/tools/valet-support-thinkphp-5.md)
 
   - [如何在各大平台上免费翻"墙"](/tools/how-to-be-free-on-all-major-platforms-over-the-fire-wall.md)
 
