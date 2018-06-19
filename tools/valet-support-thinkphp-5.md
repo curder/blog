@@ -1,4 +1,4 @@
-# 让Valet支持ThinkPHP
+# 让Valet支持ThinkPHP5
 
 主要通过配置文件重写配置获得ThinkPHP5的支持，配置文件放置在`~/.valet/Drivers/`下，针对ThinkPHP5我们可以使用如下配置文件，文件名命名为`ThinkPHP5ValetDriver.php`：
 

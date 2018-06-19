@@ -1,6 +1,6 @@
-# 让Valet支持ThinkPHP
+# 让Valet支持ThinkPHP3
 
-主要通过配置文件重写配置获得ThinkPHP的支持，配置文件放置在`~/.valet/Drivers/`下，针对ThinkPHP我们可以使用如下配置文件，文件名命名为`ThinkPHP3ValetDriver.php`：
+主要通过配置文件重写配置获得ThinkPHP3的支持，配置文件放置在`~/.valet/Drivers/`下，针对ThinkPHP3我们可以使用如下配置文件，文件名命名为`ThinkPHP3ValetDriver.php`：
 
 ```
 <?php
