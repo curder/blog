@@ -4,7 +4,7 @@
 
 ## 基本的SSH配置
 
-### 使用命令生成SSH公钥和秘钥。
+### 使用命令生成SSH公钥和秘钥
 
 ```
 ssh-keygen -t rsa -C "your_email@example.com" -f your_email_rsa
@@ -12,9 +12,9 @@ ssh-keygen -t rsa -C "your_email@example.com" -f your_email_rsa
 
 执行上面的命令会在当前用户的家目录下生成两个文件：`~/.ssh/your_email_rsa`秘钥和`~/.ssh/your_email_rsa.pub`公钥。
 
-> 其中参数`-C`的作用是提供一个备注，`-f`参数的作用是文件名。更多参数可以使用`ssh-keygen --help`查看。
+> 其中参数`-C`的作用是提供一个备注，`-f`参数的作用是指定要生成文件名。更多参数可以使用`ssh-keygen --help`查看。
 
-### 拷贝内容到第三方GIT平台
+### 拷贝内容到第三方Git平台
 
 #### 获取SSH公钥内容
 
