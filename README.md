@@ -56,10 +56,13 @@
     + [Vagrant常用命令](/tools/vagrant/vagrant-common-commands.md)
     + [Vagrant端口转发和文件共享](/tools/vagrant/vagrant-port-forwarding-and-file-sharing.md)
 
-  - [Valet开发环境](/tools/valet/README.md)
+  - [Valet相关](/tools/valet/README.md)
     + [Mac开发环境Laravel Valet实践](/tools/valet/valet-install.md)
     + [让Valet支持ThinkPHP3](/tools/valet/valet-support-thinkphp-3.md)
     + [让Valet支持ThinkPHP5](/tools/valet/valet-support-thinkphp-5.md)
+
+  - [Docker相关](/tools/docker/README.md)
+    * [使用Docker Compose方式安装Gitlab服务](/tools/docker/installing-gitlab-services-using-docker-compose.md)
 
   - [如何在各大平台上免费翻"墙"](/tools/how-to-be-free-on-all-major-platforms-over-the-fire-wall.md)
   - [在Nginx或者Apache服务器中配置SSI支持](/tools/how-to-configure-ssi-support-in-nginx-or-apache-server.md)
