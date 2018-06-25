@@ -22,9 +22,16 @@
 
 Docker Compose接受一个`docker-compose.yml`文件作为配置输入。yml文件指定了多个容器怎么启动，彼此之间怎么连接。下面是[sameersbn/gitlab](https://github.com/sameersbn/docker-gitlab)这个镜像所提供的Yml文件(https://raw.githubusercontent.com/sameersbn/docker-gitlab/master/docker-compose.yml).
 
-可以使用`wget https://raw.githubusercontent.com/sameersbn/docker-gitlab/master/docker-compose.yml`将文件内容下载到本地。
-
+```
+# 执行下面的命令将文件下载
+wget https://raw.githubusercontent.com/sameersbn/docker-gitlab/master/docker-compose.yml
+```
 下载完成之后，在文件中，我们可以看到 GitLab 的很多配置都已经参数化了，包数据卷的配置、服务的端口、备份时机和邮件配置等。
+
+```
+# 或者执行下面已经修改好的文件内容
+wget -O docker-compose.yml https://gist.githubusercontent.com/curder/0b8a10a827a4f6236bccfddb0d8d5c46/raw/787cb4160caf73993a1d76b8d159c9024a5e3002/gitlab-docker-compose.yml
+```
 
 在MacOS上，使用`/Users/Shared`而不是`/srv`，所以我将其下载下来并将文件内容进行了适当的修改，主要是针对`volumn`相关的映射路径存储至如下路径。
 
