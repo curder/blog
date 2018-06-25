@@ -29,7 +29,7 @@ wget https://raw.githubusercontent.com/sameersbn/docker-gitlab/master/docker-com
 下载完成之后，在文件中，我们可以看到 GitLab 的很多配置都已经参数化了，包数据卷的配置、服务的端口、备份时机和邮件配置等。
 
 ```
-# 或者执行下面已经修改好的文件内容
+# 或者执行下面的命令将已经改好的文件下载
 wget -O docker-compose.yml https://gist.githubusercontent.com/curder/0b8a10a827a4f6236bccfddb0d8d5c46/raw/787cb4160caf73993a1d76b8d159c9024a5e3002/gitlab-docker-compose.yml
 ```
 
