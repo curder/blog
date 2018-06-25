@@ -58,18 +58,27 @@ wget -O docker-compose.yml https://gist.githubusercontent.com/curder/0b8a10a827a
 > 如果当前网速拉取国外站点镜像缓慢，建议启动之前可以[参考这里](https://yeasy.gitbooks.io/docker_practice/install/mirror.html)修改docker镜像加速器。
 
 ```
-docker-compose up
+docker-compose up -d
 ```
 
-上面的这行命令，首先会下载相关的镜像，然后依次创建并启动容器。如果不能后台运行docker，可以加上` -d`参数。如下图所示：
+上面的这行命令，首先会下载相关的镜像，然后依次创建并启动容器。如下图所示：
 
 ![](/assets/docker/docker-compose-gitlab-image.png)
 
-当启动完成之后，我们就可以在浏览器中输入`http://localhost:10080`，如果能正确打开，那么说明 GitLab 创建启动成功。如下图所示：
+```
+➜  gitlab-docker docker-compose ps
+           Name                         Command               State                           Ports
+---------------------------------------------------------------------------------------------------------------------------
+gitlab-docker_gitlab_1       /sbin/entrypoint.sh app:start    Up      0.0.0.0:10022->22/tcp, 443/tcp, 0.0.0.0:10080->80/tcp
+gitlab-docker_postgresql_1   /sbin/entrypoint.sh              Up      5432/tcp
+gitlab-docker_redis_1        /sbin/entrypoint.sh --logl ...   Up      6379/tcp
+```
+
+当启动完成之后，我们就可以在浏览器中输入`http://localhost:10080`，如果暂时能够访问却不能正确打开，那么说明 GitLab 创建还未启动成功。如下图所示：
 
 ![](/assets/docker/docker-compose-gitlab-image-502-error.png)
 
-第一次进入gitlab需要输入root的初始密码，**密码需要保持在8位数以上**。
+第一次成功进入gitlab需要输入root的初始密码，**密码需要保持在8位数以上**。
 
 ![](/assets/docker/docker-compose-gitlab-image-need-reset-password.png)
 
