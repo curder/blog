@@ -2,9 +2,11 @@
 
 [GitLab](https://about.gitlab.com/)是一个开源的Git服务软件，在开发中使用广泛。它有很丰富的功能（Git 版本管理、文件浏览、WIKI、Code Review、Issue 管理、Code Snippets、Web Hooks、CI、CD等）。
 
-使用Docker的方式来安装服务端软件是挺方便的。但是Gitlab需要三个服务：`Gitlab`，`PostgreSQL`数据库和`Redis`缓存。
+使用Docker的方式来安装服务端软件是挺方便的。但是GitLab需要三个服务：`Gitlab`，`PostgreSQL`数据库和`Redis`缓存。
 
-如果用命令行直接运行容器，需要三条命令，还要指定很多的配置项。我们借助[docker-compose](https://docs.docker.com/compose/)工具来一次运行多个容器。前期配置好相关的容器编排参数，只需要简单的命令行就可以完成Gitlab服务的安装和启动。
+如果用命令行直接运行容器，需要三条命令，还要指定很多的配置项。
+
+这里借助[docker-compose](https://docs.docker.com/compose/)工具来一次运行多个容器。前期配置好相关的容器编排参数，只需要简单的命令行就可以完成GitLab服务的安装和启动。
 
 > 根据官方提示，服务器的配置之少是：2Core-CPU 4GB-RAM，并安装了[docker](https://yeasy.gitbooks.io/docker_practice/content/install/)和[docker-compose](https://yeasy.gitbooks.io/docker_practice/content/compose/install.html)
 
@@ -24,19 +26,19 @@ Docker Compose接受一个`docker-compose.yml`文件作为配置输入。yml文�
 
 下载完成之后，在文件中，我们可以看到 GitLab 的很多配置都已经参数化了，包数据卷的配置、服务的端口、备份时机和邮件配置等。
 
-这里由于使用的MacOSX系统，所以我将其下载下来并将文件内容进行了适当的修改，主要是针对`volumn`相关的映射路径存储至如下路径。
+在MacOS上，使用`/Users/Shared`而不是`/srv`，所以我将其下载下来并将文件内容进行了适当的修改，主要是针对`volumn`相关的映射路径存储至如下路径。
 
 ```
-/Users/xiaoluo/Codes/Docker/gitlab/
+/Users/Shared/gitlab/
 ```
 
 修改后的完整代码可以[参考这里](https://gist.github.com/curder/0b8a10a827a4f6236bccfddb0d8d5c46)。
 
 主要修改如下文件内容
 ```
-- /Users/xiaoluo/Codes/Docker/gitlab/redis:/var/lib/redis:Z
-- /Users/xiaoluo/Codes/Docker/gitlab/postgresql:/var/lib/postgresql:Z
-- /Users/xiaoluo/Codes/Docker/gitlab/gitlab:/home/git/data:Z
+- /Users/Shared/gitlab/redis:/var/lib/redis:Z
+- /Users/Shared/gitlab/postgresql:/var/lib/postgresql:Z
+- /Users/Shared/gitlab/gitlab:/home/git/data:Z
 
 - TZ=Asia/Shanghai
 - GITLAB_TIMEZONE=Beijing
