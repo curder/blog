@@ -12,3 +12,4 @@
 * [CentOS7下安装配置shadowsocks](/centos/installing-configuration-shadowsocks-under-centos-7.md)
 * [CentOS下安装PHP拓展Swoole](/centos/centos-7-install-php-extension-swoole.md)
 * [如何在CentOS上使用Deployer自动部署Laravel应用程序](/centos/automatically-deploy-laravel-applications-deployer-centos.md)
+* [如何在CentOS 7上安装和配置GitLab CE](/centos/how-to-install-and-configure-gitlab-ce-on-centos-7.md)
