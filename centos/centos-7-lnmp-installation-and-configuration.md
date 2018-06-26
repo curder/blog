@@ -6,11 +6,11 @@
 
 * MySQL 5.7.22
 
-* PHP-FPM 7.1.16
+* PHP-FPM 7.2.6
 
 * Composer 1.4.2
 
-* Laravel 5.4.28
+* Laravel 5.6.26
 
 * NodeJS v6.12.3 && NPM 3.10.10 && Yarn 1.5.1
 
@@ -87,6 +87,7 @@ netstat -plntu | grep 80
 使用如下`rpm`命令安装”webtatic“仓库。
 
 ```shell
+yum install -y epel-release zip unzip
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 ```
 >如果执行上面的命令一直报错`curl: (35) Encountered end of file`，可以尝试将上面的`https`协议改成`http`协议获取rpm源。
@@ -96,12 +97,12 @@ rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 现在，我们可以使用单个`yum`命令来安装`php-fpm`。
 
 ```shell
-yum install -y php71w php71w-gd php71w-curl php71w-common php71w-cli php71w-mysql php71w-mbstring php71w-fpm php71w-xml php71w-pdo php71w-zip
+yum install -y php72w php72w-gd php72w-curl php72w-common php72w-cli php72w-mysql php72w-mbstring php72w-fpm php72w-xml php72w-pdo php72w-zip
 ```
 
-执行完上面的命令后，CentOS系统上已经安装了PHP 7.1。
+执行完上面的命令后，CentOS系统上已经安装了PHP 7.2。
 
-> 注意：如果想更换到php5.6或7.0版本, 直接把上面的php71w换成php56w或者php70w就可以了。重装php-fpm时，记得使用`sudo systemctl stop php-fpm`先关闭`php-fpm`进程，然后再使用 `yum uninstall php71w php71w-curl php71w-common php71w-cli php71w-mysql php71w-mbstring php71w-fpm php71w-xml php71w-pdo php71w-zip` 命令进行移除后，并再次执行`yum install` 重装。
+> 注意：如果想更换到php5.6或7.1版本, 直接把上面的php72w换成php56w或者php71w就可以了。重装php-fpm时，记得使用`sudo systemctl stop php-fpm`先关闭`php-fpm`进程，然后再使用 `yum uninstall php72w php72w-curl php72w-common php72w-cli php72w-mysql php72w-mbstring php72w-fpm php72w-xml php72w-pdo php72w-zip` 命令进行移除后，并再次执行`yum install` 重装。
 
 
 ### 方式二使用remi仓库
@@ -111,10 +112,10 @@ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 wget http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 rpm -Uvh remi-release-7.rpm epel-release-latest-7.noarch.rpm
 
-sudo yum install yum-utils
-sudo yum-config-manager --enable remi-php71
+sudo yum install yum-utils zip unzip
+sudo yum-config-manager --enable remi-php72
 
-sudo yum install php71
+sudo yum install php72
 
 yum install -y php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinf php-fpm
 ```
@@ -196,12 +197,11 @@ rpm -ivh mysql57-community-release-el7-11.noarch.rpm
 sudo yum update
 sudo yum install -y mysql-server
 ```
-
-这里以安装MySQL5.7为例。
+> 执行上面的命令进行MySQL的安装，在安装的过程中两次按`Y`键，同意后安装完成。
 
 ### 启动MySQL
 
-安装完成后，启动`mysql`并使其在引导时启动。
+使用下面的命令启动`mysql`并使其在随系统启动而启动。
 
 ```shell
 sudo systemctl start mysqld
@@ -223,14 +223,6 @@ mysql -uroot -p # 回车输入上面获取到的密码
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPassword1!';
 ```
-
-> ## Securing the MySQL Installation \(for MySQL 5.7 only\)
->
-> MySQL5.7版本使用如下命令进行初始化
->
-> ```shell
-> mysql_secure_installation
-> ```
 
 至此，MySQL的安装和配置已经完成。
 
@@ -327,24 +319,23 @@ vim conf.d/laravel.conf
 ```
 server {
     listen 80;
-    listen [::]:80 ipv6only=on;
 
-# Log files for Debugging
+    # Log files for Debugging
     access_log /var/log/nginx/laravel-access.log;
     error_log /var/log/nginx/laravel-error.log;
 
-# Webroot Directory for Laravel project
+    # Webroot Directory for Laravel project
     root /var/www/laravel/public;
     index index.php index.html index.htm;
 
-# Your Domain Name
+    # Your Domain Name
     server_name laravel.domain.io;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
     }
 
-# PHP-FPM Configuration Nginx
+    # PHP-FPM Configuration Nginx
     location ~ \.php$ {
         try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
@@ -353,11 +344,14 @@ server {
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
     }
+
+    location ~ /\.ht {
+        deny all;
+    }
 }
 ```
 
-保存文件并退出vim。
-
+保存文件并退出vim编辑器。
 
 ### 测试并重启Nginx
 
