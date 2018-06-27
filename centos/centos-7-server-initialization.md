@@ -2,24 +2,37 @@
 
 当初次创建新服务器时，应该尽早完成一些配置步骤，作为基本设置的一部分，这将增加服务器的安全性和可用性，并为后续操作奠定坚实的基础。
 
+## 登录服务器
+root用户是拥有非常广泛特权的Linux环境中的管理用户。由于root帐户的权限较高，因此实际上不建议长期使用它。这是因为根账户固有的部分权力是能够做出非常具有破坏性的变更，即使是意外情况导致。
+
+要登录到您的服务器，需要知道服务器的**公共IP地址**和**root**用户帐户的密码。并通过下面的命令登录到服务器
+
+```
+ssh root@SERVER_IP_ADDRESS
+```
+
+然后提供根认证（密码或私钥），完成登录过程。
+
 ## 更新yum源，并添加必要系统工具
 
 ```
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-yum install -y yum-utils net-tools net-snmp wget iftop htop telnet git vim zip unzip curl ntpdate
-rpm -qa |grep -E "snmp|wget|iftop|htop|git|telnet|vim|release"
+sudo rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install -y yum-utils net-tools net-snmp wget iftop htop telnet git vim zip unzip curl ntpdate
+sudo rpm -qa |grep -E "snmp|wget|iftop|htop|git|telnet|vim|zip|unzip|curl|ntpdate|release" # 检查安装情况
 ```
 
 ## 修改时区&&设置时间
 
 ```
-ntpdate time-a.nist.gov
-echo "00 */10 * * * ntpdate time-a.nist.gov >/dev/null 2>&1" >> /var/spool/cron/root
+sudo ntpdate time-a.nist.gov
+sudo echo "00 */10 * * * ntpdate time-a.nist.gov >/dev/null 2>&1" >> /var/spool/cron/root
 ```
 
 ## 修改系统字符集
 
 ```
+yum reinstall -y kde-l10n-Chinese && glibc-common
+
 LANG=zh_CN.UTF-8 # 临时修改字符集
 sed -i 's/en_US.UTF-8/zh_CN.UTF-8/g' /etc/locale.conf
 ```
@@ -58,18 +71,6 @@ ulimit -HSn 65535
 setenforce 0
 cp /etc/sysconfig/selinux /etc/sysconfig/selinux.bak`date +%F` && sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 ```
-
-
-## 登录服务器
-root用户是拥有非常广泛特权的Linux环境中的管理用户。由于root帐户的权限较高，因此实际上不建议长期使用它。这是因为根账户固有的部分权力是能够做出非常具有破坏性的变更，即使是意外情况导致。
-
-要登录到您的服务器，需要知道服务器的**公共IP地址**和**root**用户帐户的密码。并通过下面的命令登录到服务器
-
-```
-ssh root@SERVER_IP_ADDRESS
-```
-
-然后提供根认证（密码或私钥），完成登录过程。
 
 ## 创建一个新用户
 
