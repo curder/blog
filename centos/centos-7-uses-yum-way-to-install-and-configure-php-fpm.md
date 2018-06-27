@@ -206,3 +206,8 @@ sudo netstat -pl | grep php-fpm.sock
 至此，CentOS下安装`php-fpm`就安装好了。
 
 
+## 参考链接
+
+* [Install PHP 7 on CentOS 7](https://linuxize.com/post/install-php-7-on-centos-7/)
+
+* [How to install PHP 7.2 on CentOS 7/RHEL 7](https://www.cyberciti.biz/faq/how-to-install-php-7-2-on-centos-7-rhel-7/)
