@@ -102,7 +102,7 @@ yum install -y php72w php72w-gd php72w-curl php72w-common php72w-cli php72w-mysq
 
 执行完上面的命令后，CentOS系统上已经安装了PHP 7.2。
 
-> 注意：如果想更换到php5.6或7.1版本, 直接把上面的php72w换成php56w或者php71w就可以了。重装php-fpm时，记得使用`sudo systemctl stop php-fpm`先关闭`php-fpm`进程，然后再使用 `yum uninstall php72w php72w-curl php72w-common php72w-cli php72w-mysql php72w-mbstring php72w-fpm php72w-xml php72w-pdo php72w-zip` 命令进行移除后，并再次执行`yum install` 重装。
+> 注意：如果想更换到php5.6或7.1版本, 直接把上面的php72w换成php56w或者php71w就可以了。重装php-fpm时，记得使用`sudo systemctl stop php-fpm`先关闭`php-fpm`进程，然后再使用 `yum remove php72w php72w-curl php72w-common php72w-cli php72w-mysql php72w-mbstring php72w-fpm php72w-xml php72w-pdo php72w-zip` 命令进行移除后，并再次执行`yum install` 重装。
 
 
 ### 方式二使用remi仓库
