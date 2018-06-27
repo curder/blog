@@ -42,8 +42,6 @@ sudo yum repolist
 
 使用LNMP环境下运行Laravel。Nginx是其中的Web服务器部分，可以从EPEL仓库安装。
 
-使用yum命令通过EPEL仓库升级Nginx 1.10
-
 ```shell
 sudo yum -y install nginx
 ```
