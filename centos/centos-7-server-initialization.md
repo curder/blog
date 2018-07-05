@@ -13,10 +13,18 @@ ssh root@SERVER_IP_ADDRESS
 
 然后提供根认证（密码或私钥），完成登录过程。
 
-## 更新yum源，并添加必要系统工具
+## 更新aliyun的yum源
 
 ```
-sudo rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+sudo curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+sudo yum makecache
+```
+> 相关操作和更多其他操作系统镜像操作[查看这里](https://opsx.alibaba.com/mirror)。
+
+## 添加必要系统工具
+
+```
 sudo yum install -y yum-utils net-tools net-snmp wget iftop htop telnet git vim zip unzip curl ntpdate
 sudo rpm -qa |grep -E "snmp|wget|iftop|htop|git|telnet|vim|zip|unzip|curl|ntpdate|release" # 检查安装情况
 ```
@@ -25,7 +33,12 @@ sudo rpm -qa |grep -E "snmp|wget|iftop|htop|git|telnet|vim|zip|unzip|curl|ntpdat
 
 ```
 sudo ntpdate time-a.nist.gov
-sudo echo "00 */10 * * * ntpdate time-a.nist.gov >/dev/null 2>&1" >> /var/spool/cron/root
+```
+
+执行下面的命令之前，需要将当前操作时的用户切换为root用户，否则将提示没有权限。
+
+```
+echo "00 */10 * * * ntpdate time-a.nist.gov >/dev/null 2>&1" >> /var/spool/cron/root
 ```
 
 ## 修改系统字符集
