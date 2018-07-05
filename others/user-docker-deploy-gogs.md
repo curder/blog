@@ -2,7 +2,7 @@
 
 服务器环境使用`CentOS Linux release 7.4.1708 (Core)`。
 
-> 不需要在本地提前安装好 `Mysql`，都通过 `Docker` 来完成。
+> 不需要在本地提前安装好 `MySQL`，这里通过 `Docker` 安装`gogs-server`和`MySQL`。
 
 ## 安装 docker 和 docker-compsoe
 
@@ -16,9 +16,11 @@ yum -y install docker
 
 ### 安装docker-composer
 
-    sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+```
+sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 
-    sudo chmod +x /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
 
 > 更多的安装请参考[Install Compose](https://docs.docker.com/compose/install/#install-compose)
 
@@ -86,7 +88,7 @@ volumes:
       driver: local
 ```
 
-其中上面使用到的环境变量需要放在在`.env`文件中，保证和`docker-compose.yaml`文件在同一目录下。
+其中上面使用到的环境变量需要放在文件名在`.env`的文件中，并保证与`docker-compose.yaml`文件在同一目录下，大致内容如下：
 
 ```
 MYSQL_ROOT_PASSWORD=mysql_root_password
@@ -102,7 +104,6 @@ SSH_PORT=10022
 执行命令运行docker。
 
 > 执行命令前安装[阿里云加速器](https://cr.console.aliyun.com/?spm=5176.100239.blogcont57268.20.ik4KA5#/accelerator)来加速安装过程。
->
 > ```
 > docker-compose up -d
 > ```

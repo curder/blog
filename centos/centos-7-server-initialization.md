@@ -25,7 +25,7 @@ sudo yum makecache
 ## 添加必要系统工具
 
 ```
-sudo yum install -y yum-utils net-tools net-snmp wget iftop htop telnet git vim zip unzip curl ntpdate
+sudo yum install -y yum-utils net-tools net-snmp wget iftop htop telnet tree git vim zip unzip curl ntpdate
 sudo rpm -qa |grep -E "snmp|wget|iftop|htop|git|telnet|vim|zip|unzip|curl|ntpdate|release" # 检查安装情况
 ```
 
