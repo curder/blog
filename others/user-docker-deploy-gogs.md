@@ -1,6 +1,18 @@
 # 使用docker部署私有Gogs服务
 
+## 环境依赖
+
+* docker
+
+* docker-compose
+
+* nginx
+
+* 域名`gogs.domain.com`
+
 服务器环境使用`CentOS Linux release 7.4.1708 (Core)`。
+
+安装之前请准备一个`gogs.domain.com`域名，并将其指向服务器IP地址。
 
 > 不需要在本地提前安装好 `MySQL`，这里通过 `Docker` 安装`gogs-server`和`MySQL`。
 
@@ -97,7 +109,7 @@ MYSQL_USER=gogs
 MYSQL_PASSWORD=gogs_password
 
 
-GOGS_PORT=3001
+GOGS_PORT=3000
 SSH_PORT=10022
 ```
 
@@ -110,8 +122,37 @@ SSH_PORT=10022
 
 ## HTTP运行Gogs
 
-第一次在浏览器运行Gogs会需要填写一些初始化数据库配置参数。如下图：
+第一次在浏览器运行Gogs会需要填写一些初始化数据库配置等参数。如下图：
 
-![](/assets/gogs_install.png)
+![](/assets/centos/gogs_install.png)
 
+`nginx`配置文件内容
 
+```
+#server {
+#    listen      80; ## listen for ipv4
+#    server_name   gogs.domain.com;
+#    return      301 https://$server_name$request_uri;
+#}
+server {
+    charset utf-8;
+    client_max_body_size 300M;
+
+    listen 80; # 或者 443，如果你使用 HTTPS 的话
+
+    # SSL support
+    # ssl on;
+    # ssl_certificate      ./ssl/fullchain.cer;
+    # ssl_certificate_key  ./ssl/domain.com.key;
+
+    server_name gogs.domain.com;
+
+    location / { # 如果你希望通过子路径访问，此处修改为子路径，注意以 / 开头并以 / 结束
+        proxy_pass http://127.0.0.1:3000/;
+    }
+}
+```
+
+## 参考链接
+
+* [使用 HTTPS 部署 Gogs](https://github.com/Unknwon/wuwen.org/issues/12)
