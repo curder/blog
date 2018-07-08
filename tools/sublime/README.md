@@ -11,7 +11,9 @@
 * [Sublime插件之SnippetMaker自定义代码片段](/tools/sublime/sublime-custom-code-snippet.md)
 * [Sublime插件之SublimeLinter和PHP代码检测与自动修复](/tools/sublime/sublime-linter-detect-your-php-code-and-fix-it.md)
 * [Sublime插件之ProjectManager项目管理](/tools/sublime/sublime-project-management-project-manager-plugin.md)
-* [Sublimt插件之Emmet快速编写HTML/CSS](/tools/sublime/sublime-emmet-quickly-write-html-and-css.md)
+* [Sublime插件之Emmet快速编写HTML/CSS](/tools/sublime/sublime-emmet-quickly-write-html-and-css.md)
+* [Sublime插件之Sublime​Linter和Sublimelinter-contrib-eslint检查代码规范](/tools/sublime/sublime-sublimelinter-and-sublimelinter-contrib-eslint-plugin.md)
+* [Sublime插件之HTML-CSS-JS Prettify格式化前端代码](/tools/sublime/sublime-html-css-js-prettify-plugin.md)
 * [Sublime快捷键](/tools/sublime/sublime-text-3-keymap.md)
 * [Sublime Text 3恢复到新安装状态](/tools/sublime/sublime-text-3-revert.md)
 
