@@ -212,31 +212,29 @@ sudo vim /etc/nginx/conf.d/example.com
 
 ```
 server {
-        listen 80;
-        listen [::]:80;
+    listen 80;
+    listen [::]:80;
 
-        root /var/www/html/laravel-app/current/public;
-        index index.php index.html index.htm index.nginx-debian.html;
+    root /var/www/html/laravel-app/current/public;
+    index index.php index.html index.htm index.nginx-debian.html;
 
-        server_name example.com www.example.com;
+    server_name example.com www.example.com;
 
-        location / {
-                try_files $uri $uri/ /index.php?$query_string;
-        }
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
 
-        location ~ \.php$ {
-                include snippets/fastcgi-php.conf;
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+        include fastcgi_params;
+    }
 
-                fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
-                fastcgi_param DOCUMENT_ROOT $realpath_root;
-
-                fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
-        }
-
-        location ~ /\.ht {
-                deny all;
-        }
-
+    location ~ /\.ht {
+        deny all;
+    }
 }
 ```
 
