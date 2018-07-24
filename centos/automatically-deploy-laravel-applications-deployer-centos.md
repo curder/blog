@@ -100,7 +100,7 @@ ssh -T git@mygitserver.com
 
 ### 配置部署者用户
 
-部署者使用SSH协议在服务器上安全地执行命令。出于这个原因，我们将向配置生产服务器创建一个用户，Deployer可以使用该用户通过SSH登录并在您的服务器上执行命令。
+部署者使用SSH协议在服务器上安全地执行命令。出于这个原因，在生产服务器创建一个用户`deployer`，Deployer可以使用该用户通过SSH登录并在您的服务器上执行命令。
 使用sudo非root用户登录到生产服务器，并使用以下命令创建一个名为`deployer`的新用户：
 ```
 sudo yum install -y unzip
