@@ -103,7 +103,7 @@ ssh -T git@mygitserver.com
 部署者使用SSH协议在服务器上安全地执行命令。出于这个原因，我们将向配置生产服务器创建一个用户，Deployer可以使用该用户通过SSH登录并在您的服务器上执行命令。
 使用sudo非root用户登录到生产服务器，并使用以下命令创建一个名为`deployer`的新用户：
 ```
-sudo apt-get install -y unzip
+sudo apt-get install -y unzip git
 sudo adduser deployer
 ```
 > 创建一个`deployer`部署用户，上面的命令按回车后输入用户密码和重复密码后直接按回车即可。
@@ -124,7 +124,7 @@ sudo chfn -o umask=022 deployer
 我们将应用程序存储在`/var/www/html/`目录中，因此将目录的所有权更改为部署者用户和`www-data`组。
 
 ```
-sudo chown deployer:www-data /var/www/html # 最后这里不要加斜线哦
+sudo mkdir -p /var/www/html && sudo chown deployer:www-data /var/www/html # 最后这里不要加斜线哦
 ```
 
 该**部署**的用户需要能够在中修改文件和文件夹`/var/www/html`目录。因此目录中创建的所有新文件和子目录`/var/www/html`都应该继承该文件夹的组标识（www-data）。要实现这个目标，请使用以下命令在此目录中设置组ID：
@@ -181,7 +181,15 @@ cat ~/.ssh/deployerkey.pub
 
 将上面复制的公钥内容，添加到生产服务器上的`~/.ssh/authorized_keys`文件内。
 
-> 注意在生产服务器上，作为**部署者**用户`deployer`修改上面的文件内容。
+```
+# 使用vi编辑器打开文件
+vi ~/.ssh/authorized_keys
+
+# 粘贴下面的内容到文件中
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLjvl3r+Mlk975SW8zJrNrkIqwKe573LcYscq0F0DRPePVOxGcoqNMx/DGLewOf70Ozc3OuHTwkQIuj1mxOJ6w/W8qTgXr4X5szE1DfvHr/0Nnn/rJBTWm6qas0ktNGgYkixS4AJMcnXwuGDU8NSu+lSrkhYmi/+yN/fpyHUGhSLbT7LP1XxaTEDQNjjyGbgJgTEkrL1ZwlXW7CtwFLBKxm60JkQzUk39FPu6tXZGIQDcixL3CNIiHxdSIOroxvYdEVKfv6YyKKR1uizSbE3GjDrn7CDEE1LHmrHXOhbU805rdbyykIaYORMhSRZ869bRRAMhZDqzcdpu4kwVLeIOr xiaoluo@bogon
+```
+
+> 注意在生产服务器上，使用**部署者**`deployer`用户修改上面的文件内容。
 
 修改完成后，使用下面的命令修改文件权限：
 
@@ -203,6 +211,12 @@ ssh deployer@your_server_ip  -i ~/.ssh/deployerkey
 ssh -T git@mygitserver.com
 ```
 
+如果是Gogs代码仓库服务器，大致输出会是这样：
+
+```
+Hi there, You've successfully authenticated, but Gogs does not provide shell access.
+If this is unexpected, please log in with password and setup Gogs under another user.
+```
 
 ## 配置Nginx
 
@@ -267,7 +281,7 @@ sudo nginx -t
 ### 重新启动Nginx
 
 ```
-sudo systemctl restart nginx
+sudo service nginx restart
 ```
 
 现在配置Nginx服务器。接下来，我们将配置应用程序的MySQL数据库。
@@ -365,7 +379,7 @@ task('build', function () {
 // desc('Restart PHP-FPM service');
 // task('php-fpm:reload', function () {
 //    // The user must have rights for reload service
-//    // /etc/sudoers: deployer ALL=NOPASSWD:/bin/systemctl reload php7.1-fpm.service
+//    // /etc/sudoers: deployer ALL=NOPASSWD:/binsystemctls service n relo restartad php7.1-fpm.service
 //    run('sudo systemctl reload php7.1-fpm.service');
 //});
 

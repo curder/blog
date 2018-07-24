@@ -85,7 +85,7 @@ sudo rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 sudo yum-config-manager --enable remi-php72 # 默认remi仓库禁用的，在实际需要的时候启用
 sudo yum update
 # sudo yum search php72 | more
-sudo yum install php72 php72-php-fpm php72-php-gd php72-php-json php72-php-mbstring php72-php-mysqlnd php72-php-xml php72-php-xmlrpc php72-php-opcache
+sudo yum install -y php72 php72-php-fpm php72-php-gd php72-php-json php72-php-mbstring php72-php-mysqlnd php72-php-xml php72-php-xmlrpc php72-php-opcache
 sudo mkdir -p /run/php-fpm/remi-php72 # 创建一个sock存放的目录
 sudo ln -s  `which php72` /usr/local/sbin/php # 建立软连接方便命令行使用
 ```
@@ -164,11 +164,11 @@ group = nginx
 * `php-fpm`将在套接字文件下运行，而不是使用服务器端口，**remi仓库**方式安装的PHP可以将值改为`/run/php-fpm/remi-php72/php-fpm.sock`，**webtatic仓库**方式安装的PHP请将'listen'值更改为路径`/run/php-fpm/php-fpm.sock`。
 
 ```
-# webtatic
-listen = /run/php-fpm/php-fpm.sock
-
 # remi
 listen = /run/php-fpm/remi-php72/php-fpm.sock
+
+# webtatic
+listen = /run/php-fpm/php-fpm.sock
 ```
 
 * 套接字文件所有者将是“nginx”用户，权限模式为660，取消注释并更改所有值。
