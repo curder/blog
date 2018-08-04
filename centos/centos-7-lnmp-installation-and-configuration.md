@@ -85,7 +85,7 @@ sudo rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 sudo yum-config-manager --enable remi-php72 # 默认remi仓库禁用的，在实际需要的时候启用
 sudo yum update
 # sudo yum search php72 | more
-sudo yum install -y php72 php72-php-fpm php72-php-gd php72-php-json php72-php-mbstring php72-php-mysqlnd php72-php-xml php72-php-xmlrpc php72-php-opcache
+sudo yum install -y php72 php72-php-fpm php72-php-gd php72-php-json php72-php-mbstring php72-php-mysqlnd php72-php-xml php72-php-xmlrpc php72-php-opcache php72-php-pecl-zip
 sudo mkdir -p /run/php-fpm/remi-php72 # 创建一个sock存放的目录
 sudo ln -s  `which php72` /usr/local/sbin/php # 建立软连接方便命令行使用
 ```
