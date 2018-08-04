@@ -201,6 +201,8 @@ sudo systemctl start php-fpm
 sudo systemctl enable php-fpm
 ```
 
+> 使用`remi`仓库的时候启动的时候可能会报错，由于`php-fpm.sock`文件目录不存在，执行命令：`sudo mkdir -p /run/php-fpm/remi-php72`后在启动就没有问题了。
+
 ## 检查php-fpm
 
 `php-fpm`在套接字文件下运行，使用以下命令检查。
