@@ -192,13 +192,13 @@ env[TEMP] = /tmp
 保存文件并退出vim编辑，然后启动`php-fpm`并使其在启动时运行。
 
 ```
-# webtatic
-sudo systemctl start php-fpm
-sudo systemctl enable php-fpm
-
 # remi
 sudo systemctl start php72-php-fpm.service
 sudo systemctl enable php72-php-fpm.service
+
+# webtatic
+sudo systemctl start php-fpm
+sudo systemctl enable php-fpm
 ```
 
 ## 检查php-fpm
