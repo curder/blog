@@ -31,6 +31,12 @@ sudo echo 'extension=redis.ini' > /etc/php/7.2/mods-available/redis.ini
 sudo ln -s /etc/php/7.2/mods-available/redis.ini /etc/php/7.2/fpm/conf.d/20-redis.ini
 ```
 
+> 注意：client模式也需要加上这个扩展，在`/etc/php/7.2/cli/php.ini`主配置文件也加上这个扩展。
+
+```
+echo "extension=redis.so" >> /etc/php/7.2/cli/php.ini
+```
+
 ## 重启进程
 
 通过下面的命令重启php-fpm进程，打印`phpinfo();`查看是否成功安装拓展。
