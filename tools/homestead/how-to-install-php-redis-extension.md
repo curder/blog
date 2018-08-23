@@ -28,7 +28,7 @@ php -i|grep extension_dir
 
 ```
 sudo echo 'extension=redis.ini' > /etc/php/7.2/mods-available/redis.ini
-sudo ln -s /etc/php/7.2/mods-available/redis.ini /etc/php/7.2/fpm/conf.d/20-reids.ini
+sudo ln -s /etc/php/7.2/mods-available/redis.ini /etc/php/7.2/fpm/conf.d/20-redis.ini
 ```
 
 ## 重启进程
