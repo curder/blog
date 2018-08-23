@@ -539,6 +539,12 @@ dep deploy -vvv
 
 当配置完上面的配置之后，每次开发场景不需要如此复杂的操作。
 
+> 有时候部署完成后访问域名会出现 **403 Forbidden** 的情况，此时，检查机器的SELinux是否禁用，如果没有禁用可能会导致文件无权访问。
+> ```
+> setenforce 0
+> cp /etc/sysconfig/selinux /etc/sysconfig/selinux.bak`date +%F` && sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+> ```
+
 ## 运行典型部署
 
 在再次部署之前，通过修改应用程序开始。例如，您可以在`routes/web.php`文件中添加新的`about`路由：
