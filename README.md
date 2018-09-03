@@ -140,6 +140,7 @@
 * [Go学习](/go/readme.md)
   + Go安装
     - [如何在CentOS 7上安装Go](/go/how-to-install-go-lang-on-centos-7.md)
+    - [如何在MacOSX上安装Go](/go/how-to-install-go-lang-on-mac-osx.md)
 
 * [其他](others/README.md)
     * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
