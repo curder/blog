@@ -134,6 +134,10 @@
   - [Ubuntu下快速搭建LNMP环境](/ubuntu/ubuntu-quickly-build-lnmp-environment.md)
   - [如何在Ubuntu上使用Deployer自动部署Laravel应用程序](/ubuntu/automatically-deploy-laravel-applications-deployer-ubuntu.md)
 
+* [Go学习](/go/readme.md)
+  + Go安装
+    - [如何在CentOS 7上安装Go](/go/how-to-install-go-lang-on-centos-7.md)
+
 * [其他](others/README.md)
     * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
     * [使用docker部署私有Gogs服务](others/user-docker-deploy-gogs.md)
