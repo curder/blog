@@ -162,7 +162,7 @@ namespace App\Http\Traits;
 use Toplan\Sms\Facades\SmsManager;
 use Illuminate\Support\Facades\Validator;
 
-trait SmsCodeUtil
+trait SmsCode
 {
     /**
      * 发送验证码
