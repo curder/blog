@@ -222,7 +222,7 @@ Route::post('/sms/validate-code', 'Api\SmsController@validateSmsCode');
 
 ### 修改控制器
 
-建议使用`php artisan make:controller Api\SmsController`新建一个控制器，并引入上面编写的trait。
+建议使用`php artisan make:controller Api/SmsController`新建一个控制器，并引入上面编写的trait。
 
 ```
 <?php
