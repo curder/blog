@@ -2,14 +2,14 @@
 
 项目中经常要使用发送短信功能，验证用户的手机号的正确性。比如：短信注册或者通过手机号码找回密码等功能。
 
-这里使用[Laravel5.6](https://laravel.com/docs/5.6)、[laravel-sms2.6](https://github.com/toplan/laravel-sms)，短信发送使用aliyun短信发送作为演示。
+这里使用[Laravel5.6](https://laravel.com/docs/5.6)、[laravel-sms2.6](https://github.com/toplan/laravel-sms)，中间件使用`api`验证，短信发送使用`Aliyun`驱动作为演示。
 
 ## 安装laravel-sms
 
-进入到laravel的项目根目录下，运行下面的composer命令安装laravel-sms。
+进入到laravel的项目根目录下，运行下面的composer命令安装`laravel-sms`。
 
 ```
-composer require toplan/laravel-sms:~2.6
+composer require toplan/laravel-sms
 ```
 
 ## 配置laravel-sms
@@ -53,7 +53,6 @@ php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
     'Aliyun'
 ],
 ```
-
 
 设置 `phpsms.php` 中 `agnets` 数组中aliyun的代理器信息。
 
@@ -100,8 +99,9 @@ php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
         'enable'      => true,
         'default'     => 'unique_phone',
         'staticRules' => [
-            // 不重复的手机号码
-            'unique_phone'     => 'required|zh_mobile|unique:users,phone',
+          'unique_phone'     => 'required|zh_mobile|unique:users,phone', // 默认验证规则
+          'register_unique_phone'     => 'required|zh_mobile|unique:users,phone', // 注册
+          'reset_password_exists_phone' => 'required|zh_mobile|exists:users,phone', // 重置密码
         ],
     ],
 ],
@@ -121,9 +121,9 @@ php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
 * 设置验证码内容短信
 
 ```
-'content'    => function ($code, $minutes, $input) {
-  return "您的验证码是：{$code} （{$minutes}分钟内有效，如非本人操作，请忽略）";
-},
+'content'    => \Toplan\Sms\SmsManager::closure(function ($code, $minutes, $input) {
+    return "您的验证码是：{$code} （{$minutes}分钟内有效，如非本人操作，请忽略）";
+}),
 ```
 
 * 开启数据库日志
@@ -264,6 +264,104 @@ return [
   ],
 ];
 ```
+## 前端资源
+
+这里的前端资源使用扩展包提供的`laravel-sms.js`文件，具体编写使用：
+
+```
+require('@common/js/helpers/laravel-sms');
+
+$(function() {
+    const phone_rules = {
+        register: 'register_unique_phone',
+        reset_password: 'reset_password_exists_phone',
+    },
+    token =  $('meta[name="csrf-token"]').attr('content'),
+    interval = 60,
+    requestUrl = '/api/v1/sms/send-code',
+    phone_value = () => $("#phone").val(),
+    language = {
+        sending    : '短信发送中...',
+        failed     : '请求失败，请重试',
+        resendable : '{{seconds}} 秒后再次发送'
+    },
+    notifyCallback = (msg, type) => {
+        if(type === 'sms_sent_success') {
+            toastr.success(msg);
+        }else {
+            toastr.error(msg);
+        }
+    },
+    types = { // 短信验证类型，后台通过这个类型发送不用的模版
+        register: 'register', // 注册
+        reset_password: 'reset_password', // 重置密码
+    }
+  ;
+
+  // 发送ajax之前在Header头添加Access-Token，参考文档：https://github.com/toplan/laravel-sms#%E6%97%A0%E4%BC%9A%E8%AF%9D%E6%94%AF%E6%8C%81
+  $.ajaxSetup({
+      beforeSend: (xhr) => {
+          xhr.setRequestHeader('Access-Token',  phone_value());
+      }
+  });
+
+  // 注册发送校验短信
+  $("#sendRegisterVerifySmsButton").sms({
+      //laravel csrf token
+      token       : token,
+      //请求间隔时间
+      interval    : interval,
+      // 请求地址
+      requestUrl  : requestUrl,
+      //语音验证码
+      voice       : false,
+      //请求参数
+      requestData : {
+          // 手机号
+          phone: phone_value,
+          // 手机号的检测规则，与配置文件中配置保持一致
+          phone_rule: phone_rules.register,
+          // 短信类型
+          type: types.register,
+      },
+      //消息展示方式(默认为alert)
+      notify : notifyCallback,
+
+      //语言包
+      language    : language
+  });
+
+  // 重置密码发送校验短信
+  $("#sendResetVerifySmsButton").sms({
+      //laravel csrf token
+      token       : token,
+      //请求间隔时间
+      interval    : interval,
+      // 请求地址
+      requestUrl  : requestUrl,
+      //语音验证码
+      voice       : false,
+      //请求参数
+      requestData : {
+          // 手机号
+          phone : phone_value,
+          // 手机号的检测规则，与配置文件中配置保持一致
+          phone_rule : phone_rules.reset_password,
+          // 短信类型
+          type : types.reset_password,
+      },
+      //消息展示方式(默认为alert)
+      notify : notifyCallback,
+
+      //语言包
+      language    : language
+  });
+});
+
+```
+
+
+
 
 ## 测试
 
