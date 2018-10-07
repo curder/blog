@@ -1,4 +1,5 @@
 * [Centos 7 服务器初始化](/centos/centos-7-server-initialization.md)
+* [如何在CentOS上创建sudo用户](/centos/how-to-create-a-sudo-user-on-centos.md)
 * [防止远程Linux主机自动断开SSH连接](/centos/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections.md)
 * [CentOS7中firewalld防火墙的使用](/centos/how-to-use-firewall-package-in-centos7.md)
 * [使用supervisord管理进程](/centos/how-to-use-supervisord-manager-processes.md)

@@ -6,7 +6,7 @@
   * [MacOSX清空DNS缓存命令](mac-osx/clear-dns-cache-command.md)
   * [Mac OSX系统下快速创建大文件](mac-osx/fast-creation-of-large-files-under-mac-osx.md)
   * [Mac下安装和使用node版本管理工具nvm和smart-npm](/mac-osx/install-and-use-the-node-version-management-tools-nvm-and-smart-npm-under-mac.md)
-
+  * [切换Homestead源](/tools/homestead/change-homebrew-source.md)
 * [开发工具](/tools/README.md)
   - [SublimeText相关](/tools/sublime/README.md)
     + [Sublime Text 3安装和使用Package Control包管理](/tools/sublime/sublime-text-3-installation-and-use-package-control-package-management.md)
@@ -60,6 +60,9 @@
     + [让Valet支持ThinkPHP3](/tools/valet/valet-support-thinkphp-3.md)
     + [让Valet支持ThinkPHP5](/tools/valet/valet-support-thinkphp-5.md)
 
+  - [Homestead开发环境](/tools/homestead/README.md)
+    + [Homestead安装phpredis扩展](/tools/homestead/how-to-install-php-redis-extension.md)
+
   - [Docker相关](/tools/docker/README.md)
     * [使用Docker Compose方式安装Gitlab服务](/tools/docker/installing-gitlab-services-using-docker-compose.md)
 
@@ -106,6 +109,7 @@
   * [使用预加载（Eager loading）来优化 Laravel Eloquent 查询](/laravel/using-lazy-loading-to-optimize-laravel-eloquent-queries.md)
   * [在 Laravel 应用中使用 pjax 进行页面加速](/laravel/using-pjax-for-page-acceleration-in-the-laravel-app.md)
   * [Laravel5确认框从数据库示例中删除记录](/laravel/laravel5-confirmation-box-to-delete-records-from-mysql-database-example.md)
+  * [使用 laravel-sms 构建短信验证码发送校验模块](/laravel/use-laravel-sms-to-build-sms-verification-code-to-send-verification-module.md)
   * [API开发](/laravel/api/README.md)
     * [对API资源的第一印象 - Laravel5.5](/laravel/api/first-impressions-on-laravel-api-resources.md)
     * [嵌套关系的可重用API资源 - Laravel5.5](/laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
@@ -115,6 +119,7 @@
 
 * [CentOS](/centos/README.md)
   - [Centos 7 服务器初始化](/centos/centos-7-server-initialization.md)
+  - [如何在CentOS上创建sudo用户](/centos/how-to-create-a-sudo-user-on-centos.md)
   - [防止远程Linux主机自动断开SSH连接](/centos/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections.md)
   - [CentOS7中firewalld防火墙的使用](/centos/how-to-use-firewall-package-in-centos7.md)
   - [使用supervisord管理进程](/centos/how-to-use-supervisord-manager-processes.md)
@@ -131,6 +136,11 @@
 * [Ubuntu](/ubuntu/README.md)
   - [Ubuntu下快速搭建LNMP环境](/ubuntu/ubuntu-quickly-build-lnmp-environment.md)
   - [如何在Ubuntu上使用Deployer自动部署Laravel应用程序](/ubuntu/automatically-deploy-laravel-applications-deployer-ubuntu.md)
+
+* [Go学习](/go/readme.md)
+  + Go安装
+    - [如何在CentOS 7上安装Go](/go/how-to-install-go-lang-on-centos-7.md)
+    - [如何在MacOSX上安装Go](/go/how-to-install-go-lang-on-mac-osx.md)
 
 * [其他](others/README.md)
     * [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)

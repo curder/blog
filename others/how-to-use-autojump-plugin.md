@@ -5,6 +5,7 @@ GitHub地址：[autojump](https://github.com/wting/autojump)是一个命令行�
 与之类似的插件还有：[fs-jumping](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview#fs-jumping)
 
 ## 安装
+
 - Mac
 ```
 brew install autojump

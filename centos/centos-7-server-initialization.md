@@ -32,13 +32,14 @@ sudo rpm -qa |grep -E "snmp|wget|iftop|htop|git|telnet|vim|zip|unzip|curl|ntpdat
 ## 修改时区&&设置时间
 
 ```
-sudo ntpdate time-a.nist.gov
+sudo timedatectl set-timezone Asia/Shanghai
+sudo ntpdate cn.pool.ntp.org
 ```
 
 执行下面的命令之前，需要将当前操作时的用户切换为root用户，否则将提示没有权限。
 
 ```
-echo "00 */10 * * * ntpdate time-a.nist.gov >/dev/null 2>&1" >> /var/spool/cron/root
+echo "00 */10 * * * ntpdate cn.pool.ntp.org >/dev/null 2>&1" >> /var/spool/cron/root
 ```
 
 ## 修改系统字符集

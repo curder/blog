@@ -51,6 +51,12 @@
     + [让Valet支持ThinkPHP3](/tools/valet/valet-support-thinkphp-3.md)
     + [让Valet支持ThinkPHP5](/tools/valet/valet-support-thinkphp-5.md)
 
+  - [Homestead开发环境](/tools/homestead/README.md)
+    + [Homestead安装phpredis扩展](/tools/homestead/how-to-install-php-redis-extension.md)
+
+  - [Docker相关](/tools/docker/README.md)
+    * [使用Docker Compose方式安装Gitlab服务](/tools/docker/installing-gitlab-services-using-docker-compose.md)
+
   - [如何在各大平台上免费翻"墙"](/tools/how-to-be-free-on-all-major-platforms-over-the-fire-wall.md)
 
   - [在Nginx或者Apache服务器中配置SSI支持](/tools/how-to-configure-ssi-support-in-nginx-or-apache-server.md)
