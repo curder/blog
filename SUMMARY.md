@@ -86,6 +86,8 @@
   - [Ajax文件上传jQuery插件simpleUpload.js的使用](/javascript/ajax-file-upload-using-jquery-plugin-impleupload-js.md)
   - [使用bootstrap-fileStyle改变BootStrap默认的文件选择框样式](/javascript/change-the-default-file-select-box-styles-of-the-bootstrap-framework-using-bootstrap-filestyle.md)
 
+  - [Javascript中的Promise](/javascript/promise/README.md)
+
 * [WordPress相关](wordpress/README.md)
   * [WordPress创建主题](wordpress/create_theme.md)
 
@@ -147,6 +149,7 @@
     * [申请Let's Encrypt通配符HTTPS证书](others/requesting-the-lets-encrypt-wildcard-https-certificate.md)
     * [使用ssh-copy-id建立与远端Linux服务器的信任](others/use-ssh-copy-id-to-establish-trust-with-a-remote-linux-server.md)
     * [Linux禁止root用户直接登录sshd并修改默认端口](others/linux-prevents-root-users-from-directly-logging-in-to-ssh-and-modifying-the-default-port.md)
+    * [修改Composer镜像下载地址](/others/change-composer-packagist-config.md)
     * [安装和使用Oh-My-Zsh](/others/install-and-use-oh-my-zsh.md)
       - [Oh-My-Zsh常用插件](/others/oh-my-zsh-common-plugins.md)
         + [autojump自动跳转](/others/how-to-use-autojump-plugin.md)
