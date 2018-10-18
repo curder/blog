@@ -1,3 +1,4 @@
+* [SSH登陆远程主机后进入指定目录或执行命令](/others/after-logging-in-to-the-remote-host-through-ssh-enter-the-specified-directory-or-execute-the-command.md)
 * [scp 跨机远程拷贝](/others/use-scp-order-download-or-upload-files-and-dirctories.md)
 * [使用docker部署私有Gogs服务](/others/user-docker-deploy-gogs.md)
 * [申请Let's Encrypt通配符HTTPS证书](/others/requesting-the-lets-encrypt-wildcard-https-certificate.md)
