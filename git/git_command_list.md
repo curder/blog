@@ -7,19 +7,28 @@ Git作为常用的版本控制工具之一，我们应该在平时的开发中�
 
 关于git，首先需要了解几个名词，如下
 
-* `Workspace`           //工作区
+* `Working Directory`           // 工作区
 
-* `Index / Stage`       //暂存区
+* `Index / Stage Area`       // 暂存区
 
-* `Repository`          //仓库区（或本地仓库）
+* `Repository`          // 仓库区（或本地仓库）
 
-* `Remote`              //远程仓
+* `Remote`              // 远程仓
+
+在 Git 里，主要可以分成「工作区（Working Directory）」、「暂存区（Staging Area）」以及「储存区（Repository）」三个区块，通过不同的 Git 指令，可以把文件移到不同的区域：
+
+- `git add` 指令把文件从工作目录移至暂存区（或索引）。
+
+- `git commit` 指令把暂存区的內容移至仓库区。
+
 
 ## 配置
 
 Git的设置文件为`.gitconfig`，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。
 
-配置文件的优先级是：`/etc/gitconfig`、`~/.gitconfig`和 当前项目目录的config文件（即`.git/config`文件），这三个文件的优先级依次增高，每个级别重写前一个级别的值。因此，在`.git/config`中的值覆盖了在`/etc/gitconfig`中的同一个配置值。
+配置文件的优先级是：`/etc/gitconfig`、`~/.gitconfig`和 当前项目目录的config文件（即`.git/config`文件）。
+
+这三个文件的优先级依次增高，每个级别重写前一个级别的值。因此，在`.git/config`中的值覆盖了在`/etc/gitconfig`中的同一个配置值。
 
 ```
 // 显示当前的Git配置
@@ -33,17 +42,17 @@ git config [--global] user.name "[name]"
 git config [--global] user.email "[email address]"
 ```
 
-## 新建代码库
+## 新建仓库
 
 ```
-// 在当前目录新建一个Git代码库
+// 在当前目录新建一个Git仓库
 git init
 
-// 新建一个目录，并将其初始化为Git代码库
+// 新建一个目录，并将其初始化为Git仓库
 git init [project-name]
 
 // 下载一个项目和它的整个代码历史
-git clone [ssh/https]
+git clone [ssh/https/file:///]
 ```
 
 ## 增加/删除文件
@@ -62,23 +71,27 @@ git add .
 // 对于同一个文件的多处变化，可以实现分次提交
 git add -p
 
-// 删除工作区文件，并且将这次删除放入暂存区
+// 删除工作区文件，并且将这次删除放入暂存区（相当于 rm [file1] [file2]，再执行 git add 命令结果）
 git rm [file1] [file2]
+
+// 停止追踪指定文件，但该文件会保留在工作区，通常是在文件曾经被git管理过，现在不需要被git接管的时候使用【不删除物理文件，仅将该文件从缓存中删除】
+git rm --cached [file]
 
 // 将误删除的文件恢复
 git checkout -- file
-
-// 停止追踪指定文件，但该文件会保留在工作区
-git rm --cached [file]
 
 // 改名文件，并且将这个改名放入暂存区
 git mv [file-original] [file-renamed]
 ```
 
-## 代码提交
+## 提交文件
 
 ```
-// 提交暂存区到仓库区
+// 空文件提交到版本
+// 空的 Commit 出來，基本上没什么意义，有时可以不用新增文件而快速产生 Commit 來git相关的操作
+git commit --allow-empty -m "空的"
+
+// 提交暂存区文件到仓库区
 git commit -m [message]
 
 // 提交暂存区的指定文件到仓库区
@@ -134,7 +147,7 @@ git branch [branch-name]
 // 新建一个分支，并切换到该分支
 git checkout -b [branch]
 
-// 新建一个分支，指向指定commit
+// 新建一个分支，指向指定的commit
 git branch [branch] [commit]
 
 // 新建一个分支，与指定的远程分支建立追踪关系
@@ -243,6 +256,18 @@ git log -5 --pretty --oneline
 
 // 显示所有提交过的用户，按提交次数排序
 git shortlog -sn
+
+// 找某个人或某些人的 Commit
+git log --author="curder"
+git log --author="curder\|test"
+
+// 按照提交的 Message 获取对应的提交
+git log --grep="css"
+
+// 找出某行文件内容谁写的
+git blame file_name
+git blame -L 2,8 file_name
+
 ```
 
 ## 文件差异对比
@@ -350,7 +375,7 @@ git reset [file]
 // 重置暂存区与工作区，与上一次commit保持一致
 git reset --hard
 
-// 返回上一版本
+// 返回上一版本，丢弃当前提交的一个版本，如果错误的删除了，可以使用 git reflog 获取到最后的提交hash值，然后使用 git merge hash_code 回退到上一个提交
 git reset --hard HEAD^
 
 // 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
@@ -366,8 +391,8 @@ git reset --keep [commit]
 // 后者的所有变化都将被前者抵消，并且应用到当前分支
 git revert [commit]
 
-// 暂时将未提交的变化移除，稍后再移入
-
+// 撤销上一个提交，使用 git revert 当作撤销已经提交的更改，而 git reset HEAD 用来撤销没有提交的更改。
+git revert HEAD
 ```
 ## 储藏工作区
 
