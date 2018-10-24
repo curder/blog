@@ -525,3 +525,7 @@ git archive --format=tar.gz 1.0 | gzip > v1.0.tar.gz
 ## 参考链接
 
 * [Git进阶使用笔记](https://www.jianshu.com/p/f19d6b690a7e)
+
+* [為你自己學 Git](https://gitbook.tw/)
+
+* [Git 菜单](https://github.com/geeeeeeeeek/git-recipes)
