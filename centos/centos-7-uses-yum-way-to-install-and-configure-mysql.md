@@ -78,10 +78,10 @@ mysql: added process group
 
 - 授权新用户
 
-```
-CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'CKHbYiEpZokM9yB7ojqPUikSLX4P!8Y';
-GRANT ALL PRIVILEGES ON new_user_database.* TO 'new_user'@'localhost';
-```
+    ```
+    CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'CKHbYiEpZokM9yB7ojqPUikSLX4P!8Y';
+    GRANT ALL PRIVILEGES ON new_user_database.* TO 'new_user'@'localhost';
+    ```
 
 ## 检查MySQL
 
