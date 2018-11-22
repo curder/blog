@@ -53,7 +53,7 @@ sodu apt-get -y install zsh git
 ```
 chsh -s `which zsh` root # 为root用户修改默认shell为zsh
 
-chsh -s `which zsh` # 为当前用户修改默认shell为zsh
+chsh -s `which zsh` # 为当前用户修改默认shell为zsh，注意：MacOSX系统使用`chsh -s /bin/zsh`即可。
 
 chsh -s /bin/bash # 恢复bash命令
 ```
