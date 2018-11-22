@@ -32,7 +32,7 @@ echo $SHELL
 brew install zsh git
 ```
 
-> 值得注意的是：zsh 在MacOSX上使用 brew 命令的安装的 zsh 路径在`/usr/local/bin/zsh`，而系统自带的 zsh 默认是在 /bin/zsh。
+> 值得注意的是：zsh 在MacOSX上使用 brew 命令的安装的 zsh 路径在`/usr/local/bin/zsh`，而系统自带的 zsh 默认是在 /bin/zsh，如果需要使用brew安装的zsh，则在`/etc/shells`中添加一条记录，`/usr/local/bin/zsh`，也可以直接使用系统自带的zsh也行。
 
 - CentOS下的安装
 
