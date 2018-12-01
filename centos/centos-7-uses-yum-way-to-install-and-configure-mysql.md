@@ -76,7 +76,12 @@ mysql: added process group
     ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPassword1!';
     ```
 
+- 授权新用户
 
+    ```
+    CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'CKHbYiEpZokM9yB7ojqPUikSLX4P!8Y';
+    GRANT ALL PRIVILEGES ON new_user_database.* TO 'new_user'@'localhost';
+    ```
 
 ## 检查MySQL
 

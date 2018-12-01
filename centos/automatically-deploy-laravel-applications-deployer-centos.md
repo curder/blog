@@ -7,11 +7,11 @@
 ## 开始之前
 
 在开始之前，您需要以下内容：
-* 一个`CentOS 7.5.1804`服务器，具有`sudo`特权的非root用户。
-* 按照[CentOS7下LNMP安装配置](/centos/centos-7-lnmp-installation-and-configuration.md)配置好的LNMP环境
-* 一个Git服务器。可以选择使用[Gogs](https://gogs.io)、[GitLab](https://about.gitlab.com)，[Bitbucket](https://bitbucket.org)或[GitHub](https://github.com)等服务。`Gogs`、`GitLab`和`Bitbucket`免费提供私人仓库，而`GitHub`提供私人仓库，每月**$7**起。
-* 指向生产服务器的域名。
 * `Composer`和`Git`也安装在本地机器上。例如这里的MacOSX系统。
+* 一个`CentOS 7.5.1804`服务器，具有`sudo`特权的非root用户。
+* 按照[CentOS7下LNMP安装配置](/centos/centos-7-lnmp-installation-and-configuration.md)配置好的LNMP环境。
+* 一个Git服务器。可以选择使用[Gogs](https://gogs.io)、[GitLab](https://about.gitlab.com)，[Bitbucket](https://bitbucket.org)或[GitHub](https://github.com)等服务。`Gogs`、`GitLab`和`Bitbucket`免费提供私人仓库，而`GitHub`提供私人仓库，每月 **$7** 起。
+* 指向生产服务器的域名或者通过修改本地host文件解析到对应的服务器域名。
 
 ## 设置本地开发环境
 
@@ -19,7 +19,7 @@
 
 ### 下载deployer扩展
 
-由于将从本地机器创建和部署应用程序，因此首先配置本地开发环境。部署者将从本地机器控制整个部署过程，因此请先安装它。
+由于从本地机器创建和部署应用程序，因此首先配置本地开发环境。部署者将从本地机器控制整个部署过程，因此请先安装`deployer/deployer`。
 
 在**本地机器**上，打开终端并使用下载部署器安装程序`composer`：
 ```
@@ -38,16 +38,16 @@ dep --version
 接下来，在**本地机器**上创建一个Laravel项目（假如本地代码放在`~/Codes`目录下）：
 
 ```
-cd ~/Codes && composer create-project --prefer-dist laravel/laravel laravel-app "5.6.*"
+cd ~/Codes && composer create-project --prefer-dist laravel/laravel laravel-app "5.7.*"
 ```
 
 现在已经在本地计算机上安装了所有必需的扩展包。有了这个，我们将继续为应用程序创建一个Git仓库。
 
-### 本地机器连接到您的远程Git仓库
+### 本地机器连接到远程Git仓库
 
 部署旨在使用户能够从任何地方部署代码。为了实现这一功能，它需要用户将代码推送到互联网上的仓库，然后部署人员将代码拷贝到生产服务器。
 
-我们将使用开源版本控制系统Git来管理Laravel应用程序的源代码。可以使用SSH协议连接到Git服务器，为了安全地执行此操作，您需要生成SSH密钥。这比基于密码的身份验证更安全，同时也可以避免在每次部署前输入密码。
+我们将使用开源版本控制系统Git来管理Laravel应用程序的源代码。可以使用SSH协议连接到Git服务器，为了安全地执行此操作，需要生成SSH密钥。这比基于密码的身份验证更安全，同时也可以避免在每次部署前输入密码。
 
 #### 编辑SSH密钥
 
@@ -83,6 +83,7 @@ cat ~/.ssh/gitkey.pub
 * [将SSH密钥添加到GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account)
 * [将SSH密钥添加到GitLab](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html)
 * [将SSH密钥添加到Bitbucket](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html)
+* [生成/添加SSH公钥](https://gitee.com/help/articles/4181)
 
 添加完成之后，现在可以使用本地机器连接到Git服务器。使用以下命令测试连接
 
@@ -96,12 +97,13 @@ ssh -T git@mygitserver.com
 
 ## 配置生产服务器
 
-> 此部分在目标服务器即**生产服务器**上操作 1. 创建一个部署用户用于部署 2. 授权部署用户的相关操作 3. 使生产环境能够免密拉取远程git仓库代码
+> 此部分在目标服务器即**生产服务器**上操作 1. 创建一个用于部署的部署用户deployer 2. 授权部署用户的相关操作 3. 配置生产环境能够免密拉取远程git仓库代码
 
 ### 配置部署者用户
 
 部署者使用SSH协议在服务器上安全地执行命令。出于这个原因，在生产服务器创建一个用户`deployer`，Deployer可以使用该用户通过SSH登录并在您的服务器上执行命令。
 使用sudo非root用户登录到生产服务器，并使用以下命令创建一个名为`deployer`的新用户：
+
 ```
 sudo yum install -y unzip git
 sudo adduser deployer
@@ -109,10 +111,11 @@ sudo adduser deployer
 > 创建一个`deployer`部署用户，上面的命令按回车后输入用户密码和重复密码后直接按回车即可。
 
 Laravel需要一些可写的目录来存储缓存的文件和上传文件，因此部署者用户创建的目录必须可由Nginx Web服务器写入。使用下面的命令将用户添加到`nginx`组中以执行此操作：
+
 ```
 sudo usermod -aG nginx deployer
 ```
-> Nginx服务器的用户组是`nginx`，根据当前环境进行替换
+> Nginx服务器的用户组是`nginx`，根据当前环境进行替换。
 
 假设将应用程序存储在`/var/www/html/`目录中，因此将目录的所有权更改为部署者用户和`nginx`组。
 
@@ -120,7 +123,7 @@ sudo usermod -aG nginx deployer
 sudo mkdir -p /var/www/html && sudo chown deployer:nginx /var/www/html # 最后这里不要加斜线哦
 ```
 
-该**部署**的用户需要能够在中修改文件和文件夹`/var/www/html`目录。因此目录中创建的所有新文件和子目录`/var/www/html`都应该继承该文件夹的组标识（nginx）。要实现这个目标，请使用以下命令在此目录中设置组ID：
+该**部署**的用户需要能够修改文件和文件夹`/var/www/html`目录。因此目录中创建的所有新文件和子目录`/var/www/html`都应该继承该文件夹的组标识（nginx）。要实现这个目标，请使用以下命令在此目录中设置组ID：
 
 ```
 sudo chmod g+s /var/www/html
