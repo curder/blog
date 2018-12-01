@@ -420,3 +420,7 @@ CentOS 7上的Nginx、PHP-FPM、MySQL、Composer、NodeJS、Yarn和Laravel安装
 * [How to Install PHP 7 in CentOS 7](https://www.tecmint.com/install-php-7-in-centos-7/)
 
 * [Install PHP 7 on CentOS 7](https://linuxize.com/post/install-php-7-on-centos-7/)
+
+* [How To Install Node.js on a CentOS 7 server](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server)
+
+* [Centos7 安装Nodejs](https://www.jianshu.com/p/7d3f3fa056e8)
