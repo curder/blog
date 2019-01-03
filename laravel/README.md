@@ -8,7 +8,7 @@
   * [Laravel5确认框从数据库示例中删除记录](/laravel/laravel5-confirmation-box-to-delete-records-from-mysql-database-example.md)
   * [使用 laravel-sms 构建短信验证码发送校验模块](/laravel/use-laravel-sms-to-build-sms-verification-code-to-send-verification-module.md)
 
-  * [API开发相关](/larvel/api/README.md)
+  * [API开发相关](/laravel/api/README.md)
     * [对API资源的第一印象 - Laravel5.5](/laravel/api/first-impressions-on-laravel-api-resources.md)
     * [嵌套关系的可重用API资源 - Laravel5.5](/laravel/api/reusable-api-resource-with-nested-relationship-laravel-5-5.md)
     * [动态的隐藏API字段 - Laravel5.5](/laravel/api/hiding-api-fields-dynamically-laravel-5-5.md)
