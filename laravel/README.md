@@ -7,6 +7,7 @@
   * [在 Laravel 应用中使用 pjax 进行页面加速](/laravel/using-pjax-for-page-acceleration-in-the-laravel-app.md)
   * [Laravel5确认框从数据库示例中删除记录](/laravel/laravel5-confirmation-box-to-delete-records-from-mysql-database-example.md)
   * [使用 laravel-sms 构建短信验证码发送校验模块](/laravel/use-laravel-sms-to-build-sms-verification-code-to-send-verification-module.md)
+  * [在Laravel项目中创建自己的PHP函数](/laravel/creating-helpers-function.md)
 
   * [API开发相关](/laravel/api/README.md)
     * [对API资源的第一印象 - Laravel5.5](/laravel/api/first-impressions-on-laravel-api-resources.md)
