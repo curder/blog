@@ -101,3 +101,7 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 ## 显示或隐藏空白字符
 
 使用快捷键`Command + Shift + a`输入`Show WhiteSpaces`来快速切换显示和隐藏。
+
+## 设置代码自动换行
+
+使用快捷键`Command + Shift + a`输入`Use Soft Wraps`来快速切换自动显示的选项。
