@@ -1,4 +1,17 @@
-## 修改Composer镜像下载地址
+# 修改Composer镜像下载地址
+
+
+
+## 查看配置
+
+```
+composer config -l -g # 全局配置
+composer config -g repo.packagist # 项目配置
+```
+
+## 修改配置
+
+> 镜像地址有：`https://php.cnpkg.org`、`https://packagist.phpcomposer.com` 和 `https://packagist.laravel-china.org` 等可供选择，这里以`php.cnpkg.org`配置为例。
 
 * 全局配置
 
@@ -18,14 +31,7 @@ composer config repo.packagist composer https://php.cnpkg.org
 composer config -g --unset repos.packagist
 ```
 
-## 查看
-
-```
-composer config -l -g # 全局配置
-composer config -g repo.packagist # 项目配置
-```
-
-## 还原
+## 还原配置
 
 ```
 composer config -g repo.packagist composer https://packagist.org
