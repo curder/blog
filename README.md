@@ -92,6 +92,9 @@
 
   - [Javascript中的Promise](/javascript/promise/README.md)
 
+* [Vue相关](/vue/README.md)
+  - [如何将vue项目发布到github的pages](/vue/how-to-deployment-vue-project-to-github-pages.md)
+
 * [WordPress相关](wordpress/README.md)
   * [WordPress创建主题](wordpress/create_theme.md)
 
