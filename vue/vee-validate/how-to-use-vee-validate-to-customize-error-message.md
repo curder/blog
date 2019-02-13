@@ -55,7 +55,7 @@ export default {
 
 - 导入对应的语言文件，这里以简体中文为例是 `zh_CN`
 
-- 使用 `Validator.localize()` 设定为 `zh_TW`
+- 使用 `Validator.localize()` 设定为 `zh_CN`
 
 - 将自定义信息定义在 dictionary，其中第一层是语言，比如：`zh_CN` `zh_TW`等；第二层定义语言对象
 
