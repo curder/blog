@@ -1,0 +1,1 @@
+- [在 Vue 中使用 vee-validate](/vue/vee-validate/how-to-install-vee-validate-plugin.md)
