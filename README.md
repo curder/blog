@@ -108,6 +108,7 @@
 
   - [vee-validate](/vue/vee-validate/README.md)
     - [在 Vue 中使用 vee-validate](/vue/vee-validate/how-to-install-vee-validate-plugin.md)
+    - [使用 vee-validate 显示简体中文错误提示](/vue/vee-validate/how-to-use-vee-validate-plugin-show-chinese-message.md)
 
 - [WordPress 相关](wordpress/README.md)
 
