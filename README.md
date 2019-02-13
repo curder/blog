@@ -111,12 +111,13 @@
     - [使用 vee-validate 显示简体中文错误提示](/vue/vee-validate/how-to-use-vee-validate-plugin-show-chinese-message.md)
     - [如何使用 vee-validate 自定义错误提示](/vue/vee-validate/how-to-use-vee-validate-to-customize-error-message.md)
     - [如何使用 vee-validate 自定义验证规则](/vue/vee-validate/how-to-use-vee-validate-to-customize-validation-rules.md)
+    - [使用 vee-validate 时使用数据绑定](/vue/vee-validate/how-to-use-vee-validate-data-binding-in-vue.md)
 
-- [WordPress 相关](wordpress/README.md)
+* [WordPress 相关](wordpress/README.md)
 
   - [WordPress 创建主题](wordpress/create_theme.md)
 
-- [Git 相关](git/README.md)
+* [Git 相关](git/README.md)
 
   - [Git 命令清单](git/git_command_list.md)
   - [Git 合并特定 commits 到另一个分支](git/some_of_the_branches_are_commit.md)
@@ -127,7 +128,7 @@
   - [Git 获取仓库指定目录或文件](/git/get-sparse-checkout-the-repository-specified-directory-or-file.md)
   - [Git 记住用户名和密码](/git/git-remember-username-and-password.md)
 
-- [Laravel 开发](laravel/README.md)
+* [Laravel 开发](laravel/README.md)
 
   - [Laravel 项目初始化 README 模版](laravel/laravel-project-initialize-readme-template.md)
   - [使用 Laravel + adminlte + vue.js 构建项目](/laravel/prepare-project-by-laravel-adminlte-vue-js.md)
@@ -144,7 +145,7 @@
   - [Laravel 测试](/laravel/testing/README.md)
     - [Laravel 中针对 API 的 TDD 步骤](/laravel/testing/simple-tdd-in-laravel-with-11-steps.md)
 
-* [CentOS](/centos/README.md)
+- [CentOS](/centos/README.md)
 
   - [Centos 7 服务器初始化](/centos/centos-7-server-initialization.md)
   - [如何在 CentOS 上创建 sudo 用户](/centos/how-to-create-a-sudo-user-on-centos.md)
@@ -161,18 +162,18 @@
   - [如何在 CentOS 7 上安装和配置 GitLab CE](/centos/how-to-install-and-configure-gitlab-ce-on-centos-7.md)
   - [如何在 CentOS 上使用 Deployer 自动部署 Laravel 应用程序](/centos/automatically-deploy-laravel-applications-deployer-centos.md)
 
-- [Ubuntu](/ubuntu/README.md)
+* [Ubuntu](/ubuntu/README.md)
 
   - [Ubuntu 下快速搭建 LNMP 环境](/ubuntu/ubuntu-quickly-build-lnmp-environment.md)
   - [如何在 Ubuntu 上使用 Deployer 自动部署 Laravel 应用程序](/ubuntu/automatically-deploy-laravel-applications-deployer-ubuntu.md)
 
-- [Go 学习](/go/readme.md)
+* [Go 学习](/go/readme.md)
 
   - Go 安装
     - [如何在 CentOS 7 上安装 Go](/go/how-to-install-go-lang-on-centos-7.md)
     - [如何在 MacOSX 上安装 Go](/go/how-to-install-go-lang-on-mac-osx.md)
 
-- [其他](others/README.md)
+* [其他](others/README.md)
   - [SSH 登陆远程主机后进入指定目录或执行命令](/others/after-logging-in-to-the-remote-host-through-ssh-enter-the-specified-directory-or-execute-the-command.md)
   - [scp 跨机远程拷贝](others/use-scp-order-download-or-upload-files-and-dirctories.md)
   - [使用 docker 部署私有 Gogs 服务](others/user-docker-deploy-gogs.md)
