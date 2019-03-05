@@ -37,6 +37,7 @@
 | `Command + Shift + ↑` | 块移动标在{} ()或 if、while 行上，进行移动，在普通语句上行移动 |
 | `Command + /` | 单行注释 |
 | `Command + Shift + /` | 多行注释 |
+| `Command + Alt + Shift + h` | 调整代码检查的模式 |
 
 
 
