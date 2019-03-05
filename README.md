@@ -106,6 +106,7 @@
 - [Vue 相关](/vue/README.md)
 
   - [如何将 vue 项目发布到 github 的 pages](/vue/how-to-deployment-vue-project-to-github-pages.md)
+  - [使用mixins重构代码](/vue/refactoring-code-with-mixins.md)
 
   - [VeeValidate 相关](/vue/vee-validate/README.md)
     - [在 Vue 中使用 vee-validate](/vue/vee-validate/how-to-install-vee-validate-plugin.md)
