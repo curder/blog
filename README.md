@@ -39,6 +39,7 @@
     - [PhpStorm 配置主题和颜色](/tools/phpstorm/configuration-themes-and-colors.md)
     - [PHPStorm 如何配置 PHP-Code-Sniffer 和 PHP-CS-Fixer 让 PHP 代码支持 PSR2 规范](/tools/phpstorm/how-to-use-phpstorm-configures-php-code-sniffer-and-php-cs-fixer-to-support-psr2-specification.md)
     - [PhpStorm 快捷键](/tools/phpstorm/keymap.md)
+    - [PHPStorm 对 JS 或者 Vue 文件中导入路径别名识别](/tools/phpstorm/path-aliases-for-imports-in-phpstorm.md)
 
   - [Atom 的基本使用](tools/atom/normal.md)
 
@@ -106,7 +107,7 @@
 - [Vue 相关](/vue/README.md)
 
   - [如何将 vue 项目发布到 github 的 pages](/vue/how-to-deployment-vue-project-to-github-pages.md)
-  - [使用mixins重构代码](/vue/refactoring-code-with-mixins.md)
+  - [使用 mixins 重构代码](/vue/refactoring-code-with-mixins.md)
 
   - [VeeValidate 相关](/vue/vee-validate/README.md)
     - [在 Vue 中使用 vee-validate](/vue/vee-validate/how-to-install-vee-validate-plugin.md)
