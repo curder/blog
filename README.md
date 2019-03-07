@@ -152,6 +152,7 @@
   - [Laravel Nova](/laravel/nova/README.md)
     - [安装 laravel nova](/laravel/nova/how-to-installation-laravel-nove.md)
     - [使用 laravel nova 定义资源](/laravel/nova/how-to-defining-resources-use-laravel-nova.md)
+    - [使用 laravel nova 定义字段](/laravel/nova/how-to-defining-more-fields-user-laravel-nova.md)
 
 - [CentOS](/centos/README.md)
 
