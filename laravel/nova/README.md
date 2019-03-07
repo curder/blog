@@ -1,0 +1,1 @@
+- [安装 laravel nova](/laravel/nova/how-to-installation-laravel-nove.md)

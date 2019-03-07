@@ -149,6 +149,8 @@
     - [动态的隐藏 API 字段 - Laravel5.5](/laravel/api/hiding-api-fields-dynamically-laravel-5-5.md)
   - [Laravel 测试](/laravel/testing/README.md)
     - [Laravel 中针对 API 的 TDD 步骤](/laravel/testing/simple-tdd-in-laravel-with-11-steps.md)
+  - [Laravel Nova](/laravel/nova/README.md)
+    - [安装 laravel nova](/laravel/nova/how-to-installation-laravel-nove.md)
 
 - [CentOS](/centos/README.md)
 
