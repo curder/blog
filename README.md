@@ -151,6 +151,7 @@
     - [Laravel 中针对 API 的 TDD 步骤](/laravel/testing/simple-tdd-in-laravel-with-11-steps.md)
   - [Laravel Nova](/laravel/nova/README.md)
     - [安装 laravel nova](/laravel/nova/how-to-installation-laravel-nove.md)
+    - [使用 laravel nova 定义资源](/laravel/nova/how-to-defining-resources-use-laravel-nova.md)
 
 - [CentOS](/centos/README.md)
 
