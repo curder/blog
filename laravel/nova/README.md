@@ -2,3 +2,4 @@
 - [使用 laravel nova 定义资源](/laravel/nova/how-to-defining-resources-use-laravel-nova.md)
 - [使用 laravel nova 定义字段](/laravel/nova/how-to-defining-more-fields-use-laravel-nova.md)
 - [使用 laravel nova 关联资源](/laravel/nova/how-to-use-resources-relationships-in-laravel-nova.md)
+- [使用 laravel nova 验证字段](/laravel/nova/how-to-use-resources-vilidation-in-laravel-nova.md)
