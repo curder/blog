@@ -12,10 +12,10 @@ php artisan make:migration --table=posts add_more_fields_to_posts_table
 
 ```
 /**
-    * Run the migrations.
-    *
-    * @return void
-    */
+ * Run the migrations.
+ *
+ * @return void
+ */
 public function up()
 {
     Schema::table('posts', function (Blueprint $table) {

@@ -16,10 +16,10 @@ php artisan make:model Post -m
 
 ```
 /**
-    * Run the migrations.
-    *
-    * @return void
-    */
+ * Run the migrations.
+ *
+ * @return void
+ */
 public function up()
 {
     Schema::create('posts', function (Blueprint $table) {
