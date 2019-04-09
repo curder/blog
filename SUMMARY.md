@@ -157,6 +157,7 @@
     - [使用 laravel nova 对资源进行权限控制](/laravel/nova/how-to-defining-resources-authorization-in-laravel-nova.md)
     - [使用 laravel nova 对资源搜索](/laravel/nova/how-to-use-resources-searching-in-laravel-nova.md)
     - [使用 laravel nova 过滤资源](/laravel/nova/how-to-use-filters-in-laravel-nova.md)
+    - [使用 laravel nova Lenses](/laravel/nova/how-to-use-resources-lenses-in-laravel-nova.md)
 
 - [Laravel 拓展](/laravel/packages/README.md)
   - [使用 laravel-query-cache 来缓存数据库的 SELECT 请求](/laravel/using-laravel-query-cache-package-to-optimize-laravel-eloquent-queries.md)
