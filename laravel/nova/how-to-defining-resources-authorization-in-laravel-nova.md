@@ -26,7 +26,13 @@ Nova 利用了 Laravel [授权策略](https://laravel.com/docs/authorization#cre
 
 > Laravel 5.8 默认自动会检测策略，[参看这里](https://laravel-news.com/automatic-policy-resolution-laravel-5-8)
 
-不需要额外的配置！例如，要确定允许哪些用户能够更新 `Post` 模型，你只需在相应的策略类上定义一个 update 方法
+使用命令生成文件，文件地址在`app/Policies/PostPolicy.php`
+
+```
+php artisan make:policy PostPolicy -m Post
+```
+
+不需要额外的配置！例如，要确定允许哪些用户能够更新 `Post` 模型，只需在相应的策略类上定义一个 update 方法
 
 ```
 <?php
