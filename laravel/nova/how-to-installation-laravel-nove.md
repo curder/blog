@@ -58,7 +58,7 @@ laravel new laravel-nova
 将`laravel-nova`项目中的`.gitignore`文件中添加一个行
 
 ```
-nova
+/nova
 ```
 
 ## 修改项目的 composer.json 文件
