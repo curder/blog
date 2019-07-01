@@ -154,3 +154,4 @@ sh ./deploy.sh
 ## 参考地址
 
 [如何將 Vue 發佈到 GitHub ?](https://oomusou.io/vue/deployment/github/)
+[使用travis-ci集成一个vue.js项目](https://yimogit.github.io/2017/07/24/%E4%BD%BF%E7%94%A8travis-ci%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2github%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE/)
