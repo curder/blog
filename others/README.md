@@ -10,3 +10,4 @@
         - [autojump自动跳转](/others/how-to-use-autojump-plugin.md)
         - [zsh-autosuggestion终端提示](/others/how-to-use-zsh-autosuggestion-plugin.md)
         - [zsh-syntax-highlighting语法高亮](/others/how-to-use-zsh-syntax-highlighting-plugin.md)
+* [九九乘法表](/others/nine-nine-multiplication-table-in-eeach-programming-language.md)
