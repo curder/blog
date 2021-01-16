@@ -1,4 +1,4 @@
-## PhpStorm 终端
+## PHPStorm 终端
 
 ## 配置字体大小
 
