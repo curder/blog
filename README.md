@@ -41,6 +41,7 @@
     - [PhpStorm 快捷键](/tools/phpstorm/keymap.md)
     - [PHPStorm 对 JS 或者 Vue 文件中导入路径别名识别](/tools/phpstorm/path-aliases-for-imports-in-phpstorm.md)
     - [PHPStorm 对 php 警告的一些处理](/tools/phpstorm/ignore-some-errors.md)
+    - [PhpStorm 终端配置](/tools/phpstorm/terminal.md)
 
   - [Atom 的基本使用](tools/atom/normal.md)
 
