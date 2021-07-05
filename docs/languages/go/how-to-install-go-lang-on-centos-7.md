@@ -10,13 +10,13 @@
 
 首先进入可写目录：
 
-```
+```bash
 cd /tmp
 ```
 
 使用`curl`命令和Go中的链接下载`tar.gz`
 
-```
+```bash
 curl -LO https://storage.googleapis.com/golang/go1.11.linux-amd64.tar.gz
 ```
 
@@ -26,7 +26,7 @@ curl -LO https://storage.googleapis.com/golang/go1.11.linux-amd64.tar.gz
 
 使用下面的验证方法证明文件在下载过程中既未被篡改也未被破坏或损坏。shasum带有该-a 256标志的命令会产生一个唯一的256位哈希：
 
-```
+```bash
 shasum -a 256 go1.11.linux-amd64.tar.gz
 ```
 
@@ -38,7 +38,7 @@ shasum -a 256 go1.11.linux-amd64.tar.gz
 
 将Go的安装包解压缩到`/usr/local`目录中。使用`tar`命令并带有`-C`参数的命令可将内容保存到指定目录中。该`-x`标志执行提取功能，`-v`生成详细输出，`-z`通过gzip压缩实用程序过滤存档，并`-f`告诉它指定的文件名以执行以下操作：
 
-```
+```bash
 sudo tar -C /usr/local -xvzf go1.11.linux-amd64.tar.gz
 ```
 
@@ -49,7 +49,7 @@ sudo tar -C /usr/local -xvzf go1.11.linux-amd64.tar.gz
 
 这里go命令调用工作区目录`go-lang-projects`，也可以将其命名为任何名称。
 
-```
+```bash
 mkdir -p ~/go-lang-projects/{bin,pkg,src}
 ```
 
@@ -61,14 +61,15 @@ mkdir -p ~/go-lang-projects/{bin,pkg,src}
 
 使用编辑器在`/etc/profile.d/path.sh`目录中创建脚本：
 
-```
+```bash
 sudo echo "export PATH=\$PATH:/usr/local/go/bin" >> /etc/profile.d/path.sh
 ```
 
 > 如果Go安装在其他位置，则相应地调整路径。
 
 修改`GOBIN`和`GOPATH`
-```
+
+```bash
 echo "# GOBIN && GOPATH PATH" >> ~/.bash_profile
 echo 'export GOBIN="\$HOME/go-lang-projects/bin"' >> ~/.bash_profile
 echo 'export GOPATH="\$HOME/go-lang-projects"' >> ~/.bash_profile
@@ -76,7 +77,7 @@ echo 'export GOPATH="\$HOME/go-lang-projects"' >> ~/.bash_profile
 
 要将更改应用于当前的BASH会话，请使用该source命令重新加载更新的配置文件：
 
-```
+```bash
 source /etc/profile && source ~/.bash_profile
 ```
 
