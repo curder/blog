@@ -43,14 +43,14 @@ const config = {
 
 在webpack配置的入口文件`app/index.css`中引入一个`main.css`文件。
 
-```
+```javascript
 // ...
 import './main.css';
 ```
 
 编写这个css文件，内容如下：
 
-```
+```css
 body {
     background-color: #eaeaea;
 }

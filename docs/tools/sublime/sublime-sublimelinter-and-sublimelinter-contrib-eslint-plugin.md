@@ -1,39 +1,49 @@
-# Sublime插件之Sublime​Linter和Sublimelinter-contrib-eslint检查代码规范
+# Sublime代码规范检查插件
 
-[Sublime​Linter](https://packagecontrol.io/packages/SublimeLinter) 是一个代码检查框架插件，功能非常强大，支持各种语言的检查。但它本身并没有代码检查的功能，需要借助 [ESLint](http://eslint.cn/) 这样的特定语言检查支持。我们只需要使用对应的 [Sublime​Linter-contrib-eslint](https://packagecontrol.io/packages/SublimeLinter-contrib-standard) 插件即可。
+[Sublime Linter](https://packagecontrol.io/packages/SublimeLinter)
+是一个代码检查框架插件，功能非常强大，支持各种语言的检查。但它本身并没有代码检查的功能，需要借助 [ESLint](http://eslint.cn/)
+这样的特定语言检查支持。我们只需要使用对应的 [Sublime Linter-contrib-eslint](https://packagecontrol.io/packages/SublimeLinter-contrib-standard)
+插件即可。
 
-## 安装Sublime​Linter 和 Sublime​Linter-contrib-standard
+## 安装Sublime Linter 和 Sublime Linter-contrib-standard
 
-```
+```bash
 npm install -g standard
 ```
 
-然后在 Sublime text 中 `Command + Shift + p` > `Package Control:Install Package` 里面搜索关键词 `SublimeLinter`。然后再搜索 **eslint** 找到 `SublimeLinter-eslint` 将二者一并完成安装，更多安装步骤[查看这里](https://github.com/Flet/SublimeLinter-contrib-standard)。
+然后在 Sublime text 中 `Command + Shift + p` > `Package Control:Install Package` 里面搜索关键词 `SublimeLinter`。然后再搜索 **eslint**
+找到 `SublimeLinter-eslint` 将二者一并完成安装，更多安装步骤[查看这里](https://github.com/Flet/SublimeLinter-contrib-standard)。
 
 ## 配置
 
 > **注意：** 如果您跟我一样使用MAC系统的时候安装了`zsh`、`oh-my-zsh`和`.nvm`管理NodeJS，那么需要将`~/.zshrc`中关于加载`nvm`的代码注释掉。
 
 另外再建立`nodejs`和`standard`对应的软链接
-```
+
+```bash
 ln -s /Users/xiaoluo/.nvm/versions/node/v{YOUR_NVM_VERSION}/bin/node /usr/local/bin/node
 ln -s /Users/xiaoluo/.nvm/versions/node/v{YOUR_NVM_VERSION}/bin/standard /usr/local/bin/standard
 ```
 
-通过上面的配置之后，再配置Sublime​Linter中的配置，如下：
-```
-"paths": {
+通过上面的配置之后，再配置Sublime Linter中的配置，如下：
+
+```json
+{
+  "paths": {
     "linux": [],
-    "osx": ["/usr/local/bin"],
+    "osx": [
+      "/usr/local/bin"
+    ],
     "windows": []
-},
+  }
+}
 ```
 
 ## 自动格式化sublime-standard-format
 
 使用sublime升级`StandardFormat`插件，并勾选`StandardFormat`配置中的`auto save`。
 
-![](/assets/sublime-format-auto-save.png)
+<img :src="$withBase('/images/tools/sublime/sublime-format-auto-save.png')" alt="">
 
 ## 参考地址
 

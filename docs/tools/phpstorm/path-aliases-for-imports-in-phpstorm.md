@@ -12,13 +12,13 @@
 
 - `webpack.mix.js`
 
-```
+```javascript
 const mix = require('laravel-mix');
 mix.webpackConfig({
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            '@': path.resolve(__dirname , 'resources/js'),
+            '@': path.resolve(__dirname, 'resources/js'),
         },
     },
 });
@@ -26,7 +26,8 @@ mix.webpackConfig({
 
 - `LoginLayout.vue`
 
-```
+```vue
+
 <script>
 import Loading from '@/components/Loading.vue';
 </script>
@@ -36,7 +37,7 @@ import Loading from '@/components/Loading.vue';
 
 - 新增`webpack.conf.js`文件
 
-```
+```javascript
 const path = require('path');
 const webpack = require('webpack');
 module.exports = {
@@ -53,7 +54,7 @@ module.exports = {
 
 - 修改`webpack.mix.js`文件
 
-```
+```javascript
 const mix = require('laravel-mix');
 const config = require('./webpack.config');
 mix.webpackConfig(config);
@@ -61,7 +62,7 @@ mix.webpackConfig(config);
 
 - 修改 PHPStorm 中的 webpack 配置
 
-![](/assets/phpstorm/webpack-custom-config-for-phpstorm.png)
+<img :src="$withBase('/images/tools/phpstorm/webpack-custom-config-for-phpstorm.png')" alt="">
 
 ## 参考
 

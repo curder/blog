@@ -4,48 +4,53 @@
 
 ## 版本
 
-- Vue 2.5.22
-- vue-validate 2.1.7
+- Vue `2.5.22`
+- vue-validate `2.1.7`
 
 ## 编写 DemoForm.vue
 
-```
+```vue
+
 <template>
   <div>
     <div>
-      <input type="text" v-model="email" v-validate="'required|email'" data-vv-validate-on="change|blur" data- name="email">
+      <input type="text" v-model="email" v-validate="'required|email'" data-vv-validate-on="change|blur" data-
+             name="email">
     </div>
     <div>
       <span>{{ errors.first('email') }}</span>
     </div>
-    <div><button @click="submitHandle">Submit</button></div>
+    <div>
+      <button @click="submitHandle">Submit</button>
+    </div>
   </div>
 </template>
 <script>
 import Vue from "vue";
 import VeeValidate from "vee-validate";
+
 Vue.use(VeeValidate);
 export default {
   name: "DemoForm",
   data() {
-      return {
-          email: '',
-      }
+    return {
+      email: '',
+    }
   },
   methods: {
-      submitHandle() {
-          const hasError = this.errors.items.length;
-          const showFirstErrorMessage = () => alert(this.errors.items[0].msg); // 展示第一个错误信息
-          const name = hasError ? this.errors.items[0].field : '';
-          const setFocusOnErrorComponent = () => this.$root.$el.querySelector(`[name=${name}]`).focus(); // 光标聚焦在第一个错误的字段
+    submitHandle() {
+      const hasError = this.errors.items.length;
+      const showFirstErrorMessage = () => alert(this.errors.items[0].msg); // 展示第一个错误信息
+      const name = hasError ? this.errors.items[0].field : '';
+      const setFocusOnErrorComponent = () => this.$root.$el.querySelector(`[name=${name}]`).focus(); // 光标聚焦在第一个错误的字段
 
-          if (hasError) {
-              showFirstErrorMessage();
-              setFocusOnErrorComponent();
-              return;
-          }
-          alert('no error');
+      if (hasError) {
+        showFirstErrorMessage();
+        setFocusOnErrorComponent();
+        return;
       }
+      alert('no error');
+    }
   }
 };
 </script>

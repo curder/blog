@@ -1,4 +1,4 @@
-## Vagrant
+# Vagrant
 
 * [Mac系统安装Vagrant](/tools/vagrant/mac-installation-vagrant.md)
 * [使用Vagrant和LANMP环境搭建](/tools/vagrant/mac-installation-using-vagrant-and-lanmp-environment-to-build.md)

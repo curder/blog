@@ -6,7 +6,6 @@
 
 这时通过配置服务器的SSI支持来达到简化这一重复编码文件的目的。
 
-
 ## 什么是SSI
 
 **SSI**是Server Sidde Include的缩写，是服务器包含的意思，支持大部分的web服务器，例如：Apache、Nginx、Tomcat等等。
@@ -30,7 +29,6 @@ SSI是被HTML文档内需要进行处理的包含部分的SSI Servlet调用的�
 `printenv` | `<!--#printenv -->` | 返回所有定义的变量
 `set` | `<!--#set var="foo" value="Bar" -->`| 用来为定义的变量赋值
 
-
 ### Nginx启用SSI
 
 官方文档地址： [Module ngx_http_ssi_module](http://nginx.org/en/docs/http/ngx_http_ssi_module.html)
@@ -45,7 +43,7 @@ Nginx的SSI配置选项主要是以下三个：
 
 参数的上下文环境是:`http`, `server`, `location`, `if in location`，下面是示例：
 
-```
+```nginx
 server {
     listen  80;
     server_name  192.168.1.10;
@@ -61,7 +59,6 @@ server {
 }
 ```
 
-
 ### Apache上启用SSI
 
 官方文档地址：[Introduction to Server Side Includes](https://httpd.apache.org/docs/current/howto/ssi.html)
@@ -71,7 +68,6 @@ Apache的主配置文件`httpd.conf`中配置需要支持SSI的后缀（html）
 去掉`AddType text/shtml，AddOutputFilter INCLUDES .shtml`前面注释。
 
 > 注意一下包含文件的后缀。
-
 
 ## 参考链接
 

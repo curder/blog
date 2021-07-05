@@ -2,7 +2,7 @@
 
 主要通过配置文件重写配置获得ThinkPHP3的支持，配置文件放置在`~/.valet/Drivers/`下，针对ThinkPHP3我们可以使用如下配置文件，文件名命名为`ThinkPHP3ValetDriver.php`：
 
-```
+```php
 <?php
 
 class ThinkPHP3ValetDriver extends SampleValetDriver
@@ -54,7 +54,9 @@ class ThinkPHP3ValetDriver extends SampleValetDriver
     }
 }
 ```
-关于上面的三个方法`serves`、`isStaticFile`和`frontControllerPath`方法的具体介绍可以通过[查看官网](https://laravel.com/docs/5.5/valet#custom-valet-drivers)获得更多帮助。
+
+关于上面的三个方法`serves`、`isStaticFile`和`frontControllerPath`
+方法的具体介绍可以通过[查看官网](https://laravel.com/docs/5.5/valet#custom-valet-drivers)获得更多帮助。
 
 
 

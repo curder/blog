@@ -8,14 +8,16 @@
 ### 通过Oh-My-Zsh
 
 1. 克隆资源库到 `$ZSH_CUSTOM/plugins` (默认是 `~/.oh-my-zsh/custom/plugins`)
-```
+
+```bash
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ```
 
 2. 将插件添加到插件列表，让 Oh-My-Zsh 加载
 
 修改 `~/.zshrc` 文件，找到 `plugins=(git)`` 这一行，然后添加`autosuggestions`
-```
+
+```ini
 plugins=(git zsh-autosuggestions)
 ```
 
@@ -26,20 +28,20 @@ plugins=(git zsh-autosuggestions)
 
 1. 克隆资源库到你的计算机. 假设是 `~/.zsh/plugins/zsh-autosuggestions`
 
-```
+```bash
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
 ```
 
 2. 添加内容到 `.zshrc`
 
-```
+```bash
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ```
 
 3. 重新打开终端会话
 
+<img :src="$withBase('/images/others/how-to-use-zsh-autosuggestion-plugin/how-to-use-zsh-autosuggestion-plugin')" alt="">
 
-![zsh-autosuggestion](/assets/zsh-autosuggestions.gif)
 > 注意在终端输入命令行的时候后面会有浅色单词提示。
 
 ## 参考地址

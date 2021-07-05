@@ -1,6 +1,5 @@
 # 使用预加载（Eager loading）来优化 Laravel Eloquent 查询
 
-
 > 项目GitHub地址: [curder-blog/laravel-eloquent-lazy-loading](https://github.com/curder-blog/laravel-eloquent-lazy-loading)
 >
 > 英文原文：[Optimize Laravel Eloquent Queries with Eager Loading](https://laravel-news.com/eloquent-eager-loading)
@@ -11,7 +10,7 @@
 
 文章针对ORM的标准数据库优化是预加载相关数据，将建立一些模型关联关系，介绍使用预加载和不使用预加载产生的查询语句之间的区别，通过直接在代码中实现，并希望通过一些示例说明如何进行预加载，将进一步帮助您理解如何优化查询。
 
->  文章使用Laravel5.6作项目演示，其他版本也可以类似参考。
+> 文章使用Laravel5.6作项目演示，其他版本也可以类似参考。
 
 ## 简介
 
@@ -36,7 +35,8 @@ $authors = array_map(function($post) {
 
 正如上面提到的，ORM"懒惰"加载关联。如果您打算使用关联的模型数据，则可以使用预先加载将该查询总计优化为2个查询。您只需要告诉模型您需要预加载什么。
 
-这里有一个使用[Rails预加载的活动记录指南](http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations)的例子，这个概念与 [laravel的预加载](https://laravel.com/docs/5.6/eloquent-relationships#eager-loading) 概念非常相似。
+这里有一个使用[Rails预加载的活动记录指南](http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations)的例子，这个概念与 [laravel的预加载](https://laravel.com/docs/5.6/eloquent-relationships#eager-loading)
+概念非常相似。
 
 ```php
 # Rails
@@ -65,7 +65,7 @@ cd laravel-eloquent-lazy-loading && touch database/database.sqlite
 
 编辑项目根目录下的`.env`文件中数据库相关配置。
 
-```
+```dotenv
 DB_CONNECTION=sqlite
 ```
 
@@ -73,26 +73,23 @@ DB_CONNECTION=sqlite
 
 > 这个例子很简单，所以我们可以把注意力集中在预加载上，在这个过程中省略了可能使用的东西，比如**索引**和**外键**约束。
 
-
 ```bash
 php artisan make:model -m Post
 php artisan make:model -m Author
 php artisan make:model -m Profile
 ```
 
-
 `-m` 参数的意思是创建一个迁移文件与将用于创建表模型一起使用。
 
 数据模型将具有以下关联：
 
-```
+```text
 Post -> belongsTo -> Author
 Author -> hasMany -> Post
 Author -> hasOne -> Profile
 ```
 
 ### 迁移数据
-
 
 为每个表创建一个简单的迁移语句。只需要修改`up()`方法，因为 **Laravel** 会自动为新表生成`down()。`迁移文件位于`databases/migrations/`文件夹中。
 
@@ -172,7 +169,6 @@ class CreateAuthorsTable extends Migration
     }
 }
 ```
-
 
 - `Profile`
 
@@ -308,7 +304,6 @@ $factory->define(App\Profile::class, function (Faker $faker) {
 });
 ```
 
-
 这些工厂方法可以很容易通过数据库填充创建一堆可以用于查询的模型数据。
 
 打开`database/seeds/DatabaseSeeder.php`文件并将以下内容添加到`DatabaseSeeder::run()`方法中
@@ -328,7 +323,6 @@ public function run()
     });
 }
 ```
-
 
 您创建了5个`Author`，然后遍历每位作者并保存关联的配置文件和许多帖子（每位作者的帖子数量为 20 到 30 篇）。
 
@@ -381,7 +375,6 @@ class AppServiceProvider extends ServiceProvider
 
 当然也可以使用扩展包 [Laravel Debugbar](https://laravel-news.com/laravel-debugbar) 获得更详细的查询记录。
 
-
 让我们看看当我们不加载模型关系时会发生什么。运行`php artisan tinker`命令。
 
 ```php
@@ -395,7 +388,7 @@ $posts->map(function ($post) {
 
 如果检查日志文件`storages/logs/laravel.log`，应该可以看到一堆查询以获取关联的作者
 
-```
+```text
 [2018-04-15 03:07:38] local.INFO: select * from "posts"
 [2018-04-15 03:07:43] local.INFO: select * from "authors" where "authors"."id" = ? limit 1 ["1"]
 [2018-04-15 03:07:43] local.INFO: select * from "authors" where "authors"."id" = ? limit 1 ["1"]
@@ -415,7 +408,7 @@ $posts->map(function ($post) {
 
 这次你只能在日志文件中看到两个查询。所有帖子的第一个查询，以及所有关联作者的第二个查询。
 
-```
+```text
 [2018-04-15 03:12:32] local.INFO: select * from "posts"  
 [2018-04-15 03:12:32] local.INFO: select * from "authors" where "authors"."id" in (?, ?, ?, ?, ?) ["1","2","3","4","5"]
 ```
@@ -443,7 +436,7 @@ $posts->map(function ($post) {
 
 上面的命令对应的日志记录是
 
-```
+```text
 [2018-04-15 03:15:34] local.INFO: select * from "posts"  
 [2018-04-15 03:15:34] local.INFO: select * from "authors" where "authors"."id" in (?, ?, ?, ?, ?) ["1","2","3","4","5"] 
 [2018-04-15 03:15:35] local.INFO: select * from "profiles" where "profiles"."author_id" = ? and "profiles"."author_id" is not null limit 1 [1] 
@@ -452,9 +445,9 @@ $posts->map(function ($post) {
 ......
 ```
 
-现在有7个查询。前2个是预加载的，然后每当获得一个新的`Profile`模型时，都需要查询来获取每个作者的`Profile`数据。
+现在有7个查询。前2个是预加载的，然后每当获得一个新的 `Profile` 模型时，都需要查询来获取每个作者的 `Profile` 数据。
 
-使用嵌套预加载时可以避免嵌套关系中的额外查询。再次清除`storages/log/laravel.log` 文件并运行以下命令。
+使用嵌套预加载时可以避免嵌套关系中的额外查询。再次清除 `storages/log/laravel.log` 文件并运行以下命令。
 
 ```php
 namespace App;
@@ -467,7 +460,7 @@ $posts->map(function ($post) {
 
 现在，应该只有3个查询总数
 
-```
+```text
 [2018-04-15 03:18:25] local.INFO: select * from "posts"  
 [2018-04-15 03:18:25] local.INFO: select * from "authors" where "authors"."id" in (?, ?, ?, ?, ?) ["1","2","3","4","5"] 
 [2018-04-15 03:18:25] local.INFO: select * from "profiles" where "profiles"."author_id" in (?, ?, ?, ?, ?) [1,2,3,4,5] 
@@ -475,7 +468,7 @@ $posts->map(function ($post) {
 
 ### 惰性预加载
 
-可能只需要根据条件收集相关模型。在这种情况下，运行`php artisan tinker`为相关数据调用其他查询：
+可能只需要根据条件收集相关模型。在这种情况下，运行 `php artisan tinker` 为相关数据调用其他查询：
 
 ```php
 namespace App;
@@ -485,9 +478,9 @@ $posts->load('author.profile');
 $posts->first()->author->profile;
 ```
 
-应该看到总共有三个查询，但只有在`$posts->load()`被调用时才会产生。
+应该看到总共有三个查询，但只有在`$posts->load()` 被调用时会发送查询请求。
 
-```
+```text
 [2018-04-15 03:20:25] local.INFO: select * from "posts"  
 [2018-04-15 03:20:40] local.INFO: select * from "authors" where "authors"."id" in (?, ?, ?, ?, ?) ["1","2","3","4","5"] 
 [2018-04-15 03:20:40] local.INFO: select * from "profiles" where "profiles"."author_id" in (?, ?, ?, ?, ?) [1,2,3,4,5] 
@@ -497,9 +490,8 @@ $posts->first()->author->profile;
 
 希望能更多地了解预加载模型并理解它在更深层次上的工作原理。
 
-Laravel 官方 Eloquent 模型[预加载文档](https://laravel.com/docs/5.6/eloquent-relationships#eager-loading)写得也非常全面，希望通过额外的动手练习可以更好地了解优化关系查询。
-
-
+Laravel 官方 Eloquent
+模型[预加载文档](https://laravel.com/docs/5.6/eloquent-relationships#eager-loading)写得也非常全面，希望通过额外的动手练习可以更好地了解优化关系查询。
 
 ## 参考地址
 

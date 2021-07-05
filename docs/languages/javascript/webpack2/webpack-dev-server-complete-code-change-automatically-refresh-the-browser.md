@@ -41,7 +41,7 @@ sudo npm run start
 
 默认启动的是`http://localhost:8080/`，监听文件变化，并自动构建和刷新浏览器。
 
-## 配置webpack-dev-server
+## 配置 webpack-dev-server
 
 官方文档[参考这里](https://webpack.js.org/configuration/dev-server/)。
 

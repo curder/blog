@@ -16,5 +16,5 @@
 
 比如进行一些简单的运算，或者一些元素的获取等JS基础语法的调试。
 
-![](/assets/google-developer-tools/console-debug-base-code.png)
+<img :src="$withBase('/images/tools/google-developer-tools/console-debug-base-code.png')" alt="">
 

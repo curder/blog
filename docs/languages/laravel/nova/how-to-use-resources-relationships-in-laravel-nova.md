@@ -1,6 +1,7 @@
 # 使用 laravel nova 关联资源
 
-在[使用 laravel nova 定义更多字段](/laravel/nova/how-to-defining-more-fields-use-laravel-nova.md)中说到使用 nova 定义了更多的字段，这里对一些表之间的关联关系进行一些设定。
+在[使用 laravel nova 定义更多字段](/languages/laravel/nova/how-to-defining-more-fields-use-laravel-nova.md)中说到使用 nova
+定义了更多的字段，这里对一些表之间的关联关系进行一些设定。
 
 ## BelongsTo 和 HasMany
 
@@ -12,7 +13,7 @@
 php artisan make:migration alter_posts_table_add_user_id_field --table=posts
 ```
 
-```
+```php
 <?php
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -259,13 +260,12 @@ public function fields(Request $request)
 ```
 
 - 访问文章的查看界面可以看到关联的标签列表，并能进行增删改操作。
-  ![](laravel/nova/laravel-nova-relationship-post-has-many-tags.png)
+  <img :src="$withBase('/images/languages/laravel/nova/how-to-use-resources-relationships-in-laravel-nova/laravel-nova-relationship-post-has-many-tags.png')" alt="">
 
 - 访问标签的查看界面可以看到关联的文章列表，并能进行增删改操作。
-  ![](laravel/nova/laravel-nova-relationship-tag-has-many-posts.png)
+  <img :src="$withBase('/images/languages/laravel/nova/how-to-use-resources-relationships-in-laravel-nova/laravel-nova-relationship-tag-has-many-posts.png')" alt="">
 
 ## 参考链接
 
 - [Laravel Nova Relationships](https://nova.laravel.com/docs/2.0/resources/relationships.html#hasone)
-
 - [Laravel 5 Extended Generators](https://github.com/laracasts/Laravel-5-Generators-Extended#pivot-tables)

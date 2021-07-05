@@ -6,14 +6,14 @@
 
 ## 安装
 
-用`Package Control`安装`SnippetMaker`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `install`…打开**Package Control** -> 输入`SnippetMaker`后回车进入安装）。
-
+用`Package Control`安装`SnippetMaker`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `install`…打开**Package Control** -> 输入`SnippetMaker`
+后回车进入安装）。
 
 ## 新增
 
 创建代码片段之前首先要确定生效的文件类型，比如：创建一个PHP类公共方法的定义，我们可以来到某个PHP文件中，代码如下
 
-```
+```text
 public function ${1}(${2}) {
     ${0}
 }
@@ -33,13 +33,11 @@ public function ${1}(${2}) {
 
 接下来到一个PHP文件中试一下这个自定义的代码片段是不是能够正常工作。
 
-
 ## 修改
 
 要修改一个已经存在的代码片段也很简单，打开`⌘⇧P` –> 输入 `edit Snippet`后在下拉列表中选择要修改的具体代码片段，回车确定选择后进行修改。
 
 具体更细致的功能和修改请参考文章最底部的官网文档连接。
-
 
 ## 查看
 
@@ -49,13 +47,11 @@ public function ${1}(${2}) {
 
 点击回车可以将代码片段应用到当前文件中。
 
-
 ## 删除
 
 打开命令控制`Command + Shift + p`输入`delete snippet`，可以上下选择待删除的代码片段。回车确认删除。
 
 > 删除是一个危险的操作，请保证确定要这样操作，否则有可能再也找不回来。
-
 
 ## 参考链接
 

@@ -14,7 +14,6 @@
 * 配置要检出的目录或文件
 * 从远程将目标目录或文件拉取下来
 
-
 ## 具体操作
 
 演示`git`的版本是`1.8.3.1`，远程仓库地址是[swoole/swoole-src](https://github.com/swoole/swoole-src.git)。
@@ -23,29 +22,31 @@
 
 在命令行中运行如下命令
 
-```
+```bash
 git --version
 ```
+
 > 比如保证git的版本大于`1.7.0`，这里以 `git version 1.8.3.1`作为演示。
 
 ### 创建仓库存放目录
 
-```
+```bash
 mkdir swoole-src-examples && cd swoole-src-examples
 ```
+
 > 创建一个目录，这里以`swoole-src-example`，并且使用`cd`命令进入到目录中。
 
 ### 初始化仓库
 
 执行初始化仓库的命令
 
-```
+```bash
 git init
 ```
 
 ### 添加远程仓库地址
 
-```
+```bash
 git remote add origin https://github.com/swoole/swoole-src.git
 ```
 
@@ -53,7 +54,7 @@ git remote add origin https://github.com/swoole/swoole-src.git
 
 使用下面的命令允许`config`中使用**Sparse checkout**模式。
 
-```
+```bash
 git config core.sparsecheckout true
 ```
 
@@ -61,7 +62,7 @@ git config core.sparsecheckout true
 
 将要检出的目录或文件使用文件追加的形式写入到git的配置`.git/info/sparse-checkout`文件中，**允许添加多行**。
 
-```
+```bash
 echo "examples/*" >> .git/info/sparse-checkout
 ```
 
@@ -71,7 +72,7 @@ echo "examples/*" >> .git/info/sparse-checkout
 
 当仓库还是空白的情况下，首次需要执行下面的命令从远程将配置的目录或者文件拉取到本地。
 
-```
+```bash
 git pull origin master
 ```
 
@@ -79,10 +80,9 @@ git pull origin master
 
 在对配置文件`.git/info/sparse-checkout`的内容进行**增**、**删**、**改**操作之后，使用下面的命令重新修正目录和文件。
 
-```
+```bash
 git checkout
 ```
-
 
 ## 参考链接
 

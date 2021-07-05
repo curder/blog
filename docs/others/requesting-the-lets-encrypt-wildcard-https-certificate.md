@@ -6,13 +6,14 @@
 
 [acme.sh](https://github.com/Neilpang/acme.sh) 实现了 `acme` 协议, 可以从 letsencrypt 生成免费的证书。
 
-主要步骤:  
-0. 安装依赖  
-1. 安装 `acme.sh`  
-2. 生成证书  
-3. 拷贝安装证书到 `nginx/apache` 或者其他web服务器  
-4. 更新证书  
-5. 更新 acme.sh  
+主要步骤:
+
+0. 安装依赖
+1. 安装 `acme.sh`
+2. 生成证书
+3. 拷贝安装证书到 `nginx/apache` 或者其他web服务器
+4. 更新证书
+5. 更新 acme.sh
 6. 更改web服务器启用https
 
 > 记得在操作具体的命令之前将一些域名变量`<domain>.com`替换成你当前要操作的域名信息。
@@ -21,25 +22,25 @@
 
 * `Debian/Ubuntu`
 
-  ```
+  ```bash
   apt-get install curl -y && apt-get install cron -y && apt-get install socat -y
   ```
 
 * `Centos`
 
-  ```
+  ```bash
   yum install curl -y && yum install cron -y && yum install socat -y
   ```
 
 ## 安装`acme.sh`
 
-```
+```bash
 curl https://get.acme.sh | sh
 ```
 
 输出如下内容：
 
-```
+```bash
 $ curl https://get.acme.sh | sh
 % Total % Received % Xferd Average Speed Time Time Time Current
 Dload Upload Total Spent Left Speed
@@ -73,13 +74,13 @@ Dload Upload Total Spent Left Speed
 
 `acme.sh` 实现了 **acme** 协议支持的所有验证协议. 一般有两种方式验证: `http` 和 `dns` 验证.
 
-### http验证
+### http 验证
 
 #### 通用方式
 
 `http` 方式需要在你的网站根目录下放置一个文件, 来验证你的域名所有权,完成验证. 然后就可以生成证书了。
 
-```
+```bash
 ~/.acme.sh/acme.sh --issue -d <domain>.com -d www.<domain>.com --webroot /home/wwwroot/<domain>.com/
 ```
 
@@ -89,7 +90,7 @@ Dload Upload Total Spent Left Speed
 
 如果当前使用的是`nginx`服务器或者反代, `acme.sh` 还可以智能的从 `nginx`的配置中自动完成验证, 将不需要指定网站根目录:
 
-```
+```bash
 ~/.acme.sh/acme.sh --issue -d <domain>.com --nginx
 ```
 
@@ -97,7 +98,7 @@ Dload Upload Total Spent Left Speed
 
 如果你用的 `apache`服务器, `acme.sh` 还可以智能的从 `apache`的配置中自动完成验证, 你不需要指定网站根目录:
 
-```
+```bash
 ~/.acme.sh/acme.sh --issue -d <domain>.com --apache
 ```
 
@@ -107,7 +108,7 @@ Dload Upload Total Spent Left Speed
 
 如果你还没有运行任何 web 服务, 80 端口是空闲的, 那么 acme.sh 还能假装自己是一个webserver, 临时听在80 端口, 完成验证:
 
-```
+```bash
 ~/.acme.sh/acme.sh --issue -d <domain>.com --standalone
 ```
 
@@ -121,18 +122,19 @@ Dload Upload Total Spent Left Speed
 这里以aliyun获取api为例，可以访问此地址获取：[https://ak-console.aliyun.com/\#/accesskey](https://ak-console.aliyun.com/#/accesskey)。  
 然后输入下面命令。其中 `Ali_Key=""`中输入个人在阿里云后台的**Access Key ID**信息，`Ali_Secret=""`输入你的**Access Key Secret**信息。
 
-```
+```bash
 export Ali_Key="soamdagfqweaf"
 export Ali_Secret="asd213dfas"
 ```
 
 接下来再输入下面命令申请`Let’s Encrypt`泛域名免费SSL证书。
 
-```
+```bash
 ~/.acme.sh/acme.sh --issue --dns dns_ali -d <domain>.com -d *.<domain>.com
 ```
 
-第一次成功之后，`acme.sh`会记录下`App_Key`和`App_Secret`，并且生成一个定时任务，每天凌晨0：00自动检测过期域名并且自动续期。对这种方式有顾虑的，请慎重，不过也可以自行删掉用户级的定时任务，并且清理掉`~/.acme.sh`文件夹就行。
+第一次成功之后，`acme.sh`会记录下`App_Key`和`App_Secret`
+，并且生成一个定时任务，每天凌晨0：00自动检测过期域名并且自动续期。对这种方式有顾虑的，请慎重，不过也可以自行删掉用户级的定时任务，并且清理掉`~/.acme.sh`文件夹就行。
 
 ## 拷贝安装证书
 
@@ -140,16 +142,18 @@ export Ali_Secret="asd213dfas"
 
 **注意, **默认生成的证书都放在安装目录下: `~/.acme.sh/`，不要直接使用此目录下的文件。例如: 不要直接让 `nginx/apache` 的配置文件使用这下面的文件. 这里面的文件都是内部使用, 而且目录结构可能会变化.
 
-正确的使用方法是使用 `--installcert` 命令,并指定目标位置, 然后证书文件会被copy到相应的位置，如果 `/etc/nginx/ssl` 不存在需要使用`mkdir`命令创建`mkdir -p /etc/nginx/ssl`， 例如:
+正确的使用方法是使用 `--installcert` 命令,并指定目标位置, 然后证书文件会被copy到相应的位置，如果 `/etc/nginx/ssl` 不存在需要使用`mkdir`
+命令创建`mkdir -p /etc/nginx/ssl`， 例如:
 
-```
+```bash
 ~/.acme.sh/acme.sh --installcert -d <domain>.com \
 --key-file /etc/nginx/ssl/<domain>.com.key \
 --fullchain-file /etc/nginx/ssl/fullchain.cer \
 --reloadcmd "service nginx force-reload"
 ```
 
-Nginx 的配置 `ssl_certificate` 使用 `/etc/nginx/ssl/fullchain.cer` ，而非 `/etc/nginx/ssl/<domain>.cer` ，否则 SSL Labs 的测试会报 Chain issues Incomplete 错误。
+Nginx 的配置 `ssl_certificate` 使用 `/etc/nginx/ssl/fullchain.cer` ，而非 `/etc/nginx/ssl/<domain>.cer` ，否则 SSL Labs 的测试会报 Chain
+issues Incomplete 错误。
 
 `--installcert` 命令可以携带很多参数, 来指定目标文件. 并且可以指定 `reloadcmd`, 当证书更新以后, `reloadcmd`会被自动调用,让服务器生效.
 
@@ -167,19 +171,19 @@ Nginx 的配置 `ssl_certificate` 使用 `/etc/nginx/ssl/fullchain.cer` ，而�
 
 * 升级 acme.sh 到最新版
 
-```
+```bash
 acme.sh --upgrade
 ```
 
 * 如果你不想手动升级, 可以开启自动升级
-  ```
+  ```bash
   acme.sh --upgrade --auto-upgrade
   ```
 
 之后, acme.sh 就会自动保持更新了.
 
 * 你也可以随时关闭自动更新
-  ```
+  ```bash
   acme.sh --upgrade --auto-upgrade 0
   ```
 
@@ -187,7 +191,7 @@ acme.sh --upgrade
 
 这里以Nginx应用为例：
 
-```
+```nginx
 server {
     listen      80; ## listen for ipv4
     server_name   <domain>.com;
@@ -201,21 +205,19 @@ server {
     listen 443;
 
     # SSL support
-     ssl on;
-     ssl_certificate      ../ssl/fullchain.cer;
-     ssl_certificate_key  ../ssl/<domain>.com.key;
+    ssl on;
+    ssl_certificate      ../ssl/fullchain.cer;
+    ssl_certificate_key  ../ssl/<domain>.com.key;
 
     server_name <domain>.com;
     root        /web_path/public;
     index       index.php;
-
-... ...
 }
 ```
 
 更改完之后重启服务器`sudo systemctl reload nginx`，访问`<domain>.com`即可看到效果了。
 
-> 如果你使用的是aliyun等云服务器，可能还需要配置云服务器的**安全组配置**，将443端口开放访问。
+> 如果你使用的是 aliyun 等云服务器，可能还需要配置云服务器的**安全组配置**，将 443 端口开放访问。
 
 ## 参考地址
 

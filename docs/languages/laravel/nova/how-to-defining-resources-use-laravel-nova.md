@@ -1,6 +1,6 @@
 # 使用 laravel nova 定义资源
 
-通过[安装 laravel nova](/laravel/nova/how-to-installation-laravel-nove.md)已经了解了 nova 的安装。
+通过[安装 laravel nova](/languages/laravel/nova/how-to-installation-laravel-nove.md)已经了解了 nova 的安装。
 
 下面通过简单的文章增删改查来展示 nova 的高效开发后台。
 
@@ -43,9 +43,9 @@ php artisan migrate
 php artisan nova:resource Post
 ```
 
-![](/assets/laravel/laravel-nova-post-resource-init-index.png)
+<img :src="$withBase('/images/languages/laravel/nova/how-to-defining-resources-use-laravel-nova/laravel-nova-post-resource-init-index.png')" alt="">
 
-![](/assets/laravel/laravel-nova-post-resource-init-create.png)
+<img :src="$withBase('/images/languages/laravel/nova/how-to-defining-resources-use-laravel-nova/laravel-nova-post-resource-init-create.png')" alt="">
 
 可以看到，新增页面没有任何的表字段可以添加。
 
@@ -66,11 +66,11 @@ public function fields(Request $request)
 
 再次查看新增页面可以看到如下的输出。
 
-![](/assets/laravel/laravel-nova-post-resource-add-fields-for-create.png)
+<img :src="$withBase('/images/languages/laravel/nova/how-to-defining-resources-use-laravel-nova/laravel-nova-post-resource-add-fields-for-create.png')" alt="">
 
 至此，一个简单的 Posts 管理界面开发完毕，后面再对这些 CURD 界面进行一些定制化开发。
 
 ## 参考链接
 
-- [Laravel Nova Resoures Document](https://nova.laravel.com/docs/2.0/resources/)
+- [Laravel Nova Resources Document](https://nova.laravel.com/docs/2.0/resources/)
 - [Laravel Nova 入门创建一个简单的博客(一)](https://leijingwei.com/archives/31)

@@ -4,12 +4,13 @@ VeeValidate 插件自带错误提示语言，但在实际的开发场景中我�
 
 ## 版本
 
-- Vue 2.5.22
-- vue-validate 2.1.7
+- Vue `2.5.22`
+- vue-validate `2.1.7`
 
 ## 编写 DemoForm.vue
 
-```
+```vue
+
 <template>
   <div>
     <div>
@@ -22,8 +23,9 @@ VeeValidate 插件自带错误提示语言，但在实际的开发场景中我�
 </template>
 <script>
 import Vue from "vue";
-import VeeValidate, { Validator } from "vee-validate";
+import VeeValidate, {Validator} from "vee-validate";
 import zh_CN from 'vee-validate/dist/locale/zh_CN';
+
 Vue.use(VeeValidate);
 Validator.localize('zh_CN', zh_CN);
 
@@ -31,15 +33,15 @@ Validator.localize('zh_CN', zh_CN);
 const required = field => `请输入${field}`;
 const email = '邮箱格式有误';
 const messages = {
-    required,
-    email,
+  required,
+  email,
 };
 
 /** custom dictionary */
 const dictionary = {
-    zh_CN: {
-        messages,
-    },
+  zh_CN: {
+    messages,
+  },
 };
 
 Validator.localize(dictionary);
@@ -66,10 +68,10 @@ export default {
 ## 验证
 
 - 不允许为空的自定义提示
-  ![](/assets/vue/vee-validate/vee-validate-check-input-required-rule-by-custom-message.png)
+  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-use-vee-validate-to-customize-error-message/vee-validate-check-input-required-rule-by-custom-message.png')" alt="">
 
 - 邮箱地址不合法的自定义提示
-  ![](/assets/vue/vee-validate/vee-validate-check-input-email-rule-by-custom-message.png)
+  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-use-vee-validate-to-customize-error-message/vee-validate-check-input-email-rule-by-custom-message.png')" alt="">
 
 ## 参考地址
 

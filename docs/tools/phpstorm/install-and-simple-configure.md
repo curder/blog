@@ -4,21 +4,19 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 比如，这里下载的是`PhpStorm-2018.1.3.dmg`文件。
 
-
 双击下载好的`PhpStorm-2018.1.3.dmg`文件，出现下面的界面
 
-![](/assets/drop-phpstorm-to-install.png)
+<img :src="$withBase('/images/tools/phpstorm/drop-phpstorm-to-install.png')" alt="">
 
 将PhpStorm拖拽到右边的**Application**文件夹里。
 
 拖拽完成之后，来到`Launchpad`中找到PhpStorm的图标，单击打开它。
 
-![](/assets/phpstorm-select-free-license.png)
+<img :src="$withBase('/images/tools/phpstorm/phpstorm-select-free-license.png')" alt="">
 
 如上，这里选择试用30天体验。
 
 至此，下载和安装已经完成。
-
 
 ## 简单配置
 
@@ -32,7 +30,7 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 2. `Preferences` -> `Appearance` -> `Theme`一栏中选择`Darcula`。
 
-![](/assets/phpstorm-select-darcula-theme.png)
+<img :src="$withBase('/images/tools/phpstorm/phpstorm-select-darcula-theme.png')" alt="">
 
 ### 隐藏或显示工具栏Toolbar
 
@@ -42,7 +40,6 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 2. `Views`->`Toolbar`，点击隐藏，再次点击则显示。
 
-
 ### 隐藏或显示工具按钮Tool Buttons
 
 提供两种方式操作：
@@ -51,11 +48,9 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 2. `Views`->`Tool Buttons`，点击隐藏，再次点击则显示。
 
-
 ### 隐藏或显示状态栏Status Bar
 
 提供两种方式操作：
-
 
 1. 使用快捷键`Command + Shift + a` 输入`status Bar`，按回车来切换显示和隐藏。
 
@@ -79,12 +74,13 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 1. 使用快捷键`Command + Shift + a` 输入`Show Breadcrumbs`，点击回车来切换显示和隐藏。
 
-2. 来到`Preferences`（快捷键`Command + ,`）-> `Editor` -> `General` -> `Breadcrumbs`，将右侧配置中的`Show breadcrumbs`前面的勾选去掉即可隐藏，勾选则启用。
-
+2. 来到`Preferences`（快捷键`Command + ,`）-> `Editor` -> `General` -> `Breadcrumbs`，将右侧配置中的`Show breadcrumbs`
+   前面的勾选去掉即可隐藏，勾选则启用。
 
 ### 显示或隐藏文件标签Tabs Placement
 
-使用快捷键`Command + Shift + a`输入`Tabs Placement`, 点击`Tabs Placement: None`来隐藏，如果需要显示可以根据需要选择左侧`Tabs Placement: Left`，右侧`Tabs Placement: Right`，上面`Tabs Placement: Top`和底部`Tabs Placement: Bottom`。
+使用快捷键`Command + Shift + a`输入`Tabs Placement`, 点击`Tabs Placement: None`来隐藏，如果需要显示可以根据需要选择左侧`Tabs Placement: Left`
+，右侧`Tabs Placement: Right`，上面`Tabs Placement: Top`和底部`Tabs Placement: Bottom`。
 
 ### 显示或隐藏代码小地图
 
@@ -96,7 +92,8 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 ### 显示或隐藏代码区域的浏览器
 
-使用快捷键`Command + Shift +a`输入`Show browser popup in the editor`，进入`Web Browsers`的切换，将底部的`Show browser popup in the editor`的选项勾选去掉即可。
+使用快捷键`Command + Shift +a`输入`Show browser popup in the editor`，进入`Web Browsers`的切换，将底部的`Show browser popup in the editor`
+的选项勾选去掉即可。
 
 ## 显示或隐藏空白字符
 
@@ -105,3 +102,6 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 ## 设置代码自动换行
 
 使用快捷键`Command + Shift + a`输入`Use Soft Wraps`来快速切换自动显示的选项。
+              
+## 终端配置
+[参考这里](/tools/phpstorm/terminal.md)

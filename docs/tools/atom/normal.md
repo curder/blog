@@ -24,7 +24,7 @@
 * AutoComplete
     * `css-snippets` (CSS片段支持)
     * `autocomplete-modules` (`import/require`自动完成)
-    * `autocomplete-html-entities` 
+    * `autocomplete-html-entities`
 
 
 * Git
@@ -32,7 +32,7 @@
     * `merge-conflicts` (再也不怕 git 的合并冲突了，分分钟解决 conflicts)
 
 
-* Languages 
+* Languages
     * `language-vue`（VueJs支持）
     * `language-sass` (scss支持)
     * `language-blade`（blade支持）

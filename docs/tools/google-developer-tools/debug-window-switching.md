@@ -10,18 +10,15 @@ window和MacOSX系统下的快捷方式有所不同，它们分别是：
 
 * Windows：`f12`
 
-
-![](/assets/google-developer-tools/show-google-developer-tools.png)
-
+<img :src="$withBase('/images/tools/google-developer-tools/show-google-developer-tools.png')" alt="">
 
 ### 调试窗口的布局
 
-调试窗口的布局可以是分为：单独于浏览器窗口、窗口左侧、窗口下方和窗口右侧（默认模式）。 
+调试窗口的布局可以是分为：单独于浏览器窗口、窗口左侧、窗口下方和窗口右侧（默认模式）。
 
-![](/assets/google-developer-tools/switch-debug-window-mode.png)
+<img :src="$withBase('/images/tools/google-developer-tools/switch-debug-window-mode.png')" alt="">
 
 开发者可以根据个人喜好和开发需要在不同的情景下进行选择不同的布局。
-
 
 ## 参考链接
 

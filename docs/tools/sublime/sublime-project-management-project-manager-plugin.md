@@ -6,16 +6,14 @@
 
 ## 安装
 
-用`Package Control`安装`ProjectManager`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `Install`…打开`Package Control` -> 输入`ProjectManager`后回车进入安装）。
-
+用`Package Control`安装`ProjectManager`（`⌘(Command) + ⇧(Shift) + P` –> 输入 `Install`…打开`Package Control` ->
+输入`ProjectManager`后回车进入安装）。
 
 ## 新增项目
 
 用`Command + Shift + p`打开控制面板`Package Control`后输入`Add New Project`，在底部弹出的对话框中输入项目名称，默认以当前项目文件夹命名，方便后期查看。
 
-
 ## 查看
-
 
 用户`Command + Shift + p`打开控制面板`Package Control`后输入`open Project`，或者也可以直接按快捷键`Command + Control + p`呼出项目列表，然后按回车进行快速切换。
 
@@ -27,19 +25,22 @@
 
 用户`Command + Shift + p`打开控制面板`Package Control`后输入`edit project`，添加一个关联的路径，比如：
 
-```
+```json
 {
-    "folders":
-    [
-        {
-            "path": "/Volumes/Desktop/curder/blog"
-        },
-        {
-            "path": "/Volumes/Desktop/curder/example",
-            "folder_exclude_patterns": ["node_modules"]
-            "file_exclude_patterns": ['*.log']
-        },
-    ]
+  "folders": [
+    {
+      "path": "/Volumes/Desktop/curder/blog"
+    },
+    {
+      "path": "/Volumes/Desktop/curder/example",
+      "folder_exclude_patterns": [
+        "node_modules"
+      ]
+      "file_exclude_patterns": [
+        '*.log'
+      ]
+    }
+  ]
 }
 ```
 
@@ -60,7 +61,6 @@
 > 删除是一个危险的操作，请保证确定要这样操作，否则有可能再也找不回来。
 
 ## 其他命令
-
 
 - 重命名项目`rename project`
 

@@ -4,7 +4,7 @@
 
 首先选中要调试的页面元素，然后看到右下角的`Style`面板，如下：
 
-![](/assets/google-developer-tools/quick-debugging-and-modification-of-styles-panel.png)
+<img :src="$withBase('/images/tools/google-developer-tools/quick-debugging-and-modification-of-styles-panel.png')" alt="">
 
 方法一：在样式面板中找到对应的样式修改其值。
 

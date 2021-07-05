@@ -10,12 +10,11 @@
 
 * `/path/stop_data_refresh.sh` 停止执行的脚本
 
-
 ### 脚本内容
 
 #### 启动脚本`start_refresh_data.sh`
 
-```
+```bash
 #!/bin/bash
 
 # php脚本路径
@@ -35,7 +34,7 @@ done
 
 #### 暂停脚本`/path/stop_data_refresh.sh`
 
-```
+```bash
 #!/bin/bash
 
 /bin/pkill -f start_refresh_data.sh
@@ -43,11 +42,11 @@ done
 
 > 通过匹配脚本名称杀死进程。
 
-
 ### 定时任务
 
 通过执行命令`crontab -e`，写入到文件中。
-```
+
+```bash
 0 12 * * * nohup /bin/bash /path/start_data_refresh.sh &
 00 00 * * * /bin/bash /path/stop_data_refresh.sh
 ```

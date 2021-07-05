@@ -24,7 +24,8 @@ Sublime Text 3可以通过移除文件夹来恢复到初始安装状态。
 
 ### Mac OSX
 
-在Mac系统里，`~/Library`文件夹默认是隐藏的（在Finder文件夹中不可见）。可以在Finder里通过`前往`->`前往文件夹...（Command + Shift + G）`菜单后输入 `~/Library` 来浏览文件夹路径。
+在Mac系统里，`~/Library`文件夹默认是隐藏的（在Finder文件夹中不可见）。可以在Finder里通过`前往`->`前往文件夹...（Command + Shift + G）`菜单后输入 `~/Library`
+来浏览文件夹路径。
 
 ### Windows
 

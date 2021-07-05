@@ -1,18 +1,14 @@
 # 使用Laravel + adminlte + vue.js构建项目
 
-英文原文地址：https://medium.com/@lojorider/prepare-project-by-laravel-adminlte-vue-js-644cab072909
+英文原文地址：[@lojorider/prepare-project-by-laravel-adminlte-vue-js-644cab072909](https://medium.com/@lojorider/prepare-project-by-laravel-adminlte-vue-js-644cab072909)
 
 ## 本地开发环境
 
 * Laravel 5.6.16
-
 * PHP 7.1.13
     * extension=php_openssl.dll
-
     * extension=php_pdo_mysql.dll
-
 * MySQL 5.7.30
-
 * Laravel Packages
     - [acacha/adminlte-laravel](https://github.com/acacha/adminlte-laravel)
     - [laravel/dusk](https://github.com/laravel/dusk)
@@ -21,10 +17,9 @@
     - [intervention/image](https://github.com/Intervention/image)
     - [tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth)
 
-
 ## 创建项目
 
-```
+```bash
 composer create-project --prefer-dist laravel/laravel adminlte-laravel "5.6.*"
 ```
 
@@ -34,7 +29,7 @@ composer create-project --prefer-dist laravel/laravel adminlte-laravel "5.6.*"
 
 在项目`adminlte-laravel`根目录下执行命令
 
-```
+```bash
 composer require "acacha/admin-lte-template-laravel" \
 && php artisan vendor:publish --tag=adminlte --force \
 && composer require "laravel/dusk" --dev \
@@ -47,16 +42,19 @@ composer require "acacha/admin-lte-template-laravel" \
 
 添加如下内容
 
-```
-'aliases' => [
-'Html' => Spatie\Menu\Laravel\Html::class,
-'Link' => Spatie\Menu\Laravel\Link::class,
+```php
+[
+    // ...
+    'aliases' => [
+        'Html' => Spatie\Menu\Laravel\Html::class,
+        'Link' => Spatie\Menu\Laravel\Link::class,
+    ]
 ];
 ```
 
 ### 执行命令
 
-```
+```bash
 php artisan adminlte:menu
 ```
 
@@ -64,13 +62,13 @@ php artisan adminlte:menu
 
 ### 执行命令
 
-```
+```bash
 composer require "maatwebsite/excel"
 ```
 
 ### 编辑`config/app.php`配置文件
 
-```
+```php
 'aliases' => [
     'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 ];
@@ -80,14 +78,13 @@ composer require "maatwebsite/excel"
 
 ### 执行命令
 
-```
+```bash
 composer require "intervention/image"
 ```
 
-
 ### 编辑`config/app.php`配置文件
 
-```
+```php
 'aliases' => [
     'Image' => Intervention\Image\Facades\Image::class,
 ];
@@ -95,24 +92,21 @@ composer require "intervention/image"
 
 ### 执行命令
 
-```
+```bash
 php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
 ```
 
-
 ## 升级jwt-auth包
-
 
 ### 执行命令
 
-```
+```bash
 composer require "tymon/jwt-auth"
 ```
 
-
 ### 编辑`config/app.php`配置文件
 
-```
+```php
 'aliases' => [
     'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
     'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
@@ -121,10 +115,9 @@ composer require "tymon/jwt-auth"
 
 ## 修改数据库配置
 
-
 数据库配置文件为：`config\database.php`
 
-```
+```php
 'charset' => env('DB_CHARSET', 'utf8mb4'),
 'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
 ```
@@ -133,14 +126,14 @@ composer require "tymon/jwt-auth"
 
 mysql数据库的配置不支持utf8mb4
 
-```
+```dotenv
 DB_CHARSET=utf8
 DB_COLLATION=utf8_unicode_ci
 ```
 
 同时修改其他数据库配置信息，如:
 
-```
+```dotenv
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -153,8 +146,7 @@ DB_PASSWORD=secret
 
 编辑`.\database\seeds\DatabaseSeeder.php`，添加`$this->call(AdminUserSeeder::class);`
 
-
-```
+```php
 public function run()
 {
     $this->call(AdminUserSeeder::class);
@@ -163,19 +155,18 @@ public function run()
 
 ### 运行命令
 
-```
+```bash
 php artisan migrate --seed
 ```
 
 ## 启动本地服务器
 
-
-```
+```bash
 php artisan serv
 ```
 
 地址: `http://127.0.0.1:8000/login`
-邮箱: `admin@example.com` 
+邮箱: `admin@example.com`
 密码：`123456`
 
 > 邮箱和密码在迁移文件`database\seeds\AdminUserSeeder.php`中定义。
@@ -186,17 +177,16 @@ php artisan serv
 
 ### 执行命令
 
-```
+```bash
 npm install
 npm run watch
 ```
-
 
 ## 总结
 
 ### 命令行运行命令
 
-```
+```bash
 composer create-project --prefer-dist laravel/laravel adminlte-laravel "5.6.*" \
 && cd adminlte-laravel \
 && touch config/menu.php \
@@ -206,7 +196,7 @@ composer create-project --prefer-dist laravel/laravel adminlte-laravel "5.6.*" \
 
 ### 编辑`config/app.php`
 
-```
+```php
 'aliases' => [
     'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
     'Excel' => Maatwebsite\Excel\Facades\Excel::class,
@@ -221,7 +211,7 @@ composer create-project --prefer-dist laravel/laravel adminlte-laravel "5.6.*" \
 
 ### 执行命令
 
-```
+```bash
 php artisan vendor:publish --tag=adminlte --force \
 && php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5" \
 && php artisan adminlte:menu \
@@ -229,22 +219,20 @@ php artisan vendor:publish --tag=adminlte --force \
 && composer dump
 ```
 
-
 ### 配置
 
 编辑`.\database\seeds\DatabaseSeeder.php`文件，添加`$this->call(AdminUserSeeder::class);`
 
-```
+```php
 public function run()
 {
     $this->call(AdminUserSeeder::class);
 }
 ```
 
-
 编辑`.env`数据库配置信息
 
-```
+```dotenv
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -255,19 +243,19 @@ DB_PASSWORD=secret
 
 ### 设置用户
 
-```
+```bash
 php artisan migrate --seed 
 ```
 
-
 ### 其他
 
-```
+```bash
 npm install node-sass sass-loader node-less less-loader --save-dev
 ```
 
 ### 开发命令
-```
+
+```bash
 npm install
 npm run watch
 ```

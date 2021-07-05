@@ -1,4 +1,4 @@
-# 安装
+# Laravel 项目README
 
 ## 1. 下载
 
@@ -10,15 +10,13 @@
 
 > 注意：确保您的系统上显示隐藏的文件。
 
-
-
 ## 3. Composer
 
 laravel项目依赖通过`[composer](http://getcomposer.org/)`工具进行管理。
 
 第一步是通过在终端中进入到项目中并输入以下命令来安装依赖
 
-```php
+```bash
 composer install
 ```
 
@@ -38,13 +36,11 @@ npm install
 yarn
 ```
 
-
-
 ## 5. 创建数据库
 
 在服务器上创建数据库，然后更新项目根目录下的`.env`文件上如下的相关行：
 
-```
+```dotenv
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -54,8 +50,6 @@ DB_PASSWORD=secret
 ```
 
 更新上面的行已完成数据库相关设置。
-
-
 
 ## 6. artisan命令
 
@@ -83,11 +77,12 @@ php artisan db:seed
 
 应该得到每个迁移文件的消息，并且应该可以看到数据库表中的信息。
 
-### 7. NPM Run "*"
+## 7. NPM Run "*"
 
 既然已经拥有数据库表和默认行，则需要构建样式和脚本。
 
-这些文件是使用laravel mix生成的，[laravel mix](https://laravel.0x123.com/zh/docs/5.5/mix)是许多工具的包装，并且在项目的根目录下运行**webpack.mix.js**。通过执行下面的命令：
+这些文件是使用laravel
+mix生成的，[laravel mix](https://laravel.0x123.com/zh/docs/5.5/mix)是许多工具的包装，并且在项目的根目录下运行**webpack.mix.js**。通过执行下面的命令：
 
 ```bash
 npm run <command>
@@ -99,7 +94,7 @@ npm run <command>
 
 此时您已完成，您应该能够在本地浏览器中查看该项目并查看该项目。
 
-### 8. PHPUnit
+## 8. PHPUnit
 
 安装项目后，确保运行测试套件以确保所有部件都正常工作。
 
@@ -111,7 +106,7 @@ phpunit
 
 您会看到每个数百个测试都会出现一个点`.`，然后在最后提供通过测试的数量。全新的安装应该没有失败。
 
-### 9. Storage:link
+## 9. Storage:link
 
 安装项目后，您必须运行此命令以链接您的公用存储文件夹以进行用户文件上传
 
@@ -119,9 +114,7 @@ phpunit
 php artisan storage:link
 ```
 
-
-
-### 10. 登录
+## 10. 登录
 
 在项目安装完成后，您可以在浏览器中访问它，点击导航栏右侧的登录按钮。
 
@@ -135,8 +128,6 @@ php artisan storage:link
 
 如果之前在数据库迁移文件中更改了这些值，那么显然应该使用更新的值。
 
-
-
 ## Web服务器配置
 
 ### Nginx
@@ -149,11 +140,10 @@ location / {
 }
 ```
 
-
-
 ### Apache
 
-项目使用 `public/.htaccess` 文件来为前端控制器提供隐藏了 `index.php` 的优雅链接。如果当前环境使用了 `Apache` 作为Web服务器，请务必启用 `mod_rewrite` 模块，让服务器能够支持 `.htaccess` 文件的解析。
+项目使用 `public/.htaccess` 文件来为前端控制器提供隐藏了 `index.php` 的优雅链接。如果当前环境使用了 `Apache` 作为Web服务器，请务必启用 `mod_rewrite`
+模块，让服务器能够支持 `.htaccess` 文件的解析。
 
 如果项目附带的 `.htaccess` 文件不起作用，就尝试用下面的方法代替
 
@@ -165,8 +155,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [L]
 ```
-
-
 
 ## 其他优化
 

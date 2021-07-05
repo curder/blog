@@ -6,7 +6,7 @@
 
 ### 使用命令生成SSH公钥和秘钥
 
-```
+```bash
 ssh-keygen -t rsa -C "your_email@example.com" -f your_email_rsa
 ```
 
@@ -20,24 +20,25 @@ ssh-keygen -t rsa -C "your_email@example.com" -f your_email_rsa
 
 通过下面的命令，获取上面使用`ssh-keygen`命令生成的公钥内容并拷贝。
 
-```
+```bash
 cat ~/.ssh/your_email_rsa.pub
 ```
 
 #### 将公钥内容复制至代码托管平台上
 
-这里以GitHub为例，进入 [GiHub](https://github.com/) --> [Setting](https://github.com/settings/profile) --> [SSH and GPG keys](https://github.com/settings/keys) ，点击 [New SSH key](https://github.com/settings/ssh/new) 按钮。
+这里以GitHub为例，进入 [GiHub](https://github.com/) --> [Setting](https://github.com/settings/profile)
+--> [SSH and GPG keys](https://github.com/settings/keys) ，点击 [New SSH key](https://github.com/settings/ssh/new) 按钮。
 
 - 在 **Title** 文本框中输入一个标识字符
 - 在 **Key** 文本框粘贴刚才复制的公钥字符串，即`YOUR_NAME.pub`文件内容，按 `Add SSH Key` 按钮完成操作。
 
-![将公钥内容复制到代码托管平台](/assets/github-save-ssh-key.png)
+<img :src="$withBase('/images/tools/git/ssh-server-to-use-keyless-login-on-git-server/github-save-ssh-key.png')" alt="将公钥内容复制到代码托管平台">
 
 ### 验证是否成功授权
 
 在使用 `git` 命令与服务端进行交互之前，可以先验证下客户端和服务器是否握手成功。使用下面的命令验证 SSH 公钥是否正常。
 
-```
+```bash
 ssh -T git@github.com
 ```
 
@@ -47,13 +48,14 @@ ssh -T git@github.com
 
 修改SSH配置文件，`vim ~/.ssh/config`（如果没有此文件，可以打开终端，输入`touch ~/.ssh/config`生成此文件），配置域名并指定认证文件。
 
-```
+```text
 Host github.com
     HostName github.com
     User git
     IdentityFile ~/.ssh/your_email_rsa
     Port 22
 ```
+
 > 如果 git 仓库机器的ssh端口不是默认的`22`，需要配置SSH配置`~/.ssh/config`的**Port**的值为当前环境的值。
 
 当我们使用ssh连接的时候，使用的认证文件是我们刚刚定义的，特别注意这里的`Host`、`HostName`、`Port`和`IdentityFile`，不要写错。
@@ -83,13 +85,13 @@ Host github.com
 
 ### 生成第二个公钥
 
-```
+```bash
 ssh-keygen -t rsa -C "your_secondemail@email.com" -f ~/.ssh/second_rsa
 ```
 
 > 注意将此处的『youre_secondemail@example.com』 换成您的个人邮箱，这里的文件名以`second_rsa`为例。
 
-```
+```text
 Host github.com
     HostName github.com
     User git
@@ -102,19 +104,20 @@ Host second
     IdentityFile ~/.ssh/second_rsa  // 生成的第二个公钥
     Prot 22
 ```
+
 > 如果 git 仓库机器的ssh端口不是默认的`22`，需要配置SSH配置`~/.ssh/config`的**Port**的值为当前环境的值。
 
 ### 克隆代码需要注意的地方
 
 当克隆 GitHub 上的某个仓库时，之前的 Clone 地址是：
 
-```
+```bash
 git clone git@github.com:curder/test.git
 ```
 
 现在需要将 Clone 地址修改为：
 
-```
+```bash
 git clone second:curder/test.git
 ```
 

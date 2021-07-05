@@ -5,7 +5,6 @@
 
 > **注意：** `Supervisor`只能**管理非daemon的进程**，也就是说`Supervisor`不能管理守护进程。否则提示`Exited too quickly (process log may have details)`异常。
 
-
 ## 安装
 
 这里使用`yum`安装，`supervisor`没有发布在标准的CentOS源里，需要安装`epel`源。
@@ -26,10 +25,9 @@ yum install -y epel-release supervisor
 
 - `echo_supervisord_conf`：生成初始配置文件程序
 
-
 ## 启动Supervisor服务
 
-```
+```bash
 supervisord -c /etc/supervisord.conf
 ```
 
@@ -39,32 +37,34 @@ supervisord -c /etc/supervisord.conf
 
 在实际环境中，不建议将进程管理配置参数写到这个主配置文件中，应该给每个进程单独写一个配置文件，默认主配置文件引入的文件是`/etc/supervisord.d/*.ini`。
 
-
 下面是Nginx配置进程的一个例子，**注意配置文件名的后缀**
-```
+
+```ini
 [program:nginx]
-command=/sbin/nginx                                   ; 程序路径
-autostart=true
-autorestart=true                                      ; 自动重启
-priority=999                                          ; 优先级
-startsecs=1                                           ; 重启前等待时间
-startretries=100                                      ; 最大重启次数
+command = /sbin/nginx                                   ; 程序路径
+autostart = true
+autorestart = true                                      ; 自动重启
+priority = 999                                          ; 优先级
+startsecs = 1                                           ; 重启前等待时间
+startretries = 100                                      ; 最大重启次数
 ```
+
 > 一定要将被supervisor所管理的进程在**前台**运行，如果进程正在运行，请先关闭。
 
 ### 重载配置
-```
+
+```bash
 supervisorctl reread && supervisorctl update
 ```
+
 执行完上面的命令，可以看到控制台会输出如下结果
 
-```
+```text
 nginx: available
 nginx: added process group
 ```
 
 至此使用 supervisord 管理`nginx`进程已经OK。
-
 
 ## 终端管理进程
 
@@ -74,7 +74,7 @@ nginx: added process group
 
 运行`supervisorctl`命令，不加参数，会进入`supervisor`客户端的交互终端，并会列出当前所管理的所有进程。
 
-```
+```text
 [root@localhost ~]# supervisorctl
 nginx                            RUNNING   pid 4423, uptime 0:00:02
 supervisor> help
@@ -86,13 +86,14 @@ avail  exit   maintail  pid   reload  reread  shutdown  status  tail  version
 
 supervisor>
 ```
+
 > 图中`nginx`就是上面在配置文件中第一行`[program:nginx]`指定。
 
 这么多的命令不知道怎么使用可以使用`help [命令名称]`，例如：`help stop`，则会有更详细的命令解释。
 
 ### Bash终端命令
 
-```
+```bash
 supervisorctl status
 supervisorctl stop nginx
 supervisorctl start nginx
@@ -105,7 +106,7 @@ supervisorctl update # 配合reread使用
 
 默认配置没有开启WEB管理界面，需要修改主配置文件`supervisord.conf`配置文件中打开,并修改如下内容。
 
-```
+```ini
 ;[inet_http_server]         ; inet (TCP) server disabled by default
 ;port=127.0.0.1:9001        ; (ip_address:port specifier, *:port for all iface)
 ;username=user              ; (default is no username (open server))
@@ -114,19 +115,18 @@ supervisorctl update # 配合reread使用
 
 修改为：
 
-```
+```ini
 [inet_http_server]         ; inet (TCP) server disabled by default
-port=0.0.0.0:9001          ; (ip_address:port specifier, *:port for all iface)
-username=user              ; (default is no username (open server))
-password=123               ; (default is no password (open server))
+port = 0.0.0.0:9001          ; (ip_address:port specifier, *:port for all iface)
+username = user              ; (default is no username (open server))
+password = 123               ; (default is no password (open server))
 ```
 
-- `port`：绑定访问IP和端口，这里是绑定的是本地IP和`9001`端口 
+- `port`：绑定访问IP和端口，这里是绑定的是本地IP和`9001`端口
 
-- `username`：登录管理后台的用户名 
+- `username`：登录管理后台的用户名
 
 - `password`：登录管理后台的密码
-
 
 ## 配置开机启动Supervisor服务
 
@@ -135,8 +135,8 @@ password=123               ; (default is no password (open server))
 ### 添加systemctl服务
 
 1. 创建supervisor.service文件。
-    > 进入`/lib/systemd/system`目录，并创建`supervisor.service`文件，文件内容如下：
-    >```
+   > 进入`/lib/systemd/system`目录，并创建`supervisor.service`文件，文件内容如下：
+   > ```ini
     >[Unit]
     >Description=supervisor
     >After=network.target
@@ -155,26 +155,28 @@ password=123               ; (default is no password (open server))
     >```
 
 2. 修改文件权限
-```
+
+```bash
 chmod 766 supervisor.service
 ```
 
 3. 设置开机启动
-```
+
+```bash
 systemctl enable supervisor.service
 systemctl daemon-reload
 systemctl start/restart/stop supervisor.service
 ```
 
 4. 验证是否开机自启动
-```
+
+```bash
 systemctl is-enabled supervisor
 ```
 
-
 ### 添加service服务
 
-```
+```bash
 #!/bin/bash
 #
 # supervisord   This scripts turns supervisord on
@@ -239,15 +241,15 @@ esac
 
 exit $RETVAL
 ```
+
 将上面的代码内容保存到`/etc/rc.d/init.d/supervisor`文件并将文件权限修改为755，并设置开机自启动。
 
-```
+```bash
 chmod 755 /etc/rc.d/init.d/supervisor
 chkconfig supervisor on
 ```
 
 其它Linux发行版开机启动脚本：https://github.com/Supervisor/initscripts
-
 
 ## 参考地址
 

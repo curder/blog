@@ -2,7 +2,7 @@
 
 * [SSH登陆远程主机后进入指定目录或执行命令](/others/after-logging-in-to-the-remote-host-through-ssh-enter-the-specified-directory-or-execute-the-command.md)
 * [scp 跨机远程拷贝](/others/use-scp-order-download-or-upload-files-and-dirctories.md)
-* [使用docker部署私有Gogs服务](/others/user-docker-deploy-gogs.md)
+* [使用docker部署私有Gogs服务](/others/use-docker-deploy-gogs.md)
 * [申请Let's Encrypt通配符HTTPS证书](/others/requesting-the-lets-encrypt-wildcard-https-certificate.md)
 * [使用ssh-copy-id建立与远端Linux服务器的信任](/others/use-ssh-copy-id-to-establish-trust-with-a-remote-linux-server.md)
 * [Linux禁止root用户直接登录sshd并修改默认端口](/others/linux-prevents-root-users-from-directly-logging-in-to-ssh-and-modifying-the-default-port.md)

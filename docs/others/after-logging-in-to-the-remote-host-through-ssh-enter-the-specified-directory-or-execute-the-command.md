@@ -2,7 +2,7 @@
 
 通过在终端中执行下面的命令：
 
-```
+```bash
 ssh user@hostname -t 'cd /var/www/html/; bash --login'
 ssh user@hostname -t 'ls -l; bash --login'
 ```

@@ -4,7 +4,7 @@
 
 地址：https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git?s[]=homebrew
 
-```
+```bash
 # 替换brew.git:
 cd "$(brew --repo)"
 git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
@@ -18,7 +18,7 @@ git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 
 ## 使用清华源
 
-```
+```bash
 # 替换brew.git:
 cd "$(brew --repo)"
 git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/brew.git
@@ -29,7 +29,8 @@ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew-core
 ```
 
 ## 切换官方源
-```
+
+```bash
 # 重置brew.git:
 cd "$(brew --repo)"
 git remote set-url origin https://github.com/Homebrew/brew.git

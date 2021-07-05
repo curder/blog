@@ -2,7 +2,7 @@
 
 Nova 的过滤器可以让你定制你的 Nova 列表的查询条件. 例如, 你也许想定义一个过滤器, 用来快速找到 你应用中的"管理员"用户:
 
-![](/assets/laravel/laravel-nova-defining-select-filters.png)
+<img :src="$withBase('/images/languages/laravel/nova/how-to-use-filters-in-laravel-nova/laravel-nova-defining-select-filters.png')" alt="">
 
 ## 定义过滤器
 
@@ -16,7 +16,8 @@ Nova 的过滤器可以让你定制你的 Nova 列表的查询条件. 例如, �
 php artisan nova:filter UserType
 ```
 
-每个在 Nova 中生成的过滤器都包含了 2 个方法 : `apply` 和 `options`. `apply` 方法负责按希望的状态修改查询条件, 而 `options` 方法用来定义过滤器中定义的过滤选项。例如 `UserType` 过滤器内容如下
+每个在 Nova 中生成的过滤器都包含了 2 个方法 : `apply` 和 `options`. `apply` 方法负责按希望的状态修改查询条件, 而 `options` 方法用来定义过滤器中定义的过滤选项。例如 `UserType`
+过滤器内容如下
 
 ```php
 <?php
@@ -65,7 +66,7 @@ class UserType extends Filter
 
 Nova 同时页支持布尔类型的过滤器，它允许用户在一个列表中多选过滤条件。
 
-![](/assets/laravel/laravel-nova-defining-boolean-filters.png)
+<img :src="$withBase('/images/languages/laravel/nova/how-to-use-filters-in-laravel-nova/laravel-nova-defining-boolean-filters.png')" alt="">
 
 可以通过命令行`nova:filter --boolean`的命令来生成一个布尔类型的过滤器， 生成的过滤器默认放在 `app/Nova/Filters` 文件夹下：
 
@@ -130,7 +131,7 @@ class UserType extends BooleanFilter
 
 Nova 同时也支持`date`过滤器，允许用户通过时间选择器来进行过滤。
 
-![](/assets/laravel/laravel-nova-defining-date-filters.png)
+<img :src="$withBase('/images/languages/laravel/nova/how-to-use-filters-in-laravel-nova/laravel-nova-defining-date-filters.png')" alt="">
 
 可以通过命令行`nova:filter --date`的命令来生成一个时间类型的过滤器， 生成的过滤器默认放在 `app/Nova/Filters` 文件夹下：
 

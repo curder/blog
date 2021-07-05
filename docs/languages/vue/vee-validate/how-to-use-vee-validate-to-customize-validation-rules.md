@@ -4,12 +4,13 @@ VeeValidate 自带了很多有用的验证规则，但是在实际的开发生�
 
 ## 版本
 
-- Vue 2.5.22
-- vue-validate 2.1.7
+- Vue `2.5.22`
+- vue-validate `2.1.7`
 
 ## 编写 DemoForm.vue
 
-```
+```vue
+
 <template>
   <div>
     <div>
@@ -22,8 +23,9 @@ VeeValidate 自带了很多有用的验证规则，但是在实际的开发生�
 </template>
 <script>
 import Vue from "vue";
-import VeeValidate, { Validator } from "vee-validate";
+import VeeValidate, {Validator} from "vee-validate";
 import zh_CN from 'vee-validate/dist/locale/zh_CN';
+
 Vue.use(VeeValidate);
 Validator.localize('zh_CN', zh_CN);
 
@@ -31,13 +33,13 @@ Validator.localize('zh_CN', zh_CN);
 const getMessage = field => `${field}格式不正确`;
 
 const validate = value => {
-    const regex = /^\w+\.*\w+@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
-    return regex.test(value);
+  const regex = /^\w+\.*\w+@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+  return regex.test(value);
 };
 
 const myValidator = {
-    getMessage,
-    validate,
+  getMessage,
+  validate,
 };
 /** Custom Rule */
 Validator.extend('customizeEmailRule', myValidator);
@@ -63,7 +65,7 @@ export default {
 ## 验证
 
 - 邮箱地址不合法的自定义提示
-  ![](/assets/vue/vee-validate/vee-validate-check-input-email-by-customize-rule.png)
+  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-use-vee-validate-to-customize-validation-rules/vee-validate-check-input-email-by-customize-rule.png')" alt="">
 
 ## 参考地址
 

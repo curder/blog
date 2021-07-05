@@ -1,10 +1,8 @@
 # 修改Composer镜像下载地址
 
-
-
 ## 查看配置
 
-```
+```bash
 composer config -l -g # 全局配置
 composer config -g repo.packagist # 项目配置
 ```
@@ -15,28 +13,27 @@ composer config -g repo.packagist # 项目配置
 
 * 全局配置
 
-```
+```bash
 composer config -g repos.packagist composer https://php.cnpkg.org
 ```
 
 * 单独项目配置
 
-```
+```bash
 composer config repo.packagist composer https://php.cnpkg.org
 ```
 
 * 关闭全局配置
 
-```
+```bash
 composer config -g --unset repos.packagist
 ```
 
 ## 还原配置
 
-```
+```bash
 composer config -g repo.packagist composer https://packagist.org
 ```
-
 
 ## 参考链接
 

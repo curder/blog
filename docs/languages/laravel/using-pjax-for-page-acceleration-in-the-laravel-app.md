@@ -2,7 +2,8 @@
 
 > 项目代码地址：[curder-blog/laravel-pajx-demo](https://github.com/curder-blog/laravel-pajx-demo.git)
 
-[Pjax](https://github.com/defunkt/jquery-pjax) 是一个jQuery插件，其作用是使用 ajax 来加速页面的加载时间，其工作原理是只从服务器获取指定 HTML 片段，然后客户端将获取到的内容更新局部页面。
+[Pjax](https://github.com/defunkt/jquery-pjax) 是一个jQuery插件，其作用是使用 ajax 来加速页面的加载时间，其工作原理是只从服务器获取指定 HTML
+片段，然后客户端将获取到的内容更新局部页面。
 
 ## 介绍
 
@@ -13,11 +14,13 @@
 
 ### Pjax的缺点
 
-1. 不支持一些低版本的浏览器（比如：IE浏览器） 
+1. 不支持一些低版本的浏览器（比如：IE浏览器）
 2. 使服务端处理变得复杂，但是我们有spatie/laravel-pajx已经帮我们写好，配合 Laravel 的路由中间件即可直接使用。
 3. 或许对SEO优化有影响（具体不是特别清楚）
 
-综合来看，Pajx 的优点很强势，缺点也几乎可以忽略，非常值得推荐，尤其是类似像[个人博客](https://curder.com)这种大部分情况下只有主体内容变化的网站。另外它使用简单、学习成本小，即使全站只有极个别页面能用得到，尝试下没什么损失。更多 Pjax 相关介绍请参照 [Pjax GitHub](https://github.com/defunkt/jquery-pjax)。
+综合来看，Pajx 的优点很强势，缺点也几乎可以忽略，非常值得推荐，尤其是类似像[个人博客](https://curder.com)
+这种大部分情况下只有主体内容变化的网站。另外它使用简单、学习成本小，即使全站只有极个别页面能用得到，尝试下没什么损失。更多 Pjax
+相关介绍请参照 [Pjax GitHub](https://github.com/defunkt/jquery-pjax)。
 
 本文通过在Laravel5.6项目作为演示，[GitHub地址](https://github.com/curder-blog/laravel-pajx-demo.git)，主要使用到[spatie/laravel-pajx](https://github.com/spatie/laravel-pajx)扩展包。
 
@@ -37,7 +40,8 @@ composer require spatie/laravel-pajx -vvv
 
 ### 配置中间件
 
-spatie/laravel-pajx 项目的README中建议将类`\Spatie\Pjax\Middleware\FilterIfPjax`添加到`app/Http/Kernel.php`的`$middleware`全局中间件中，我不建议这么做，理由是这样的话就影响了全部的站点路由，违反了安装的最小化的原则。
+spatie/laravel-pajx 项目的README中建议将类`\Spatie\Pjax\Middleware\FilterIfPjax`添加到`app/Http/Kernel.php`的`$middleware`
+全局中间件中，我不建议这么做，理由是这样的话就影响了全部的站点路由，违反了安装的最小化的原则。
 
 我建议将它定义为单独的**路由中间件**，将其注册到`app/Http/Kernel.php`文件的`$routeMiddleware`数组中，并取名为`pjax`。
 
@@ -80,14 +84,13 @@ Route::group([ 'middleware' => 'pjax' ], function() {
 <script>
     $(document).pjax('a', '.pjax-container');
     $(document).on("pjax:timeout", function(event) {
-        // 阻止超时导致链接跳转事件发生
-        event.preventDefault()
-    });
+    // 阻止超时导致链接跳转事件发生
+    event.preventDefault()
+});
 </script>
 ```
 
 运行项目，点击`Login`和`Register`按钮时，不会发生跳转而直接进行刷新。
-
 
 
 > 另外：该扩展包会设置一个`X-AJAX`请求头以区别 pjax 请求和普通的 XHR 请求。在这种情况下，如果请求是 pjax，服务端代码会跳过页面布局部分 HTML，只渲染页面主体部分内容。
@@ -96,13 +99,14 @@ Route::group([ 'middleware' => 'pjax' ], function() {
 
 接下来再给项目添加一个页面加载的动画 [rstacruz/nprogress](https://github.com/rstacruz/nprogress)。
 
-![rstacruz/nprogress加载动画](/assets/nprogress-loading.png)
+<img :src="$withBase('/images/languages/laravel/using-pjax-for-page-acceleration-in-the-laravel-app/nprogress-loading.png')" alt="rstacruz/nprogress加载动画">
 
 ### 下载CSS和JS
 
 为了简洁起见所有的前端依赖都引用BootCDN的资源。
 
 ```html
+
 <link href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
 <script src="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 ```
@@ -112,19 +116,18 @@ Route::group([ 'middleware' => 'pjax' ], function() {
 使用 Pjax 的对应事件来调用NProgress。
 
 ```javascript
-$(document).ready(function()
-{
+$(document).ready(function () {
     $(document).pjax('a', '.pjax-container');
 
-    $(document).on('pjax:start', function() {
+    $(document).on('pjax:start', function () {
         NProgress.start();
     });
-    
-    $(document).on('pjax:end', function() {
+
+    $(document).on('pjax:end', function () {
         NProgress.done();
     });
-    
-    $(document).on("pjax:timeout", function(event) {
+
+    $(document).on("pjax:timeout", function (event) {
         // 阻止超时导致链接跳转事件发生
         event.preventDefault()
     });

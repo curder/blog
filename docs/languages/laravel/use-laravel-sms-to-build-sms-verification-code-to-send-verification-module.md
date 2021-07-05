@@ -8,7 +8,7 @@
 
 进入到laravel的项目根目录下，运行下面的composer命令安装`laravel-sms`。
 
-```
+```bash
 composer require toplan/laravel-sms
 ```
 
@@ -16,7 +16,7 @@ composer require toplan/laravel-sms
 
 在 `config/app.php` 文件的 `providers` 数组中添加
 
-```
+```php
 'providers' => [
     /*
      * Package Service Providers...
@@ -28,19 +28,20 @@ composer require toplan/laravel-sms
 
 并在 `aliases` 数组里添加
 
-```
+```php
 'PhpSms' => Toplan\PhpSms\Facades\Sms::class,
 'SmsManager' => Toplan\Sms\Facades\SmsManager::class,
 ```
 
 运行下面的命令生成配置文件
 
-```
+```bash
 php artisan vendor:publish --provider="Toplan\PhpSms\PhpSmsServiceProvider"
 php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
 ```
 
-命令运行成功后，在 `config` 文件夹中生成两个配置文件：`phpsms.php` 和 `laravel-sms.php`。其中 `phpsms.php` 中可以配置代理器信息及均衡调度方案， `laravel-sms.php` 中可以配置验证码的发送与验证方案。
+命令运行成功后，在 `config` 文件夹中生成两个配置文件：`phpsms.php` 和 `laravel-sms.php`。其中 `phpsms.php` 中可以配置代理器信息及均衡调度方案， `laravel-sms.php`
+中可以配置验证码的发送与验证方案。
 
 同时会向 `database\migrations` 中复制 `2015_12_21_111514_create_sms_table.php` 文件，用于生成 `laravel_sms` 表。该表用于记录发送短信的记录。
 
@@ -48,7 +49,7 @@ php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
 
 * 设置 scheme 数组，配置均衡调度方案。
 
-```
+```php
 'scheme' => [
     'Aliyun'
 ],
@@ -56,7 +57,7 @@ php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
 
 设置 `phpsms.php` 中 `agnets` 数组中aliyun的代理器信息。
 
-```
+```php
 /*
  * -----------------------------------
  * Aliyun
@@ -77,22 +78,23 @@ php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
 
 * 设置默认路由
 
-```
+```php
 'route' => [
   'enable'     => true, // 方便调试，上线后选择关闭
   'prefix'     => 'laravel-sms',
   'middleware' => ['api'], // 修改为api中间件
 ],
 ```
+
 * 设置请求间隔，单位为秒
 
-```
+```php
 'interval' => 60,
 ```
 
 * 设置号码验证规则
 
-```
+```php
  'validation' => [
     'phone' => [
         'isMobile'    => true,
@@ -109,7 +111,7 @@ php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
 
 * 设置验证码规则
 
-```
+```php
 'code' => [
   'length'        => 6,  //验证码长度
   'validMinutes'  => 10,  //验证码有效时间长度，单位为分钟
@@ -120,7 +122,7 @@ php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
 
 * 设置验证码内容短信
 
-```
+```php
 'content'    => \Toplan\Sms\SmsManager::closure(function ($code, $minutes, $input) {
     return "您的验证码是：{$code} （{$minutes}分钟内有效，如非本人操作，请忽略）";
 }),
@@ -128,13 +130,11 @@ php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
 
 * 开启数据库日志
 
-```
+```php
 'dbLogs' => 'ture',
 ```
 
 > 开发环境建议开启。需要提前运行 `php artisan migrate` 生成 `laravel_sms` 表。
-
-
 
 ## API 实现
 
@@ -154,7 +154,7 @@ php artisan vendor:publish --provider="Toplan\Sms\SmsManagerServiceProvider"
 
 具体代码如下：
 
-```
+```php
 <?php
 
 namespace App\Http\Traits;
@@ -215,7 +215,7 @@ trait SmsCode
 
 打开`routes/api.php`文件，添加两条路由：
 
-```
+```php
 Route::post('/sms/send-code', 'Api\SmsController@sendSmsCode');
 Route::post('/sms/validate-code', 'Api\SmsController@validateSmsCode');
 ```
@@ -224,7 +224,7 @@ Route::post('/sms/validate-code', 'Api\SmsController@validateSmsCode');
 
 建议使用`php artisan make:controller Api/SmsController`新建一个控制器，并引入上面编写的trait。
 
-```
+```php
 <?php
 
 namespace App\Http\Controllers\Api;
@@ -244,13 +244,13 @@ class SmsController extends Controller
 
 首先确保 `config/app.php` 中的语言设置正确为 `zh-CN`。
 
-```
+```php
 'locale' => 'zh_cn',
 ```
 
 然后在 `resources\lang\zh-CN` 文件夹下新建 `validation.php`，并填入本地化信息
 
-```
+```php
 return [
   'required'  => '缺少:attribute参数',
 
@@ -264,114 +264,110 @@ return [
   ],
 ];
 ```
+
 ## 前端资源
 
 这里的前端资源使用扩展包提供的`laravel-sms.js`文件，具体编写使用：
 
-```
+```javascript
 require('@common/js/helpers/laravel-sms');
 
-$(function() {
+$(function () {
     const phone_rules = {
-        register: 'register_unique_phone',
-        reset_password: 'reset_password_exists_phone',
-    },
-    token =  $('meta[name="csrf-token"]').attr('content'),
-    interval = 60,
-    requestUrl = '/api/v1/sms/send-code',
-    phone_value = () => $("#phone").val(),
-    language = {
-        sending    : '短信发送中...',
-        failed     : '请求失败，请重试',
-        resendable : '{{seconds}} 秒后再次发送'
-    },
-    notifyCallback = (msg, type) => {
-        if(type === 'sms_sent_success') {
-            toastr.success(msg);
-        }else {
-            toastr.error(msg);
+            register: 'register_unique_phone',
+            reset_password: 'reset_password_exists_phone',
+        },
+        token = $('meta[name="csrf-token"]').attr('content'),
+        interval = 60,
+        requestUrl = '/api/v1/sms/send-code',
+        phone_value = () => $("#phone").val(),
+        language = {
+            sending: '短信发送中...',
+            failed: '请求失败，请重试',
+            resendable: '{{seconds}} 秒后再次发送'
+        },
+        notifyCallback = (msg, type) => {
+            if (type === 'sms_sent_success') {
+                toastr.success(msg);
+            } else {
+                toastr.error(msg);
+            }
+        },
+        types = { // 短信验证类型，后台通过这个类型发送不用的模版
+            register: 'register', // 注册
+            reset_password: 'reset_password', // 重置密码
         }
-    },
-    types = { // 短信验证类型，后台通过这个类型发送不用的模版
-        register: 'register', // 注册
-        reset_password: 'reset_password', // 重置密码
-    }
-  ;
+    ;
 
-  // 发送ajax之前在Header头添加Access-Token，参考文档：https://github.com/toplan/laravel-sms#%E6%97%A0%E4%BC%9A%E8%AF%9D%E6%94%AF%E6%8C%81
-  $.ajaxSetup({
-      beforeSend: (xhr) => {
-          xhr.setRequestHeader('Access-Token',  phone_value());
-      }
-  });
+    // 发送ajax之前在Header头添加Access-Token，参考文档：https://github.com/toplan/laravel-sms#%E6%97%A0%E4%BC%9A%E8%AF%9D%E6%94%AF%E6%8C%81
+    $.ajaxSetup({
+        beforeSend: (xhr) => {
+            xhr.setRequestHeader('Access-Token', phone_value());
+        }
+    });
 
-  // 注册发送校验短信
-  $("#sendRegisterVerifySmsButton").sms({
-      //laravel csrf token
-      token       : token,
-      //请求间隔时间
-      interval    : interval,
-      // 请求地址
-      requestUrl  : requestUrl,
-      //语音验证码
-      voice       : false,
-      //请求参数
-      requestData : {
-          // 手机号
-          phone: phone_value,
-          // 手机号的检测规则，与配置文件中配置保持一致
-          phone_rule: phone_rules.register,
-          // 短信类型
-          type: types.register,
-      },
-      //消息展示方式(默认为alert)
-      notify : notifyCallback,
+    // 注册发送校验短信
+    $("#sendRegisterVerifySmsButton").sms({
+        //laravel csrf token
+        token: token,
+        //请求间隔时间
+        interval: interval,
+        // 请求地址
+        requestUrl: requestUrl,
+        //语音验证码
+        voice: false,
+        //请求参数
+        requestData: {
+            // 手机号
+            phone: phone_value,
+            // 手机号的检测规则，与配置文件中配置保持一致
+            phone_rule: phone_rules.register,
+            // 短信类型
+            type: types.register,
+        },
+        //消息展示方式(默认为alert)
+        notify: notifyCallback,
 
-      //语言包
-      language    : language
-  });
+        //语言包
+        language: language
+    });
 
-  // 重置密码发送校验短信
-  $("#sendResetVerifySmsButton").sms({
-      //laravel csrf token
-      token       : token,
-      //请求间隔时间
-      interval    : interval,
-      // 请求地址
-      requestUrl  : requestUrl,
-      //语音验证码
-      voice       : false,
-      //请求参数
-      requestData : {
-          // 手机号
-          phone : phone_value,
-          // 手机号的检测规则，与配置文件中配置保持一致
-          phone_rule : phone_rules.reset_password,
-          // 短信类型
-          type : types.reset_password,
-      },
-      //消息展示方式(默认为alert)
-      notify : notifyCallback,
+    // 重置密码发送校验短信
+    $("#sendResetVerifySmsButton").sms({
+        //laravel csrf token
+        token: token,
+        //请求间隔时间
+        interval: interval,
+        // 请求地址
+        requestUrl: requestUrl,
+        //语音验证码
+        voice: false,
+        //请求参数
+        requestData: {
+            // 手机号
+            phone: phone_value,
+            // 手机号的检测规则，与配置文件中配置保持一致
+            phone_rule: phone_rules.reset_password,
+            // 短信类型
+            type: types.reset_password,
+        },
+        //消息展示方式(默认为alert)
+        notify: notifyCallback,
 
-      //语言包
-      language    : language
-  });
+        //语言包
+        language: language
+    });
 });
-
 ```
-
-
-
 
 ## 测试
 
-接下来配置路由和控制器，测试下功能是否正常。
-可以同时打开 `http://domain/laravel-sms/info` 查看验证码短信发送和校验状态。
-如果启用了数据库日志，可以在 `laravel_sms` 表中查看短信发送结果的详细信息。
+接下来配置路由和控制器，测试下功能是否正常。 可以同时打开 `http://domain/laravel-sms/info` 查看验证码短信发送和校验状态。 如果启用了数据库日志，可以在 `laravel_sms`
+表中查看短信发送结果的详细信息。
 
 ### 发送验证码
 
-```
+```text
 # request
 {{api_url}}/sms/send-code
 
@@ -387,7 +383,7 @@ $(function() {
 
 ### 校验验证码
 
-```
+```text
 # request
 {{api_url}}/sms/validate-code
 
@@ -403,7 +399,6 @@ $(function() {
 ```
 
 若通过验证，则无返回。若验证失败，则会返回对应的错误信息。
-
 
 ## 参考地址
 

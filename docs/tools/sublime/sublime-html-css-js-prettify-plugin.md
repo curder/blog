@@ -4,18 +4,17 @@
 
 ## 配置node的路径
 
-"Preferences"->"Package Setting"->"HTML/CSS/JS Prettify"->"Set `node` Path"配置当前系统的`node_path`值。
+"Preferences" -> "Package Setting" -> "HTML/CSS/JS Prettify" -> "Set `node` Path"配置当前系统的`node_path`值。
 
 ## 自定义CSS配置
 
-"Preferences"->"Package Setting"->"HTML/CSS/JS Prettify"->"Prettify Preferences - User"中配置。
+"Preferences" -> "Package Setting" -> "HTML/CSS/JS Prettify" -> "Prettify Preferences - User"中配置。
 
-```
+```json
 {
-    "css":
-    {
-        "newline_between_rules": false
-    }
+  "css": {
+    "newline_between_rules": false
+  }
 }
 ```
 

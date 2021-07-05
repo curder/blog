@@ -12,7 +12,7 @@ LANMP 环境包含如下服务器软件。
 
 ### 进入到vagrant虚拟机
 
-```
+```bash
 vagrant shh
 ```
 
@@ -20,13 +20,13 @@ vagrant shh
 
 执行下面的命令对原始源进行备份
 
-```
+```bash
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 ```
 
 将下面的内容替换`/etc/apt/sources.list` 文件的源内容。
 
-```
+```text
 deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
 deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
 deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
@@ -41,7 +41,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted unive
 
 执行完上面的操作后，再执行下面的命令对源进行更新。
 
-```
+```bash
 sudo apt-get update
 ```
 
@@ -51,13 +51,13 @@ sudo apt-get update
 
 使用`apt-get`命令对nginx服务器进行安装。
 
-```
+```bash
 sudo apt-get install nginx
 ```
 
 查看安装效果
 
-```
+```bash
 nginx -v
 curl -I 'http://127.0.0.1'
 wget 'http://127.0.0.1'
@@ -68,13 +68,13 @@ telnet 127.0.0.1 80
 
 使用`apt-get`命令对apache服务器进行安装。
 
-```
+```bash
 sudo apt-get install apache2
 ```
 
 查看安装效果
 
-```
+```bash
 apache2 -v
 curl -I 'http://127.0.0.1'
 wget 'http://127.0.0.1'
@@ -85,7 +85,7 @@ telnet 127.0.0.1 80
 
 * 停掉另一个服务器
 
-```
+```bash
 sudo /etc/init.d/nginx stop
 sudo /etc/init.d/apache2 stop
 ```
@@ -94,7 +94,7 @@ sudo /etc/init.d/apache2 stop
 
 例如修改apache2的端口，配置文件在`/etc/apache2/ports.conf`
 
-```
+```bash
 sudo vi /etc/apache2/ports.conf
 
 Listen 8888
@@ -102,9 +102,9 @@ Listen 8888
 
 将apache的监听端口设置成8888。
 
-### MySQL安装
+### MySQL 安装
 
-```
+```bash
 sudo apt-get install mysql-server mysql-client
 ```
 
@@ -114,7 +114,7 @@ sudo apt-get install mysql-server mysql-client
 
 查看安装效果
 
-```
+```bash
 mysql -uroot -p
 ```
 
@@ -124,7 +124,7 @@ mysql -uroot -p
 
 使用下面的命令安装php5.5.9和一些常用的php拓展。
 
-```
+```bash
 sudo apt-get install php5-cli php5-mcrypt php5-mysql php5-gd
 ```
 
@@ -132,18 +132,19 @@ sudo apt-get install php5-cli php5-mcrypt php5-mysql php5-gd
 
 * 支持apache2的php模块
 
-```
+```bash
 sudo apt-get install libapache2-mod-php5
 ```
 
 * 开启rewrite功能
-```
+
+```bash
 sudo a2enmod rewrite
 ```
 
 #### Nginx相关设置
 
-```
+```bash
 sudo apt-get install php5-cgi php5-fpm
 ```
 
@@ -151,7 +152,7 @@ sudo apt-get install php5-cgi php5-fpm
 
 修改成9000端口 ，默认sock模式
 
-```
+```bash
 cd /etc/php5/fpm/pool.d
 sudo vim www.conf # search listen = 127.0.0.1:9000
 sudo /etc/init.d/php5-fpm restart

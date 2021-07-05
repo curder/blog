@@ -4,14 +4,15 @@ VeeValidate 能搭配数据绑定一起运行吗？比如一些场景下需要�
 
 ## 版本
 
-- Vue 2.5.22
-- vue-validate 2.1.7
+- Vue `2.5.22`
+- vue-validate `2.1.7`
 
 ## 编写 DemoForm.vue
 
 ### 数据绑定到字符串
 
-```
+```vue
+
 <template>
   <div>
     <div>
@@ -25,24 +26,26 @@ VeeValidate 能搭配数据绑定一起运行吗？比如一些场景下需要�
 <script>
 import Vue from "vue";
 import VeeValidate from "vee-validate";
+
 Vue.use(VeeValidate);
 export default {
   name: "DemoForm",
-    data() {
-        return {
-            rules: 'required|email',
-        }
-    },
+  data() {
+    return {
+      rules: 'required|email',
+    }
+  },
 };
 </script>
 ```
 
-- 将自定义的规则放到 data 内
-- 将 VeeValidate 的 v-validate 指令绑定到 data 的 rules
+- 将自定义的规则放到 `data` 内
+- 将 VeeValidate 的 v-validate 指令绑定到 `data` 的 rules
 
 ### 数据绑定到对象
 
-```
+```vue
+
 <template>
   <div>
     <div>
@@ -56,17 +59,18 @@ export default {
 <script>
 import Vue from "vue";
 import VeeValidate from "vee-validate";
+
 Vue.use(VeeValidate);
 export default {
   name: "DemoForm",
-    data() {
-        return {
-            rules: {
-                required: true,
-                email: true,
-            },
-        }
-    },
+  data() {
+    return {
+      rules: {
+        required: true,
+        email: true,
+      },
+    }
+  },
 };
 </script>
 ```

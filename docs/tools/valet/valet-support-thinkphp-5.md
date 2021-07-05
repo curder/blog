@@ -2,7 +2,7 @@
 
 主要通过配置文件重写配置获得ThinkPHP5的支持，配置文件放置在`~/.valet/Drivers/`下，针对ThinkPHP5我们可以使用如下配置文件，文件名命名为`ThinkPHP5ValetDriver.php`：
 
-```
+```php
 <?php
 
 class ThinkPHP5ValetDriver extends ValetDriver
@@ -55,4 +55,6 @@ class ThinkPHP5ValetDriver extends ValetDriver
     }
 }
 ```
-关于上面的三个方法`serves`、`isStaticFile`和`frontControllerPath`方法的具体介绍可以通过[查看官网](https://laravel.com/docs/5.6/valet#custom-valet-drivers)获得更多帮助。
+
+关于上面的三个方法`serves`、`isStaticFile`和`frontControllerPath`
+方法的具体介绍可以通过[查看官网](https://laravel.com/docs/5.6/valet#custom-valet-drivers)获得更多帮助。

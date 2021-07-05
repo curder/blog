@@ -52,4 +52,4 @@ module.exports = config;
 
 访问编译好的页面可以查看到css被分离成单独的文件。
 
-![](/assets/webpack2/automatically-separate-css-to-independent-file.png)
+<img :src="$withBase('/images/languages/javascript/webpack2/automatically-separate-css-to-independent-file/automatically-separate-css-to-independent-file.png')" alt="">

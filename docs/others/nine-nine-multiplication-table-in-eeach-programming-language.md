@@ -4,7 +4,7 @@
 
 ### JS
 
-```
+```javascript
 let str = "";
 for (let x = 1; x <= 9; x++) {
     for (let y = 1; y <= x; y++) {
@@ -17,7 +17,7 @@ console.log(str);
 
 ### PHP
 
-```
+```php
 <?php
 
 for ($x = 1; $x <= 9; ++$x) {
@@ -30,7 +30,7 @@ for ($x = 1; $x <= 9; ++$x) {
 
 ### GoLang
 
-```
+```go
 for x := 1; x <= 9 ; x++  {
     for y := 1; y <= x ; y++  {
         fmt.Printf("%d * %d = %d " , x, y, x * y )

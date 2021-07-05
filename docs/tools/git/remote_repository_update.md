@@ -6,34 +6,37 @@
 
 * 查看远程仓库
 
-```
+```bash
 git remote -v
 ```
+
 > 默认情况下会有一个`origin`的远程仓库名
 
 * 从远程获取最新版本到本地新建的分支
 
-```
+```bash
 git fetch origin master:temp
 ```
 
 * 比较区别
 
-```
+```bash
 git diff temp
 ```
+
 > 比较本地`master`分支和远程`master`分支的区别
 
 * 合并分支
 
-```
+```bash
 git merge temp
 ```
+
 > 合并`temp`分支到`master`。
 
 * 删除临时分支
 
-```
+```bash
 git branch -d temp
 ```
 

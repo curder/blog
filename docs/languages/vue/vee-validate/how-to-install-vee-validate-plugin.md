@@ -6,18 +6,18 @@
 
 ## 版本
 
-- Vue 2.5.22
-- vue-validate 2.1.7
+- Vue `2.5.22`
+- vue-validate `2.1.7`
 
 ## 安装
 
-```
+```bash
 yarn add vee-validate
 ```
 
 使用上面的命令安装完后可以在`package.json`中看到对应的`vee-validate`。
 
-```
+```json
 {
   "name": "vee-validate",
   "version": "0.1.0",
@@ -50,7 +50,7 @@ yarn add vee-validate
 
 ## 编写 DemoForm.vue
 
-```
+```vue
 <template>
   <div>
     <div>
@@ -79,10 +79,10 @@ export default {
 ## 验证
 
 - 验证必须填写
-  ![](/assets/vue/vee-validate/vee-validate-check-input-required-rule.png)
+  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-install-vee-validate-plugin/vee-validate-check-input-required-rule.png')" alt="">
 
 - 邮箱格式必须填写正确
-  ![](/assets/vue/vee-validate/vee-validate-check-input-email-rule.png)
+  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-install-vee-validate-plugin/vee-validate-check-input-email-rule.png')" alt="">
 
 ## 参考地址
 

@@ -1,30 +1,33 @@
 # PHPStorm如何配置PHP-Code-Sniffer和PHP-CS-Fixer让PHP代码支持PSR2规范
 
 ## phpcs
-[PHP Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer/) 简称 `phpcs`，用来检查PHP代码是否符合PSR-2，若完全符合则没有任何结果，若有任何错误将显示错误报告。
+
+[PHP Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer/) 简称 `phpcs`
+，用来检查PHP代码是否符合PSR-2，若完全符合则没有任何结果，若有任何错误将显示错误报告。
 
 ### 安装
 
 使用Composer命令进行全局安装[phpcs](https://github.com/squizlabs/PHP_CodeSniffer)。
 
-```
+```bash
 composer global require 'squizlabs/php_codesniffer=*'
 ```
 
 ### 测试
-```
+
+```bash
 phpcs --version
 ```
 
 输出如下提示
 
-```
+```bash
 PHP_CodeSniffer version 3.2.3 (stable) by Squiz (http://www.squiz.net)
 ```
 
 ### 检查PSR-2命令行
 
-```
+```bash
 phpcs --standard=PSR2 laravel/app
 ```
 
@@ -34,7 +37,7 @@ phpcs --standard=PSR2 laravel/app
 
 输出类似如下的内容：
 
-```
+```text
 FILE: /Volumes/codes/Desktop_Temp/201801/laravel/laravel-model-observers/app/Observers/PostObserver.php
 -------------------------------------------------------------------------------------------------------
 FOUND 9 ERRORS AFFECTING 9 LINES
@@ -54,6 +57,7 @@ PHPCBF CAN FIX THE 9 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 
 Time: 104ms; Memory: 6Mb
 ```
+
 若没有任何违反`PSR-2`之处，将没有任何回应，否则将出現类似如上的输出信息，告知用户那个文件有问题，错在哪些地方。其中FOUND为行数。
 
 至此，phpcs安装完毕。
@@ -68,25 +72,25 @@ Time: 104ms; Memory: 6Mb
 
 使用Composer命令进行全局安装 [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)。
 
-```
+```bash
 composer global require friendsofphp/php-cs-fixer
 ```
 
 ### 测试
 
-```
+```bash
 php-cs-fixer  --version
 ```
 
 输出如下提示
 
-```
+```text
 PHP CS Fixer 2.12.0 Long Journey by Fabien Potencier and Dariusz Ruminski
 ```
 
 ### 修正PSR-2命令行
 
-```
+```bash
 php-cs-fixer fix laravel/app/ --rules=@PSR2 --verbose
 ```
 
@@ -98,7 +102,7 @@ php-cs-fixer fix laravel/app/ --rules=@PSR2 --verbose
 
 输出类似如下的内容：
 
-```
+```text
 SSSSSSSSSSSSSFSSSSSSS
 Legend: ?-unknown, I-invalid file syntax, file ignored, S-Skipped, .-no changes, F-fixed, E-error
    1) app/Observers/PostObserver.php (braces, single_blank_line_at_eof)
@@ -122,21 +126,21 @@ PhpStorm对于PSR-2有以下支持:
 
 `Preferences` -> `Editor` -> `Code Style` -> `PHP : Set from…` -> `Predefined Style` -> `PSR1/PSR2`
 
-![](/assets/phpstorm/editor-code-style-php-psr-1-and-psr-2.png)
+<img :src="$withBase('/images/tools/phpstorm/editor-code-style-php-psr-1-and-psr-2.png')" alt="">
 
-PSR-2 所没规定的 Code Style
-如下图所示，可能会希望 array 的 key 与 value 能对齐，但这病不是 PSR-2 所规定的style，开发者可以根据需要自行设定。
+PSR-2 所没规定的 Code Style 如下图所示，可能会希望 array 的 key 与 value 能对齐，但这病不是 PSR-2 所规定的style，开发者可以根据需要自行设定。
 
-![](/assets/phpstorm/editor-code-style-php-wrapping-and-braces-array-align-key-value-pairs.png)
+<img :src="$withBase('/images/tools/phpstorm/editor-code-style-php-wrapping-and-braces-array-align-key-value-pairs.png')" alt="">
 
 ### phpcs
+
 `Preferences` -> `Languages & Frameworks` -> `PHP` -> `Code Sniffer`
 
-![](/assets/phpstorm/languages-and-frameworks-php-code-sniffer-for-current-project-configuration.png)
+<img :src="$withBase('/images/tools/phpstorm/languages-and-frameworks-php-code-sniffer-for-current-project-configuration.png')" alt="">
 
 指定 `phpcs` 路徑 : `/Users/xiaoluo/.composer/vendor/bin/phpcs`，其中`/Users/xiaoluo/`为当前电脑的家目录。
 
-![](/assets/phpstorm/languages-and-frameworks-php-code-sniffer-for-current-project-configuration-phpcs-path.png)
+<img :src="$withBase('/images/tools/phpstorm/languages-and-frameworks-php-code-sniffer-for-current-project-configuration-phpcs-path.png')" alt="">
 
 `Preferences` -> `Editor` -> `Inspections`
 
@@ -144,7 +148,7 @@ PSR-2 所没规定的 Code Style
 
 * 将`Coding standard`选`PSR2`。
 
-![](/assets/phpstorm/editor-inspections-php-code-sniffer-validation-psr2.png)
+<img :src="$withBase('/images/tools/phpstorm/editor-inspections-php-code-sniffer-validation-psr2.png')" alt="">
 
 至此，phpStorm的phpcs配置完毕。
 
@@ -154,7 +158,7 @@ PSR-2 所没规定的 Code Style
 
 按`+`新增**External Tools**。
 
-![](/assets/phpstorm/php-cs-fixer-external-tools.png)
+<img :src="$withBase('/images/tools/phpstorm/php-cs-fixer-external-tools.png')" alt="">
 
 在模板中添加如下内容：
 
@@ -170,7 +174,7 @@ PSR-2 所没规定的 Code Style
 
 上述文件中包含一个`php-cs-fixer`的配置文件，`/Users/xiaoluo/.phpcsfixer`内容如下：
 
-```
+```php
 <?php
 $finder = PhpCsFixer\Finder::create()
           ->exclude('tests/')
@@ -191,13 +195,13 @@ return PhpCsFixer\Config::create()
 ;
 ```
 
-![](/assets/phpstorm/create-php-cs-fixer-tool.png)
+<img :src="$withBase('/images/tools/phpstorm/create-php-cs-fixer-tool.png')" alt="">
 
 ### 添加快捷键
+
 `Preferences` -> `keymap` -> 搜索`php-cs-fixer` -> 右键点击`Add Keyboard Shortcut`
 
-![](/assets/phpstorm/preferences-keymap-add-keyboard-shortcut.png)
-
+<img :src="$withBase('/images/tools/phpstorm/preferences-keymap-add-keyboard-shortcut.png')" alt="">
 
 ### 测试
 
@@ -208,12 +212,14 @@ return PhpCsFixer\Config::create()
 * `⌃ + ⌥ + ⇧+ L` : 设定重新整理Coding Style方式。
 
 添加完以后快捷键为：
-![](/assets/phpstorm/preferences-keymap-add-keyboard-shortcut-shift-control-command-l.png)
+
+<img :src="$withBase('/images/tools/phpstorm/preferences-keymap-add-keyboard-shortcut-shift-control-command-l.png')" alt="">
 
 #### 一些简单的格式化设置
+
 使用命令`Command + Shift + a`后输入：'Show Reformat File Dialog'关键字，后看到下面的配置
 
-![](/assets/phpstorm/php-cs-fixer-refomat-file.png)
+<img :src="$withBase('/images/tools/phpstorm/php-cs-fixer-refomat-file.png')" alt="">
 
 * `Optimize imports` : 没用到的namespace，use会自动移除。
 

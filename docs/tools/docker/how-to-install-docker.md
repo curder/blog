@@ -18,7 +18,7 @@
 
 ## 在centos系统上安装docker
 
-```
+```bash
 sudo yum remove docker \
                   docker-client \
                   docker-client-latest \
@@ -46,9 +46,7 @@ sudo usermod -aG docker your-user # 如果想将Docker用作非root用户，应�
 
 验证是否安装成功可以执行`sudo docker run hello-world`命令。
 
-
 官方安装参考地址：https://docs.docker.com/install/linux/docker-ce/centos/
-
 
 # 参考链接
 

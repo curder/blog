@@ -2,12 +2,11 @@
 
 打开**Google Developer Tools**可以看到左侧视窗中的`Elements`切换界面。如下图所示：
 
-![](/assets/google-developer-tools/switch-elements-pannel.png)
-
+<img :src="$withBase('/images/tools/google-developer-tools/switch-elements-pannel.png')" alt="">
 
 当光标焦点在元素上，可以点击其左侧的`...`呼出对应的操作菜单，它们分别是：
 
-```
+```text
 Add Attribute 添加元素属性
 Edit as HTML 编辑选中元素的HTML
 Delete element 删除选中元素
@@ -39,8 +38,7 @@ Focus（焦点）
 
 另外值得注意的是当我们选中某个元素，在底部会出现对应的层级关系树，方便我们定位它的上级元素。如下图：
 
-![](/assets/google-developer-tools/switch-elements-pannel-element-tree.png)
-
+<img :src="$withBase('/images/tools/google-developer-tools/switch-elements-pannel-element-tree.png')" alt="">
 
 ## 参考链接
 

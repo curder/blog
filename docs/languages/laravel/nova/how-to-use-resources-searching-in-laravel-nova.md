@@ -4,7 +4,7 @@
 
 通过定义资源中的`search`属性值，编写可搜索的字段。 **如果字段值为空数组，则表示不允许搜索。**
 
-```
+```php
 /**
  * The columns that should be searched.
  *
@@ -19,11 +19,11 @@ public static $search = [
 
 Nova 不仅允许在特定的资源和关系中搜索，还可以使用 Nova 管理面板中顶部导航栏的全局搜索框对所有资源进行全局搜索：
 
-![](/assets/laravel/laravel-nova-global-searching-show.png)
+<img :src="$withBase('/images/languages/laravel/nova/how-to-use-resources-searching-in-laravel-nova/laravel-nova-global-searching-show.png')" alt="">
 
 ### 开启和关闭全局搜索
 
-```
+```php
 /**
  * 指示资源是否是全局可搜索的。
  *
@@ -44,7 +44,7 @@ public static $title = 'name';
 
 或者，你也可以覆盖资源的 `title` 方法：
 
-```
+```php
 /**
  * 获取指定的资源来展示。
  *
@@ -58,7 +58,7 @@ public function title()
 
 当然还可以在全局搜索结果中显示一个较小的 「subtitle」 属性。副标题将展示在标题属性下。
 
-```
+```php
 public function subtitle()
 {
     return 'Author: ' . $this->user->name;

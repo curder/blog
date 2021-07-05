@@ -28,11 +28,8 @@ npm run stats
 ### 将生成的文件上传到第三方网站
 
 - http://webpack.github.io/analyse/
-
 - https://alexkuz.github.io/webpack-chart/
-
 - https://alexkuz.github.io/stellar-webpack/
-
 - https://www.npmjs.com/package/webpack-bundle-analyzer
 
 ## 参考链接

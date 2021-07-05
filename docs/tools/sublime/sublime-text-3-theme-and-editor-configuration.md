@@ -1,6 +1,5 @@
 # Sublime Text 3主题以及编辑器配置
 
-
 ## 主题
 
 推荐两款常用主题集合：
@@ -8,7 +7,6 @@
 - [Material](https://github.com/equinusocio/material-theme) 同时提供了许许多多的主题供选择，用户可以根据个人喜欢进行选择。
 
 - [Materialize](https://github.com/saadq/Materialize) 同样也提供了许多的主题供用户选择。
-
 
 ### Material 主题
 
@@ -21,8 +19,6 @@
 快捷键`⌘(Command) + ⇧(Shift) + P`回车后输入`Material Theme: Activate theme`回车后选择自己喜欢的配色方案。
 > 推荐`Material Theme`或者`Material Theme Darker`都相当赞。
 
-
-
 ### Materialize 主题
 
 * 安装主题
@@ -34,31 +30,32 @@
 快捷键`⌘(Command) + ⇧(Shift) + P`回车后输入`Activate Materialize Theme`回车后选择自己喜欢的配色方案。
 > 推荐 `Material Dracula`或者`Material Flatland`
 
-
 ## 简单配置
 
 快捷键`command + ,` 呼出`Sublime Text 3`的配置，在右侧用户自定义配置中写入如下配置。
 
 ```json
 {
-    "color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme", // 需要安装Material主题
-    "theme": "Material-Theme-Darker.sublime-theme",
-    "ignored_packages":[],
-    "material_theme_tree_headings": true,
-    "font_face": "Operator Mono xlight", // 需要安装Operator字体
-    "line_padding_bottom": 12,
-    "line_padding_top": 12,
-    "font_size": 18,
-    "highlight_line": true,
-    "highlight_modified_tabs": true,
-    "scroll_past_end": true,
-    "translate_tabs_to_spaces": true,
-    "trim_trailing_white_space_on_save": true,
-    "ensure_newline_at_eof_on_save": true,
-    "save_on_focus_lost": true,
-    "close_windows_when_empty": true,
-    "caret_style": "phase",
-    "remember_full_screen": true,
+  // 需要安装Material主题
+  "color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+  "theme": "Material-Theme-Darker.sublime-theme",
+  "ignored_packages": [],
+  "material_theme_tree_headings": true,
+  // 需要安装Operator字体
+  "font_face": "Operator Mono xlight",
+  "line_padding_bottom": 12,
+  "line_padding_top": 12,
+  "font_size": 18,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "scroll_past_end": true,
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "ensure_newline_at_eof_on_save": true,
+  "save_on_focus_lost": true,
+  "close_windows_when_empty": true,
+  "caret_style": "phase",
+  "remember_full_screen": true
 }
 ```
 

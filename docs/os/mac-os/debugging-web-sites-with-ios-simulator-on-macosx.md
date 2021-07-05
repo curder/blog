@@ -3,17 +3,14 @@
 ## 版本
 
 - MacOSX 10.13.6
-
 - Safari 11.1.2
-
 - Xcode 9.2
-
 - Simulator 10.0
 
 ## 设置 Simulator
 
 - 打开 Simulator
-  ![](/assets/mac-osx/lunched-simulator.png)
+  <img :src="$withBase('/images/os/macos/debugging-web-sites-with-ios-simulator-on-macosx/lunched-simulator.png')" alt="">
 
 - 点击"Setting" -> "Safari" -> "Advanced" -> 开启"Web Inspector"选项
 
@@ -33,9 +30,10 @@
 
 - 在 MacOSX 中选中菜单上的 Develop -> Simulator -- iPhone \*\*\*\* -> 目标地址
 
-![](/assets/mac-osx/choose-simulator-from-safari.png)
 
-![](/assets/mac-osx/choose-simulator-from-safari-result.png)
+<img :src="$withBase('/images/os/macos/debugging-web-sites-with-ios-simulator-on-macosx/choose-simulator-from-safari.png')" alt="">
+
+<img :src="$withBase('/images/os/macos/debugging-web-sites-with-ios-simulator-on-macosx/choose-simulator-from-safari-result.png')" alt="">
 
 - 接下来就是尽情的打断点调试 HTML/JS/CSS 了
 

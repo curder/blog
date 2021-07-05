@@ -39,8 +39,6 @@
 | `Command + Shift + /` | 多行注释 |
 | `Command + Alt + Shift + h` | 调整代码检查的模式 |
 
-
-
 ## 一些经典的流程
 
 ### 新建文件
@@ -49,11 +47,11 @@
 
 1. 使用`Command + ↑`快捷键呼出文件路径导航，并选择`controllers`目录，如下操作界面：
 
-   ![](/assets/phpstorm_create_file_keymap.png)
+    <img :src="$withBase('/images/tools/phpstorm/phpstorm_create_file_keymap.png')" alt="">
 
 2. 在文件中，使用`Command + n`新建一个 Class 文件，如下操作界面：
 
-   ![](/assets/phpstorm_command_n.png)
+   <img :src="$withBase('/images/tools/phpstorm/phpstorm_command_n.png')" alt="">
 
 例如：在编辑器中删除一个文件  
 呼出文件路径导航，如上面的第一步；第二步是选中要删除的文件，使用`delete`对文件进行删除。

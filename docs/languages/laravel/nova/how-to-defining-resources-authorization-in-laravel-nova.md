@@ -159,7 +159,5 @@ public static function indexQuery(NovaRequest $request, $query)
 ```
 
 ## 参考
-
 - [Laravel Nova Authorization](https://nova.laravel.com/docs/2.0/resources/authorization.html#authorization)
-
 - [Laravel Nova 授权](https://learnku.com/docs/nova/1.0/to-grant-authorization/2193)

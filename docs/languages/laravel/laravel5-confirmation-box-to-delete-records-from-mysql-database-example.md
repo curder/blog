@@ -12,7 +12,7 @@
 
 ### 使用composer创建Laravel项目
 
-```php
+```bash
 composer create-project laravel/laravel laravel5-confirmation-box
 ```
 
@@ -26,7 +26,7 @@ cd laravel5-confirmation-box && touch database/database.sqlite
 
 创建数据库，然后更新项目根目录下的`.env`文件上如下的相关行：
 
-```
+```dotenv
 DB_CONNECTION=mysql
 ```
 
@@ -143,12 +143,11 @@ class UsersController extends Controller
 * `bootstrap.min.js` >= 3.2
 * `bootstrap-confirmation.min.js`
 
-![](/assets/laravel5-confirmation-box-to-delete-records-from-mysql-database-example.png)
+<img :src="$withBase('/images/languages/laravel/laravel5-confirmation-box-to-delete-records-from-mysql-database-example/laravel5-confirmation-box-to-delete-records-from-mysql-database-example.png')" alt="">
 
 更多的插件参数和事件的使用详情[参考这里](http://bootstrap-confirmation.js.org)。
 
 ## 参考链接
 
 * [Laravel5 confirmation box for deleting a record from mysql database example](http://www.phpzone.in/laravel5-confirmation-box-deleting-record-mysql-database-example/)
-
 * [bootstrap-confirmation v1.0.7](https://github.com/mistic100/Bootstrap-Confirmation)

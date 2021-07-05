@@ -12,7 +12,7 @@
 
 菜单路径在GoogleDeveloperTools的->"Sources"->"Filesystem"->点击"Add folder to workspace"添加新的工作区。
 
-![](/assets/google-developer-tools/edit-source-files-and-sync-to-local-files-path.png)
+<img :src="$withBase('/images/tools/google-developer-tools/edit-source-files-and-sync-to-local-files-path.png')" alt="">
 
 > 当选择完正确的路径之后，可能会需要允许一下文件权限，点击`Allow`。
 

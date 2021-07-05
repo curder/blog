@@ -103,4 +103,4 @@ const config = {
 
 配置`modules`选项和`devServer`下的`overlay`选项（在浏览器中限制错误和警告信息）。
 
-![](/assets/webpack2/configuring-eslint-to-implement-code-specification-autotest-use-eslint-loader-overlay-error-and-warning.png)
+<img :src="$withBase('/images/languages/javascript/webpack2/configuring-eslint-to-implement-code-specification-autotest/configuring-eslint-to-implement-code-specification-autotest-use-eslint-loader-overlay-error-and-warning.png')" alt="">

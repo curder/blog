@@ -4,7 +4,7 @@
 
 这个时候需要检查域名是否正确指向到该服务器IP，如果也做好了域名解析，还是ping不通的话。可以通过下面的命令试着清除一下Mac的DNS缓存。
 
-```
+```bash
 sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;
 ```
 

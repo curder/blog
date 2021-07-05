@@ -1,6 +1,5 @@
 # Vagrant常用命令
 
-
 命令 | 简单说明
 ---- | ---
 `vagrant init [options] [name [url]]` | 初始化box的操作

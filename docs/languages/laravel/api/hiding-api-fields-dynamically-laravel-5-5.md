@@ -1,4 +1,4 @@
-![](/assets/hiding-api-fields-dynamically-laravel-5-5.png)
+<img :src="$withBase('/images/languages/laravel/hiding-api-fields-dynamically-laravel-5-5/hero.png')" alt="">
 
 # 动态的隐藏API字段 - Laravel5.5
 
@@ -42,7 +42,7 @@ touch database/database.sqlite
 
 编辑`.env`文件以删除数据库设置并使用SQLite
 
-```
+```dotenv
 DB_CONNECTION=sqlite
 ```
 
@@ -70,7 +70,7 @@ Route::apiResource('users', 'UsersController');
 
 控制器表示预期的目标。在这个例子中，我们假设在列表中，我们只想要所有用户的名字；而在单数据显示中，我们只想隐藏电子邮件地址。
 
-```bash
+```php
 <?php
 namespace App\Http\Controllers;
 

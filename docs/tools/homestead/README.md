@@ -1,3 +1,3 @@
 # Homestead
 
-* [Homestead安装phpredis扩展](/tools/homestead/how-to-install-php-redis-extension.md)
+* [Homestead 安装 phpredis 扩展](/tools/homestead/how-to-install-php-redis-extension.md)

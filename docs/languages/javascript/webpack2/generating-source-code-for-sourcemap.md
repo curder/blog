@@ -27,7 +27,7 @@
 
 ```javascript
 const config = {
-  devtool: 'source-map',
+    devtool: 'source-map',
 }
 
 module.exports = config;
@@ -37,9 +37,10 @@ module.exports = config;
 
 ## 测试
 
-```
+```bash
 npm run start
 ```
 
 通过上面的编译命令可以看到编译的文件中新增了很多
-![](/assets/webpack2/generating-source-code-for-sourcemap.png)
+
+<img :src="$withBase('/images/languages/javascript/webpack2/generating-source-code-for-sourcemap/generating-source-code-for-sourcemap.png')" alt="">

@@ -1,9 +1,8 @@
-![](/assets/reusable-api-resource-with-nested-relationship-laravel-5-5.png)
+<img :src="$withBase('/images/languages/laravel/reusable-api-resource-with-nested-relationship-laravel-5-5/hero.png')" alt="">
 
 # 嵌套关系的可重用API资源 - Laravel5.5
 
 > 本文原址：[hackernoon.com](https://hackernoon.com/reusable-api-resource-with-nested-relationship-laravel-5-5-c654c7243869)
-
 
 
 两天前，作者发表了对Laravel最新的API资源功能的第一印象[原文地址](https://hackernoon.com/reusable-api-resource-with-nested-relationship-laravel-5-5-c654c7243869)

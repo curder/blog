@@ -4,12 +4,12 @@ VeeValidate 插件默认使用的使用英文错误提示语言，但是它同�
 
 ## 版本
 
-- Vue 2.5.22
-- vue-validate 2.1.7
+- Vue `2.5.22`
+- vue-validate `2.1.7`
 
 ## 编写 DemoForm.vue
 
-```
+```vue
 <template>
   <div>
     <div>
@@ -43,7 +43,7 @@ export default {
 ## 验证
 
 - 校验的中文错误提示
-  ![](/assets/vue/vee-validate/vee-validate-localization.png)
+  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-use-vee-validate-plugin-show-chinese-message/vee-validate-localization.png')" alt="">
 
 ## 参考地址
 

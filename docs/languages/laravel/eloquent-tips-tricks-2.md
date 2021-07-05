@@ -1,11 +1,8 @@
 # Laravel Eloquent 模型技巧2
 
-> 英文原文：[20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks) 
-
-
+> [英文原文：20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks)
 
 ## `BelongsTo`默认模型
-
 
 假设您的帖子属于作者，然后是Blade代码
 
@@ -39,7 +36,6 @@ public function author()
 }
 ```
 
-
 ## 使用变化属性排序
 
 假如您有下面的模型方法
@@ -65,7 +61,6 @@ $clients = Client::get()->sortBy('full_name'); // 成功排序
 
 > **注意：**函数名称是不同的，它不是`orderBy`，而是`sortBy`。[更多可以参考这里](http://laraveldaily.com/eloquent-order-results-mutator-attribute/)
 
-
 ## 全局范围内的默认排序
 
 如果您想让`User::all()`总是按名称字段排序呢？您可以指定一个全局范围。
@@ -86,7 +81,6 @@ protected static function boot()
 
 更多[查询作用域参考这里](https://laravel-china.org/docs/laravel/5.6/eloquent#query-scopes)
 
-
 ## 原始查询方法
 
 有时我们需要将原始查询添加到我们的雄辩报表中。幸运的是，Laravel Eloquent Model 提供了这样的功能。
@@ -105,7 +99,6 @@ User::where('created_at', '>', '2016-01-01')
   ->orderByRaw('(updated_at - created_at) desc')
   ->get();
 ```
-
 
 ## 复制数据库行
 
@@ -129,7 +122,6 @@ foreach ($users as $user) {
     // ...
 }
 ```
-
 
 - 更优雅的示范
 
@@ -171,7 +163,6 @@ $product->save(['timestamps' => false]);
 
 这里您用您预先定义的覆盖默认`updated_at`，当前修改行的时间将被设置为上面的`2019-01-01 10:00:00`。
 
-
 ## `update()`的结果是什么？
 
 您有没有想过这段代码实际返回的内容？
@@ -212,7 +203,7 @@ $q->where(function ($query) {
 })->orWhere(function($query) {
     $query->where('gender', 'Female')
         ->where('age', '>=', 65); 
-})
+});
 ```
 
 ## `orWhere`有多个参数的地方
@@ -232,13 +223,9 @@ $q->where('a', 1);
 $q->orWhere(['b' => 2, 'c' => 3]);
 ```
 
-
 ## 参考链接
 
-英文原文：[20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks) 
-
-[Laravel源码 - Abstract Model class](https://github.com/laravel/framework/blob/5.6/src/Illuminate/Database/Eloquent/Model.php)
-
-[Eloquent手册 - 查询作用域](https://laravel-china.org/docs/laravel/5.6/eloquent#query-scopes)
-
-[Eloquent: How to Order Results by Mutator Attribute?](http://laraveldaily.com/eloquent-order-results-mutator-attribute/)
+- [英文原文：20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks)
+- [Laravel源码 - Abstract Model class](https://github.com/laravel/framework/blob/5.6/src/Illuminate/Database/Eloquent/Model.php)
+- [Eloquent手册 - 查询作用域](https://laravel-china.org/docs/laravel/5.6/eloquent#query-scopes)
+- [Eloquent: How to Order Results by Mutator Attribute?](http://laraveldaily.com/eloquent-order-results-mutator-attribute/)

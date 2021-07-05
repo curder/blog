@@ -8,7 +8,7 @@
 
 听起来挺复杂的，但是不要担心 - 这正是 lenses 旨在解决的场景:
 
-![](/assets/laravel/laravel-nova-lenses-show.png)
+<img :src="$withBase('/images/languages/laravel/nova/how-to-use-resources-lenses-in-laravel-nova/laravel-nova-lenses-show.png')" alt="">
 
 ## 定义 Lenses
 
@@ -18,7 +18,8 @@
 php artisan nova:lens MostValuableUsers
 ```
 
-每一个 Nova 创建的 Lens 都包含几个方法。然而，目前关注的两个方法是 `query` 和 `fields` 方法。`query` 方法负责创建获取所需数据的 Eloquent 查询，而 `fields` 方法返回了在查看 `lens` 时应当显示的字段的数组。
+每一个 Nova 创建的 Lens 都包含几个方法。然而，目前关注的两个方法是 `query` 和 `fields` 方法。`query` 方法负责创建获取所需数据的 Eloquent 查询，而 `fields`
+方法返回了在查看 `lens` 时应当显示的字段的数组。
 
 为了更深入的学习，来看一个完整 lens，该 lens 显示了用户和他们的终生收入:
 
@@ -119,7 +120,7 @@ class MostValuableUsers extends Lens
 
 ### Lens 过滤器
 
-每一个 Nova lens 都包含一个 `filters` 方法。这个方法可以让你把任何现存的 [过滤器](/laravel/nova/how-to-use-filters-in-laravel-nova.md) 添加到 `lens`:
+每一个 Nova lens 都包含一个 `filters` 方法。这个方法可以让你把任何现存的 [过滤器](/languages/laravel/nova/how-to-use-filters-in-laravel-nova.md) 添加到 `lens`:
 
 ```php
 use App\Nova\Filters\UserType;

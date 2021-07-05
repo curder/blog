@@ -11,7 +11,8 @@
 
 ### 全局配置
 
-```
+```vue
+
 <template>
   <div>
     <div>
@@ -25,8 +26,9 @@
 <script>
 import Vue from "vue";
 import VeeValidate from "vee-validate";
+
 Vue.use(VeeValidate, {
-    events: 'input|blur',
+  events: 'input|blur',
 });
 export default {
   name: "DemoForm",
@@ -38,7 +40,8 @@ export default {
 
 ### 针对某个单独字段配置
 
-```
+```vue
+
 <template>
   <div>
     <div>
@@ -52,6 +55,7 @@ export default {
 <script>
 import Vue from "vue";
 import VeeValidate from "vee-validate";
+
 Vue.use(VeeValidate);
 export default {
   name: "DemoForm",

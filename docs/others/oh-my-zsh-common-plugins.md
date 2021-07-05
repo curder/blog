@@ -18,18 +18,14 @@ Oh-My-Zsh自带的插件一般放置在目录`~/.oh-my-zsh/plugins`目录下，�
 
 插件名称 | 文章介绍 | 插件GitHub地址
 ---- | ---- | ----
-`git` | `Oh-My-Zsh` 默认开启了该插件，提供了大量 `git` 别名，具体用法参见 GitHub 地址 | https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
- `autojump` | [autojump自动跳转](/others/how-to-use-autojump-plugin.md) | https://github.com/wting/autojump
- `zsh-autosuggestion` | [zsh-autosuggestion终端提示](/others/how-to-use-zsh-autosuggestion-plugin.md) | https://github.com/zsh-users/zsh-autosuggestions
- `zsh-syntax-highlighting` | [zsh-syntax-highlighting语法高亮](/others/how-to-use-zsh-syntax-highlighting-plugin.md) | https://github.com/zsh-users/zsh-syntax-highlighting
-
+`git` | `Oh-My-Zsh` 默认开启了该插件，提供了大量 `git` 别名，具体用法参见 GitHub 地址 | [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/)
+`autojump` | [autojump 自动跳转](/others/how-to-use-autojump-plugin.md) | [wting/autojump](https://github.com/wting/autojump)
+`zsh-autosuggestion` | [zsh-autosuggestion 终端提示](/others/how-to-use-zsh-autosuggestion-plugin.md) | [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+`zsh-syntax-highlighting` | [zsh-syntax-highlighting 语法高亮](/others/how-to-use-zsh-syntax-highlighting-plugin.md) | [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 ## 参考链接
 
 - [Plugins Overview](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview)
-
 - [那些我希望在一开始使用 Zsh(oh-my-zsh) 时就知道的](https://segmentfault.com/a/1190000002658335)
-
 - [oh-my-zsh插件推荐](https://www.jianshu.com/p/9189eac3e52d)
-
 - [Oh My Zsh 插件篇 - 实用工具](https://swiftcafe.io/2015/12/04/omz-plugin/)

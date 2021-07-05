@@ -1,7 +1,7 @@
 # Mac下安装和使用node版本管理工具nvm和smart-npm
 
 目前主流的node版本管理工具有两种，[nvm](https://github.com/creationix/nvm)和[n](https://github.com/tj/n)。
-两者差异挺大的，具体分析可以参考一下淘宝FED团队的一篇文章： [管理 node 版本，选择 nvm 还是 n？](http://taobaofed.org/blog/2015/11/17/nvm-or-n/)。
+两者差异挺大的，具体分析可以参考一下淘宝FED团队的一篇文章： [管理 node 版本，选择 nvm 还是 n ?](http://taobaofed.org/blog/2015/11/17/nvm-or-n/)。
 
 ## nvm
 
@@ -9,15 +9,16 @@
 
 安装可以参考nvm的README文档，这里使用`curl`命令安装。
 
-```
+```bash
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 ```
 
 ### 配置
 
-成功执行上面的命令后`nvm`就被安装在了`~/.nvm`目录下，接下来就需要配一下环境变量了，如果当前Mac环境使用了`zsh`的话，就需要在`~/.zshrc`这个配置文件中配置，否则就编辑`~/.bash_profile`或者`~/.profile`文件，添加如下内容。
+成功执行上面的命令后`nvm`就被安装在了`~/.nvm`目录下，接下来就需要配一下环境变量了，如果当前Mac环境使用了`zsh`的话，就需要在`~/.zshrc`这个配置文件中配置，否则就编辑`~/.bash_profile`
+或者`~/.profile`文件，添加如下内容。
 
-```
+```bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 # current npm path
@@ -30,50 +31,57 @@ export PATH="$(npm config get prefix)/bin:$PATH"
 
 执行命令将`nvm`加载到环境变量中。
 
-```
+```bash
 source ~/.zshrc
 ```
 
 验证是否安装成功可以执行命令。
 
-```
+```bash
 command -v nvm
 ```
 
 ### 使用
 
 * 查看当前可供使用的NodeJS版本
-```
+
+```bash
 nvm ls-remote
 ```
+
 > NodeJS的版本发布很频繁，一般可以在[NodeJS]官网看到LTS版本进行下载。
 
-
 * 安装指定版本的NodeJS
-```
+
+```bash
 nvm install v8.11.3
 nvm install v10.4.1
 ```
+
 > NodeJS安装的目录一般在`~/.nvm/versions/node`下。
 
 * 卸载指定的NodeJS版本
-```
+
+```bash
 nvm uninstall v8.11.3 // 卸载8.11.3
 ```
 
 * 查看本地安装的NodeJS版本
-```
+
+```bash
 nvm list
 ```
 
 * 指定默认的NodeJS版本
-```
+
+```bash
 nvm use v8.11.3
 nvm alias default v8.11.3 # 指定默认的NodeJS版本
 ```
 
 * 查看当前使用的NodeJS版本
-```
+
+```bash
 nvm current
 ```
 
@@ -83,7 +91,7 @@ nvm current
 
 ### 安装
 
-```
+```bash
 npm install --global smart-npm --registry=https://registry.npm.taobao.org/
 ```
 
@@ -91,7 +99,7 @@ npm install --global smart-npm --registry=https://registry.npm.taobao.org/
 
 如果当前使用了`zsh`的话，就需要在`~/.zshrc`这个配置文件中配置，否则就编辑`~/.bash_profile`或者`~/.profile`文件，添加如下内容。
 
-```
+```bash
 alias npm=smart-npm
 ```
 
@@ -99,7 +107,7 @@ alias npm=smart-npm
 
 ### 卸载
 
-```
+```bash
 npm uninstall --global smart-npm
 ```
 

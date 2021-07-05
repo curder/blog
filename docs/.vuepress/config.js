@@ -26,7 +26,16 @@ module.exports = {
                 ]
             },
             {text: '操作系统', children: ['/os/centos/', '/os/ubuntu/', '/os/mac-os/']},
-            {text: "工具", children: ['/tools/']},
+            {
+                text: "工具",
+                children: [
+                    '/tools/sublime/',
+                    '/tools/phpstorm/',
+                    '/tools/valet/',
+                    '/tools/vagrant/',
+                    '/tools/google-developer-tools/'
+                ]
+            },
             {text: "其他", children: ['/others/']}
         ],
         sidebar: {
@@ -99,8 +108,13 @@ module.exports = {
             '/os/centos': [
                 {
                     isGroup: true,
-                    text: 'Centos',
+                    text: 'CentOS',
                     children: getFiles('os/centos'),
+                },
+                {
+                    isGroup: true,
+                    text: 'CentOS7',
+                    children: getFiles('os/centos/centos7'),
                 },
             ],
             '/os/ubuntu': [

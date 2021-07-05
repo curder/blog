@@ -2,7 +2,9 @@
 
 [Laravel Valet](https://laravel.com/docs/5.5/valet "Laravel Valet")是一个**Mac**下面的常见框架的极简开发环境，不但可以本地开发，还可以分享到公网访问。
 
-当Mac电脑开机后会在后台一直启动 [Caddy](https://caddyserver.com/),`Valet`通过 [DnsMasq](https://en.wikipedia.org/wiki/Dnsmasq) 把所有的`.dev`为后缀的域名指向本地安装的站点。比如站点所在目录`blog`, 通过浏览器访问`blog.dev`就会自动访问到`blog/public`目录了。分享到公网其实主要依靠[ngrok](https://ngrok.com/)来实现的。
+当Mac电脑开机后会在后台一直启动 [Caddy](https://caddyserver.com/),`Valet`通过 [DnsMasq](https://en.wikipedia.org/wiki/Dnsmasq)
+把所有的`.dev`为后缀的域名指向本地安装的站点。比如站点所在目录`blog`, 通过浏览器访问`blog.dev`就会自动访问到`blog/public`
+目录了。分享到公网其实主要依靠[ngrok](https://ngrok.com/)来实现的。
 
 目前能直接支持如下项目：
 
@@ -28,7 +30,8 @@
 * [WordPress](https://wordpress.org/)
 * [Zend](https://framework.zend.com/)
 
-**当然，我们也是可以自己驱动，**[**Custom Valet Drivers**](https://laravel.com/docs/5.4/valet#custom-valet-drivers "Custom Valet Drivers")。
+**当然，我们也是可以自己驱动，**[**Custom Valet
+Drivers**](https://laravel.com/docs/5.4/valet#custom-valet-drivers "Custom Valet Drivers")。
 
 ## 安装前的准备
 
@@ -43,34 +46,32 @@ brew update
 brew services list
 ```
 
-* 如果没有安装homebrew的话可以[参照这里](/homebrew.html "Homebrew管理")完成安装
-* 如果没有安装php70可以[参照这里](/php.html "PHP安装")使用homebrew安装
-* 如果没有安装composer，可以使用命令`brew install composer`进行安装
+* 如果没有安装 composer，可以使用命令`brew install composer`进行安装
 
 ### 安装
 
 #### 安装Valet
 
-```
+```bash
 composer global require laravel/valet
 ```
 
 #### 安装Valet和DnsMasq
 
-```
+```bash
 valet install
 ```
 
 如果**DnsMasq安装失败可以使用命令手动安装**
 
-```
+```bash
 brew install dnsmasq
 ```
 
 执行完成后，使用ping命令试试效果
 
-```
-☁  ~  ping "*.dev"
+```bash
+ping "*.dev"
 PING *.dev (127.0.0.1): 56 data bytes
 64 bytes from 127.0.0.1: icmp_seq=0 ttl=64 time=0.027 ms
 64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.036 ms
@@ -82,13 +83,13 @@ PING *.dev (127.0.0.1): 56 data bytes
 
 * 创建文件夹并进入
 
-```
+```bash
 mkdir ~/Website && cd ~/Website
 ```
 
 * 运行`valet park`
 
-```
+```bash
 valet park
 ```
 
@@ -96,13 +97,15 @@ valet park
 
 * 创建Laravel项目
 
-```
+```bash
 laravel new blog
 ```
 
 如果不存在 laravel 命令，则运行 `composer global require "laravel/installer"`拿到laravel命令。
 
-* 访问`blog.dev`项目![](/assets/tools/valet/blog.dev.jpg)
+* 访问`blog.dev`项目
+
+<img :src="$withBase('/images/tools/valet/valet-install/blog.dev.jpg')" alt="">
 
 ### 项目别名
 
@@ -110,14 +113,18 @@ laravel new blog
 
 `link`命令也可以用来启动 Laravel 站点。
 
-```
+```bash
 cd ~/Website/blog
 valet link test-blog
 ```
 
-执行上面命令就可以在本地浏览器通过 [http://test-blog.dev](http://test-blog.dev/) 访问blog项目的站点了。![](/assets/tools/valet/test-blog.dev.jpg)另外还有了两个比较有用的命令如：
+执行上面命令就可以在本地浏览器通过 [http://test-blog.dev](http://test-blog.dev/) 访问blog项目的站点了。
 
-```
+<img :src="$withBase('/images/tools/valet/valet-install/test-blog.dev.jpg')" alt="">
+
+另外还有了两个比较有用的命令如：
+
+```bash
 valet links
 valet unlink
 ```
@@ -128,13 +135,13 @@ valet unlink
 
 让站点支持TLS也很简单，只需要执行：
 
-```
+```bash
 valet secure blog
 ```
 
 这样就可以用 `https://blog.dev` 进行访问了，如果想取消的话可以使用下面的命令：
 
-```
+```bash
 valet unsecure blog
 ```
 
@@ -142,13 +149,13 @@ valet unsecure blog
 
 这个功能是让本地开发的项目通过分享给互联网上其他用户进行访问呢，只需要在项目根目录下执行一个命令就可以
 
-```
+```bash
 valet share
 ```
 
 这样就会通过`ngrok`生成一个外网URL，要停止分享，可以按 `control + c`来取消进程。
 
-```
+```bash
 ngrok by @inconshreveable                                                                        (Ctrl+C to quit)
 
 Session Status                online

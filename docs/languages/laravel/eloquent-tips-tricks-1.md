@@ -1,6 +1,6 @@
 # Laravel Eloquent 模型技巧1
 
-> 英文原文：[20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks) 
+> 英文原文：[20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks)
 
 Laravel Eloquent 的ORM看起来像一个简单的机制。
 
@@ -41,7 +41,7 @@ Laravel Eloquent 有相当多的功能结合了两种方法，比如"请做x，�
 
 ```php
 $user = User::find($id);
-if (!$user) abort (404);
+if (!$user) {abort (404);}
 ```
 
 - 更优雅的示范
@@ -71,7 +71,6 @@ $user = User::firstOrCreate(['email' => $email]);
 
 ## 模型 `boot()` 方法
 
-
 在Laravel Eloquent的模型中有一个叫做`boot()`的静态方法，您可以通过在模型中重写来覆盖默认行为。
 
 ```php
@@ -93,7 +92,6 @@ class User extends Model
 
 这里假设您想在那个时候生成[uuid](https://github.com/webpatser/laravel-uuid)字段。
 
-
 ```php
 public static function boot()
 {
@@ -110,7 +108,7 @@ public static function boot()
 
 ```php
 public function users() {
-    return $this->hasMany('App\User');    
+    return $this->hasMany('App\User');
 }
 ```
 
@@ -127,7 +125,6 @@ public function approvedUsers() {
 ## 模型属性：时间戳，追加等。
 
 有一个Laravel Eloquent Model 的几个参数，以类的属性的形式声明，最常用的可能是下面这些。
-
 
 ```php
 class User extends Model {
@@ -152,7 +149,6 @@ public $timestamps = false; // 如果不使用时间戳需要设置为false值
 
 更多请查看默认[抽象模型类](https://github.com/laravel/framework/blob/5.6/src/Illuminate/Database/Eloquent/Model.php)的代码并查看所有使用的特征。
 
-
 ## 找到多个实体
 
 我们都知道`find()`方法。
@@ -166,7 +162,6 @@ $user = User::find(1);
 ```php
 $users = User::find([1,2,3]);
 ```
-
 
 ## WhereX
 
@@ -183,7 +178,6 @@ $users = User::whereApproved(1)->get();
 ```
 
 您可以更改任何字段的名称，并将其作为后缀追加到“where”，它将按魔术方法帮您达成目标。
-
 
 另外，还有一些预先定义好的与日期/时间相关的方法
 
@@ -248,13 +242,9 @@ $query->when(request('role', false), function ($q, $role) {
 $authors = $query->get();
 ```
 
-
 ## 参考链接
 
-英文原文：[20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks) 
-
-[Laravel源码 - Abstract Model class](https://github.com/laravel/framework/blob/5.6/src/Illuminate/Database/Eloquent/Model.php)
-
-[Eloquent手册 - 查询作用域](https://laravel-china.org/docs/laravel/5.6/eloquent#query-scopes)
-
-[Eloquent: How to Order Results by Mutator Attribute?](http://laraveldaily.com/eloquent-order-results-mutator-attribute/)
+- [英文原文：20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks)
+- [Laravel源码 - Abstract Model class](https://github.com/laravel/framework/blob/5.6/src/Illuminate/Database/Eloquent/Model.php)
+- [Eloquent手册 - 查询作用域](https://laravel-china.org/docs/laravel/5.6/eloquent#query-scopes)
+- [Eloquent: How to Order Results by Mutator Attribute?](http://laraveldaily.com/eloquent-order-results-mutator-attribute/)
