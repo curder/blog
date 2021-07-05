@@ -15,7 +15,14 @@ module.exports = {
     themeConfig: {
         navbar: [
             {text: '首页', link: '/'},
-            {text: '编程语言', children: ['/languages/laravel/', '/languages/go/', '/languages/javascript/']},
+            {
+                text: '编程语言', children: [
+                    '/languages/laravel/',
+                    '/languages/go/',
+                    '/languages/javascript/',
+                    '/languages/vue/'
+                ]
+            },
             {text: '操作系统', children: ['/os/', '/os/']},
             {text: "工具", children: ['/tools/', '/tools/']},
             {text: "其他", children: ['/others/', '/others/']}
@@ -65,6 +72,19 @@ module.exports = {
                     isGroup: true,
                     text: 'Webpack2',
                     children: getFiles('languages/javascript/webpack2'),
+                },
+            ],
+
+            '/languages/vue/': [
+                {
+                    isGroup: true,
+                    text: 'Vue',
+                    children: getFiles('languages/vue'),
+                },
+                {
+                    isGroup: true,
+                    text: 'Vee Validate',
+                    children: getFiles('languages/vue/vee-validate'),
                 },
             ],
         },
