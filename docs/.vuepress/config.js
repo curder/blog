@@ -170,6 +170,14 @@ module.exports = {
                     children: getFiles('tools/docker')
                 },
             ],
+
+            '/others': [
+                {
+                    isGroup: true,
+                    text: 'Others',
+                    children: getFiles('others'),
+                },
+            ],
         },
     }
 }

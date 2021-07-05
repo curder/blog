@@ -1,4 +1,4 @@
-## zsh-syntax-highlighting语法高亮
+# zsh-syntax-highlighting语法高亮
 
 在使用终端打开文件的时候，我们想是不是能够让命令高亮带来更好的编辑提示。[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)在操作命令行的时候或许能带来更好的体验。
 

@@ -1,4 +1,4 @@
-## zsh-autosuggestion终端提示
+# zsh-autosuggestion终端提示
 
 [zsh-autosuggestion](https://github.com/zsh-users/zsh-autosuggestions) 是一款根据命令历史输入时的命令进行输入提示的插件。
 

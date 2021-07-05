@@ -1,4 +1,4 @@
-## autojump自动跳转
+# autojump自动跳转
 
 GitHub地址：[autojump](https://github.com/wting/autojump)是一个命令行工具，它允许用户可以直接跳转到常用的目录，而不用管用户现在身在何处。
 

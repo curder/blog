@@ -1,4 +1,4 @@
-## 安装和使用Oh-My-Zsh
+# 安装和使用Oh-My-Zsh
 
 shell 俗称壳，C语言编写的命令解析器程序，是用户使用 Linux 的桥梁。Linux/Unix 提供了很多种 Shell。常用的 Shell 有这么几种：`sh`、`bash`、`csh`等。
 

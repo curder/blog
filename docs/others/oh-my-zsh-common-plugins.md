@@ -1,4 +1,4 @@
-## Oh-My-Zsh常用插件
+# Oh-My-Zsh常用插件
 
 在上一篇文章[安装和使用oh-my-zsh](/others/install-and-use-oh-my-zsh.md)中介绍了如何在Mac、CentOS或者Ubuntu操作系统上安装它，这里介绍一些 Oh-My-Zsh 的常用插件。
 
