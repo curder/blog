@@ -16,8 +16,10 @@ module.exports = {
         navbar: [
             {text: '首页', link: '/'},
             {
-                text: '编程语言', children: [
+                text: '编程相关',
+                children: [
                     '/languages/laravel/',
+                    '/languages/wordpress/',
                     '/languages/go/',
                     '/languages/javascript/',
                     '/languages/vue/'
@@ -53,6 +55,13 @@ module.exports = {
                     isGroup: true,
                     text: 'Nova',
                     children: getFiles('languages/laravel/nova'),
+                },
+            ],
+            '/languages/wordpress/': [
+                {
+                    isGroup: true,
+                    text: 'WordPress',
+                    children: getFiles('languages/wordpress'),
                 },
             ],
             '/languages/go/': [

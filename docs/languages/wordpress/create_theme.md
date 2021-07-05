@@ -1,4 +1,4 @@
-## 主题剖析
+# 主题剖析
 
 WordPress 主题目录位于`wp-content/themes/`下。
 
