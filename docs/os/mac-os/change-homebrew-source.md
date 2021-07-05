@@ -1,4 +1,4 @@
-## 修改homebrew源
+# 修改homebrew源
 
 ### LUG@USTC中科大的镜像
 

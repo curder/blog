@@ -1,4 +1,4 @@
-## MacOS Hight Sierra清除DNS缓存
+# MacOS Hight Sierra清除DNS缓存
 
 在Mac机器Terminal终端通过`ping`命令探测域名的时候，一直卡顿ping没有响应；但是通过`ping`服务器IP的时候却能正常`ping`通。
 

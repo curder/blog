@@ -1,4 +1,4 @@
-## Mac下安装和使用node版本管理工具nvm和smart-npm
+# Mac下安装和使用node版本管理工具nvm和smart-npm
 
 目前主流的node版本管理工具有两种，[nvm](https://github.com/creationix/nvm)和[n](https://github.com/tj/n)。
 两者差异挺大的，具体分析可以参考一下淘宝FED团队的一篇文章： [管理 node 版本，选择 nvm 还是 n？](http://taobaofed.org/blog/2015/11/17/nvm-or-n/)。

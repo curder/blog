@@ -23,7 +23,7 @@ module.exports = {
                     '/languages/vue/'
                 ]
             },
-            {text: '操作系统', children: ['/os/centos/']},
+            {text: '操作系统', children: ['/os/centos/', '/os/ubuntu/', '/os/mac-os/']},
             {text: "工具", children: ['/tools/']},
             {text: "其他", children: ['/others/', '/others/']}
         ],
@@ -93,6 +93,20 @@ module.exports = {
                     isGroup: true,
                     text: 'Centos',
                     children: getFiles('os/centos'),
+                },
+            ],
+            '/os/ubuntu': [
+                {
+                    isGroup: true,
+                    text: 'Ubuntu',
+                    children: getFiles('os/ubuntu'),
+                },
+            ],
+            '/os/mac-os': [
+                {
+                    isGroup: true,
+                    text: 'Mac OS',
+                    children: getFiles('os/mac-os'),
                 },
             ],
         },

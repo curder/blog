@@ -1,4 +1,4 @@
-## 如何在Ubuntu上使用Deployer自动部署Laravel应用程序
+# 如何在Ubuntu上使用Deployer自动部署Laravel应用程序
 
 [Laravel](https://laravel.com)是一个开放源代码的PHP Web框架，旨在简化认证，路由和缓存等常见Web开发任务。[Deployer](https://deployer.org)是一款开源的PHP部署工具，它为许多流行的框架提供了开箱即用的支持，包括`Laravel`，`CodeIgniter`，`Symfony`和`Zend Framework`等等。
 
