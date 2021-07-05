@@ -136,6 +136,11 @@ module.exports = {
                 },
                 {
                     isGroup: true,
+                    text: 'Git',
+                    children: getFiles('tools/git')
+                },
+                {
+                    isGroup: true,
                     text: 'Atom',
                     children: getFiles('tools/atom')
                 },

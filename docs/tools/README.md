@@ -28,9 +28,18 @@
     - [PHPStorm 对 JS 或者 Vue 文件中导入路径别名识别](/tools/phpstorm/path-aliases-for-imports-in-phpstorm.md)
     - [PHPStorm 对 php 警告的一些处理](/tools/phpstorm/ignore-some-errors.md)
 
-  - [Atom 的基本使用](tools/atom/normal.md)
+  * [Git相关](/tools/git/README.md)
+    * [Git合并特定commits到另一个分支](/tools/git/some_of_the_branches_are_commit.md)
+    * [Git合并其他分支的个别文件或文件夹](/tools/git/merge_files_or_folders_from_other_branches.md)
+    * [Git更新远程代码到本地仓库](/tools/git/remote_repository_update.md)
+    * [Git拉取远程分支到本地](/tools/git/remote_repository_pull.md)
+    * [Git服务器上使用SSH协议授权免密码登录](/tools/git/ssh-server-to-use-keyless-login-on-git-server.md)
+    * [Git获取仓库指定目录或文件](/tools/git/get-sparse-checkout-the-repository-specified-directory-or-file.md)
+    * [Git记住用户名和密码](/tools/git/git-remember-username-and-password.md)
 
-  - [Google Deveoloer Tools 必备调试技巧](/tools/google-developer-tools/readme.md)
+  - [Atom 的基本使用](/tools/atom/normal.md)
+
+  - [Google Developer Tools 必备调试技巧](/tools/google-developer-tools/README.md)
 
     - [调试窗口的切换](/tools/google-developer-tools/debug-window-switching.md)
     - [快速切换 PC 与手机端进行测试](/tools/google-developer-tools/quickly-switch-between-pc-and-mobile-phone-mode.md)
