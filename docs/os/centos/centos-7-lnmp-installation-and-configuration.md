@@ -1,4 +1,4 @@
-## 软件版本
+# 软件版本
 
 * CentOS Linux release 7.4.1708 (Core)
 

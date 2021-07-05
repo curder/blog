@@ -1,4 +1,4 @@
-## CentOS7使用yum方式安装和配置php-fpm
+# CentOS7使用yum方式安装和配置php-fpm
 
 目前常用的两种yum方式安装php-fpm，分别是`webtatic`仓库和`remi`仓库，在实际的使用中选择一种即可。
 

@@ -1,4 +1,4 @@
-## CentOS7使用yum方式安装和配置MySQL
+# CentOS7使用yum方式安装和配置MySQL
 
 以安装 MySQL 5.7 为例。
 

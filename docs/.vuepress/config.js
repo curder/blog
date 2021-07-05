@@ -23,8 +23,8 @@ module.exports = {
                     '/languages/vue/'
                 ]
             },
-            {text: '操作系统', children: ['/os/', '/os/']},
-            {text: "工具", children: ['/tools/', '/tools/']},
+            {text: '操作系统', children: ['/os/centos/']},
+            {text: "工具", children: ['/tools/']},
             {text: "其他", children: ['/others/', '/others/']}
         ],
         sidebar: {
@@ -85,6 +85,14 @@ module.exports = {
                     isGroup: true,
                     text: 'Vee Validate',
                     children: getFiles('languages/vue/vee-validate'),
+                },
+            ],
+
+            '/os/centos': [
+                {
+                    isGroup: true,
+                    text: 'Centos',
+                    children: getFiles('os/centos'),
                 },
             ],
         },

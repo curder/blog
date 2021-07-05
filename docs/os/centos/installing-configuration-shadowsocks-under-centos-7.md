@@ -1,4 +1,4 @@
-## CentOS7下安装配置shadowsocks
+# CentOS7下安装配置shadowsocks
 
 [Shadowsocks](https://github.com/shadowsocks/)是当前比较受欢迎的科学上网工具，本文将介绍如何在 CentOS 7下安装和配置 Shadowsocks 服务。
 

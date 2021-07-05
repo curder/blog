@@ -1,4 +1,4 @@
-## CentOS下安装PHP拓展Swoole
+# CentOS下安装PHP拓展Swoole
 
 [Swoole官网](https://www.swoole.com/)
 

@@ -1,4 +1,4 @@
-## 如何在CentOS 7上安装和配置GitLab CE
+# 如何在CentOS 7上安装和配置GitLab CE
 
 GitLab是一个基于GitLab Inc.开发的Rails的开源资源库管理器。它是一个基于Web的git资源库管理器，可让您的团队在编码，测试和部署应用程序方面进行协作。GitLab提供了多种功能，包括维基，问题跟踪，代码评论和活动提要。
 

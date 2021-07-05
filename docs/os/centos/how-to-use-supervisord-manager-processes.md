@@ -1,4 +1,4 @@
-## 使用supervisord管理进程
+# 使用supervisord管理进程
 
 [supervisord](http://supervisord.org/)是一个进程管理工具，用来启动、停止、重启和监测进程，当程序挂掉后`supervisor`能够重新启动进程。
 
