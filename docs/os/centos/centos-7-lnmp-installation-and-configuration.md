@@ -1,4 +1,6 @@
-# 软件版本
+# CentOS 7 LNMP 安装和配置
+
+## 软件版本
 
 * CentOS Linux release 7.4.1708 (Core)
 
@@ -18,7 +20,8 @@
 
 ### 升级命令
 
-EPEL \(Extra Packages for Enterprise Linux，企业版Linux的额外软件包\) 是Fedora小组维护的一个软件仓库项目，为RHEL/CentOS提供他们默认不提供的软件包。这个源兼容RHEL及像CentOS和Scientific Linux这样的衍生版本。
+EPEL \(Extra Packages for Enterprise Linux，企业版Linux的额外软件包\)
+是Fedora小组维护的一个软件仓库项目，为RHEL/CentOS提供他们默认不提供的软件包。这个源兼容RHEL及像CentOS和Scientific Linux这样的衍生版本。
 
 更多详细介绍查看这里：[EPEl](https://fedoraproject.org/wiki/EPEL "EPEL Repository")
 
@@ -36,7 +39,7 @@ sudo yum -y install epel-release
 sudo yum repolist
 ```
 
-![](/assets/yum-epel-repository-list.jpg)
+<img :src="$withBase('/images/centos7/centos-7-lnmp-installation-and-configuration/yum-epel-repository-list.jpg')" alt="">
 
 ## 安装Nginx
 
@@ -63,7 +66,7 @@ Nginx默认运行在80端口，使用下面的`netstat`命令检查。
 netstat -plntu | grep 80
 ```
 
-![](/assets/nginx_status_check.jpg)
+<img :src="$withBase('/images/centos7/centos-7-lnmp-installation-and-configuration/nginx-status-check.jpg')" alt="">
 
 至此`Nginx`安装完毕。
 
@@ -90,10 +93,13 @@ sudo mkdir -p /run/php-fpm/remi-php72 # 创建一个sock存放的目录
 sudo ln -s  `which php72` /usr/local/sbin/php # 建立软连接方便命令行使用
 ```
 
-执行完上面的命令后，CentOS系统上已经安装了PHP 7.2, 安装好的`php72`目录在`/etc/opt/remi/php72`, 也可以参考这个[链接](https://www.cyberciti.biz/faq/how-to-install-php-7-2-on-centos-7-rhel-7/)查看更多操作详情。
+执行完上面的命令后，CentOS系统上已经安装了PHP 7.2, 安装好的`php72`目录在`/etc/opt/remi/php72`,
+也可以参考这个[链接](https://www.cyberciti.biz/faq/how-to-install-php-7-2-on-centos-7-rhel-7/)查看更多操作详情。
 
 #### 卸载
+
 > `remi`仓库支持PHP的多版本共存，**不到万不得已不建议使用卸载操作**
+
 ```
 sudo yum-config-manager --disable remi-php72 # 禁用remi-php72仓库
 sudo systemctl stop php72-php-fpm.service
@@ -101,6 +107,7 @@ yum remove php72 php72-php-fpm php72-php-gd php72-php-json php72-php-mbstring ph
 sudo rmdir /run/php-fpm/remi-php72
 sudo rm -rf /etc/opt/remi/remi-php72 # 删除前记得备份配置
 ```
+
 至此，使用remi仓库安装的PHP已经成功卸载。
 
 #### 多版本安装
@@ -114,7 +121,7 @@ sudo mkdir -p /run/php-fpm/remi-php73 # 创建一个sock存放的目录
 sudo ln -s  `which php73` /usr/local/sbin/php # 建立软连接方便命令行使用
 ```
 
-### 方式二 webtatic仓库
+### 方式二 webstatic仓库
 
 #### 安装
 
@@ -122,14 +129,16 @@ sudo ln -s  `which php73` /usr/local/sbin/php # 建立软连接方便命令行�
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 sudo yum install -y php72w php72w-gd php72w-curl php72w-common php72w-cli php72w-mysql php72w-mbstring php72w-fpm php72w-xml php72w-pdo php72w-zip
 ```
+
 其他版本下载可以查看这里：[webtatic仓库](https://webtatic.com/projects/yum-repository/ "webtatic repository")。
 
->如果执行上面的命令一直报错`curl: (35) Encountered end of file`，可以尝试将上面的`https`协议改成`http`协议获取rpm源。
+> 如果执行上面的命令一直报错`curl: (35) Encountered end of file`，可以尝试将上面的`https`协议改成`http`协议获取rpm源。
 
 
 执行完上面的命令后，CentOS系统上已经安装了PHP 7.2, 安装好的php72w目录在`/etc/php`下。
 
 #### 卸载
+
 > **注意：** 如果想更换到php5.6或7.1版本, 直接把上面yum命令里面的关键字`php72w`换成`php56w`或者`php71w`就可以了。
 
 ```
@@ -141,7 +150,8 @@ yum remove php72w php72w-curl php72w-common php72w-cli php72w-mysql php72w-mbstr
 
 ### 配置php-fpm
 
-通过使用vim编辑配置文件`php.ini`来配置PHP，**remi仓库**方式安装的主配置文件存放位置在`/etc/opt/remi/php72/php.ini`，**webtatic仓库**方式安装的主配置文件存放位置在`/etc/php.ini`。
+通过使用vim编辑配置文件`php.ini`来配置PHP，**remi仓库**方式安装的主配置文件存放位置在`/etc/opt/remi/php72/php.ini`，**webtatic仓库**
+方式安装的主配置文件存放位置在`/etc/php.ini`。
 
 * 在文件中找如如下行，取消它的行注释并将值更改为0。
 
@@ -151,7 +161,8 @@ cgi.fix_pathinfo=0
 
 保存文件并退出编辑器。
 
-编辑`php-fpm`文件`www.conf`，**remi仓库**方式安装的配置文件存放位置在`/etc/opt/remi/php72/php-fpm.d/www.conf`，**webtatic仓库**方式安装的配置文件存放位置在`/etc/php-fpm.d/www.conf`。
+编辑`php-fpm`文件`www.conf`，**remi仓库**方式安装的配置文件存放位置在`/etc/opt/remi/php72/php-fpm.d/www.conf`，**webtatic仓库**
+方式安装的配置文件存放位置在`/etc/php-fpm.d/www.conf`。
 
 * `php-fpm`将在用户和组`nginx`下运行，将下面两行的值更改为`nginx`，这里用户和用户组请保持与`Nginx`的用户和用户组一致。
 
@@ -161,7 +172,8 @@ user = nginx
 group = nginx
 ```
 
-* `php-fpm`将在套接字文件下运行，而不是使用服务器端口，**remi仓库**方式安装的PHP可以将值改为`/run/php-fpm/remi-php72/php-fpm.sock`，**webtatic仓库**方式安装的PHP请将'listen'值更改为路径`/run/php-fpm/php-fpm.sock`。
+* `php-fpm`将在套接字文件下运行，而不是使用服务器端口，**remi仓库**方式安装的PHP可以将值改为`/run/php-fpm/remi-php72/php-fpm.sock`，**webtatic仓库**
+  方式安装的PHP请将'listen'值更改为路径`/run/php-fpm/php-fpm.sock`。
 
 ```
 # remi
@@ -211,11 +223,12 @@ sudo systemctl enable php-fpm
 sudo netstat -pl | grep php-fpm.sock
 ```
 
-![](/assets/php-fpm_status_check.jpg)
+<img :src="$withBase('/images/centos7/centos-7-lnmp-installation-and-configuration/php-fpm-status-check.jpg')" alt="">
 
 ## 安装MySQL
 
-可以使用MariaDB或PostgreSQL作为Laravel项目的数据库存储。 这里使用MySQL数据库服务器进行安装。 它在CentOS存储库中可用， 使用下面的`yum`命令[安装MySQL-server](https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/ "mysql server install")。
+可以使用MariaDB或PostgreSQL作为Laravel项目的数据库存储。 这里使用MySQL数据库服务器进行安装。 它在CentOS存储库中可用， 使用下面的`yum`
+命令[安装MySQL-server](https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/ "mysql server install")。
 
 ### 下载并安装MySQL5.7
 
@@ -225,6 +238,7 @@ rpm -ivh mysql57-community-release-el7-11.noarch.rpm
 sudo yum update
 sudo yum install -y mysql-server
 ```
+
 > 执行上面的命令进行MySQL的安装，在安装的过程中两次按`Y`键，在同意后安装完成。
 
 ### 启动MySQL
@@ -270,12 +284,11 @@ GRANT ALL PRIVILEGES ON laravel.* TO laravel@localhost IDENTIFIED BY "LaravelPas
 
 至此，MySQL的安装和配置已经完成。
 
-
 ## 安装PHP Composer
 
 PHP composer是PHP语言的包管理器。 它创建于2011年，灵感来自于Node.js的“npm”和Ruby的“bundler”安装程序。 使用`curl`命令安装composer。
 
-```shell
+```bash
 php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
@@ -284,52 +297,52 @@ sudo mv composer.phar /usr/local/bin/composer
 
 * 配置Packagist国内镜像
 
-```
+```bash
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
 ```
 
 安装完成后，尝试使用“composer”命令，您将看到以下结果。
 
-```shell
+```bash
 composer
 composer config -g repo.packagist -l # 查看配置的Packagist国内镜像
 ```
 
-![](/assets/composer_install.jpg)
+<img :src="$withBase('/images/centos7/centos-7-lnmp-installation-and-configuration/composer-install.jpg')" alt="">
 
 至此，PHP Composer已经正常安装在了CentOS系统上。
 
 ### NodeJS && NPM
 
-```
+```bash
 sudo yum -y install nodejs npm --enablerepo=epel
 ```
 
 ### Yarn
 
-```
+```bash
 curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 sudo yum install -y yarn
 ```
-
 
 ### 安装Laravel测试LNMP
 
 现在进入到 laravel 的根目录'/var/www/laravel'。
 
-```
+```bash
 sudo mkdir -p /var/www/laravel && cd /var/www/laravel
 ```
 
-Laravel提供了两种在服务器上[安装框架](https://laravel.com/docs/5.4/installation "laravel install document")的方法。可以用Laravel安装程序安装Laravel，也可以用PHP composer安装它。在这里我将通过使用composer命令创建一个新项目来安装Laravel，运行下面的命令来安装Laravel。
+Laravel提供了两种在服务器上[安装框架](https://laravel.com/docs/5.4/installation "laravel install document")
+的方法。可以用Laravel安装程序安装Laravel，也可以用PHP composer安装它。在这里我将通过使用composer命令创建一个新项目来安装Laravel，运行下面的命令来安装Laravel。
 
-```shell
+```bash
 composer create-project laravel/laravel .
 ```
 
 等待Laravel安装完成。 这可能需要一些时间。
 
-![](/assets/laravel_install.jpg)
+<img :src="$withBase('/images/centos7/centos-7-lnmp-installation-and-configuration/laravel-install.jpg')" alt="">
 
 安装完成后，将Laravel Web根目录的所有者更改为“nginx”用户，并使用以下命令将存储目录的权限更改为755。
 
@@ -340,7 +353,7 @@ chmod 755 -R /var/www/laravel/storage
 
 至此，Laravel安装已经完成。
 
-### 为Larvel配置Nginx配置
+### 为 Laravel 配置Nginx配置
 
 在这个步骤中，将为 Laravel 项目创建 Nginx 虚拟主机配置。 我们需要为此 Laravel 定义web根目录`/var/www/laravel/public`。
 
@@ -353,7 +366,7 @@ vim conf.d/laravel.conf
 
 将下面的配置粘贴到文件中：
 
-```
+```nginx
 server {
     listen 80;
 
@@ -395,12 +408,12 @@ server {
 
 测试nginx配置，确保没有错误，然后重新启动nginx服务。
 
-```shell
+```bash
 nginx -t # 测试配置是否正确
 sudo systemctl restart nginx # 重启Nginx
 ```
 
-![](/assets/restart_nginx.jpg)
+<img :src="$withBase('/images/centos7/centos-7-lnmp-installation-and-configuration/restart-nginx.jpg')" alt="">
 
 至此，Laravel的nginx虚拟主机配置已经完成。
 
@@ -410,10 +423,9 @@ sudo systemctl restart nginx # 重启Nginx
 
 访问域名时，您将看到Laravel框架的首页。
 
-![](/assets/laravel_install_preview.jpg)
+<img :src="$withBase('/images/centos7/centos-7-lnmp-installation-and-configuration/laravel-install-preview.jpg')" alt="">
 
 CentOS 7上的Nginx、PHP-FPM、MySQL、Composer、NodeJS、Yarn和Laravel安装已经成功。
-
 
 ## 参考连接
 
