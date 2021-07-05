@@ -1,4 +1,4 @@
-## webpack-dev-server完成代码更改自动刷新
+# webpack-dev-server完成代码更改自动刷新
 
 安装好webpack并配置命令之后，可以很方便的通过`npm run build`生成压缩代码，但是每次当更新完代码后，要重复执行命令才能正常构建好代码。
 
@@ -6,32 +6,36 @@
 
 ## 安装webpack-dev-server
 
-```
+```bash
 npm i webpack-dev-server --save-dev
 ```
 
 这里需要注意的是下载的webpack-dev-server的版本与webpack要匹配，例如：
 
-```
-"webpack": "^2.7.0",
-"webpack-dev-server": "^2.11.2"
+```json
+{
+  "webpack": "^2.7.0",
+  "webpack-dev-server": "^2.11.2"
+}
 ```
 
 ## 执行命令
 
 修改项目`package.json`中的`scripts`中添加`"start": "webpack-dev-server --env development"`
 
-```
-"scripts": {
+```json
+{
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --env development",
     "build": "webpack --env production"
-},
+  }
+}
 ```
 
 配置好快捷命令后，通过命令
 
-```
+```bash
 sudo npm run start
 ```
 
@@ -41,7 +45,7 @@ sudo npm run start
 
 官方文档[参考这里](https://webpack.js.org/configuration/dev-server/)。
 
-```
+```javascript
 module.exports = {
     //...
     devServer: {

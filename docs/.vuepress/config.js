@@ -15,7 +15,7 @@ module.exports = {
     themeConfig: {
         navbar: [
             {text: '首页', link: '/'},
-            {text: '编程语言', children: ['/languages/laravel/', '/languages/go/']},
+            {text: '编程语言', children: ['/languages/laravel/', '/languages/go/', '/languages/javascript/']},
             {text: '操作系统', children: ['/os/', '/os/']},
             {text: "工具", children: ['/tools/', '/tools/']},
             {text: "其他", children: ['/others/', '/others/']}
@@ -54,7 +54,19 @@ module.exports = {
                     text: 'Go',
                     children: getFiles('languages/go'),
                 },
-            ]
+            ],
+            '/languages/javascript/': [
+                {
+                    isGroup: true,
+                    text: 'Javascript',
+                    children: getFiles('languages/javascript'),
+                },
+                {
+                    isGroup: true,
+                    text: 'Webpack2',
+                    children: getFiles('languages/javascript/webpack2'),
+                },
+            ],
         },
     }
 }

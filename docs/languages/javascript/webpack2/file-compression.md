@@ -1,14 +1,14 @@
-## 文件压缩
+# 文件压缩
 
 在webpack配置节点中，可以通过`performance`配置参数显示警告，并且通过插件`babili-webpack-plugin`。
 
-```
+```javascript
 const config = {
-  performance: {
-    hints: 'warning',
-    maxEntrypointSize: 100000, // bytes
-    maxAssetSize: 450000, // bytes
-  },
+    performance: {
+        hints: 'warning',
+        maxEntrypointSize: 100000, // bytes
+        maxAssetSize: 450000, // bytes
+    },
 };
 
 module.exports = config;
@@ -16,7 +16,7 @@ module.exports = config;
 
 ## 下载插件
 
-```
+```bash
 npm i babel-minify-webpack-plugin --save-dev
 ```
 
@@ -26,20 +26,20 @@ npm i babel-minify-webpack-plugin --save-dev
 
 修改`webpack.config.js`文件内容：
 
-```
+```javascript
 const MinifyPlugin = require("babel-minify-webpack-plugin"); // https://github.com/webpack-contrib/babel-minify-webpack-plugin
 
 const config = {
-  plugins: {
-    // ...
-    new MinifyPlugin(),
-  }
+    plugins: {
+        // ...
+        new MinifyPlugin(),
+    }
 };
 ```
 
 ## 测试
 
-```
+```bash
 npm run build
 npm run start
 ```

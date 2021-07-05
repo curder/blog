@@ -1,4 +1,4 @@
-## 使用bootstrap-fileStyle改变BootStrap默认的文件选择框样式
+# 使用bootstrap-fileStyle改变BootStrap默认的文件选择框样式
 
 这是一篇关于页面上传按钮美化的文章，适用于bootstrap2、3、4版本，这里以bootstrap3作为演示。
 
@@ -8,7 +8,7 @@
 
 ### 插件基础示例
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,20 +17,20 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <input type="file">
-    </div>
-    <div>
-        <input class="bootstrap-filestyle" type="file" class="filestyle">
-    </div>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap-filestyle/1.2.3/bootstrap-filestyle.min.js"></script>
-    <script>
-        $(".bootstrap-filestyle").filestyle({input: false});
-        $(".bootstrap-filestyle").on('change',function(){
-            alert()
-        });
-    </script>
+<div>
+    <input type="file">
+</div>
+<div>
+    <input class="bootstrap-filestyle" type="file" class="filestyle">
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-filestyle/1.2.3/bootstrap-filestyle.min.js"></script>
+<script>
+    $(".bootstrap-filestyle").filestyle({input: false});
+    $(".bootstrap-filestyle").on('change', function () {
+        alert()
+    });
+</script>
 </body>
 </html>
 ```
@@ -45,14 +45,14 @@
 `badge` | `true` | Boolean，`true`、`false` | 是否需要一个上传后的数字提示，需要`input`配置为`false`的时候生效
 `icon` | `false` | Boolean，`true`、`false` | 是否需要按钮上的图标
 `iconName` | `glyphicon glyphicon-folder-open` | String，`glyphicon glyphicon-inbox` | 按钮上的图标的样式类（需要配置`icon`为`true`）
-`buttonText` | `Choose file` | String | 按钮文本文字 
+`buttonText` | `Choose file` | String | 按钮文本文字
 `buttonName` | `''` | String，`btn-primary`、`btn-danger`、`btn-info`、`btn-success`、`btn-default` | 按钮样式
 `size` | `md` | String，`lg`：大、`md`：中、`sm`：小 | 按钮大小
 `disabled` | `false` | Boolean，`true`、`false` | 是否禁用，默认是`false`
 
 ### 配置示例
 
-```
+```javascript
 $(".bootstrap-filestyle").filestyle({
     input: true,
     icon: true,
@@ -66,7 +66,6 @@ $(".bootstrap-filestyle").filestyle({
     disabled: false,
 });
 ```
-
 
 至此，bootstrap-filestyle的一些使用就到这里，更多的可以参考作者的文档。
 

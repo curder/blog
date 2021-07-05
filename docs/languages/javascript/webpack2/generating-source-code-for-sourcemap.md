@@ -1,4 +1,4 @@
-## 生成源代码的SourceMap
+# 生成源代码的SourceMap
 
 为什么要生成SourceMap呢?
 
@@ -7,13 +7,16 @@
 ## 下载插件
 
 修改`package.json`文件内容：
-```
+
+```json
+{
   "resolutions": {
     "webpack-sources": "1.0.1"
   },
   "devDependencies": {
     // ...
   }
+}
 ```
 
 执行`npm install`安装依赖。
@@ -22,13 +25,14 @@
 
 修改配置文件`webpack.config.js`内容：
 
-```
+```javascript
 const config = {
   devtool: 'source-map',
 }
 
 module.exports = config;
 ```
+
 具体`devtool`的配置值可以[参考这里](https://webpack.js.org/configuration/devtool/#devtool)。
 
 ## 测试

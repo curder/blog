@@ -1,4 +1,4 @@
-## 加载CSS的相关配置
+# 加载CSS的相关配置
 
 CSS相关的loader包含`css-loader`和`style-loader`。
 
@@ -7,13 +7,13 @@ CSS相关的loader包含`css-loader`和`style-loader`。
 
 ## 安装
 
-```
+```bash
 npm i css-loader style-loader --save-dev
 ```
 
 ## 配置
 
-```
+```javascript
 const config = {
   // ...
   module: {

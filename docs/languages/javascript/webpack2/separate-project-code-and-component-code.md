@@ -1,4 +1,4 @@
-## 分离项目代码和组件代码
+# 分离项目代码和组件代码
 
 在实际开发项目中会引入很多的第三方包，比如：`bootstrap`、`vue`、`react`等等。
 
@@ -8,7 +8,7 @@
 
 修改`webpack.config.js`文件内容：
 
-```
+```javascript
 const webpack = require('webpack');
 
 const config = {

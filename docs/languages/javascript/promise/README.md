@@ -40,7 +40,7 @@
 
 - 事件监听和相应
 
-```
+```javascript
 document.getElementById('start').addEventListener('click', start, false); // 当用户点击了id为start的元素，会触发start函数
 
 function start () {
@@ -53,7 +53,7 @@ $("#start").on('click', start);
 
 - 回调
 
-```
+```javascript
 $.ajax('http://www.google.com.cn', {
     success: function(result) {
         // 这里就是成功的回调处理函数了
@@ -68,7 +68,7 @@ $(function() {
 
 ## Promise详解
 
-```
+```javascript
 new Promise(
     /* 执行器 executor */
     function (resole, reject) {
@@ -97,7 +97,7 @@ Promise 状态一经改变，不会再变。
 ### 示例
 #### 定时执行简单示例
 
-```
+```javascript
 console.log('here we go');
 new Promise( resolve => {
     setTimeout( () => {
@@ -113,7 +113,7 @@ new Promise( resolve => {
 
 #### 分两次顺序执行
 
-```
+```javascript
 console.log('here we go');
 new Promise( resolve => {
     setTimeout( () => {
@@ -134,7 +134,7 @@ new Promise( resolve => {
 
 #### 对已完成的Promise执行then
 
-```
+```javascript
 console.log('here we go');
 
 let promise = new Promise( resolve => {
