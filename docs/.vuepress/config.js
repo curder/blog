@@ -27,7 +27,7 @@ module.exports = {
             },
             {text: '操作系统', children: ['/os/centos/', '/os/ubuntu/', '/os/mac-os/']},
             {text: "工具", children: ['/tools/']},
-            {text: "其他", children: ['/others/', '/others/']}
+            {text: "其他", children: ['/others/']}
         ],
         sidebar: {
             '/languages/laravel/': [
@@ -83,7 +83,6 @@ module.exports = {
                     children: getFiles('languages/javascript/webpack2'),
                 },
             ],
-
             '/languages/vue/': [
                 {
                     isGroup: true,
@@ -116,6 +115,54 @@ module.exports = {
                     isGroup: true,
                     text: 'Mac OS',
                     children: getFiles('os/mac-os'),
+                },
+            ],
+
+            '/tools/': [
+                {
+                    isGroup: true,
+                    text: 'Tools',
+                    children: getFiles('tools'),
+                },
+                {
+                    isGroup: true,
+                    text: 'Sublime Text',
+                    children: getFiles('tools/sublime')
+                },
+                {
+                    isGroup: true,
+                    text: 'PHPStorm',
+                    children: getFiles('tools/phpstorm')
+                },
+                {
+                    isGroup: true,
+                    text: 'Atom',
+                    children: getFiles('tools/atom')
+                },
+                {
+                    isGroup: true,
+                    text: 'Google Developer Tools',
+                    children: getFiles('tools/google-developer-tools'),
+                },
+                {
+                    isGroup: true,
+                    text: 'Vagrant',
+                    children: getFiles('tools/vagrant'),
+                },
+                {
+                    isGroup: true,
+                    text: 'Valet',
+                    children: getFiles('tools/valet')
+                },
+                {
+                    isGroup: true,
+                    text: 'Homestead',
+                    children: getFiles('tools/homestead')
+                },
+                {
+                    isGroup: true,
+                    text: 'Docker',
+                    children: getFiles('tools/docker')
                 },
             ],
         },
