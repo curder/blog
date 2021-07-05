@@ -1,0 +1,15 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Some articles for laravel study.",
+  "repository": "git@github.com:curder/blog.git",
+  "author": "curder <q.curder@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "watch": "vuepress dev docs",
+    "prod": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.21"
+  }
+}
