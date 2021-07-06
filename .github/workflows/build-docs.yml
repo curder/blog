@@ -1,0 +1,39 @@
+# github pages: https://github.com/marketplace/actions/github-pages-action#table-of-contents
+# How to cache node_modules in GitHub Actions with Yarn: https://dev.to/mpocock1/how-to-cache-nodemodules-in-github-actions-with-yarn-24eh
+
+name: github pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: '12.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install packages
+        run: yarn install
+
+      - name: Build Docs
+        run: yarn prod
+
+      - name: Deployment
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/.vuepress/dist
