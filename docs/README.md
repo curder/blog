@@ -1,7 +1,7 @@
 ---
 home: true
 title: 首页
-heroText: 编程学习记录
+heroText: 编程学习
 tagline: Study one by one.
 
 
