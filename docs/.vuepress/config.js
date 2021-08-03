@@ -65,6 +65,11 @@ module.exports = {
                     text: 'Nova',
                     children: getFiles('languages/laravel/nova'),
                 },
+                {
+                    isGroup: true,
+                    text: 'Livewire',
+                    children: getFiles('languages/laravel/livewire'),
+                },
             ],
             '/languages/wordpress/': [
                 {

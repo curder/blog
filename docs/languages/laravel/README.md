@@ -32,3 +32,5 @@
     - [使用 laravel nova 对资源搜索](/languages/laravel/nova/how-to-use-resources-searching-in-laravel-nova.md)
     - [使用 laravel nova 过滤资源](/languages/laravel/nova/how-to-use-filters-in-laravel-nova.md)
     - [使用 laravel nova Lenses](/languages/laravel/nova/how-to-use-resources-lenses-in-laravel-nova.md)
+
+  - [Laravel Livewire](/languages/laravel/livewire/README.md)
