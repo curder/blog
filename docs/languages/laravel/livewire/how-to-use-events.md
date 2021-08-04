@@ -108,7 +108,7 @@ class ShowPosts extends Component
 
 > 定义好上面的方法后，当 `postAdded` 事件被触发。
 
-#### 使用 $refresh 中执行默认刷新
+#### 使用 $refresh 刷新当前组件
 
 ```html
 <button wire:click="$refresh">Refresh</button>
