@@ -3,7 +3,7 @@
 开始之前已经下载好了Laravel项目。
 
 ## 下载 livewire
-使用下面的命令下载 livewire/livewire 包到当前 Laravel 项目。
+使用下面的命令下载 [livewire/livewire](https://github.com/livewire/livewire) 包到当前 Laravel 项目。
 
 ```bash
 composer require livewire/livewire -vvv
@@ -13,7 +13,7 @@ composer require livewire/livewire -vvv
 
 在模版文件中添加如下两行指令
 
-```html {10, 15}
+```html {10,15}
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -32,7 +32,9 @@ composer require livewire/livewire -vvv
 </html>
 ```
 
-> 上面通过指令：`@livewireStyles` 和 `@livewireScripts` 可以释放css和js。也可以通过标签语法 `<livewire:styles />` 和 `<livewire:scripts />`。
+> 上面通过指令：`@livewireStyles` 和 `@livewireScripts` 可以释放css和js。
+>
+> 也可以通过标签语法 `<livewire:styles />` 和 `<livewire:scripts />`。
 
 ## 在 compose.json 添加命令
 
@@ -44,7 +46,9 @@ composer require livewire/livewire -vvv
 ],
 ```
 
-## 创建第一个 livewire
+至此 livewire 引入完毕。
+
+## 创建一个 livewire 组件
 
 ```bash
 php artisan make:livewire hello-world
@@ -56,7 +60,7 @@ php artisan make:livewire hello-world
 
 ### 通过 view 函数的参数传递
 
-- 组件通过数组传参到视图。
+组件通过数组传参到视图。
 
 ```php {11}
 <?php
@@ -75,14 +79,6 @@ class HelloWorld extends Component
 }
 ```
 
-- 视图通过模版输出
-
-```html {2}
-<div>
-    Hello {{ $name }}
-</div>
-```
-
 ### 通过类属性传递
 
 ```php {8}
@@ -99,4 +95,13 @@ class HelloWorld extends Component
         return view('livewire.hello-world');
     }
 }
+```
+
+
+## 视图通过模版输出
+
+```html {2}
+<div>
+    Hello {{ $name }}
+</div>
 ```
