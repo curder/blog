@@ -84,6 +84,7 @@
 
   - [如何在各大平台上免费翻"墙"](docs/tools/how-to-be-free-on-all-major-platforms-over-the-fire-wall.md)
   - [在 Nginx 或者 Apache 服务器中配置 SSI 支持](docs/tools/how-to-configure-ssi-support-in-nginx-or-apache-server.md)
+  - [vim 粘贴包含注释时不保留格式](docs/tools/vim-paste-unused-formatter.md)
 
 - [Javascript](docs/languages/javascript/README.md)
 
