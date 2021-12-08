@@ -11,6 +11,7 @@
   - [Laravel5 确认框从数据库示例中删除记录](/languages/laravel/laravel5-confirmation-box-to-delete-records-from-mysql-database-example.md)
   - [使用 laravel-sms 构建短信验证码发送校验模块](/languages/laravel/use-laravel-sms-to-build-sms-verification-code-to-send-verification-module.md)
   - [在 Laravel 项目中创建自己的 PHP 函数](/languages/laravel/creating-helpers-function.md)
+  - [Laravel 使用MySQL按JSON 字段值排序](/languages/laravel/sort-by-mysql-json-field-value-in-laravel.md)
 
   - [API 开发相关](/languages/laravel/api/README.md)
 
