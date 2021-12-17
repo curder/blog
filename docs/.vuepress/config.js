@@ -36,7 +36,11 @@ module.exports = {
                     '/tools/google-developer-tools/'
                 ]
             },
-            {text: "其他", children: ['/others/']}
+            {text: "其他", children: ['/others/']},
+            {text: "📖📚", children: [
+                { text: 'Setup mac for developer', link: 'https://curder.github.io/setup-mac-for-developer/' },
+                { text: 'Laravel study', link: 'https://curder.github.io/laravel-study/' }
+            ]},
         ],
         sidebar: {
             '/languages/laravel/': [
