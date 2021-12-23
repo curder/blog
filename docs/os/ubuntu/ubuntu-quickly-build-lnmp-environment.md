@@ -3,10 +3,12 @@
 在Ubuntu系统中，可以使用 `apt-get` 命令来搭建LNMP环境。这种方式较编译方式安装更加简便，因此选择该方式来搭建环境以供学习。
 
 * Ubuntu Ubuntu 20.04.3 LTS
-* nginx 1.18.0
-* php 8.1.0
-    - composer 2.1.14
-* mysql 8.0.27
+* Nginx 1.18.0
+* PHP 8.1.0
+    - Composer 2.1.14
+* MySQL 8.0.27
+
+安装前请确保对服务器进行了初始化，可以[参考这里](https://curder.github.io/blog/os/ubuntu/ubuntu-server-initialization.html)。
 
 ## Nginx
 
@@ -42,7 +44,9 @@ nginx -v
 /etc/nginx/sites-available
 ```
 
-> 默认的主配置目录仅仅包含`/etc/nginx/sites-enabled`目录下的文件，实际操作中添加网站配置首先添加到`/etc/nginx/sites-available/another-website.conf`，然后通过`ln -s /etc/nginx/sites-available/another-website.conf /etc/nginx/sites-enabled/another-website.conf`将配置文件放置到`/etc/nginx/sites-enabled`目录下。
+> 默认的主配置目录仅仅包含`/etc/nginx/sites-enabled`目录下的文件，实际操作中添加网站配置首先添加到`/etc/nginx/sites-available/another-website.conf`。
+> 
+> 然后通过`ln -s /etc/nginx/sites-available/another-website.conf /etc/nginx/sites-enabled/another-website.conf`将配置文件放置到`/etc/nginx/sites-enabled`目录下。
 
 * 默认网站目录
 
@@ -56,7 +60,7 @@ nginx -v
 
 ```bash
 sudo /etc/init.d/nginx start
-sudo service nginx start
+sudo systemctl start nginx
 ```
 
 分别可以通过下面的三种方式测试进程和端口是否正常。
@@ -88,7 +92,6 @@ sudo apt-get install -y \
   php8.1 \
   php8.1-fpm \
   php8.1-common \
-  php8.1-cli \
   php8.1-mysql \
   php8.1-opcache \
   php8.1-gd \
@@ -112,6 +115,20 @@ sudo apt-get install -y \
 ```ini
 listen = /run/php/php8.1-fpm.sock
 ```
+
+#### 开启opcache和jit
+
+文件 `/etc/php/8.1/fpm/php.ini` 和 `/etc/php/8.1/cli/php.ini` 中修改如下配置：
+
+```ini
+opcache.enable=1
+opcache.enable_cli=1
+opcache.jit_buffer_size=100M
+opcache.jit=1255
+```
+
+执行命令 `php -i |egrep 'opcache.jit |opcache.enable |opcache.enable_cli |opcache.jit_buffer_size'` 检查是否配置成功。
+
 
 #### 配置Nginx
 
@@ -153,7 +170,7 @@ sudo mv composer.phar /usr/local/bin/composer
 ```
 
 * 切换 Composer 版本
-默认情况下安装的 composer 为 2.1.11 的版本。切换到 1.10.23
+默认情况下安装的 composer 为 2.1.14 的版本。切换到 1.10.24
 ```bash
 composer self-update --1
 ```

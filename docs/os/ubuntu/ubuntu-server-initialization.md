@@ -109,6 +109,30 @@ sudo adduser ubuntu
 sudo usermod -aG sudo ubuntu
 ```
 
+## 安装 docker（可选）
+
+[docker官方](https://docs.docker.com/engine/install/ubuntu/)为 Ubuntu 提供了三种安装方式，这里使用最简单的通过脚本的方式安装：
+
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+将普通用户添加到 docker 用户组，这样普通用户就能正常操作docker。
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+> 添加新用户到docker组之后需要退出终端重新进入才能正常操作docker命令
+
+启动一个 hello-world 容器
+
+```
+docker run hello-world
+```
+
+
 ## 配置 SSH 登录及 SSH Server 安全设定
 
 ### 配置免密登录
