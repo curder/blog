@@ -106,7 +106,7 @@ sudo adduser ubuntu
 创建完 ubuntu 用户后，如果想用它来执行一些系统级命令，可以把它加进 sudo 群组，这样就可以用 sudo 命令了：
 
 ```bash
-sudo usermod -a -G sudo ubuntu
+sudo usermod -aG sudo ubuntu
 ```
 
 ## 配置 SSH 登录及 SSH Server 安全设定
@@ -176,3 +176,7 @@ sudo reboot
 ```
 
 使用上面的命令可以对服务器进行重启。
+
+## 参考
+
+- [Initial Server Setup with Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
