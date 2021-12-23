@@ -2,22 +2,22 @@
 
 在Ubuntu系统中，可以使用 `apt-get` 命令来搭建LNMP环境。这种方式较编译方式安装更加简便，因此选择该方式来搭建环境以供学习。
 
-* Ubuntu 16.4
-* nginx 1.10.3
-* php 7.1.18
-    - composer 1.6.5
-* mysql 5.7.22
+* Ubuntu Ubuntu 20.04.3 LTS
+* nginx 1.18.0
+* php 8.1.0
+    - composer 2.1.14
+* mysql 8.0.27
 
 ## Nginx
 
 ### 安装
 
-> 安装之前使用`sudo su -`命令将当前用户切换到**root**用户。
+> 安装之前使用 `sudo su -` 命令将当前用户切换到 **root** 用户。
 
 nginx 的安装非常简单，使用下面的命令即可。
 
 ```bash
-sudo apt-get install -y nginx && sudo apt-get update
+sudo apt-get update && sudo apt-get install -y nginx
 ```
 
 ### 检查
@@ -69,23 +69,48 @@ ps aux |grep nginx
 
 ## PHP
 
+### 安装前的准备
+
+执行下面的命令添加具有 PHP 8.1 软件包和其他必需的 PHP 扩展的 `ondrej/php`。
+
+```bash
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+```
+
+一旦成功添加 PPA，就可以安装 PHP 8.1 了。
+
 ### 安装
 
 ```bash
-sudo apt-get install -y python-software-properties
-sudo apt-add-repository ppa:ondrej/php
-sudo apt-get update
-sudo apt-get install -y php7.1 php7.1-fpm php7.1-zip php7.1-mbstring php7.1-xml
+sudo apt-get install -y \
+  php8.1 \
+  php8.1-fpm \
+  php8.1-common \
+  php8.1-cli \
+  php8.1-mysql \
+  php8.1-opcache \
+  php8.1-gd \
+  php8.1-imagick \
+  php8.1-curl \
+  php8.1-mbstring \
+  php8.1-xml \
+  php8.1-zip \
+  php8.1-snmp \
+  php8.1-bcmath \
+  php8.1-soap \
+  php8.1-gmp
 ```
 
 ### 配置
 
 #### 配置PHP
 
-配置php的sock地址，文件保存在`/etc/php/7.1/fpm/pool.d/www.conf`。
+配置php的sock地址，文件保存在`/etc/php/8.1/fpm/pool.d/www.conf`。
 
 ```ini
-listen = /run/php/php7.1-fpm.sock
+listen = /run/php/php8.1-fpm.sock
 ```
 
 #### 配置Nginx
@@ -98,7 +123,7 @@ location ~ \.php$ {
     # With php7.0-cgi alone:
     # fastcgi_pass 127.0.0.1:9000;
     # With php7.0-fpm:
-    fastcgi_pass unix:/run/php/php7.1-fpm.sock;
+    fastcgi_pass unix:/run/php/php8.1-fpm.sock;
 }
 ```
 
@@ -113,7 +138,7 @@ sudo /etc/init.d/nginx restart
 * 重启php-fpm
 
 ```bash
-sudo /etc/init.d/php7.1-fpm restart
+sudo /etc/init.d/php8.1-fpm restart
 ```
 
 ## Composer
@@ -127,25 +152,40 @@ php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
 ```
 
-* 配置Packagist 镜像
-
+* 切换 Composer 版本
+默认情况下安装的 composer 为 2.1.11 的版本。切换到 1.10.23
 ```bash
-composer config -g repo.packagist composer https://packagist.phpcomposer.com
+composer self-update --1
 ```
 
-> 可能需要临时切换到其他用户执行上面的配置命令。
+* 检查并确定下版本
+```bash
+composer -V # 查看当前composer版本
+```
 
-更多Composer相关的操作[参看这里](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-16-04)。
+* 切换源
+```bash
+composer config -g repos.packagist composer https://mirrors.aliyun.com/composer # 切换 aliyun 源
+
+composer config -g repo.packagist composer https://packagist.org # 切换 packagist 源
+```
+
 
 ## MySQL
 
 ### 安装
 
 ```bash
-sudo apt-get install mysql-server mysql-client php7.1-mysql
+sudo apt-get install -y \
+  mysql-server \
+  mysql-client \
+  php8.1-mysql
 ```
 
-> 安装过程中会需要输入数据库的**root**密码。
+安装默认的用户名为 `root` ，密码为空。
+
+mysqld的配置文件在 `/etc/mysql/mysql.conf.d/mysqld.cnf`。
+
 
 ## 参考地址
 
