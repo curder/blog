@@ -248,4 +248,4 @@ composer require --dev phpunit/phpunit
 ## 参考
 
 - [The Console Component 文档](https://symfony.com/doc/current/components/console.html)
-- [curder/symfony-components](https://github.com/curder/symfony-components)
+- [curder/symfony-components](https://github.com/curder/symfony-components/tree/console)
