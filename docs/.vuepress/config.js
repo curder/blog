@@ -22,7 +22,8 @@ module.exports = {
                     '/languages/wordpress/',
                     '/languages/go/',
                     '/languages/javascript/',
-                    '/languages/vue/'
+                    '/languages/vue/',
+                    '/languages/symfony-components/'
                 ]
             },
             {text: '操作系统', children: ['/os/centos/', '/os/ubuntu/', '/os/mac-os/']},
@@ -113,6 +114,14 @@ module.exports = {
                     children: getFiles('languages/vue/vee-validate'),
                 },
             ],
+            '/languages/symfony-components/': [
+                {
+                    isGroup: true,
+                    text: 'Symfony 组件',
+                    children: getFiles('languages/symfony-components'),
+                },
+            ],
+
 
             '/os/centos': [
                 {
