@@ -31,3 +31,5 @@ book.mobi
 
 .temp
 .cache
+
+docs/.vuepress/dist/
