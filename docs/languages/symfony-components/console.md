@@ -104,6 +104,11 @@ protected function configure()
     $this->setName('user:create') // 设置命令名称
          ->setDescription('Create new user') // 命令简短描述
          ->setHelp('This command allows you to create users...') // 运行命令时使用 "--help" 选项时的完整命令描述
+//         ->addOption('is_admin', InputArgument::OPTIONAL, InputOption::VALUE_NONE, 'It\'s admin user.')
+//         ->setDefinition([
+//             new InputArgument('username', InputArgument::REQUIRED, 'The username of the user.'),
+//             new InputOption('is_admin', InputArgument::OPTIONAL, InputOption::VALUE_NONE, 'It\'s admin user.'),
+//         ])
          ;
 }
 ```
