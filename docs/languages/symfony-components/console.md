@@ -4,6 +4,8 @@ Console 组件允许创建 command-line 命令。console（控制台）命令可
 
 示例创建一个 CreateUserCommand 命令。
 
+[GitHub 实例代码库 - curder/symfony-components](https://github.com/curder/symfony-components/tree/console)
+
 ## 安装前的准备
 
 ```bash
