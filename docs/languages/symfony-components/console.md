@@ -43,7 +43,7 @@ mkdir src/ # 创建源代码目录
 ## 安装
 
 ```bash
-composer require symfony/console
+composer require symfony/console @stable
 ```
 
 > 如果在 `Symfony` 应用程序之外安装这个组件，必须在代码中包含 `vendor/autoload.php` 文件来启用 Composer 提供的类的自动加载机制。
