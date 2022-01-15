@@ -1,3 +1,3 @@
 # Atom
 
-* [Atom的基本使用](/tools/atom/normal.md)
+* [Atom的基本使用](/docs/tools/atom/normal.md)

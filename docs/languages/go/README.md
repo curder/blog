@@ -2,5 +2,5 @@
 
 * Go安装
 
-  - [如何在CentOS 7上安装Go](/languages/go/how-to-install-go-lang-on-centos-7.md)
-  - [如何在MacOSX上安装Go](/languages/go/how-to-install-go-lang-on-mac-osx.md)
+  - [如何在CentOS 7上安装Go](/docs/languages/go/how-to-install-go-lang-on-centos-7.md)
+  - [如何在MacOSX上安装Go](/docs/languages/go/how-to-install-go-lang-on-mac-osx.md)
