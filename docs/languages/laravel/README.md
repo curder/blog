@@ -4,7 +4,7 @@
 
   - [Laravel 项目初始化 README 模版](/docs/languages/laravel/laravel-project-initialize-readme-template.md)
   - [使用 Laravel + adminlte + vue.js 构建项目](/docs/languages/laravel/prepare-project-by-laravel-adminlte-vue-js.md)
-  - [Laravel Eloquent 的提示和技巧一](/docs/languages/laravel/eloquent-tips-tricks-1.md)
+  - [Laravel Eloquent 的提示和技巧一](/docs/languages/laravel/eloquent-tips-tricks.md)
   - [Laravel Eloquent 的提示和技巧二](/docs/languages/laravel/eloquent-tips-tricks-2.md)
   - [使用预加载（Eager loading）来优化 Laravel Eloquent 查询](/docs/languages/laravel/using-lazy-loading-to-optimize-laravel-eloquent-queries.md)
   - [在 Laravel 应用中使用 pjax 进行页面加速](/docs/languages/laravel/using-pjax-for-page-acceleration-in-the-laravel-app.md)
