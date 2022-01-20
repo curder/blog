@@ -21,9 +21,9 @@ public function fields(Request $request)
         Markdown::make('Body')->rules(['required']), // 使用数组形式定义规则
 
         DateTime::make('Publish At')->hideFromIndex()
-            ->rules('aftet_or_equal:today'),
+            ->rules('after_or_equal:today'),
         DateTime::make('Publish Until')->hideFromIndex()
-            ->rules('aftet_or_equal:publish_at'),
+            ->rules('after_or_equal:publish_at'),
         Boolean::make('Active', 'is_published'),
         Select::make('category')->options([
             'category-1' => 'Category One',
