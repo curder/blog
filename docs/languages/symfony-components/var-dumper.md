@@ -84,6 +84,15 @@ $user = new User;
 dump($user); // 或者 dd($user);
 ```
 
+## 查看效果
+
+可以在命令行执行 `php index.php` 在终端输出中查看。
+
+也可以执行`php -S 0.0.0.0:8888`，然后在浏览器中输入`http://localhost:8888` 查看。
+
+<img :src="$withBase('/images/languages/symfony-components/var-dumper/default-style-for-heml-render.png')" alt="">
+
+
 
 ## 参考
 
