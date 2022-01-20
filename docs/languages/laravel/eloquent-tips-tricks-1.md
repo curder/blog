@@ -1,4 +1,4 @@
-# Laravel Eloquent 模型技巧1
+# Eloquent 模型技巧
 
 > 英文原文：[20 Laravel Eloquent Tips and Tricks](https://laravel-news.com/eloquent-tips-tricks)
 
