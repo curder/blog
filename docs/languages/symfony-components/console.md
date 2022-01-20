@@ -16,8 +16,9 @@ composer init # 初始化 Composer 信息
 
 mkdir src/ # 创建源代码目录
 ```
-       
+
 `composer.json` 文件如下：
+
 ```json {13-17}
 {
   "name": "curder/symfony-components",
@@ -33,7 +34,7 @@ mkdir src/ # 创建源代码目录
   },
   "autoload": {
     "psr-4": {
-      "": "src/"
+      "Curder\\": "src/"
     }
   }
 }
@@ -47,7 +48,6 @@ composer require symfony/console @stable
 ```
 
 > 如果在 `Symfony` 应用程序之外安装这个组件，必须在代码中包含 `vendor/autoload.php` 文件来启用 Composer 提供的类的自动加载机制。
-
 
 ## 创建一个Console程序
 
@@ -148,7 +148,6 @@ public function execute(InputInterface $input, OutputInterface $output)
 }
 ```
 
-
 ### 执行命令
 
 ```bash
@@ -173,30 +172,14 @@ composer require --dev phpunit/phpunit
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
-         cacheResultFile=".phpunit.cache.test-results"
-         executionOrder="depends,defects"
-         beStrictAboutCoversAnnotation="true"
-         beStrictAboutOutputDuringTests="true"
-         beStrictAboutTodoAnnotatedTests="true"
-         convertDeprecationsToExceptions="true"
-         failOnRisky="true"
-         failOnWarning="true"
-         verbose="true">
+<phpunit bootstrap="vendor/autoload.php"
+         cacheResult ="false"
+         colors="true">
     <testsuites>
-        <testsuite name="default">
+        <testsuite name="Tests">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
-
-    <coverage cacheDirectory=".phpunit.cache.code-coverage"
-              processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">src</directory>
-        </include>
-    </coverage>
 </phpunit>
 ```
 
