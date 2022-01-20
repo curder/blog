@@ -1,5 +1,7 @@
 # Laravel 项目README
 
+[source code](https://raw.githubusercontent.com/curder/blog/master/docs/languages/laravel/laravel-project-initialize-readme-template.md)
+
 ## 1. 下载
 
 推荐使用`git` 对应的`master`分支上获取项目的最新代码，使用命令`git clone https://github.com/curder/example`。

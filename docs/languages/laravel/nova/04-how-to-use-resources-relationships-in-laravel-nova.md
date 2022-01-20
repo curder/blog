@@ -1,6 +1,6 @@
-# 使用 laravel nova 关联资源
+# 关联资源
 
-在[使用 laravel nova 定义更多字段](/languages/laravel/nova/how-to-defining-more-fields-use-laravel-nova.md)中说到使用 nova
+在[使用 laravel nova 定义更多字段](/languages/laravel/nova/03-how-to-defining-more-fields-use-laravel-nova.md)中说到使用 nova
 定义了更多的字段，这里对一些表之间的关联关系进行一些设定。
 
 ## BelongsTo 和 HasMany

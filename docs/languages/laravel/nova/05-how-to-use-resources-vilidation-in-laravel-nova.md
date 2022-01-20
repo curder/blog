@@ -1,6 +1,6 @@
-# 使用 laravel nova 验证字段
+# 验证字段
 
-在[使用 laravel nova 关联资源](/languages/laravel/nova/how-to-use-resources-relationships-in-laravel-nova.md)中说到使用 nova 定义了一些表之间的关联关系进行一些设定。
+在[使用 laravel nova 关联资源](/languages/laravel/nova/04-how-to-use-resources-relationships-in-laravel-nova.md)中说到使用 nova 定义了一些表之间的关联关系进行一些设定。
 
 在新增和编辑后台资源的时候，会经常使用到一些验证，比如说：字段不允许为空，字段必须是邮箱格式等等。
 

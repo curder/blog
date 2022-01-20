@@ -1,6 +1,6 @@
-# 使用 laravel nova 定义更多字段
+# 定义更多字段
 
-在[使用 laravel nova 定义资源](/languages/laravel/nova/how-to-defining-resources-use-laravel-nova.md)中说到使用 nova 定义资源，这里对不同的资源使用不同的类型的列字段。
+在[使用 laravel nova 定义资源](/languages/laravel/nova/02-how-to-defining-resources-use-laravel-nova.md)中说到使用 nova 定义资源，这里对不同的资源使用不同的类型的列字段。
 
 ## 给表添加不同类型的列
 

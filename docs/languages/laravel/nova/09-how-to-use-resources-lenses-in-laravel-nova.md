@@ -1,4 +1,4 @@
-# 使用 laravel nova Lenses
+# Lenses
 
 与过滤器类似， Nova lenses 允许开发人员充分的定制资源的底层 Eloquent 查询。
 
@@ -120,7 +120,7 @@ class MostValuableUsers extends Lens
 
 ### Lens 过滤器
 
-每一个 Nova lens 都包含一个 `filters` 方法。这个方法可以让你把任何现存的 [过滤器](/languages/laravel/nova/how-to-use-filters-in-laravel-nova.md) 添加到 `lens`:
+每一个 Nova lens 都包含一个 `filters` 方法。这个方法可以让你把任何现存的 [过滤器](/languages/laravel/nova/08-how-to-use-filters-in-laravel-nova.md) 添加到 `lens`:
 
 ```php
 use App\Nova\Filters\UserType;

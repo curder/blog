@@ -1,4 +1,4 @@
-# 安装 Laravel Nova
+# 安装 Nova
 
 [Laravel nova](https://nova.laravel.com) 提供了一个优雅的方式快速开发一个漂亮的后台管理系统，它使用 tailwindcss 驱动前端展示界面，后台使用 Laravel 框架。
 

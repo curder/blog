@@ -1,6 +1,6 @@
-# 使用 laravel nova 定义资源
+# 定义资源
 
-通过[安装 laravel nova](/languages/laravel/nova/how-to-installation-laravel-nove.md)已经了解了 nova 的安装。
+通过[安装 laravel nova](/languages/laravel/nova/01-how-to-installation-laravel-nove.md)已经了解了 nova 的安装。
 
 下面通过简单的文章增删改查来展示 nova 的高效开发后台。
 
