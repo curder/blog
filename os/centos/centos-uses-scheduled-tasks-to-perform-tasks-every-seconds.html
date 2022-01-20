@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="generator" content="VuePress 2.0.0-beta.32">
     <title>Linux下使用定时任务每隔N秒钟执行任务 | 编程学习</title><meta name="description" content="编程学习点滴">
-    <link rel="modulepreload" href="/blog/assets/app.9a6c6854.js"><link rel="modulepreload" href="/blog/assets/centos-uses-scheduled-tasks-to-perform-tasks-every-seconds.html.5ba1c747.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/blog/assets/centos-uses-scheduled-tasks-to-perform-tasks-every-seconds.html.76881ff3.js">
+    <link rel="modulepreload" href="/blog/assets/app.ae35fea5.js"><link rel="modulepreload" href="/blog/assets/centos-uses-scheduled-tasks-to-perform-tasks-every-seconds.html.9e0cc9fa.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/blog/assets/centos-uses-scheduled-tasks-to-perform-tasks-every-seconds.html.3e482f84.js">
     <link rel="stylesheet" href="/blog/assets/style.71b8a0dd.css">
   </head>
   <body>
@@ -28,6 +28,6 @@
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><blockquote><p>通过匹配脚本名称杀死进程。</p></blockquote><h3 id="定时任务" tabindex="-1"><a class="header-anchor" href="#定时任务" aria-hidden="true">#</a> 定时任务</h3><p>通过执行命令<code>crontab -e</code>，写入到文件中。</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token number">0</span> <span class="token number">12</span> * * * <span class="token function">nohup</span> /bin/bash /path/start_data_refresh.sh <span class="token operator">&amp;</span>
 00 00 * * * /bin/bash /path/stop_data_refresh.sh
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><blockquote><p>上面的定时任务是每天中午12点开始执行任务，晚上12点结束。</p></blockquote><p>值得注意的是，执行<code>start_data_refresh.sh</code>脚本的时候，<strong>不能设定为每分钟执行</strong>，可以选择某个时间点执行。</p><p>这样在执行<code>stop_data_refresh.sh</code>脚本的时候才不至于出现在当前这一分钟内不执行，到了下一分钟又开始执行<code>start_data_refresh.sh</code>脚本的情况。</p><p>如果您有更好的解决方案，欢迎分享。</p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: q.curder@gmail.com">curder</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/blog/os/centos/automatically-deploy-laravel-applications-deployer-centos.html" class="" aria-label="如何在CentOS上使用Deployer自动部署Laravel应用程序"><!--[--><!--]--> 如何在CentOS上使用Deployer自动部署Laravel应用程序 <!--[--><!--]--></a></span><span class="next"><a href="/blog/os/centos/how-to-create-a-sudo-user-on-centos.html" class="" aria-label="如何在CentOS上创建sudo用户"><!--[--><!--]--> 如何在CentOS上创建sudo用户 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/blog/assets/app.9a6c6854.js" defer></script>
+    <script type="module" src="/blog/assets/app.ae35fea5.js" defer></script>
   </body>
 </html>

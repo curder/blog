@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="generator" content="VuePress 2.0.0-beta.32">
     <title>Mac下安装使用Vagrant和LANMP环境搭建 | 编程学习</title><meta name="description" content="编程学习点滴">
-    <link rel="modulepreload" href="/blog/assets/app.9a6c6854.js"><link rel="modulepreload" href="/blog/assets/mac-installation-vagrant.html.d1715c70.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/blog/assets/mac-installation-vagrant.html.78ac6035.js">
+    <link rel="modulepreload" href="/blog/assets/app.ae35fea5.js"><link rel="modulepreload" href="/blog/assets/mac-installation-vagrant.html.7fed75a0.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/blog/assets/mac-installation-vagrant.html.2a988ff8.js">
     <link rel="stylesheet" href="/blog/assets/style.71b8a0dd.css">
   </head>
   <body>
@@ -15,6 +15,6 @@ vagrant box <span class="token function">add</span> ubuntu/trusty64
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><blockquote><p>上面的命令执行完，在镜像列表中可以看到相关信息，执行<code>vagrant box list</code>可以查看已有的镜像列表。</p></blockquote><h3 id="初始化虚拟机配置" tabindex="-1"><a class="header-anchor" href="#初始化虚拟机配置" aria-hidden="true">#</a> 初始化虚拟机配置</h3><p>不管是通过在线下载还是将box下载到本地，使用下面的命令进行初始化。<strong>执行初始化命令时，请记得在一个新建的目录下运行</strong></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>vagrant init ubuntu1204
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><p>运行上面的命令后，Vagrant会在当前运行的目录下创建 <code>Vagrantfile</code> 的配置文件。</p><h3 id="启动虚拟机" tabindex="-1"><a class="header-anchor" href="#启动虚拟机" aria-hidden="true">#</a> 启动虚拟机</h3><p>使用下面的命令来启动虚拟机。</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>vagrant up --provider virtualbox
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><blockquote><p>上面的命令是指定virtualbox虚拟机来启动 <code>vagrant</code> 。</p><p>如果虚拟机不存在则会新建虚拟机，如果存在则会启动虚拟机。</p></blockquote><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: q.curder@gmail.com">curder</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/blog/tools/vagrant/mac-installation-using-vagrant-and-lanmp-environment-to-build.html" class="" aria-label="LANMP环境搭建"><!--[--><!--]--> LANMP环境搭建 <!--[--><!--]--></a></span><span class="next"><a href="/blog/tools/vagrant/vagrant-common-commands.html" class="" aria-label="Vagrant常用命令"><!--[--><!--]--> Vagrant常用命令 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/blog/assets/app.9a6c6854.js" defer></script>
+    <script type="module" src="/blog/assets/app.ae35fea5.js" defer></script>
   </body>
 </html>

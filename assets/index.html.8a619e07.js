@@ -1,0 +1,1 @@
+const e={key:"v-cbcc004a",path:"/os/mac-os/",title:"Mac OS",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1642649304e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"os/mac-os/README.md"};export{e as data};

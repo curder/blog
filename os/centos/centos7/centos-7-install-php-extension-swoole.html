@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="generator" content="VuePress 2.0.0-beta.32">
     <title>CentOS 下安装 PHP 拓展 Swoole | 编程学习</title><meta name="description" content="编程学习点滴">
-    <link rel="modulepreload" href="/blog/assets/app.9a6c6854.js"><link rel="modulepreload" href="/blog/assets/centos-7-install-php-extension-swoole.html.0ef50340.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/blog/assets/centos-7-install-php-extension-swoole.html.01fd9f04.js">
+    <link rel="modulepreload" href="/blog/assets/app.ae35fea5.js"><link rel="modulepreload" href="/blog/assets/centos-7-install-php-extension-swoole.html.5f3c72d4.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/blog/assets/centos-7-install-php-extension-swoole.html.91763ed3.js">
     <link rel="stylesheet" href="/blog/assets/style.71b8a0dd.css">
   </head>
   <body>
@@ -21,6 +21,6 @@ phpize
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><blockquote><p>默认将生成的<code>swoole.so</code>文件放置在<code>/usr/lib64/php/modules/</code>下。</p></blockquote><h3 id="配置php-ini" tabindex="-1"><a class="header-anchor" href="#配置php-ini" aria-hidden="true">#</a> 配置php.ini</h3><p>通过命令<code>php --ini</code>查到<code>php.ini</code>文件所在路径，这里是<code>/etc/php.ini</code>，编辑它，在合适的位置新增下面行。</p><div class="language-ini ext-ini line-numbers-mode"><pre class="language-ini"><code><span class="token key attr-name">extension</span> <span class="token punctuation">=</span> <span class="token value attr-value">swoole.so</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><h3 id="验证" tabindex="-1"><a class="header-anchor" href="#验证" aria-hidden="true">#</a> 验证</h3><p>执行下面的命令检查是否成功引入 Swoole 拓展。</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>php -m <span class="token operator">|</span><span class="token function">grep</span> swoole
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: q.curder@gmail.com">curder</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><!----><span class="next"><a href="/blog/os/centos/centos7/centos-7-lnmp-installation-and-configuration.html" class="" aria-label="CentOS 7 LNMP 安装和配置"><!--[--><!--]--> CentOS 7 LNMP 安装和配置 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/blog/assets/app.9a6c6854.js" defer></script>
+    <script type="module" src="/blog/assets/app.ae35fea5.js" defer></script>
   </body>
 </html>
