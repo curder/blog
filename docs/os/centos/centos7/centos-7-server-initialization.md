@@ -233,6 +233,17 @@ ssh demo@SERVER_IP_ADDRESS
 
 如果一切正常，您可以输入`exit`命令退出会话。
 
+
+## 终端配色
+
+为了设置终端颜色，我们需要对`/etc/bashrc`文件中的 PS1 变量进行定制，这样就能应用于所有用户。
+
+```bash
+echo "#终端配色" >> /etc/bashrc
+echo "export PS1='\n\[\e[37;1m[\]\[\e[31;1m\]\u\[\e[39;1m\]@\[\e[33;1m\]\H \[\e[34;1m\]\w\[\e[37;1m\]]\n\[\e[32;1m\]\\$ \[\e[0m\]'" >> /etc/bashrc
+source /etc/bashrc
+```
+
 ## 参考链接
 
 * [CentOS7 新装服务器初始化配置](https://ovwane.github.io/2017/11/17/CentOS7%20%E6%96%B0%E8%A3%85%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D)
