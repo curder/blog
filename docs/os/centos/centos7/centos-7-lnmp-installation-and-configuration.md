@@ -3,9 +3,9 @@
 ## 软件版本
 
 * CentOS Linux release 7.4.1708 (Core)
-* nginx 1.12.2
+* nginx 1.20.1
 * MySQL 5.7.22
-* php-fpm 7.2.6
+* php-fpm 8.1.6
 * Composer 1.4.2
 * laravel 5.6.26
 * nodejs v6.14.2 && npm 3.10.10 && yarn 1.7.0
@@ -33,7 +33,8 @@ sudo yum -y install epel-release
 sudo yum repolist
 ```
 
-<img :src="$withBase('/images/os/centos7/centos-7-lnmp-installation-and-configuration/yum-epel-repository-list.jpg')" alt="">
+![yum epel repository list](./images/yum-epel-repository-list.jpg)
+
 
 ## 安装Nginx
 
@@ -60,15 +61,15 @@ Nginx默认运行在 80 端口，使用下面的`netstat`命令检查。
 netstat -plntu | grep 80
 ```
 
-<img :src="$withBase('/images/os/centos7/centos-7-lnmp-installation-and-configuration/nginx-status-check.jpg')" alt="">
+![Nginx status check](./images/nginx-status-check.jpg)
 
 至此`Nginx`安装完毕。
 
 ## 安装php-fpm
 
-在CentOS基础库中不存在PHP 7.2，我们需要从名为`remi`或`webtatic`的第三方仓库中安装它。
+在CentOS基础库中不存在PHP 8.1，我们需要从`remi`的第三方仓库中安装它。
 
-### 方式一 remi仓库（推荐）
+### 使用remi仓库
 
 > 之所以推荐它是因为它非常方便切换PHP的版本。
 
@@ -79,72 +80,42 @@ netstat -plntu | grep 80
 ```bash
 sudo rpm --import http://rpms.famillecollet.com/RPM-GPG-KEY-remi
 sudo rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-sudo yum-config-manager --enable remi-php72 # 默认remi仓库禁用的，在实际需要的时候启用
+sudo yum-config-manager --enable remi-php81 # 默认remi仓库禁用的，在实际需要的时候启用
 sudo yum update
-# sudo yum search php72 | more
-sudo yum install -y php72 php72-php-fpm php72-php-gd php72-php-json php72-php-mbstring php72-php-mysqlnd php72-php-xml php72-php-xmlrpc php72-php-opcache php72-php-pecl-zip
-sudo mkdir -p /run/php-fpm/remi-php72 # 创建一个sock存放的目录
-sudo ln -s  `which php72` /usr/local/sbin/php # 建立软连接方便命令行使用
+# sudo yum search php81 | more
+sudo yum install -y php81 php81-php-fpm php81-php-gd php81-php-json php81-php-mbstring php81-php-mysqlnd php81-php-xml php81-php-xmlrpc php81-php-opcache php81-php-pecl-zip
+sudo mkdir -p /run/php-fpm/remi-php81 # 创建一个sock存放的目录
+sudo ln -s  `which php81` /usr/local/sbin/php # 建立软连接方便命令行使用
 ```
 
-执行完上面的命令后，CentOS系统上已经安装了PHP 7.2, 安装好的`php72`目录在`/etc/opt/remi/php72`,
-也可以参考这个[链接](https://www.cyberciti.biz/faq/how-to-install-php-7-2-on-centos-7-rhel-7/)查看更多操作详情。
+执行完上面的命令后，CentOS系统上已经安装了PHP 8.1, 安装好的`php81`目录在`/etc/opt/remi/php81`。
 
 #### 卸载
 
-> `remi`仓库支持PHP的多版本共存，**不到万不得已不建议使用卸载操作**
-
 ```bash
-sudo yum-config-manager --disable remi-php72 # 禁用remi-php72仓库
-sudo systemctl stop php72-php-fpm.service
-yum remove php72 php72-php-fpm php72-php-gd php72-php-json php72-php-mbstring php72-php-mysqlnd php72-php-xml php72-php-xmlrpc php72-php-opcache
-sudo rmdir /run/php-fpm/remi-php72
-sudo rm -rf /etc/opt/remi/remi-php72 # 删除前记得备份配置
+sudo yum-config-manager --disable remi-php81 # 禁用remi-php81仓库
+sudo systemctl stop php81-php-fpm.service
+yum remove php81 php81-php-fpm php81-php-gd php81-php-json php81-php-mbstring php81-php-mysqlnd php81-php-xml php81-php-xmlrpc php81-php-opcache
+sudo rmdir /run/php-fpm/remi-php81
+sudo rm -rf /etc/opt/remi/remi-php81 # 删除前记得备份配置
 ```
 
 至此，使用remi仓库安装的PHP已经成功卸载。
 
 #### 多版本安装
 
-再安装一个PHP7.3版本为例，执行下面的操作即可完成PHP7.3版本的安装。
+再安装一个PHP 8.0 版本为例，执行下面的操作即可完成PHP8.0版本的安装。
 
 ```bash
-sudo yum-config-manager --enable remi-php73
-sudo yum install php73 php73-php-fpm php73-php-gd php73-php-json php73-php-mbstring php73-php-mysqlnd php73-php-xml php73-php-xmlrpc php73-php-opcache
-sudo mkdir -p /run/php-fpm/remi-php73 # 创建一个sock存放的目录
-sudo ln -s  `which php73` /usr/local/sbin/php # 建立软连接方便命令行使用
+sudo yum-config-manager --enable remi-php80
+sudo yum install php80 php80-php-fpm php80-php-gd php80-php-json php80-php-mbstring php80-php-mysqlnd php80-php-xml php80-php-xmlrpc php80-php-opcache
+sudo mkdir -p /run/php-fpm/remi-php80 # 创建一个sock存放的目录
+sudo ln -s  `which php80` /usr/local/sbin/php # 建立软连接方便命令行使用
 ```
-
-### 方式二 webstatic仓库
-
-#### 安装
-
-```bash
-rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-sudo yum install -y php72w php72w-gd php72w-curl php72w-common php72w-cli php72w-mysql php72w-mbstring php72w-fpm php72w-xml php72w-pdo php72w-zip
-```
-
-其他版本下载可以查看这里：[webtatic仓库](https://webtatic.com/projects/yum-repository/ "webtatic repository")。
-
-> 如果执行上面的命令一直报错`curl: (35) Encountered end of file`，可以尝试将上面的`https`协议改成`http`协议获取rpm源。
-
-
-执行完上面的命令后，CentOS系统上已经安装了PHP 7.2, 安装好的php72w目录在`/etc/php`下。
-
-#### 卸载
-
-> **注意：** 如果想更换到php5.6或7.1版本, 直接把上面yum命令里面的关键字`php72w`换成`php56w`或者`php71w`就可以了。
-
-```bash
-sudo systemctl stop php-fpm
-yum remove php72w php72w-curl php72w-common php72w-cli php72w-mysql php72w-mbstring php72w-fpm php72w-xml php72w-pdo php72w-zip
-```
-
-至此，使用webtatic仓库安装的PHP已经成功卸载。
 
 ### 配置php-fpm
 
-通过使用vim编辑配置文件`php.ini`来配置PHP，**remi仓库**方式安装的主配置文件存放位置在`/etc/opt/remi/php72/php.ini`，**webtatic仓库**
+通过使用vim编辑配置文件`php.ini`来配置PHP，**remi仓库**方式安装的主配置文件存放位置在`/etc/opt/remi/php81/php.ini`，**webtatic仓库**
 方式安装的主配置文件存放位置在`/etc/php.ini`。
 
 * 在文件中找如如下行，取消它的行注释并将值更改为0。
@@ -155,7 +126,7 @@ cgi.fix_pathinfo = 0
 
 保存文件并退出编辑器。
 
-编辑`php-fpm`文件`www.conf`，**remi仓库**方式安装的配置文件存放位置在`/etc/opt/remi/php72/php-fpm.d/www.conf`，**webtatic仓库**
+编辑`php-fpm`文件`www.conf`，**remi仓库**方式安装的配置文件存放位置在`/etc/opt/remi/php81/php-fpm.d/www.conf`，**webtatic仓库**
 方式安装的配置文件存放位置在`/etc/php-fpm.d/www.conf`。
 
 * `php-fpm`将在用户和组`nginx`下运行，将下面两行的值更改为`nginx`，这里用户和用户组请保持与`Nginx`的用户和用户组一致。
@@ -166,12 +137,12 @@ user = nginx
 group = nginx
 ```
 
-* `php-fpm`将在套接字文件下运行，而不是使用服务器端口，**remi仓库**方式安装的PHP可以将值改为`/run/php-fpm/remi-php72/php-fpm.sock`，**webtatic仓库**
+* `php-fpm`将在套接字文件下运行，而不是使用服务器端口，**remi仓库**方式安装的PHP可以将值改为`/run/php-fpm/remi-php81/php-fpm.sock`，**webtatic仓库**
   方式安装的PHP请将'listen'值更改为路径`/run/php-fpm/php-fpm.sock`。
 
 ```ini
 # remi
-listen = /run/php-fpm/remi-php72/php-fpm.sock
+listen = /run/php-fpm/remi-php81/php-fpm.sock
 
 # webtatic
 listen = /run/php-fpm/php-fpm.sock
@@ -199,15 +170,15 @@ env[TEMP] = /tmp
 
 ```bash
 # remi
-sudo systemctl start php72-php-fpm.service
-sudo systemctl enable php72-php-fpm.service
+sudo systemctl start php81-php-fpm.service
+sudo systemctl enable php81-php-fpm.service
 
 # webtatic
 sudo systemctl start php-fpm
 sudo systemctl enable php-fpm
 ```
 
-> 使用`remi`仓库的时候启动的时候可能会报错，由于`php-fpm.sock`文件目录不存在，执行命令：`sudo mkdir -p /run/php-fpm/remi-php72`后在启动就没有问题了。
+> 使用`remi`仓库的时候启动的时候可能会报错，由于`php-fpm.sock`文件目录不存在，执行命令：`sudo mkdir -p /run/php-fpm/remi-php81`后在启动就没有问题了。
 
 ## 检查php-fpm
 
@@ -217,7 +188,7 @@ sudo systemctl enable php-fpm
 sudo netstat -pl | grep php-fpm.sock
 ```
 
-<img :src="$withBase('/images/os/centos7/centos-7-lnmp-installation-and-configuration/php-fpm-status-check.jpg')" alt="">
+![PHP Fpm status check](./images/php-fpm-status-check.jpg)
 
 ## 安装MySQL
 
@@ -302,7 +273,7 @@ composer
 composer config -g repo.packagist -l # 查看配置的Packagist国内镜像
 ```
 
-<img :src="$withBase('/images/os/centos7/centos-7-lnmp-installation-and-configuration/composer-install.jpg')" alt="">
+![Install Composer](./images/composer-install.jpg)
 
 至此，PHP Composer已经正常安装在了CentOS系统上。
 
@@ -336,7 +307,7 @@ composer create-project laravel/laravel .
 
 等待Laravel安装完成。 这可能需要一些时间。
 
-<img :src="$withBase('/images/os/centos7/centos-7-lnmp-installation-and-configuration/laravel-install.jpg')" alt="">
+![Install Laravel Framework](./images/laravel-install.jpg)
 
 安装完成后，将Laravel Web根目录的所有者更改为“nginx”用户，并使用以下命令将存储目录的权限更改为755。
 
@@ -384,7 +355,7 @@ server {
         try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/run/php-fpm/php-fpm.sock; # webtatic
-        # fastcgi_pass unix:/run/php-fpm/remi-php72/php-fpm.sock; # remi
+        # fastcgi_pass unix:/run/php-fpm/remi-php81/php-fpm.sock; # remi
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
@@ -407,7 +378,7 @@ nginx -t # 测试配置是否正确
 sudo systemctl restart nginx # 重启Nginx
 ```
 
-<img :src="$withBase('/images/os/centos7/centos-7-lnmp-installation-and-configuration/restart-nginx.jpg')" alt="">
+![Restart nginx](./images/restart-nginx.jpg)
 
 至此，Laravel的nginx虚拟主机配置已经完成。
 
@@ -417,7 +388,7 @@ sudo systemctl restart nginx # 重启Nginx
 
 访问域名时，您将看到Laravel框架的首页。
 
-<img :src="$withBase('/images/os/centos7/centos-7-lnmp-installation-and-configuration/laravel-install-preview.jpg')" alt="">
+![Install laravel framwork preview](./images/laravel-install-preview.jpg)
 
 CentOS 7上的Nginx、PHP-FPM、MySQL、Composer、NodeJS、Yarn和Laravel安装已经成功。
 

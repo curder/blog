@@ -16,7 +16,7 @@ ssh root@SERVER_IP_ADDRESS
 
 ## 更新 aliyun 的 yum 源
 
-如果服务器在国内建议修改yum源为aliyun，如果服务器在国外可以忽略。
+> 注意：如果服务器在国内建议修改yum源为aliyun，如果服务器在国外可以忽略。
 
 ```bash
 sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
@@ -46,14 +46,6 @@ sudo ntpdate cn.pool.ntp.org
 echo "00 */10 * * * ntpdate cn.pool.ntp.org >/dev/null 2>&1" >> /var/spool/cron/root
 ```
 
-## 修改系统字符集
-
-```bash
-yum reinstall -y kde-l10n-Chinese && glibc-common
-
-LANG=zh_CN.UTF-8 # 临时修改字符集
-sed -i 's/en_US.UTF-8/zh_CN.UTF-8/g' /etc/locale.conf
-```
 
 ## 内核优化`sysctl.conf` && 调整文件描述符`ulimit`
 
@@ -116,9 +108,9 @@ gpasswd -a demo wheel
 
 为新用户设置公钥认证。设置此项将通过必须使用专用的SSH密钥登录来提高服务器的安全性。
 
-### 生成密钥对
-
 如果本地尚未拥有包含公钥和私钥的SSH密钥对，则需要生成一个。如果已经存在要使用的密钥，忽略下面的操作，跳至复制公钥关键步骤。
+
+### 生成密钥对
 
 要生成新的密钥对，请在本地机器（非服务器本身）的终端输入以下命令
 
@@ -126,7 +118,7 @@ gpasswd -a demo wheel
 ssh-keygen
 ```
 
-假设服务器用户被称为`curder`，执行上面的命令将看到如下所示的输出：
+假设本机用户被称为`curder`，执行上面的命令将看到如下所示的输出：
 
 ```text
 Generating public/private rsa key pair.
