@@ -14,6 +14,12 @@ ssh root@SERVER_IP_ADDRESS
 
 然后提供根认证（密码或私钥），完成登录过程。
 
+## 设置个性化主机名
+
+```bash
+sudo hostnamectl set-hostname YOUR_HOSTNAME
+```
+
 ## 更新 aliyun 的 yum 源
 
 > 注意：如果服务器在国内建议修改yum源为aliyun，如果服务器在国外可以忽略。
@@ -239,8 +245,9 @@ ssh demo@SERVER_IP_ADDRESS
 为了设置终端颜色，我们需要对`/etc/bashrc`文件中的 PS1 变量进行定制，这样就能应用于所有用户。
 
 ```bash
-echo "#终端配色" >> /etc/bashrc
-echo "export PS1='\n\[\e[37;1m[\]\[\e[31;1m\]\u\[\e[39;1m\]@\[\e[33;1m\]\H \[\e[34;1m\]\w\[\e[37;1m\]]\n\[\e[32;1m\]\\$ \[\e[0m\]'" >> /etc/bashrc
+echo "# 终端配色
+export PS1='\n\[\e[37;1m[\]\[\e[31;1m\]\u\[\e[39;1m\]@\[\e[33;1m\]\H \[\e[34;1m\]\w\[\e[37;1m\]]\n\[\e[32;1m\]\\$ \[\e[0m\]'" >> /etc/bashrc
+
 source /etc/bashrc
 ```
 
