@@ -1,3 +1,4 @@
+const { defaultTheme } = require('@vuepress/theme-default')
 const {readdirSync} = require('fs');
 
 const getFiles = (dir, filteredReadme = true) => {
@@ -12,7 +13,7 @@ module.exports = {
     lang: 'zh-CN',
     title: '编程学习',
     description: '编程学习点滴',
-    themeConfig: {
+    theme: defaultTheme({
         navbar: [
             {text: '首页', link: '/'},
             {
@@ -211,5 +212,5 @@ module.exports = {
                 },
             ],
         },
-    }
+    }),
 }
