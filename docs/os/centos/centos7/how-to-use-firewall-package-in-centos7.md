@@ -51,10 +51,10 @@ sudo firewall-cmd --state
 sudo systemctl status firewalld
 ```
 
-<img :src="$withBase('/images/os/centos7/how-to-use-firewall-package-in-centos7/firewalld-start-status.png')" alt="firewalld启用状态">
+![firewalld启用状态](./images/how-to-use-firewall-package-in-centos7/firewalld-start-status.png)
 
 
-<img :src="$withBase('/images/os/centos7/how-to-use-firewall-package-in-centos7/firewalld-stop-status.png')" alt="firewalld禁用状态">
+![firewalld禁用状态](./images/how-to-use-firewall-package-in-centos7/firewalld-stop-status.png)
 
 ### 重新加载配置
 
