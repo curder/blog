@@ -33,7 +33,7 @@ sudo yum -y install epel-release
 sudo yum repolist
 ```
 
-![yum epel repository list](./images/yum-epel-repository-list.png)
+![yum epel repository list](images/centos-7-lnmp-installation-and-configuration/yum-epel-repository-list.png)
 
 
 ## 安装Nginx
@@ -61,7 +61,7 @@ Nginx默认运行在 80 端口，使用下面的`netstat`命令检查。
 netstat -plntu | grep 80
 ```
 
-![Nginx status check](./images/nginx-status-check.png)
+![Nginx status check](images/centos-7-lnmp-installation-and-configuration/nginx-status-check.png)
 
 至此`Nginx`安装完毕。
 
@@ -173,7 +173,7 @@ sudo netstat -tunpl|grep 9000
 # sudo netstat -pl | grep php-fpm.sock # 或者查看socket文件
 ```
 
-![PHP Fpm status check](./images/php-fpm-status-check.png)
+![PHP Fpm status check](images/centos-7-uses-yum-way-to-install-and-configure-php-fpm/php-fpm-status-check.png)
 
 至此，php-fpm 进程已经启动。
 
@@ -366,7 +366,7 @@ nginx -t && sudo systemctl restart nginx # 检测配置文件，如果成功则�
 
 访问域名时，您将看到Laravel框架的首页。
 
-![Install laravel framwork preview](./images/laravel-install-preview.png)
+![Install laravel framework preview](images/centos-7-lnmp-installation-and-configuration/laravel-install-preview.png)
 
 CentOS 7上的Nginx、PHP-FPM、MySQL、Composer、NodeJS、Yarn和Laravel安装已经成功。
 
