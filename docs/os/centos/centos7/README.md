@@ -9,3 +9,4 @@
 * [如何在CentOS 7上安装和配置GitLab CE](/docs/os/centos/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7.md)
 * [CentOS7中firewalld防火墙的使用](/docs/os/centos/centos7/how-to-use-firewall-package-in-centos7.md) 
 * [使用Deployer自动部署Laravel应用程序](/docs/os/centos/centos7/automatically-deploy-laravel-applications-deployer-centos.md)
+* [Linux下使用定时任务每隔N秒钟执行任务](/docs/os/centos/centos7/centos-uses-scheduled-tasks-to-perform-tasks-every-seconds.md)
