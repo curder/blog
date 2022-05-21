@@ -35,8 +35,8 @@ sudo yum makecache
 ## 添加必要系统工具
 
 ```bash
-sudo yum install -y yum-utils net-tools net-snmp wget iftop htop telnet tree git vim zip unzip curl ntpdate
-sudo rpm -qa |grep -E "snmp|wget|iftop|htop|git|telnet|vim|zip|unzip|curl|ntpdate|release" # 检查安装情况
+sudo yum install -y yum-utils net-tools net-snmp wget iftop htop telnet tree git vim zip unzip curl ntpdate mlocate
+sudo rpm -qa |grep -E "snmp|wget|iftop|htop|git|telnet|vim|zip|unzip|curl|ntpdate|mlocate" # 检查安装情况
 ```
 
 ## 修改时区&&设置时间
@@ -198,22 +198,12 @@ chmod 600 ~/.ssh/authorized_keys
 现在有了新帐户`demo`，通过修改机器的SSH守护程序配置来禁止远程SSH访问`root`帐户，这样可以保护服务器。首先以**root**用户的文本编辑器打开配置文件：
 
 ```bash
-vi /etc/ssh/sshd_config
+sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config # 禁用服务器root远程登录
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config # 允许使用正确的用户密码登录
 ```
 
 在这里，选择通过SSH禁用`root`用户登录。这通常是更安全的设置，因为现在可以通过普通用户帐户访问我们的服务器，并在必要时提升权限。要禁用远程root登录，我们需要找到如下所示的行，通过删除“＃”符号取消注释。
 
-```text
-#PermitRootLogin yes
-```
-
-修改完的相关行内容应该如下：
-
-```text
-PermitRootLogin no
-```
-
-**强烈建议在每台服务器上禁用远程`root`登录！**
 
 ### 重新加载SSH
 
