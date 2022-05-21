@@ -5,5 +5,3 @@
 * [使用supervisord管理进程](/docs/os/centos/how-to-use-supervisord-manager-processes.md)
 * [Linux下使用定时任务每隔N秒钟执行任务](/docs/os/centos/centos-uses-scheduled-tasks-to-perform-tasks-every-seconds.md)
 * [CentOS7下安装配置shadowsocks](/docs/os/centos/installing-configuration-shadowsocks-under-centos-7.md)
-
-* [如何在CentOS上使用Deployer自动部署Laravel应用程序](/docs/os/centos/automatically-deploy-laravel-applications-deployer-centos.md)

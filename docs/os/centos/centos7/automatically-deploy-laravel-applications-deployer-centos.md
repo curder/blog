@@ -1,4 +1,4 @@
-# 如何在CentOS上使用Deployer自动部署Laravel应用程序
+# 使用Deployer自动部署Laravel应用程序
 
 [Laravel](https://laravel.com)是一个开放源代码的PHP Web框架，旨在简化认证，路由和缓存等常见Web开发任务。[Deployer](https://deployer.org)
 是一款开源的PHP部署工具，它为许多流行的框架提供了开箱即用的支持，包括`Laravel`，`CodeIgniter`，`Symfony`和`Zend Framework`等等。
@@ -572,7 +572,7 @@ dep deploy -vvv
 
 现在，您的应用程序将正常工作。如果您访问服务器的域名（`http://example.com`），您将看到以下登录页面：
 
-<img :src="$withBase('/images/os/centos7/automatically-deploy-laravel-applications-deployer-centos/deployerimg.png')" alt="">
+![](./images/automatically-deploy-laravel-applications-deployer-centos/deployerimg.png)
 
 当配置完上面的配置之后，每次开发场景不需要如此复杂的操作。
 
