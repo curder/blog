@@ -47,16 +47,16 @@ pip install shadowsocks
 }
 ```
 
-字段 | 说明 | 是否必须
----- | ---- | ----
-server | 服务端监听地址，使用`0.0.0.0`也可以 | 是
-server_port | 服务端端口 | 是
-local_address | 本地监听地址,默认即可 | 否
-local_port | 本地监听端口，需要跟其他进程不重复 | 否
-password | 密码 | 是
-timeout | 超时时间（秒）| 否
-method | 加密方法，可选`aes-128-cfb`, `aes-192-cfb`, `aes-256-cfb`, `bf-cfb`, `cast5-cfb`, `des-cfb`, `rc4-md5`, `chacha20`, `salsa20`, `rc4`, `table` | 是
-fast_open | 是否启用TCP-Fast-Open，true或者false | 否
+| 字段            | 说明                                                                                                                                     | 是否必须 |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------|------|
+| server        | 服务端监听地址，使用`0.0.0.0`也可以                                                                                                                 | 是    |
+| server_port   | 服务端端口                                                                                                                                  | 是    |
+| local_address | 本地监听地址,默认即可                                                                                                                            | 否    |
+| local_port    | 本地监听端口，需要跟其他进程不重复                                                                                                                      | 否    |
+| password      | 密码                                                                                                                                     | 是    |
+| timeout       | 超时时间（秒）                                                                                                                                | 否    |
+| method        | 加密方法，可选`aes-128-cfb`, `aes-192-cfb`, `aes-256-cfb`, `bf-cfb`, `cast5-cfb`, `des-cfb`, `rc4-md5`, `chacha20`, `salsa20`, `rc4`, `table` | 是    |
+| fast_open     | 是否启用TCP-Fast-Open，true或者false                                                                                                          | 否    |
 
 > 以上三项信息在配置 shadowsocks 客户端时需要配置一致，具体说明可查看 shadowsocks 的帮助文档。
 
@@ -70,7 +70,6 @@ fast_open | 是否启用TCP-Fast-Open，true或者false | 否
   "local_address": "127.0.0.1",
   "local_port": 1080,
   "port_password": {
-    // 每个端口对应一个密码
     "1111": "password1",
     "1112": "password2",
     "1113": "password3"
@@ -111,7 +110,7 @@ ps aux |grep shadowsocks
 netstat -tunpl|grep 1111
 ```
 
-<img :src="$withBase('/images/os/centos7/installing-configuration-shadowsocks-under-centos-7/ps-and-netstat-check-shadowsocks-status.png')" alt="">
+![](./images/installing-configuration-shadowsocks-under-centos-7/ps-and-netstat-check-shadowsocks-status.png)
 
 ## 使用Supervisord管理进程
 
