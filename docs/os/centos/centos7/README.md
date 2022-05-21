@@ -1,6 +1,7 @@
 # CentOS7
 
 * [Centos 7 服务器初始化](/docs/os/centos/centos7/centos-7-server-initialization.md)
+* [如何在CentOS上创建sudo用户](/docs/os/centos/how-to-create-a-sudo-user-on-centos.md)
 * [CentOS7下LNMP安装配置](/docs/os/centos/centos7/centos-7-lnmp-installation-and-configuration.md)
     - [CentOS7使用yum方式安装和配置Nginx](/docs/os/centos/centos7/centos-7-uses-yum-way-to-install-and-configure-nginx.md)
     - [CentOS7使用yum方式安装和配置php-fpm](/docs/os/centos/centos7/centos-7-uses-yum-way-to-install-and-configure-php-fpm.md)
