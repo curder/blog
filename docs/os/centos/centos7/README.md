@@ -6,3 +6,4 @@
     - [CentOS7使用yum方式安装和配置php-fpm](/docs/os/centos/centos7/centos-7-uses-yum-way-to-install-and-configure-php-fpm.md)
     - [CentOS7使用yum方式安装和配置MySQL](/docs/os/centos/centos7/centos-7-uses-yum-way-to-install-and-configure-mysql.md)
 * [CentOS下安装PHP拓展Swoole](/docs/os/centos/centos7/centos-7-install-php-extension-swoole.md)
+* [如何在CentOS 7上安装和配置GitLab CE](/docs/os/centos/how-to-install-and-configure-gitlab-ce-on-centos-7.md)

@@ -90,7 +90,7 @@ cd /etc/gitlab/
 vi gitlab.rb
 ```
 
-使用域名'gitlab.webfsd.com'，更改`external_url`行。
+使用域名`gitlab.webfsd.com`，更改`external_url`行。
 
 ```text
 external_url 'http://gitlab.webfsd.com'
@@ -158,7 +158,7 @@ cd /etc/gitlab/ && vi gitlab.rb
 external_url 'https://gitlab.webfsd.com'
 ```
 
-然后将以下配置粘贴到'external_url'行配置下。
+然后将以下配置粘贴到`external_url`行配置下。
 
 ```ini
 nginx['redirect_http_to_https'] = true
@@ -214,11 +214,11 @@ GitLab已经安装在系统中，并且在Firewalld防火墙下运行。下面�
 
 ### 重置GitLab root密码
 
-打开浏览器并输入gitlab URL 'gitlab.webfsd.com'
+打开浏览器并输入gitlab URL `https://gitlab.webfsd.com`
 。会被重定向到HTTPS连接`https://gitlab.webfsd.com/users/password/edit?reset_password_token=Lj4YzxTnnQvcNR89ehsY`。使用新的密码更改root密码，然后单击“Change
 your password”按钮进行确认。
 
-<img :src="$withBase('/images/os/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7/change-gitlab-root-password.png')" alt="">
+![](./images/how-to-install-and-configure-gitlab-ce-on-centos-7/change-gitlab-root-password.png)
 
 重置密码完毕之后，可以使用默认用户“root”和刚刚重置的密码登录到GitLab仪表板。
 
@@ -226,11 +226,11 @@ your password”按钮进行确认。
 
 登录到GitLab仪表板后，单击图标配置文件的右上角，然后单击“Settings”图标以设置您的配置文件。
 
-<img :src="$withBase('/images/os/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7/change-user-profile-email-address.png')" alt="">
+![](./images/how-to-install-and-configure-gitlab-ce-on-centos-7/change-user-profile-email-address.png)
 
 接下来，转到“帐户”标签并使用您自己的用户名更改默认的根用户名，然后点击“更新用户名”按钮。
 
-<img :src="$withBase('/images/os/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7/change-user-profile-username.png')" alt="">
+![](./images/how-to-install-and-configure-gitlab-ce-on-centos-7/change-user-profile-username.png)
 
 ### 添加SSH密钥
 
@@ -246,7 +246,7 @@ ssh-keygen
 Key`https://gitlab.webfsd.com/profile/keys`标签。复制`~/.ssh/id_rsa.pub`文件的内容并粘贴到密钥框（如果当前是mac系统可以使用命令`pbcopy < ~/.ssh/id_rsa.pub`
 拷贝文件内容），然后单击'Add Key'。
 
-<img :src="$withBase('/images/os/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7/add-ssh-key-to-gitlab.png')" alt="">
+![](./images/how-to-install-and-configure-gitlab-ce-on-centos-7/add-ssh-key-to-gitlab.png)
 
 至此，SSH密钥已更新。
 
@@ -254,11 +254,11 @@ Key`https://gitlab.webfsd.com/profile/keys`标签。复制`~/.ssh/id_rsa.pub`文
 
 点击“管理区域”图标，然后点击齿轮图标并选择“设置”。
 
-<img :src="$withBase('/images/os/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7/gitlab-application-setting-list.png')" alt="">
+![](./images/how-to-install-and-configure-gitlab-ce-on-centos-7/gitlab-application-setting-list.png)
 
 在“帐户和限制设置”部分中，您可以为每个用户配置`https://gitlab.webfsd.com/admin/application_settings`最大项目。在“注册限制”部分，您可以将电子邮件的域名添加到白名单框中。
 
-<img :src="$withBase('/images/os/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7/gitlab-application-account-and-sign-up-setting.png')" alt="">
+![](./images/how-to-install-and-configure-gitlab-ce-on-centos-7/gitlab-application-account-and-sign-up-setting.png)
 
 完成这一切后，滚动到底部并点击'Save changes'按钮保存。
 
@@ -268,11 +268,11 @@ Key`https://gitlab.webfsd.com/profile/keys`标签。复制`~/.ssh/id_rsa.pub`文
 
 单击右上角的加号图标以创建新的项目存储库。
 
-<img :src="$withBase('/images/os/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7/gitlab-create-new-project.png')" alt="">
+![](./images/how-to-install-and-configure-gitlab-ce-on-centos-7/gitlab-create-new-project.png)
 
 输入项目名称，说明和设置项目的可视化设置。然后点击“Create project”按钮。
 
-<img :src="$withBase('/images/os/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7/gitlab-create-a-repository.png')" alt="">
+![](./images/how-to-install-and-configure-gitlab-ce-on-centos-7/gitlab-create-a-repository.png)
 
 至此，该项目仓库已经创建。
 
