@@ -172,7 +172,7 @@
 
   - [Centos 7 服务器初始化](/docs/os/centos/centos7/centos-7-server-initialization.md)
   - [如何在 CentOS 上创建 sudo 用户](/docs/os/centos/centos7/how-to-create-a-sudo-user-on-centos.md)
-  - [防止远程 Linux 主机自动断开 SSH 连接](/docs/os/centos/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections.md)
+  - [防止远程 Linux 主机自动断开 SSH 连接](/docs/os/centos/centos7/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections.md)
   - [CentOS7 中 firewalld 防火墙的使用](/docs/os/centos/centos7/how-to-use-firewall-package-in-centos7.md)
   - [使用 supervisord 管理进程](/docs/os/centos/centos7/how-to-use-supervisord-manager-processes.md)
   - [CentOS7 下 LNMP 安装配置](/docs/os/centos/centos7/centos-7-lnmp-installation-and-configuration.md)

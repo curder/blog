@@ -27,7 +27,7 @@ module.exports = {
                     '/languages/symfony-components/'
                 ]
             },
-            {text: '操作系统', children: ['/os/centos/', '/os/ubuntu/', '/os/mac-os/']},
+            {text: '操作系统', children: ['/os/centos/centos7/', '/os/ubuntu/', '/os/mac-os/']},
             {
                 text: "工具",
                 children: [
@@ -125,11 +125,6 @@ module.exports = {
 
 
             '/os/centos': [
-                {
-                    isGroup: true,
-                    text: 'CentOS',
-                    children: getFiles('os/centos'),
-                },
                 {
                     isGroup: true,
                     text: 'CentOS7',

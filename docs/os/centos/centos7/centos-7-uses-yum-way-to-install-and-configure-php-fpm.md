@@ -28,7 +28,7 @@ sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 sudo yum repolist
 ```
 
-<img :src="$withBase('/images/os/centos7/centos-7-uses-yum-way-to-install-and-configure-php-fpm/webtatic-rpm.png')" alt="">
+![](./images/centos-7-uses-yum-way-to-install-and-configure-php-fpm/webtatic-rpm.png)
 
 
 ### 使用yum命令安装php-fpm
@@ -44,7 +44,7 @@ yum install -y php71w php71w-gd php71w-curl php71w-common php71w-cli php71w-mysq
 ```bash
 php -v
 ```
-<img :src="$withBase('/images/os/centos7/centos-7-uses-yum-way-to-install-and-configure-php-fpm/check-php-fpm-install-by-webtatic-success.png')" alt="">
+![](./images/centos-7-uses-yum-way-to-install-and-configure-php-fpm/check-php-fpm-install-by-webtatic-success.png)
 
 > **注意：** 如果想更换到`php5.6`或`7.0`版本, 直接把上面的`php71w`换成`php56w`或者`php70w`就可以了。
 > 重装`php-fp`m时，记得使用`sudo systemctl stop php-fpm`先关闭`php-fpm`进程，然后再使用 `yum uninstall php71w php71w-curl php71w-common php71w-cli php71w-mysql php71w-mbstring php71w-fpm php71w-xml php71w-pdo php71w-zip` 命令进行移除后，并再次执行`yum install`命令进行重装。
@@ -127,7 +127,7 @@ sudo systemctl start php-fpm && sudo systemctl enable php-fpm
 
 ### 使用supervisord管理进程
 
-supervisord的进程管理[参考这里](/os/centos/how-to-use-supervisord-manager-processes.md)。
+supervisord的进程管理[参考这里](/docs/os/centos/centos7/how-to-use-supervisord-manager-processes.md)。
 
 #### 修改php-fpm在前台运行
 
@@ -185,7 +185,7 @@ php: added process group
 ps aux |grep php-fpm
 ```
 
-<img :src="$withBase('/images/os/centos7/centos-7-uses-yum-way-to-install-and-configure-php-fpm/php-fpm-process-check.png')" alt="">
+![](./images/centos-7-uses-yum-way-to-install-and-configure-php-fpm/php-fpm-process-check.png)
 
 #### 检查套接字
 
@@ -198,7 +198,7 @@ sudo netstat -pl | grep php-fpm.sock
 > 如果得到`“-bash: netstat: command not found”`错误，请安装`net-tools`软件包，如下所示：
 >`sudo yum -y install net-tools`
 
-<img :src="$withBase('/images/os/centos7/centos-7-uses-yum-way-to-install-and-configure-php-fpm/php-fpm-sock-status-check.png')" alt="">
+![](./images/centos-7-uses-yum-way-to-install-and-configure-php-fpm/php-fpm-sock-status-check.png)
 
 至此，CentOS下安装`php-fpm`就安装好了。
 
