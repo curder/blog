@@ -15,15 +15,6 @@
 sudo yum install -y gcc glibc-headers gcc-c++
 ```
 
-### 使用yum快速安装PHP7.1
-
-这里简单使用 yum 方式安装。
-
-```bash
-sudo yum install -y epel-release && sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-sudo yum install -y php71w php71w-gd php71w-curl php71w-common php71w-cli php71w-mysql php71w-mbstring php71w-fpm php71w-xml php71w-pdo php71w-zip php71w-devel
-```
-
 ### 下载 Swoole 源码并安装
 
 查看最新的[Swoole 源码](https://github.com/swoole/swoole-src/releases)，这里选择`v4.0.0-rc1`版本安装。

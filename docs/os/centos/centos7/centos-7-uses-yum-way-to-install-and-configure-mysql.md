@@ -26,7 +26,7 @@ sudo systemctl start mysqld && sudo systemctl enable mysqld
 
 ### 使用supervisord管理进程
 
-[supervisord](/os/centos/how-to-use-supervisord-manager-processes.md)的进程管理参考这里。
+[supervisord](/docs/os/centos/centos7/how-to-use-supervisord-manager-processes.md)的进程管理参考这里。
 
 #### MySQL的supervisord配置文件
 
