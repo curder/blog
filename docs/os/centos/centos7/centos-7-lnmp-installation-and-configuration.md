@@ -65,7 +65,7 @@ netstat -plntu | grep 80
 
 至此`Nginx`安装完毕。
 
-## 使用remi仓库安装php-fpm
+## 安装PHP
 
 在CentOS基础库中不存在PHP 8.1，我们需要从`remi`的第三方仓库中安装它。
 
