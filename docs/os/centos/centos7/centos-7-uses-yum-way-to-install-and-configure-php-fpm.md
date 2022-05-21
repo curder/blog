@@ -106,6 +106,6 @@ sudo netstat -tunpl|grep 9000
 # sudo netstat -pl | grep php-fpm.sock # 或者查看socket文件
 ```
 
-![PHP Fpm status check](images/centos-7-uses-yum-way-to-install-and-configure-php-fpm/php-fpm-status-check.png)
+![PHP Fpm status check](./images/centos-7-uses-yum-way-to-install-and-configure-php-fpm/php-fpm-status-check.png)
 
 至此，php-fpm 进程已经启动。
