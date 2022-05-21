@@ -184,6 +184,7 @@
   - [CentOS 下安装 PHP 拓展 Swoole](/docs/os/centos/centos7/centos-7-install-php-extension-swoole.md)
   - [如何在 CentOS 7 上安装和配置 GitLab CE](/docs/os/centos/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7.md)
   - [如何在 CentOS 上使用 Deployer 自动部署 Laravel 应用程序](/docs/os/centos/centos7/automatically-deploy-laravel-applications-deployer-centos.md)
+  - [安装和配置Docker](/docs/os/centos/centos7/centos-7-install-and-configuration-docker.md)
 
 * [Ubuntu](/docs/os/ubuntu/README.md)
 
