@@ -1,6 +1,6 @@
 # 使用yum方式安装和配置Nginx
 
-Nginx版本：1.12.2
+Nginx版本：1.20.1
 
 ## 使用yum安装Nginx
 
@@ -30,14 +30,16 @@ curl -I http://localhost
 
 ```text
 HTTP/1.1 200 OK
-Server: nginx/1.12.2
-Date: Wed, 25 Apr 2018 15:17:04 GMT
+Server: nginx/1.20.1
+Date: Tue, 24 May 2022 02:57:21 GMT
 Content-Type: text/html
-Content-Length: 3700
-Last-Modified: Tue, 06 Mar 2018 09:26:21 GMT
+Content-Length: 4833
+Last-Modified: Fri, 16 May 2014 15:12:48 GMT
 Connection: keep-alive
-ETag: "5a9e5ebd-e74"
+ETag: "53762af0-12e1"
 Accept-Ranges: bytes
 ```
 
-至此，CentOS下安装`nginx`就安装好了。
+Nginx主配置文件为：`/etc/nginx/nginx.conf`，配置目录默认安装在 `/etc/nginx/`下。
+
+至此，CentOS下安装 `nginx` 就安装好了。
