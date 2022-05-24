@@ -8,7 +8,7 @@
 ```bash
 rpm -Uvh https://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
 sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/mysql-community.repo # 启用MySQL 8社区版
-sudo yum --enablerepo=mysql80-community install mysql-community-server
+sudo yum --enablerepo=mysql80-community install -y mysql-community-server
 ```
 > 如果在安装的过程中遇到`MySQL Upgrade process failed - The GPG keys listed for the "MySQL 8.0 Community Server" repository are already installed but they are not correct for this repository.` 错误可以执行：`rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022` 命令，[具体查看这里](https://forums.cpanel.net/threads/mysql-upgrade-process-failed-the-gpg-keys-listed-for-the-mysql-8-0-community-server-repository-are-already-installed-but-they-are-not-correct-for.697213/)。
 
@@ -45,7 +45,7 @@ sudo systemctl start mysqld && sudo systemctl enable mysqld
     ```bash
     mysql -uroot -p # 回车输入上面获取到的密码
 
-    ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPassword1!';
+    ALTER USER 'root'@'localhost' IDENTIFIED BY 'pId%Mm!2vs~qnM@LFf^Bm';
     ```
 
 - 授权新用户
