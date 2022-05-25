@@ -34,7 +34,7 @@ Oh-My-Zsh 的默认配置在 `~/.zshrc` 文件中配置可以配置，修改默�
 
 ```bash
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="ys"
+ZSH_THEME="tjkirch" # ys
 plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting) # 开启常用插件,其中 git 是默认自带，其他三个插件的安装在下面有介绍
 source $ZSH/oh-my-zsh.sh
 
