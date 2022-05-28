@@ -16,3 +16,4 @@
 * [防止远程Linux主机自动断开SSH连接](/docs/os/centos/centos7/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections.md)
 * [安装和配置Docker](/docs/os/centos/centos7/centos-7-install-and-configuration-docker.md)
 * [安装Oh-My-Zsh](/docs/os/centos/centos7/centos-7-install-oh-my-zsh.md)
+* [使用lua脚本在nginx上处理网站简繁体转换逻辑](/docs/os/centos/centos7/use-the-lua-script-to-process-the-simplified-traditional-conversion-logic-on-the-nginx.md)

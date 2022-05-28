@@ -185,7 +185,8 @@
   - [如何在 CentOS 7 上安装和配置 GitLab CE](/docs/os/centos/centos7/how-to-install-and-configure-gitlab-ce-on-centos-7.md)
   - [如何在 CentOS 上使用 Deployer 自动部署 Laravel 应用程序](/docs/os/centos/centos7/automatically-deploy-laravel-applications-deployer-centos.md)
   - [安装和配置Docker](/docs/os/centos/centos7/centos-7-install-and-configuration-docker.md)
-
+  - [安装Oh-My-Zsh](/docs/os/centos/centos7/centos-7-install-oh-my-zsh.md)
+  - [使用lua脚本在nginx上处理网站简繁体转换逻辑](/docs/os/centos/centos7/use-the-lua-script-to-process-the-simplified-traditional-conversion-logic-on-the-nginx.md)
 * [Ubuntu](/docs/os/ubuntu/README.md)
 
   - [Ubuntu 下快速搭建 LNMP 环境](/docs/os/ubuntu/ubuntu-quickly-build-lnmp-environment.md)
