@@ -111,3 +111,14 @@ http {
     more_clear_headers 'Server'; # 隐藏服务器Server字段
 }
 ```
+
+
+#### 开发环境调试lua脚本
+
+```nginx
+location / {
+    lua_code_cache off; # 开发时使用，生产环境请删除
+    default_type text/html;
+    content_by_lua_file '/usr/local/openresty/lua/hello-world.lua'; # 当修改文件内容时，会实时生效
+}
+```
