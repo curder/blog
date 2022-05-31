@@ -156,7 +156,7 @@ location /download_internal {
     alias /some/other/path/download;
 }
 ```
-`ngx.exec` 方法与 `ngx.redirect` 是完全不同的，前者是个纯粹的内部跳转并且没有引入任何额外 HTTP 信号。 
+`ngx.exec` 方法与 `ngx.redirect` 是完全不同的，前者是个纯粹的内部跳转并且没有引入任何额外 HTTP 信号。
 
 这里的两个 `location` 更像是流水线上工人之间的协作关系。第一环节的工人对完成自己处理部分后，直接交给第二环节处理人（实际上可以有更多环节），它们之间的数据流是定向的。
 
