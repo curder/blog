@@ -35,7 +35,8 @@ module.exports = {
                     '/tools/phpstorm/',
                     '/tools/valet/',
                     '/tools/vagrant/',
-                    '/tools/google-developer-tools/'
+                    '/tools/google-developer-tools/',
+                    '/tools/openresty/',
                 ]
             },
             {text: "其他", children: ['/others/']},
@@ -196,6 +197,11 @@ module.exports = {
                     isGroup: true,
                     text: 'Docker',
                     children: getFiles('tools/docker')
+                },
+                {
+                    isGroup: true,
+                    text: 'OpenResty',
+                    children: getFiles('tools/openresty')
                 },
             ],
 
