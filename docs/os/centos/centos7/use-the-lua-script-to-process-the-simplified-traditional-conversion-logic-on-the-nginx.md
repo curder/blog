@@ -1,6 +1,8 @@
 # 使用lua脚本在nginx上处理网站简繁体转换逻辑
 
-默认情况下Nginx不支持Lua模块, 需要安装LuaJIT解释器, 并且需要重新编译Nginx, 建议使用openrestry。
+默认情况下Nginx不支持Lua模块，需要安装LuaJIT解释器，并且需要重新编译Nginx。
+
+同时也建议使用openrestry，因为内置对Lua的支持。
 
 ## 环境准备
 
