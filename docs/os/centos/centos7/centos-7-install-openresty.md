@@ -66,6 +66,7 @@ wget https://openresty.org/download/openresty-1.21.4.1.tar.gz && tar xf openrest
 
 gmake && gmake install
 ```
+至此 OpenResty 软件安装完毕。
 
 ### 设置环境变量
 
@@ -77,15 +78,15 @@ echo 'export PATH=$PATH:/usr/local/openresty/nginx/sbin' >> /etc/profile && sour
 
 ```bash
 echo "[Unit]
-Description=openresty-nginx - high performance web application server
-Documentation=http://openresty.org
-After=network.target remote-fs.target nss-lookup.target
+Description=The OpenResty Application Platform
+After=syslog.target network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
 
 [Service]
 Type=forking
 PIDFile=/usr/local/openresty/nginx/logs/nginx.pid
-ExecStartPre=/usr/local/openresty/bin/openresty -t -c /usr/local/openresty/nginx/conf/nginx.conf
-ExecStart=/usr/local/openresty/bin/openresty -c /usr/local/openresty/nginx/conf/nginx.conf
+ExecStartPre=/usr/local/openresty/nginx/sbin/nginx -t
+ExecStart=/usr/local/openresty/nginx/sbin/nginx
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s QUIT $MAINPID
 PrivateTmp=true
@@ -96,8 +97,6 @@ WantedBy=multi-user.target" >> /etc/systemd/system/openresty.service
 systemctl enable openresty
 systemctl start openresty
 ```
-
-至此 OpenResty 软件安装完毕。
 
 ### 简单配置
 
