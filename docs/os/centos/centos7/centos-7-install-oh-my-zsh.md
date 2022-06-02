@@ -30,7 +30,7 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 
 Oh-My-Zsh 的默认配置在 `~/.zshrc` 文件中配置可以配置，修改默认的基本配置。
 
-> **注意：** 如果配置文件 `~/.zshrc` 不存在则通过手动创建它，默认的配置文件在 [github.com/ohmyzsh/ohmyzsh/blob/templates/zshrc.zsh-template](github.com/ohmyzsh/ohmyzsh/blob/templates/zshrc.zsh-template)。
+> **注意：** 如果配置文件 `~/.zshrc` 不存在则通过手动创建它，默认的配置文件在 [github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template](https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template)。
 
 ```bash
 export ZSH=$HOME/.oh-my-zsh
