@@ -1,1 +1,0 @@
-const e={key:"v-7c947883",path:"/tools/openresty/hello-world.html",title:"OpenResty \u4E4B Hello World",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1654165831e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"tools/openresty/hello-world.md"};export{e as data};
