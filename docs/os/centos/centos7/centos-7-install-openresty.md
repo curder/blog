@@ -92,7 +92,7 @@ ExecStop=/bin/kill -s QUIT $MAINPID
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target" >> /etc/systemd/system/openresty.service
+WantedBy=multi-user.target" >> /etc/systemd/system/multi-user.target.wants/openresty.service
 
 systemctl enable openresty
 systemctl start openresty
