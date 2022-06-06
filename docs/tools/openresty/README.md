@@ -6,3 +6,4 @@
 - [获取请求头](./get-request-headers.md)
 - [获取响应头](./get-response-headers.md)
 - [获取请求主体](./get-request-body.md)
+- [日志输出](./log-response.md)
