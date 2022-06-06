@@ -1,1 +1,0 @@
-const t={key:"v-70cd2286",path:"/tools/sublime/other-plugins.html",title:"\u5176\u4ED6\u63D2\u4EF6",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:165449468e4,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"tools/sublime/other-plugins.md"};export{t as data};
