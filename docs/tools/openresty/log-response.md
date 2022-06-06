@@ -43,6 +43,8 @@ curl http://127.0.0.1/
 
 **这里还有一个知识点就是 OpenResty 里面的 `print` 语句是 `INFO` 级别**。
 
+## 日志级别
+
 有关 Nginx 的日志级别，请看下表：
 
 ```text
