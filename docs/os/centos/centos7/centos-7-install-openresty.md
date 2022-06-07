@@ -12,7 +12,7 @@ sudo mv openresty.repo /etc/yum.repos.d/
 # update the yum index:
 sudo yum check-update
 
-sudo yum install -y openresty
+sudo yum install -y openresty openresty-resty
 ```
 
 ## 源码包准备
