@@ -25,6 +25,8 @@ sudo yum remove docker \
 执行下面的命令添加 yum 软件源：
 
 ```bash
+sudo yum install -y yum-utils
+
 # 官方源
 sudo yum-config-manager \
      --add-repo \
@@ -43,7 +45,7 @@ sudo yum-config-manager \
 更新 yum 软件源缓存，并安装 docker-ce。
 
 ```bash
-sudo yum install -y docker-ce docker-ce-cli containerd.io
+sudo yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
 ## 启动Docker
