@@ -34,10 +34,11 @@ mkdir -p /opt/softwares/ && cd /opt/softwares
 
 wget https://openresty.org/download/openresty-1.21.4.1.tar.gz && tar xf openresty-1.21.4.1.tar.gz && cd openresty-1.21.4.1
 
-./configure --prefix=/usr/local/openresty\ # 文件安装到这个目录下
-            --with-file-aio\
+./configure --prefix=/usr/local/openresty \ # 文件安装到这个目录下
+            --with-file-aio \
             --with-http_auth_request_module \
             --with-http_v2_module \
+            --with-http_sub_module \
             --with-http_realip_module \
             --with-http_addition_module \
             --with-http_xslt_module=dynamic \
