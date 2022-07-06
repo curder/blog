@@ -79,7 +79,7 @@ netstat -plntu | grep 80
 yum -y install https://mirrors.aliyun.com/remi/enterprise/remi-release-7.rpm # 从阿里云镜像处安装remi源
 sudo yum-config-manager --enable remi-php81 # 默认remi仓库禁用的，实际使用时启用
 yum repolist all | grep enabled | grep php # 检查当前yum允许安装的PHP版本
-sudo yum install -y php81 php81-php-fpm php81-php-gd php81-php-mbstring php81-php-mysqlnd php81-php-xml php81-php-opcache php81-php-pecl-zip php81-php-bcmath
+sudo yum install -y php81 php81-php-fpm php81-php-gd php81-php-mbstring php81-php-mysqlnd php81-php-xml php81-php-opcache php81-php-pecl-zip php81-php-bcmath php81-php-sodium
 sudo ln -s `which php81` /usr/bin/php # 建立软连接方便命令行使用
 ```
 
@@ -91,7 +91,7 @@ sudo ln -s `which php81` /usr/bin/php # 建立软连接方便命令行使用
 
 ```bash
 sudo yum-config-manager --enable remi-php74
-sudo yum install php74 php74-php-fpm php74-php-gd php74-php-mbstring php74-php-mysqlnd php74-php-xml php74-php-opcache php74-php-pecl-zip php74-php-bcmath
+sudo yum install php74 php74-php-fpm php74-php-gd php74-php-mbstring php74-php-mysqlnd php74-php-xml php74-php-opcache php74-php-pecl-zip php74-php-bcmath php74-php-sodium
 ```
 
 > 安装其他版本PHP的时候，需要注意修改php-fpm进程的端口。
