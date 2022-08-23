@@ -1,1 +1,0 @@
-const t={key:"v-4766ef34",path:"/tools/valet/valet-support-thinkphp-3.html",title:"\u8BA9Valet\u652F\u6301ThinkPHP3",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1657087299e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"tools/valet/valet-support-thinkphp-3.md"};export{t as data};
