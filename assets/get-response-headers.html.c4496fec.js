@@ -1,0 +1,1 @@
+const e={key:"v-46f818e7",path:"/tools/openresty/get-response-headers.html",title:"\u83B7\u53D6\u76F8\u5E94\u5934",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1666345516e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"tools/openresty/get-response-headers.md"};export{e as data};
