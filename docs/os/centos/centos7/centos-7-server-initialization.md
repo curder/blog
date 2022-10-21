@@ -4,15 +4,15 @@
 
 ## 登录服务器
 
-root用户是拥有非常广泛特权的Linux环境中的管理用户。由于root帐户的权限较高，因此实际上不建议长期使用它。这是因为根账户固有的部分权力是能够做出非常具有破坏性的变更，即使是意外情况导致。
+如果要登录到服务器，需要知道服务器的 **公共IP地址** 和 **root** 帐户的密码。
 
-要登录到您的服务器，需要知道服务器的**公共IP地址**和**root**用户帐户的密码。并通过下面的命令登录到服务器
+可以通过下面的命令登录到服务器：
 
 ```bash
 ssh root@SERVER_IP_ADDRESS
 ```
 
-然后提供根认证（密码或私钥），完成登录过程。
+然后提供认证凭证，可以选择使用密码或私钥，完成登录过程。
 
 ## 设置个性化主机名
 
@@ -20,9 +20,20 @@ ssh root@SERVER_IP_ADDRESS
 sudo hostnamectl set-hostname YOUR_HOSTNAME
 ```
 
-## 更新 aliyun 的 yum 源
+## 终端配色
 
-> 注意：如果服务器在国内建议修改yum源为aliyun，如果服务器在国外可以忽略。
+为了设置终端颜色，需要对`/etc/bashrc`文件中的 **PS1** 变量进行定制，这样就能应用于所有用户。
+
+```bash
+echo "# 终端配色
+export PS1='\n\[\e[37;1m[\]\[\e[31;1m\]\u\[\e[39;1m\]@\[\e[33;1m\]\H \[\e[34;1m\]\w\[\e[37;1m\]]\n\[\e[32;1m\]\\$ \[\e[0m\]'" >> /etc/bashrc
+
+source /etc/bashrc
+```
+
+## 更新阿里云源
+
+> 注意：如果服务器在国内建议修改 yum 源为 aliyun，如果服务器在国外可以忽略。
 
 ```bash
 sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
@@ -35,8 +46,25 @@ sudo yum makecache
 ## 添加必要系统工具
 
 ```bash
-sudo yum install -y yum-utils net-tools net-snmp wget iftop htop telnet tree git vim zip unzip curl ntpdate mlocate
-sudo rpm -qa |grep -E "snmp|wget|iftop|htop|git|telnet|vim|zip|unzip|curl|ntpdate|mlocate" # 检查安装情况
+sudo yum install -y \
+    yum-utils \
+    net-tools \
+    net-snmp \
+    tree \
+    wget \
+    curl \
+    iftop \
+    htop \
+    telnet \
+    git \
+    vim \
+    zip \
+    unzip \
+    ntpdate \
+    mlocate
+
+# 检查安装情况
+sudo rpm -qa |grep -E "snmp|wget|iftop|htop|git|telnet|vim|zip|unzip|curl|ntpdate|mlocate"
 ```
 
 ## 修改时区&&设置时间
@@ -46,14 +74,16 @@ sudo timedatectl set-timezone Asia/Shanghai
 sudo ntpdate cn.pool.ntp.org
 ```
 
-执行下面的命令之前，需要将当前操作时的用户切换为root用户，否则将提示没有权限。
+> **注意：** 执行下面的命令前，需要将当前操作的用户切换为 `root`，否则会提示没有权限。
 
 ```bash
 echo "00 */10 * * * ntpdate cn.pool.ntp.org >/dev/null 2>&1" >> /var/spool/cron/root
 ```
 
 
-## 内核优化`sysctl.conf` && 调整文件描述符`ulimit`
+## 内核优化`sysctl.conf` 和 调整文件描述符`ulimit`
+
+修改网络相关配置，包括网络连接数等。
 
 ```bash
 echo "net.ipv4.ip_local_port_range = 1024 65535
@@ -73,7 +103,7 @@ net.ipv4.tcp_syncookies = 0
 net.ipv4.tcp_max_orphans = 262144
 net.ipv4.tcp_max_syn_backlog = 262144
 net.ipv4.tcp_synack_retries = 2
-net.ipv4.tcp_syn_retries = 2" >/etc/sysctl.conf
+net.ipv4.tcp_syn_retries = 2" > /etc/sysctl.conf
 
 sysctl -w net.ipv4.route.flush=1
 echo "ulimit -HSn 65536" >> /etc/rc.local
@@ -81,40 +111,46 @@ echo "ulimit -HSn 65536" >> /root/.bash_profile
 ulimit -HSn 65535
 ```
 
-## 关闭selinux
+## 关闭 SELinux
+
+一般情况下如果使用云主机会提供一个安全组配置，所以我们选择将 SELinux 关闭。
 
 ```bash
 setenforce 0
 cp /etc/sysconfig/selinux /etc/sysconfig/selinux.bak`date +%F` && sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 ```
 
-## 创建一个新用户
+## 添加一个新用户
 
-一旦使用`root`登录系统，准备添加将用于从现在开始登录的新用户帐户，创建一个名为“demo”的新用户并添加密码。
+添加一个新用户，用户名为 `demo` 并添加密码 `newPassword`：
 
 ```bash
-adduser demo && echo "newPassword" | passwd --stdin "demo"
+sudo adduser demo && sudo echo "newPassword" | passwd --stdin "demo"
 ```
 
 ## 添加用户权限
 
-已经拥有一个常规帐户权限的新用户`demo`账号，但是可能需要使用该账号执行管理任务。
+已经拥有一个常规帐户权限的新用户 `demo` 账号，但是可能需要使用该账号执行管理任务。
 
-为了避免必须从普通用户`demo`注销并以`root`帐户重新登录，可以为普通帐户设置所谓的“超级用户”或root权限。将允许普通用户通过`sudo`在每个命令之前的关键字来运行具有管理特权的命令。
+为了避免必须从普通用户`demo`注销并以`root`帐户重新登录，可以为普通帐户设置所谓的 "超级用户" 或 root 权限。
 
-默认情况下，在CentOS 7上，属于`wheel`组的用户可以使用该sudo命令，将`demo`用户加入到`wheel`组。
+将允许普通用户通过`sudo`在每个命令之前的关键字来运行具有管理特权的命令。
+
+默认情况下，在CentOS 7上，属于 `wheel` 组的用户可以使用该 sudo 命令，将`demo`用户加入到`wheel`组。
 
 ```bash
-gpasswd -a demo wheel
+sudo gpasswd -a demo wheel
 ```
+
+这个时候可以使用 demo 用户登录到服务器，并且通过命令 `sudo su -` 然后输入 demo 用户的密码来切换到 root 用户。
 
 ## 添加公钥认证（推荐）
 
 > 除非特殊说明，否则所有的操作都在本地，而非服务器上进行的操作。
 
-为新用户设置公钥认证。设置此项将通过必须使用专用的SSH密钥登录来提高服务器的安全性。
+为新用户设置公钥认证。设置此项将通过必须使用专用的 SSH 密钥登录来提高服务器的安全性。
 
-如果本地尚未拥有包含公钥和私钥的SSH密钥对，则需要生成一个。如果已经存在要使用的密钥，忽略下面的操作，跳至复制公钥关键步骤。
+如果本地尚未拥有包含公钥和私钥的 SSH 密钥对，则需要生成一个。如果已经存在要使用的密钥，忽略下面的操作，跳至复制公钥关键步骤。
 
 ### 生成密钥对
 
@@ -163,9 +199,9 @@ cat ~/.ssh/id_rsa.pub
 
 ##### 将公钥添加到新的远程用户
 
-要允许使用SSH密钥作为新的远程用户进行身份验证，必须将公钥添加到**服务器上**用户主目录中的`~/.ssh/authorized_keys`文件中。
+要允许使用SSH密钥作为新的远程用户进行身份验证，必须将公钥添加到**服务器上**用户主目录中的 `~/.ssh/authorized_keys` 文件中。
 
-**在服务器上**，以`root`用户身份输入以下命令切换到新用户
+**在服务器上**，以 `root` 用户身份输入以下命令切换到新用户
 
 ```bash
 su - demo
@@ -228,18 +264,6 @@ ssh demo@SERVER_IP_ADDRESS
 请记住，如果需要以`root`权限运行命令，请在它之前加上 `sudo`。
 
 如果一切正常，您可以输入`exit`命令退出会话。
-
-
-## 终端配色
-
-为了设置终端颜色，我们需要对`/etc/bashrc`文件中的 PS1 变量进行定制，这样就能应用于所有用户。
-
-```bash
-echo "# 终端配色
-export PS1='\n\[\e[37;1m[\]\[\e[31;1m\]\u\[\e[39;1m\]@\[\e[33;1m\]\H \[\e[34;1m\]\w\[\e[37;1m\]]\n\[\e[32;1m\]\\$ \[\e[0m\]'" >> /etc/bashrc
-
-source /etc/bashrc
-```
 
 ## 参考链接
 
