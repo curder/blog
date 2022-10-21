@@ -150,7 +150,6 @@ module.exports = {
                         "/os/centos/centos7/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections",
                         "/os/centos/centos7/use-the-lua-script-to-process-the-simplified-traditional-conversion-logic-on-the-nginx",
                     ]
-                    // children: getFiles('os/centos/centos7'),
                 },
             ],
             '/os/ubuntu': [
