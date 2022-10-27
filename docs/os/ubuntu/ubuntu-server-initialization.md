@@ -29,6 +29,22 @@ sudo hostnamectl # 查看主机名
 
 > 设置完成之后，需要退出终端重新登录就可以看到自定义主机名。
 
+## 终端配色
+
+为了设置终端颜色，需要对 `~/.bashrc` 文件中的 PS1 变量进行定制，**值得注意的是这个修改仅对当前用户生效**。
+
+```bash
+echo "# 终端配色
+export PS1='\n\[\e[37;1m[\]\[\e[31;1m\]\u\[\e[39;1m\]@\[\e[33;1m\]\H \[\e[34;1m\]\w\[\e[37;1m\]]\n\[\e[32;1m\]\\$ \[\e[0m\]'" >> ~/.bashrc
+
+source ~/.bashrc
+```
+
+配置完成后，终端配色如下
+
+![](./images/ubuntu-terminal-color-scheme.png)
+
+
 ## 更新国内源
 
 如果使用国内的服务器需要更新软件源，这里使用清华的镜像源替换文件 `/etc/apt/sources.list`
@@ -92,10 +108,10 @@ sudo timedatectl set-ntp 1
 
 Ubuntu 系统默认的文件编辑器是 nano 而不是 Vim，那么怎么设置成 Vim 呢？
 
-执行下面的命令将 Vim 设置为服务器默认的编辑器。
+执行下面的命令选择将 Vim 设置为服务器默认的编辑器。
 
 ```bash
-sudo update-alternatives --config editor /usr/local/bin/vim
+sudo update-alternatives --config editor
 ```
 
 ## 添加新用户
@@ -109,6 +125,8 @@ sudo update-alternatives --config editor /usr/local/bin/vim
 ```bash
 sudo adduser ubuntu
 ```
+
+输入自定义用户密码后都输入回车使用默认即可。
 
 创建完 ubuntu 用户后，如果想用它来执行一些系统级命令，可以把它加进 sudo 群组，这样就可以用 sudo 命令了：
 
