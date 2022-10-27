@@ -1,0 +1,1 @@
+const e={key:"v-692d8cc9",path:"/tools/openresty/get-request-headers.html",title:"\u83B7\u53D6\u8BF7\u6C42\u5934",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1666858788e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"tools/openresty/get-request-headers.md"};export{e as data};
