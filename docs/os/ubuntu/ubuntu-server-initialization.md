@@ -36,12 +36,16 @@ sudo hostnamectl # 查看主机名
 
 ```text
 deb https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
 
 deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
 
 deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
 
 deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
 ```
 
 > 如要用于其他版本，把 `jammy` 换成其他版本代号即可，对应关系如下：
