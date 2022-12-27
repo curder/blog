@@ -15,6 +15,13 @@ export default defineUserConfig({
   title: '编程学习',
   description: '编程学习点滴',
   theme: defaultTheme({
+    repo: 'https://github.com/curder/blog',
+    docsRepo: 'https://github.com/curder/blog',
+    docsDir: 'docs',
+    docsBranch: 'master',
+    lastUpdatedText: '更新时间',
+    contributorsText: '贡献者',
+    editLinkText: '编辑当前页面',
     navbar: [
       {text: '首页', link: '/'},
       {
