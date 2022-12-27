@@ -7,14 +7,15 @@ on:
   push:
     branches:
       - master
+  pull_request:
 
 jobs:
   deploy:
     runs-on: ubuntu-22.04
     permissions:
       contents: write
-      concurrency:
-        group: ${{ github.workflow }}-${{ github.ref }}
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v3
 
