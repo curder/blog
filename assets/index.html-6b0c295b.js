@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-89b8642a","path":"/tools/vagrant/","title":"Vagrant","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1672162958000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"tools/vagrant/README.md"}');export{t as data};
