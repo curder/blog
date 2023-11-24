@@ -18,3 +18,4 @@
 * [安装Oh-My-Zsh](/docs/os/centos/centos7/centos-7-install-oh-my-zsh.md)
 * [使用lua脚本在nginx上处理网站简繁体转换逻辑](/docs/os/centos/centos7/use-the-lua-script-to-process-the-simplified-traditional-conversion-logic-on-the-nginx.md)
 * [安装Openresty](/docs/os/centos/centos7/centos-7-install-openresty.md)
+* [如何在 CentOS 7 上新增 swap 分区](/docs/os/centos/centos7/how-to-add-swap-space-on-centos-7-operating-system.md)
