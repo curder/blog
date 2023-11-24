@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-67f5119e","path":"/tools/atom/","title":"Atom","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1700792124000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"tools/atom/README.md"}');export{t as data};

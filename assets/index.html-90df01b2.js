@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-72f4f03c","path":"/languages/laravel/testing/","title":"Testing","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1700792124000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"languages/laravel/testing/README.md"}');export{e as data};

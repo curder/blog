@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-06dd63be","path":"/tools/openresty/","title":"OpenResty","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1700792124000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"tools/openresty/README.md"}');export{e as data};

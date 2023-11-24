@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-d440f426","path":"/tools/","title":"Tools","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1700792124000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"tools/README.md"}');export{t as data};
