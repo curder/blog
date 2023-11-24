@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7c947883","path":"/tools/openresty/hello-world.html","title":"OpenResty 之 Hello World","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1700803901000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"tools/openresty/hello-world.md"}');export{e as data};
