@@ -160,6 +160,7 @@ export default defineUserConfig({
                         "/os/centos/centos7/prevent-remote-linux-hosts-from-automatically-desconnecting-ssh-connections",
                         "/os/centos/centos7/use-the-lua-script-to-process-the-simplified-traditional-conversion-logic-on-the-nginx",
                         "/os/centos/centos7/how-to-add-swap-space-on-centos-7-operating-system.md",
+                        "/os/centos/centos7/centos-7-install-node-18x.md",
                     ]
                 },
             ],
