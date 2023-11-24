@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-1fbdab14","path":"/tools/homestead/","title":"Homestead","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1672163402000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"tools/homestead/README.md"}');export{e as data};

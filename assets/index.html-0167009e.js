@@ -1,0 +1,1 @@
+import{_ as t,p as n,q as a,R as e,t as c}from"./framework-7e09d608.js";const s={},o=e("h1",{id:"centos",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#centos","aria-hidden":"true"},"#"),c(" CentOS")],-1),r=[o];function _(d,i){return n(),a("div",null,r)}const l=t(s,[["render",_],["__file","index.html.vue"]]);export{l as default};
