@@ -21,18 +21,15 @@ sudo yum install -y gcc glibc-headers gcc-c++
 
 ```bash
 cd /usr/local/src/ && wget https://github.com/swoole/swoole-src/archive/v4.0.0-rc1.tar.gz -O swoole.v4.0.0-rc1.tar.gz
-tar xf swoole.v4.0.0-rc1.tar.gz
-phpize
-./configure
-make
-sudo make install
+tar xf swoole.v4.0.0-rc1.tar.gz && cd swoole.v4.0.0-rc1
+/usr/local/php82/bin/phpize --with-php-config=/usr/local/php82/bin/php-config
+./configure --with-php-config=/usr/local/php82/bin/php-config
+make && make install
 ```
-
-> 默认将生成的`swoole.so`文件放置在`/usr/lib64/php/modules/`下。
 
 ### 配置php.ini
 
-通过命令`php --ini`查到`php.ini`文件所在路径，这里是`/etc/php.ini`，编辑它，在合适的位置新增下面行。
+通过命令`php --ini`查到`php.ini`文件所在路径，这里是`/usr/local/php82/etc/php.ini`，编辑它，在合适的位置新增下面行。
 
 ```ini
 extension = swoole.so
