@@ -6,8 +6,8 @@
   "author": "curder <q.curder@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "watch": "vuepress dev docs",
-    "prod": "vuepress build docs"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
   },
   "devDependencies": {
     "vuepress": "2.0.0-beta.58"
