@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-657436c6","path":"/languages/laravel/livewire/how-to-use-properties.html","title":"Livewire 属性","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1717655549000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"languages/laravel/livewire/how-to-use-properties.md"}');export{e as data};
