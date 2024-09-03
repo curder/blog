@@ -242,6 +242,7 @@ export default defineUserConfig({
                     isGroup: true,
                     text: '',
                     children: [
+                        '/others/transfer-files-between-computers-via-wireguard',
                         '/others/after-logging-in-to-the-remote-host-through-ssh-enter-the-specified-directory-or-execute-the-command',
                         '/others/synchronize-partial-files-or-directories-with-rsync',
                         '/others/use-scp-order-download-or-upload-files-and-directories',
