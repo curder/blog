@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5c00e2c3","path":"/languages/wordpress/","title":"WordPress","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1725332755000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"languages/wordpress/README.md"}');export{e as data};

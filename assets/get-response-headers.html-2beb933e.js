@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-46f818e7","path":"/tools/openresty/get-response-headers.html","title":"获取相应头","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1725332755000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"tools/openresty/get-response-headers.md"}');export{e as data};
