@@ -262,7 +262,7 @@ export default defineUserConfig({
                                 },
                             ]
                         },
-                        '/others/nine-nine-multiplication-table-in-eeach-programming-language',
+                        '/others/nine-nine-multiplication-table-in-each-programming-language',
                     ]
                 },
             ],

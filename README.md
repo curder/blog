@@ -211,4 +211,4 @@
       - [autojump 自动跳转](/docs/others/how-to-use-autojump-plugin.md)
       - [zsh-autosuggestion 终端提示](/docs/others/how-to-use-zsh-autosuggestion-plugin.md)
       - [zsh-syntax-highlighting 语法高亮](/docs/others/how-to-use-zsh-syntax-highlighting-plugin.md)
-  - [九九乘法表](/docs/others/nine-nine-multiplication-table-in-eeach-programming-language.md)
+  - [九九乘法表](/docs/others/nine-nine-multiplication-table-in-each-programming-language.md)
