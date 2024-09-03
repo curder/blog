@@ -240,8 +240,30 @@ export default defineUserConfig({
             '/others': [
                 {
                     isGroup: true,
-                    text: 'Others',
-                    children: getFiles('others'),
+                    text: '',
+                    children: [
+                        '/others/after-logging-in-to-the-remote-host-through-ssh-enter-the-specified-directory-or-execute-the-command',
+                        '/others/synchronize-partial-files-or-directories-with-rsync',
+                        '/others/use-scp-order-download-or-upload-files-and-directories',
+                        '/others/use-docker-deploy-gogs',
+                        '/others/requesting-the-lets-encrypt-wildcard-https-certificate',
+                        '/others/configure-lets-encrypt-to-implement-site-ssl',
+                        '/others/use-ssh-copy-id-to-establish-trust-with-a-remote-linux-server',
+                        '/others/linux-prevents-root-users-from-directly-logging-in-to-ssh-and-modifying-the-default-port',
+                        '/others/change-composer-packagist-config',
+                        {
+                            text: '安装和使用Oh-My-Zsh', link: '/others/install-and-use-oh-my-zsh', children: [
+                                {
+                                    text: 'Oh-My-Zsh常用插件', link: '/others/oh-my-zsh-common-plugins', children: [
+                                        '/others/how-to-use-autojump-plugin',
+                                        '/others/how-to-use-zsh-autosuggestion-plugin',
+                                        '/others/how-to-use-zsh-syntax-highlighting-plugin',
+                                    ]
+                                },
+                            ]
+                        },
+                        '/others/nine-nine-multiplication-table-in-eeach-programming-language',
+                    ]
                 },
             ],
         },

@@ -199,8 +199,8 @@
     - [如何在 MacOSX 上安装 Go](/docs/languages/go/how-to-install-go-lang-on-mac-osx.md)
 
 * [其他](/docs/others/README.md)
-  - [SSH 登陆远程主机后进入指定目录或执行命令](/docs/others/after-logging-in-to-the-remote-host-through-ssh-enter-the-specified-directory-or-execute-the-command.md)
-  - [scp 跨机远程拷贝](/docs/others/use-scp-order-download-or-upload-files-and-dirctories.md)
+  - [SSH 登陆远程主机后的操作](/docs/others/after-logging-in-to-the-remote-host-through-ssh-enter-the-specified-directory-or-execute-the-command.md)
+  - [scp 跨机远程拷贝](/docs/others/use-scp-order-download-or-upload-files-and-directories.md)
   - [使用 docker 部署私有 Gogs 服务](/docs/others/use-docker-deploy-gogs.md)
   - [申请 Let's Encrypt 通配符 HTTPS 证书](/docs/others/requesting-the-lets-encrypt-wildcard-https-certificate.md)
   - [使用 ssh-copy-id 建立与远端 Linux 服务器的信任](/docs/others/use-ssh-copy-id-to-establish-trust-with-a-remote-linux-server.md)
