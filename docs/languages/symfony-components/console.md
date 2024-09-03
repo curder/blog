@@ -104,14 +104,17 @@ protected function configure()
     $this->setName('user:create') // 设置命令名称
          ->setDescription('Create new user') // 命令简短描述
          ->setHelp('This command allows you to create users...') // 运行命令时使用 "--help" 选项时的完整命令描述
-//         ->addOption('is_admin', InputArgument::OPTIONAL, InputOption::VALUE_NONE, 'It\'s admin user.')
+//         ->addOption('is_admin', 'alias', InputArgument::OPTIONAL, InputOption::VALUE_NONE, 'It\'s admin user.')
 //         ->setDefinition([
 //             new InputArgument('username', InputArgument::REQUIRED, 'The username of the user.'),
-//             new InputOption('is_admin', InputArgument::OPTIONAL, InputOption::VALUE_NONE, 'It\'s admin user.'),
+//             new InputOption('is_admin', 'alias', InputArgument::OPTIONAL, InputOption::VALUE_NONE, 'It\'s admin user.'),
 //         ])
          ;
 }
 ```
+
+- `setDescription()` 配置命令的简单描述
+- `setHelp()` 运行命令时使用 "--help" 选项时的完整命令描述
 
 ### 配置用户输入
 
@@ -147,6 +150,11 @@ public function execute(InputInterface $input, OutputInterface $output)
     return self::SUCCESS;
 }
 ```
+                              
+#### 返回值
+- `return self::SUCCESS; // 0`
+- `return self::FAILURE; // 1`
+- `return self::INVALID; // 2`
 
 ### 执行命令
 

@@ -38,7 +38,7 @@
 curl https://get.acme.sh | sh
 ```
 
-输出如下内容：
+::: details 输出如下内容
 
 ```bash
 $ curl https://get.acme.sh | sh
@@ -65,8 +65,9 @@ Dload Upload Total Spent Left Speed
 [Sun Mar 18 20:11:03 CST 2018] OK
 [Sun Mar 18 20:11:03 CST 2018] Install success!
 ```
+:::
 
-> 脚本会自动为当前用户创建定时任务, 每天 `00:19` 自动检测所有的证书。**如果快过期了, 需要更新, 则会自动更新证书。**
+> 脚本会自动为当前用户创建定时任务, 每天凌晨自动检测所有的证书。**如果快过期了, 需要更新, 则会自动更新证书。**
 
 **安装过程不会污染已有的系统任何功能和文件**, 所有的修改都限制在安装目录中: `~/.acme.sh/`
 
@@ -119,7 +120,9 @@ Dload Upload Total Spent Left Speed
 
 `dns` 方式, 在域名上添加一条 `txt` 解析记录, 验证域名所有权。
 
-这里以aliyun获取api为例，可以访问此地址获取：[https://ak-console.aliyun.com/\#/accesskey](https://ak-console.aliyun.com/#/accesskey)。  
+#### 阿里云 DNS
+
+通过访问地址获取：[Ali_Key 和 Ali_Secret](https://ak-console.aliyun.com/#/accesskey)。  
 然后输入下面命令。其中 `Ali_Key=""`中输入个人在阿里云后台的**Access Key ID**信息，`Ali_Secret=""`输入你的**Access Key Secret**信息。
 
 ```bash
@@ -130,11 +133,57 @@ export Ali_Secret="asd213dfas"
 接下来再输入下面命令申请`Let’s Encrypt`泛域名免费SSL证书。
 
 ```bash
-~/.acme.sh/acme.sh --issue --dns dns_ali -d <domain>.com -d *.<domain>.com
+~/.acme.sh/acme.sh --issue --dns dns_ali -d <domain>.com -d "*.<domain>.com"
 ```
 
 第一次成功之后，`acme.sh`会记录下`App_Key`和`App_Secret`
 ，并且生成一个定时任务，每天凌晨0：00自动检测过期域名并且自动续期。对这种方式有顾虑的，请慎重，不过也可以自行删掉用户级的定时任务，并且清理掉`~/.acme.sh`文件夹就行。
+
+#### CloudFlare DNS
+
+CloudFlare的SSL证书申请需要 `CF_Token`、`CF_Account_ID` 和`CF_Zone_ID`，下面通过步骤一步一步演示这些数据的来源。
+
+1. 登录到 Cloudflare 的 [API Tokens](https://dash.cloudflare.com/profile/api-tokens) 页面，点选如下图所示的『Create Token（建立Token）』。
+![](./images/api-tokens.png)
+
+2. 如下图所示在『Edit zone DNS（编辑区域DNS）』点选『Use template（使用模版）』來产生一個Token。
+![](./images/edit-zone-dns-use-template.png)
+
+3. 如下图所示可以为这个 Token 命名一个辨识度高的名称，然后 Permissions（权限）区块，分别新增两个『Zone（区域）』，一個 Zone 选『Zone（区域）』仅允许『Read（读）』权限，另一个 Zone 选『DNS』仅允许『Edit（编辑）』权限；在 Zone Resources（区域资源）区块，新增一个『Include（包含）』，然后选择特定的 Zone『Specific zone（特定区域）』，最后就选择要申請SSL证书的域名。权限设定完成之后就点选『Continue to summary（继续至摘要）』。
+![](./images/config-token-options.png)
+![](./images/continue-to-summary.png)
+
+4. 如下图所示可以再次确定你本次产生 API Token 的服务和权限是否正确，没有问题之后点击『Create Token（建立Token）』。
+
+![](./images/create-token.png)
+
+5. 可以看到已经生成了一组 API Token，**请注意此API密钥仅仅会显示一次**，如果后面没有的話，那仅能在 API Tokens 列表中点选需要重新产生的Token，及点选『Roll（翻新）』重新产生新的API密钥。如下图所示点击『Copy』按鈕將此API 密钥记录到需要使用的地方。
+
+![](./images/copy-api-token.png)
+
+6. 回到 [Cloudflare 账户首页](https://dash.cloudflare.com)的『网站』页面选择本次要申請SSL证书的域名。
+
+![](./images/select-need-apply-ssl-domain.png)
+
+7. 如下图所示在域名『Overview（概览）』介面，鼠标滑动到最下面，可以在右侧看到API区域，在API区域中可以看到『Zone ID（区域识别码）』和『Account ID（账户识别码）』，分別点击『Click to copy（按一下即可复制）』。
+
+![](./images/get-zone-id-and-account-id.png)
+
+
+8. 参考 acme.sh 提供的 dnsapi 文档的格式，在CLI上分别输入 API 密钥，比如以Cloudflare的DNS來說，就将刚刚上面取得的密钥分別填在对应的『CF_Token』、『CF_Account_ID』和『CF_Zone_ID』，就可以來申請SLL证书了。
+
+```bash
+export CF_Token="Orxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export CF_Zone_ID="94xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export CF_Account_ID="f9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+~/.acme.sh/acme.sh --issue --dns dns_cf -d "curder.com" -d "*.curder.com" \
+--key-file       /etc/nginx/ssl/curder.com/privkey.pem  \
+--fullchain-file /etc/nginx/ssl/curder.com/fullchain.pem \
+--reloadcmd      "systemctl force-reload openresty.service"
+# --reloadcmd      "service nginx force-reload"
+```
+
 
 ## 拷贝安装证书
 

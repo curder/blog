@@ -68,7 +68,7 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 使用快捷键`Command + Shif + a`输入`Show Line Numbers`，按回车来切换显示和隐藏。
 
-### 显示或隐藏文件导航Breadcrumbs
+### 显示或隐藏文件面包屑导航
 
 提供两种方式操作：
 
@@ -95,13 +95,19 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 使用快捷键`Command + Shift +a`输入`Show browser popup in the editor`，进入`Web Browsers`的切换，将底部的`Show browser popup in the editor`
 的选项勾选去掉即可。
 
-## 显示或隐藏空白字符
+### 显示或隐藏空白字符
 
 使用快捷键`Command + Shift + a`输入`Show WhiteSpaces`来快速切换显示和隐藏。
 
-## 设置代码自动换行
+### 设置代码自动换行
 
 使用快捷键`Command + Shift + a`输入`Use Soft Wraps`来快速切换自动显示的选项。
-              
+
+### 显示或隐藏代码折叠
+
+使用快捷键 `Command + Shift +a` 输入 `show code folding outline` ，切换代码的显示或隐藏折叠。
+
+
+
 ## 终端配置
 [参考这里](/tools/phpstorm/terminal.md)

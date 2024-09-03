@@ -1,10 +1,18 @@
-# CentOS7使用yum方式安装和配置MySQL
-
-以安装 MySQL 5.7 为例。
+# 使用yum方式安装和配置MySQL
 
 ## 安装MySQL
 
-### 使用yum命令安装MySQL
+
+### 安装 8.0
+
+```bash
+rpm -Uvh https://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
+sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/mysql-community.repo # 启用MySQL 8社区版
+sudo yum --enablerepo=mysql80-community install -y mysql-community-server
+```
+> 如果在安装的过程中遇到`MySQL Upgrade process failed - The GPG keys listed for the "MySQL 8.0 Community Server" repository are already installed but they are not correct for this repository.` 错误可以执行：`rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022` 命令，[具体查看这里](https://forums.cpanel.net/threads/mysql-upgrade-process-failed-the-gpg-keys-listed-for-the-mysql-8-0-community-server-repository-are-already-installed-but-they-are-not-correct-for.697213/)。
+
+## 安装MySQL 5.7
 
 使用yum命令之前，需要安装MySQL5.7的rpm仓库。执行下面的命令安装MySQL
 
@@ -24,39 +32,6 @@ sudo yum install -y mysql-server
 sudo systemctl start mysqld && sudo systemctl enable mysqld
 ```
 
-### 使用supervisord管理进程
-
-[supervisord](/os/centos/how-to-use-supervisord-manager-processes.md)的进程管理参考这里。
-
-#### MySQL的supervisord配置文件
-
-默认的 supervisord 的进程文件保存在`/etc/supervisord.d/mysql.ini`，内容如下：
-
-```ini
-[program:mysql]
-command = /usr/sbin/mysqld --user=mysql
-user = root
-autostart = true
-autorestart = true
-stdout_logfile = /var/log/mysql.out.log
-stderr_logfile = /var/log/mysql.err.log
-```
-
-#### 重载配置
-
-```bash
-supervisorctl reread && supervisorctl update
-```
-
-执行完上面的命令，可以看到控制台会输出如下结果
-
-```bash
-mysql: available
-mysql: added process group
-```
-
-至此使用 supervisord 管理`mysql`进程已经完成。
-
 ## 配置MySQL
 
 - 获取安装时初始化密码
@@ -70,7 +45,7 @@ mysql: added process group
     ```bash
     mysql -uroot -p # 回车输入上面获取到的密码
 
-    ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPassword1!';
+    ALTER USER 'root'@'localhost' IDENTIFIED BY 'pId%Mm!2vs~qnM@LFf^Bm';
     ```
 
 - 授权新用户
