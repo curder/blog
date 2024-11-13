@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-4766ef34","path":"/tools/valet/valet-support-thinkphp-3.html","title":"让Valet支持ThinkPHP3","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1725335468000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"tools/valet/valet-support-thinkphp-3.md"}');export{t as data};
