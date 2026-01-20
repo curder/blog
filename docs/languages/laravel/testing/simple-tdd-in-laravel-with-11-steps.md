@@ -256,7 +256,7 @@ class Article extends Model
 
 修改完毕后，再次执行测试：
 
-![](./images/laravel-tdd-does-not-exists.png)
+![](./images/laravel-tdd-table-does-not-exists.png)
 
 如上报错，说明数据库表不存在，需要执行迁移文件生成对应的数据表
 

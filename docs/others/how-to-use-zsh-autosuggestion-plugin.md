@@ -38,7 +38,7 @@ source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 3. 重新打开终端会话
 
-![](./images/how-to-use-zsh-autosuggestion-plugin/zsh-autosuggestions.png)
+![](./images/how-to-use-zsh-autosuggestion-plugin/zsh-autosuggestions.gif)
 
 > 注意在终端输入命令行的时候后面会有浅色单词提示。
 

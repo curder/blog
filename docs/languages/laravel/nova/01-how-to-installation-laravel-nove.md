@@ -119,7 +119,7 @@ DB_PASSWORD=secret
 php artisan migrate
 ```
 
-![](./how-to-installation-laravel-nova/laravel-nova-composer-migrate.png)
+![](./how-to-installation-laravel-nova/laravel-nova-artisan-migrate.png)
 
 ## 新增管理员并访问后台
 
@@ -132,7 +132,6 @@ php artisan nova:user
 访问`https://laravel-nova.test/nova`，出现如下结果:
 
 ![](./how-to-installation-laravel-nova/laravel-nova-login-page.png)
-
 
 ![](./how-to-installation-laravel-nova/laravel-nova-dashboard.png)
 
