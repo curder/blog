@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-511bfa68","path":"/tools/valet/","title":"Valet","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1768875329000,"contributors":[{"name":"curder","email":"q.curder@gmail.com","commits":1}]},"filePathRelative":"tools/valet/README.md"}');export{t as data};
