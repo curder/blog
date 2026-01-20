@@ -10,8 +10,7 @@
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:build": "vuepress build docs"
   },
   "devDependencies": {
     "vuepress": "2.0.0-beta.58"
