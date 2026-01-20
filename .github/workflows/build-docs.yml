@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '22.x'
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -36,7 +36,7 @@ jobs:
         run: yarn install
 
       - name: Build Docs
-        run: yarn build
+        run: yarn docs:build
 
       - name: Deployment
         uses: peaceiris/actions-gh-pages@v3

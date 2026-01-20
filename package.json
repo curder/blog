@@ -5,9 +5,13 @@
   "repository": "git@github.com:curder/blog.git",
   "author": "curder <q.curder@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=22.0"
+  },
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
     "vuepress": "2.0.0-beta.58"
