@@ -94,7 +94,7 @@ laravel new laravel-nova
 composer update
 ```
 
-<img :src="$withBase('/images/languages/laravel/nova/how-to-installation-laravel-nova/laravel-nova-composer-update.png')" alt="">
+![](./how-to-installation-laravel-nova/laravel-nova-composer-update.png)
 
 执行成功后，再执行下面的命令发布一些 nova 的文件
 
@@ -119,7 +119,7 @@ DB_PASSWORD=secret
 php artisan migrate
 ```
 
-<img :src="$withBase('/images/languages/laravel/nova/how-to-installation-laravel-nova/laravel-nova-artisan-migrate.png')" alt="">
+![](./how-to-installation-laravel-nova/laravel-nova-composer-migrate.png)
 
 ## 新增管理员并访问后台
 
@@ -127,13 +127,14 @@ php artisan migrate
 php artisan nova:user
 ```
 
-<img :src="$withBase('/images/languages/laravel/nova/how-to-installation-laravel-nova/laravel-nova-create-user.png')" alt="">
+![](./how-to-installation-laravel-nova/laravel-nova-create-user.png)
 
 访问`https://laravel-nova.test/nova`，出现如下结果:
 
-<img :src="$withBase('/images/languages/laravel/nova/how-to-installation-laravel-nova/laravel-nova-login-page.png')" alt="">
+![](./how-to-installation-laravel-nova/laravel-nova-login-page.png)
 
-<img :src="$withBase('/images/languages/laravel/nova/how-to-installation-laravel-nova/laravel-nova-dashboard.png')" alt="">
+
+![](./how-to-installation-laravel-nova/laravel-nova-dashboard.png)
 
 ## 参考链接
 

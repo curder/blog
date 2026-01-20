@@ -8,7 +8,7 @@ VarDumper 组件提供了从任何 PHP 变量中提取状态的机制。
 
 ```php
 mkdir symfony-components # 创建目录
-cd symfony-components # 进入到工作目录 
+cd symfony-components # 进入到工作目录
 
 composer init # 初始化 Composer 信息
 
@@ -48,7 +48,6 @@ composer require --dev symfony/var-dumper @stable
 > 如果在 `Symfony` 应用程序之外安装这个组件，必须在代码中包含 `vendor/autoload.php` 文件来启用 Composer 提供的类的自动加载机制。
 
 ## `dump()` 函数
-
 
 首先在 `src/` 目录下创建一个 User 类，如下：
 
@@ -90,10 +89,7 @@ dump($user); // 或者 dd($user);
 
 也可以执行`php -S 0.0.0.0:8888`，然后在浏览器中输入`http://localhost:8888` 查看。
 
-<img :src="$withBase('/images/languages/symfony-components/var-dumper/default-style-for-heml-render.png')" alt="">
-
-## 自定义输出样式
-
+![](./images/var-dumper/default-style-for-html-render.png)
 
 ```php
 // index.php
@@ -124,7 +120,7 @@ $user = new User;
 dd($user);
 ```
 
-<img :src="$withBase('/images/languages/symfony-components/var-dumper/custom-light-theme-style-for-heml-render.png')" alt="">
+![](./images/var-dumper/custom-light-theme-style-for-html-render.png)
 
 ## 参考
 

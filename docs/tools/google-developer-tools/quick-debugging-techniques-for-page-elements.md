@@ -2,7 +2,7 @@
 
 打开**Google Developer Tools**可以看到左侧视窗中的`Elements`切换界面。如下图所示：
 
-<img :src="$withBase('/images/tools/google-developer-tools/switch-elements-pannel.png')" alt="">
+![](./images/google-developer-tools/switch-elements-pannel.png)
 
 当光标焦点在元素上，可以点击其左侧的`...`呼出对应的操作菜单，它们分别是：
 
@@ -38,9 +38,9 @@ Focus（焦点）
 
 另外值得注意的是当我们选中某个元素，在底部会出现对应的层级关系树，方便我们定位它的上级元素。如下图：
 
-<img :src="$withBase('/images/tools/google-developer-tools/switch-elements-pannel-element-tree.png')" alt="">
+![](./images/google-developer-tools/switch-elements-pannel-element-tree.png)
 
 ## 参考链接
 
-* [50 个 Chrome Developer Tools 必备技巧 #003 - 页面元素的快速调试技巧](https://www.youtube.com/watch?v=WGe5RDXPh9A&index=3&list=PLXbU-2B80FvBhAYNx8qqx6gaNSKX9HlCm)
-* [四个实用但容易忽略的Chrome开发工具特性](https://segmentfault.com/a/1190000000370378)
+- [50 个 Chrome Developer Tools 必备技巧 #003 - 页面元素的快速调试技巧](https://www.youtube.com/watch?v=WGe5RDXPh9A&index=3&list=PLXbU-2B80FvBhAYNx8qqx6gaNSKX9HlCm)
+- [四个实用但容易忽略的Chrome开发工具特性](https://segmentfault.com/a/1190000000370378)

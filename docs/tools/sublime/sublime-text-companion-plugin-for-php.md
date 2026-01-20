@@ -15,12 +15,12 @@
 
 ## 使用
 
-* 添加类的命名空间
+- 添加类的命名空间
 
 假如想要导入`User`类所在的命名空间，可以在输入完`User`关键字后按`Command + Shift +p`，在出现的命令行中输入`PHPCompanion:Find Use`，神奇的是`User`
 类的命名空间出现在了下拉列表中，按回车补全到代码中。
 
-* 添加构造函数
+- 添加构造函数
 
 在要添加的类文件中，输入指令`PHPCompanion:Insert Constructor Property`，它会自动在类文件中添加如下模版
 
@@ -41,7 +41,7 @@ public function __construct($PROPERTY)
 
 默认添加的构造函数是`private`，如果默认需要改成`protected`，可以通过修改个人配置来自定义。
 
-<img :src="$withBase('/images/tools/sublime/companion_user_setting_path.png')" alt="">                                 
+![](./images/companion_user_setting_path.png)
 
 路径是`Sublime Text`->`Preferences`->`Package Settings`->`PHP Companion`->`Setting User`。
 
@@ -61,48 +61,34 @@ public function __construct($PROPERTY)
 ```json
 [
   {
-    "keys": [
-      "f6"
-    ],
+    "keys": ["f6"],
     "command": "expand_fqcn"
   },
   {
-    "keys": [
-      "shift+f6"
-    ],
+    "keys": ["shift+f6"],
     "command": "expand_fqcn",
     "args": {
       "leading_separator": true
     }
   },
   {
-    "keys": [
-      "f5"
-    ],
+    "keys": ["f5"],
     "command": "find_use"
   },
   {
-    "keys": [
-      "f4"
-    ],
+    "keys": ["f4"],
     "command": "import_namespace"
   },
   {
-    "keys": [
-      "f3"
-    ],
+    "keys": ["f3"],
     "command": "implement"
   },
   {
-    "keys": [
-      "shift+f12"
-    ],
+    "keys": ["shift+f12"],
     "command": "goto_definition_scope"
   },
   {
-    "keys": [
-      "f7"
-    ],
+    "keys": ["f7"],
     "command": "insert_php_constructor_property"
   }
 ]
@@ -113,30 +99,22 @@ public function __construct($PROPERTY)
 ```json
 [
   {
-    "keys": [
-      "f9"
-    ],
+    "keys": ["f9"],
     "command": "expand_fqcn"
   },
   {
-    "keys": [
-      "f10"
-    ],
+    "keys": ["f10"],
     "command": "expand_fqcn",
     "args": {
       "leading_separator": true
     }
   },
   {
-    "keys": [
-      "alt+i"
-    ],
+    "keys": ["alt+i"],
     "command": "find_use"
   },
   {
-    "keys": [
-      "alt+c"
-    ],
+    "keys": ["alt+c"],
     "command": "insert_php_constructor_property"
   }
 ]

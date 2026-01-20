@@ -19,7 +19,7 @@ public static $search = [
 
 Nova 不仅允许在特定的资源和关系中搜索，还可以使用 Nova 管理面板中顶部导航栏的全局搜索框对所有资源进行全局搜索：
 
-<img :src="$withBase('/images/languages/laravel/nova/how-to-use-resources-searching-in-laravel-nova/laravel-nova-global-searching-show.png')" alt="">
+![](./how-to-use-resources-searching-in-laravel-nova/laravel-nova-global-searching-show.png)
 
 ### 开启和关闭全局搜索
 

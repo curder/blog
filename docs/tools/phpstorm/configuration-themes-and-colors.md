@@ -41,7 +41,7 @@
 
 按住快捷键`Command + Shift + a` 输入`Color Scheme`如下图。
 
-<img :src="$withBase('/images/tools/phpstorm/phpstorm-change-color-scheme.png')" alt="">
+![](./images/phpstorm-change-color-scheme.png)
 
 回车进入配置界面选择`Twilight`保存查看效果。
 
@@ -58,7 +58,7 @@
 
 使用快捷键`Command + ,`进入配置中找到`Editor`->`Font`，修改右侧的`Font`、`Size`、`Line Spacing`,在配置的下方会有实时预览，可以参照预览自行配置适当的文字样式。
 
-<img :src="$withBase('/images/tools/phpstorm/phpstorm-modify-font-size-and-font-face.png')" alt="">
+![](./images/phpstorm-modify-font-size-and-font-face.png)
 
 ### 修改主题配置字体
 
@@ -68,10 +68,10 @@
 
 ### 推荐几个常用的编辑字体
 
-* [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono)，[下载地址](https://www.wfonts.com/font/roboto-mono)
+- [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono)，[下载地址](https://www.wfonts.com/font/roboto-mono)
 
-* [Fira Code](https://github.com/tonsky/FiraCode)，[下载地址](https://github.com/tonsky/FiraCode/releases/download/1.205/FiraCode_1.205.zip)
+- [Fira Code](https://github.com/tonsky/FiraCode)，[下载地址](https://github.com/tonsky/FiraCode/releases/download/1.205/FiraCode_1.205.zip)
 
-* [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)，[下载地址](https://github.com/adobe-fonts/source-code-pro/releases/tag/variable-fonts)
+- [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)，[下载地址](https://github.com/adobe-fonts/source-code-pro/releases/tag/variable-fonts)
 
-* Operator Mono (收费)
+- Operator Mono (收费)

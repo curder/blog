@@ -47,11 +47,11 @@
 
 1. 使用`Command + ↑`快捷键呼出文件路径导航，并选择`controllers`目录，如下操作界面：
 
-    <img :src="$withBase('/images/tools/phpstorm/phpstorm_create_file_keymap.png')" alt="">
+    ![](./images/phpstorm_create_file_keymap.png)
 
 2. 在文件中，使用`Command + n`新建一个 Class 文件，如下操作界面：
 
-   <img :src="$withBase('/images/tools/phpstorm/phpstorm_command_n.png')" alt="">
+   ![](./images/phpstorm_command_n.png)
 
 例如：在编辑器中删除一个文件  
 呼出文件路径导航，如上面的第一步；第二步是选中要删除的文件，使用`delete`对文件进行删除。

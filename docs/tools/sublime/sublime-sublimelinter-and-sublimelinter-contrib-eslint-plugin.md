@@ -31,9 +31,7 @@ ln -s /Users/xiaoluo/.nvm/versions/node/v{YOUR_NVM_VERSION}/bin/standard /usr/lo
 {
   "paths": {
     "linux": [],
-    "osx": [
-      "/usr/local/bin"
-    ],
+    "osx": ["/usr/local/bin"],
     "windows": []
   }
 }
@@ -43,12 +41,12 @@ ln -s /Users/xiaoluo/.nvm/versions/node/v{YOUR_NVM_VERSION}/bin/standard /usr/lo
 
 使用sublime升级`StandardFormat`插件，并勾选`StandardFormat`配置中的`auto save`。
 
-<img :src="$withBase('/images/tools/sublime/sublime-format-auto-save.png')" alt="">
+![](./images/sublime-format-auto-save.png)
 
 ## 参考地址
 
-* [代码规范-从空格到代码格式化](http://echizen.github.io/tech/2016/08-07-code-space-standard)
+- [代码规范-从空格到代码格式化](http://echizen.github.io/tech/2016/08-07-code-space-standard)
 
-* [Sublime Text 中配置 Eslint 代碼檢查和自動修復](https://hk.saowen.com/a/3fbc5f6ab048863c1d3a95b5808bfca821df16a50435ce867fc3fabc072332ca)
+- [Sublime Text 中配置 Eslint 代碼檢查和自動修復](https://hk.saowen.com/a/3fbc5f6ab048863c1d3a95b5808bfca821df16a50435ce867fc3fabc072332ca)
 
-* [Sublime Text 3 配置 ESLint 代码检查](https://keelii.github.io/2017/04/29/sublime-text-3-configure-eslint/)
+- [Sublime Text 3 配置 ESLint 代码检查](https://keelii.github.io/2017/04/29/sublime-text-3-configure-eslint/)

@@ -13,14 +13,13 @@ text软件，执行命令`brew install caskroom/cask/sublime-text`。
 
 ### 安装
 
-* 通过菜单安装 在Sublime Text编辑器顶部的`Tools`->`Install Package Control...`，点击它安装Sublime Text的包管理工具，稍等片刻即可安装成功。
+- 通过菜单安装 在Sublime Text编辑器顶部的`Tools`->`Install Package Control...`，点击它安装Sublime Text的包管理工具，稍等片刻即可安装成功。
 
-
-* 通过命令行安装 使用快捷键`⌘(Command) + ⇧(Shift) + P`，输入`Install Package Control`字符后点击回车完成安装。
+- 通过命令行安装 使用快捷键`⌘(Command) + ⇧(Shift) + P`，输入`Install Package Control`字符后点击回车完成安装。
 
 成功后返回如下的提示窗信息。
 
-<img :src="$withBase('/images/tools/sublime/sublime-text-3-install-success-alert.png')" alt="">
+![](./images/sublime-text-3-install-success-alert.png)
 
 ### 卸载
 
@@ -61,5 +60,3 @@ text软件，执行命令`brew install caskroom/cask/sublime-text`。
 - `Disable Package` 禁用插件
 - `Enable Package` 启用插件
 - `List Package` 插件列表
-
-

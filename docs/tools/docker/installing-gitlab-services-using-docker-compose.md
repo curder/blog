@@ -13,7 +13,7 @@ Snippets、Web Hooks、CI、CD等）。
 
 ## 镜像
 
-* 源代码仓库： https://github.com/sameersbn/docker-gitlab
+- 源代码仓库： https://github.com/sameersbn/docker-gitlab
 
 > 包含三个镜像：[redis](https://registry.hub.docker.com/u/sameersbn/redis/), [postgresql](https://hub.docker.com/r/sameersbn/postgresql/), [gitlab](https://registry.hub.docker.com/u/sameersbn/gitlab/)
 
@@ -69,7 +69,7 @@ docker-compose up -d
 
 上面的这行命令，首先会下载相关的镜像，然后依次创建并启动容器。如下图所示：
 
-<img :src="$withBase('/images/tools/docker/installing-gitlab-services-using-docker-compose/docker-compose-gitlab-image.png')" alt="">
+![](./images/installing-gitlab-services-using-docker-compose/docker-compose-gitlab-image.png)
 
 ```bash
 ➜  gitlab-docker docker-compose ps
@@ -82,11 +82,11 @@ gitlab-docker_redis_1        /sbin/entrypoint.sh --logl ...   Up      6379/tcp
 
 当启动完成之后，我们就可以在浏览器中输入`http://localhost:10080`，如果暂时能够访问却不能正确打开，那么说明 GitLab 创建还未启动成功。如下图所示：
 
-<img :src="$withBase('/images/tools/docker/installing-gitlab-services-using-docker-compose/docker-compose-gitlab-image-502-error.png')" alt="">
+![](./images/installing-gitlab-services-using-docker-compose/docker-compose-gitlab-image-502-error.png)
 
 第一次成功进入gitlab需要输入root的初始密码，**密码需要保持在8位数以上**。
 
-<img :src="$withBase('/images/tools/docker/installing-gitlab-services-using-docker-compose/docker-compose-gitlab-image-need-reset-password.png')" alt="">
+![](./images/installing-gitlab-services-using-docker-compose/docker-compose-gitlab-image-need-reset-password.png)
 
 ## 相关命令
 
@@ -119,6 +119,6 @@ docker-compose run --rm gitlab app:rake gitlab:backup:restore BACKUP=1529921023_
 
 ## 参考链接
 
-* [用Docker Compose方式安装Gitlab服务](http://wuyijun.cn/yong-dockerfang-shi-an-zhuang-gitlabfu-wu/)
+- [用Docker Compose方式安装Gitlab服务](http://wuyijun.cn/yong-dockerfang-shi-an-zhuang-gitlabfu-wu/)
 
-* [在 Docker 中使用 GitLab](http://beyondvincent.com/2016/09/19/2016-09-17-use-gitlab-with-docker/)
+- [在 Docker 中使用 GitLab](http://beyondvincent.com/2016/09/19/2016-09-17-use-gitlab-with-docker/)

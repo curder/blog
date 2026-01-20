@@ -13,23 +13,22 @@
 - `webpack.mix.js`
 
 ```javascript
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 mix.webpackConfig({
-    resolve: {
-        extensions: ['.js', '.vue', '.json'],
-        alias: {
-            '@': path.resolve(__dirname, 'resources/js'),
-        },
+  resolve: {
+    extensions: [".js", ".vue", ".json"],
+    alias: {
+      "@": path.resolve(__dirname, "resources/js"),
     },
+  },
 });
 ```
 
 - `LoginLayout.vue`
 
 ```vue
-
 <script>
-import Loading from '@/components/Loading.vue';
+import Loading from "@/components/Loading.vue";
 </script>
 ```
 
@@ -38,16 +37,16 @@ import Loading from '@/components/Loading.vue';
 - 新增`webpack.conf.js`文件
 
 ```javascript
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 module.exports = {
-    resolve: {
-        extensions: ['.js', '.vue', '.json'],
-        alias: {
-            '@': path.resolve(__dirname, 'resources/js'),
-        },
+  resolve: {
+    extensions: [".js", ".vue", ".json"],
+    alias: {
+      "@": path.resolve(__dirname, "resources/js"),
     },
-}
+  },
+};
 ```
 
 > 将`webpack.mix.js`的配置部分分离到`webpack.config.js`
@@ -55,14 +54,14 @@ module.exports = {
 - 修改`webpack.mix.js`文件
 
 ```javascript
-const mix = require('laravel-mix');
-const config = require('./webpack.config');
+const mix = require("laravel-mix");
+const config = require("./webpack.config");
 mix.webpackConfig(config);
 ```
 
 - 修改 PHPStorm 中的 webpack 配置
 
-<img :src="$withBase('/images/tools/phpstorm/webpack-custom-config-for-phpstorm.png')" alt="">
+![](./images/webpack-custom-config-for-phpstorm.png)
 
 ## 参考
 

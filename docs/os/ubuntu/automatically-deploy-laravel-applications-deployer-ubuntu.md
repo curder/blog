@@ -10,12 +10,12 @@
 
 在开始之前，您需要以下内容：
 
-* 一个`Ubuntu 16.04`服务器，具有`sudo`特权的非root用户。
-* 按照[Ubuntu下快速搭建LNMP环境](/os/ubuntu/ubuntu-quickly-build-lnmp-environment.md)配置好的LNMP环境
-* 一个Git服务器。可以选择使用[Gogs](https://gogs.io)、[GitLab](https://about.gitlab.com)，[Bitbucket](https://bitbucket.org)
+- 一个`Ubuntu 16.04`服务器，具有`sudo`特权的非root用户。
+- 按照[Ubuntu下快速搭建LNMP环境](/os/ubuntu/ubuntu-quickly-build-lnmp-environment.md)配置好的LNMP环境
+- 一个Git服务器。可以选择使用[Gogs](https://gogs.io)、[GitLab](https://about.gitlab.com)，[Bitbucket](https://bitbucket.org)
   或[GitHub](https://github.com)等服务。`Gogs`、`GitLab`和`Bitbucket`免费提供私人仓库，而`GitHub`提供私人仓库，每月**$7**起。
-* 指向生产服务器的域名。
-* `Composer`和`Git`也安装在本地机器上。例如这里的MacOSX系统。
+- 指向生产服务器的域名。
+- `Composer`和`Git`也安装在本地机器上。例如这里的MacOSX系统。
 
 ## 设置本地开发环境
 
@@ -90,9 +90,9 @@ cat ~/.ssh/gitkey.pub
 
 如果使用Git托管服务，请参阅有关如何将SSH密钥添加到您的帐户的文档：
 
-* [将SSH密钥添加到GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account)
-* [将SSH密钥添加到GitLab](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html)
-* [将SSH密钥添加到Bitbucket](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html)
+- [将SSH密钥添加到GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account)
+- [将SSH密钥添加到GitLab](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html)
+- [将SSH密钥添加到Bitbucket](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html)
 
 添加完成之后，现在可以使用本地机器连接到Git服务器。使用以下命令测试连接
 
@@ -195,7 +195,7 @@ cat ~/.ssh/deployerkey.pub
 
 ### 修改开发环境文件内容
 
-> **此部分在生产环境操作**  生产环境修改`~/.ssh/authorized_keys`内容和权限
+> **此部分在生产环境操作** 生产环境修改`~/.ssh/authorized_keys`内容和权限
 
 将上面复制的公钥内容，添加到生产服务器上的`~/.ssh/authorized_keys`文件内。
 
@@ -509,10 +509,10 @@ Successfully deployed!
 
 以下是每个文件和目录包含的内容：
 
-* 该`releases`目录包含Laravel应用程序的部署版本。
-* `current` 是最后一个版本的符号链接。
-* 该`.dep`目录包含Deployer的特殊元数据。
-* 该`shared`目录包含`.env`配置文件和`storage`将被链接到每个版本的目录。
+- 该`releases`目录包含Laravel应用程序的部署版本。
+- `current` 是最后一个版本的符号链接。
+- 该`.dep`目录包含Deployer的特殊元数据。
+- 该`shared`目录包含`.env`配置文件和`storage`将被链接到每个版本的目录。
 
 ### 登录服务器
 
@@ -588,6 +588,7 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 保存该文件并关闭编辑器。
 
 现在取消注释`deploy.php`本地机器上文件中关于`before('deploy:symlink', 'artisan:migrate');`：
+
 > 这个操作会导致数据库迁移在每个部署中自动运行。这样可以避免手动迁移数据库，但在部署之前不要忘记备份数据库。
 
 要检查此配置是否正常，请再次部署该应用程序。在**本地开发机器**上运行以下命令：
@@ -598,7 +599,7 @@ dep deploy -vvv
 
 现在，您的应用程序将正常工作。如果您访问服务器的域名（`http://example.com`），您将看到以下登录页面：
 
-<img :src="$withBase('/images/os/ubuntu/automatically-deploy-laravel-applications-deployer-ubuntu/deployerimg.png')" alt="">
+![](./images/automatically-deploy-laravel-applications-deployer-ubuntu/deployerimg.png)
 
 当配置完上面的配置之后，每次开发场景不需要如此复杂的操作。
 
@@ -643,7 +644,7 @@ dep deploy
 
 ## 参考链接
 
-* [如何在Ubuntu 16.04上使用Deployer自动部署Laravel应用程序](https://www.digitalocean.com/community/tutorials/automatically-deploy-laravel-applications-deployer-ubuntu#conclusion)
-* [又一篇 Deployer 的使用攻略](https://laravel-china.org/articles/13242/another-introduction-to-the-use-of-deployer)
-* [deployer 实战经验分享](https://juejin.im/entry/5afd3dd051882542821c87d3)
-* [少年，是时候换种更优雅的方式部署你的 php 代码了](https://juejin.im/entry/58fd79d961ff4b00666c2e95)
+- [如何在Ubuntu 16.04上使用Deployer自动部署Laravel应用程序](https://www.digitalocean.com/community/tutorials/automatically-deploy-laravel-applications-deployer-ubuntu#conclusion)
+- [又一篇 Deployer 的使用攻略](https://laravel-china.org/articles/13242/another-introduction-to-the-use-of-deployer)
+- [deployer 实战经验分享](https://juejin.im/entry/5afd3dd051882542821c87d3)
+- [少年，是时候换种更优雅的方式部署你的 php 代码了](https://juejin.im/entry/58fd79d961ff4b00666c2e95)

@@ -42,19 +42,19 @@ skip = <区块数>：一开始读取时，跳过指定的区块数；
 
 #### 示例
 
-* 创建一个1M大小的文件
+- 创建一个1M大小的文件
 
 ```bash
 dd if=/dev/zero of=file.txt bs=1024 count=1
 ```
 
-* 创建一个100M大小的文件
+- 创建一个100M大小的文件
 
 ```bash
 dd if=/dev/zero of=file.txt bs=1024 count=0 seek=$[1024 * 100]
 ```
 
-* 创建一个1G大小的文件
+- 创建一个1G大小的文件
 
 ```bash
 dd if=/dev/zero of=file.txt bs=1024 count=0 seek=$[1024 * 1024]
@@ -68,27 +68,29 @@ dd if=/dev/zero of=file.txt bs=1024 count=0 seek=$[1024 * 1024]
 - `bs` 代表字节为单位的块大小。
 - `count` 代表被复制的块数。
 
-|单元大小 |   代码
----- | ----
-字节（1B） | c
-字节（2B） | w
-块（512B）|  b
-千字节（1024B）|  k
-兆字节（1024KB）| M
-吉字节（1024MB）| G
+| 单元大小         | 代码 |
+| ---------------- | ---- |
+| 字节（1B）       | c    |
+| 字节（2B）       | w    |
+| 块（512B）       | b    |
+| 千字节（1024B）  | k    |
+| 兆字节（1024KB） | M    |
+| 吉字节（1024MB） | G    |
 
 ### 使用磁盘工具穿件大容量空白文件
 
 0. 点击`Dock`中的`Launchpad`。搜索并点击打开磁盘工具
-   <img :src="$withBase('/images/os/macos/fast-creation-of-large-files-under-mac-osx/diskimage-utility.jpg')" alt="">
+
+   ![](./images/fast-creation-of-large-files-under-mac-osx/diskimage-utility.jpg)
 
 1. 点击左上角的“文件”下拉菜单，选择新建，然后选择“空白磁盘映像”。
-   <img :src="$withBase('/images/os/macos/fast-creation-of-large-files-under-mac-osx/diskimage-new.png')" alt="">
+
+   ![](./images/fast-creation-of-large-files-under-mac-osx/diskimage-new.png)
 
 > 或者在磁盘工具面板按快捷键`command + N`，新建"空白磁盘映像"
 
 2. 选中好要保存的文件名和文件路径，然后在“大小”下拉菜单中选择自己需要的尺寸，最后点击创建即可。
-   <img :src="$withBase('/images/os/macos/fast-creation-of-large-files-under-mac-osx/diskimage-details.png')" alt="">
+   ![](./images/fast-creation-of-large-files-under-mac-osx/diskimage-details.png)
 
 ## 参考地址
 

@@ -8,6 +8,6 @@
 
 打开调试工具来到"Sources"->"Network"->选择具体的站点的CSS或者JS类型，如下：
 
-<img :src="$withBase('/images/tools/google-developer-tools/view-packed-css-and-js-files-css.png')" alt="">
+![](./images/google-developer-tools/view-packed-css-and-js-files-css.png)
 
 通过路径找到上面的`{}`按钮，点击它之后可以看到格式化之后的代码。

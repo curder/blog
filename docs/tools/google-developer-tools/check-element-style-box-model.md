@@ -4,7 +4,7 @@
 
 依然是`Element`面板上选中元素后，在右侧的`Styles`下面拉倒最下面找到它。
 
-<img :src="$withBase('/images/tools/google-developer-tools/check-element-style-box-model-panel.png')" alt="">
+![](./images/google-developer-tools/check-element-style-box-model-panel.png)
 
 查看盒模型的目的更可能的是要修改盒模型的相关属性。
 

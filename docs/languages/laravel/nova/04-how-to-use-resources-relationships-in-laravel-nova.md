@@ -260,10 +260,10 @@ public function fields(Request $request)
 ```
 
 - 访问文章的查看界面可以看到关联的标签列表，并能进行增删改操作。
-  <img :src="$withBase('/images/languages/laravel/nova/how-to-use-resources-relationships-in-laravel-nova/laravel-nova-relationship-post-has-many-tags.png')" alt="">
+  ![](./how-to-use-resources-relationships-in-laravel-nova/laravel-nova-relationship-post-has-many-tags.png)
 
 - 访问标签的查看界面可以看到关联的文章列表，并能进行增删改操作。
-  <img :src="$withBase('/images/languages/laravel/nova/how-to-use-resources-relationships-in-laravel-nova/laravel-nova-relationship-tag-has-many-posts.png')" alt="">
+  ![](./how-to-use-resources-relationships-in-laravel-nova/laravel-nova-relationship-tag-has-many-posts.png)
 
 ## 参考链接
 

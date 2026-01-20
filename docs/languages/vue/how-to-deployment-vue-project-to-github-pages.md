@@ -9,15 +9,15 @@
 
 ## 初始化Vue项目
 
-* 执行 `vue create vue-github-src` 命令。
+- 执行 `vue create vue-github-src` 命令。
 
-* 选择 `Manually select features`，后回车。
+- 选择 `Manually select features`，后回车。
 
-* 使用空格反选掉`Linter / Formatter`，保持只选择 `Babel`后按回车。
+- 使用空格反选掉`Linter / Formatter`，保持只选择 `Babel`后按回车。
 
-* 选择 `In package.json`，后回车。
+- 选择 `In package.json`，后回车。
 
-* 输入 `N`，后回车。
+- 输入 `N`，后回车。
 
 得到 `vue-github-src` 项目目录，进入到目录中。
 
@@ -28,64 +28,56 @@
 - Index.vue
 
 ```vue
-
 <template>
   <div>
     <ul>
-      <li v-for="post in posts">
-        {{ post.id }}: {{ post.title }}
-      </li>
+      <li v-for="post in posts">{{ post.id }}: {{ post.title }}</li>
     </ul>
-
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
-const url = 'https://jsonplaceholder.typicode.com/posts';
+const url = "https://jsonplaceholder.typicode.com/posts";
 
 export default {
-  name: 'Index',
+  name: "Index",
   data() {
     return {
       posts: [],
-    }
+    };
   },
   mounted() {
-    axios.get(url)
-        .then(res => this.posts = res.data.slice(0, 5));
+    axios.get(url).then((res) => (this.posts = res.data.slice(0, 5)));
   },
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>
 ```
 
 一個最简单的 Vue，从 API Server 获取数据展示。
 
 ## 建立仓库
 
-* 建立`vue-github-src`仓库存储源代码。
+- 建立`vue-github-src`仓库存储源代码。
 
-<img :src="$withBase('/images/languages/vue/how-to-deployment-vue-project-to-github-pages/github-create-new-repository.png')" alt="">
+![](./images/how-to-deployment-vue-project-to-github-pages/github-create-new-repository.png)
 
-<img :src="$withBase('/images/languages/vue/how-to-deployment-vue-project-to-github-pages/github-create-new-repository-write-info.png')" alt="">
+![](./images/how-to-deployment-vue-project-to-github-pages/github-create-new-repository-write-info.png)
 
     - 输入 repository 名称：`vue-github-src`
     - 按 Create repository 建立新的 repository
 
-* 按上面的步骤建立`vue-github`存放生成的静态文件。
+- 按上面的步骤建立`vue-github`存放生成的静态文件。
 
 ## vue.config.js
 
 ```javascript
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-        ? '/vue-github/'
-        : '/',
+  publicPath: process.env.NODE_ENV === "production" ? "/vue-github/" : "/",
 };
 ```
 
@@ -130,25 +122,25 @@ cd -
 sh ./deploy.sh
 ```
 
-<img :src="$withBase('/images/languages/vue/how-to-deployment-vue-project-to-github-pages/run-deployer-bash-push-code-to-github.png')" alt="">
+![](./images/how-to-deployment-vue-project-to-github-pages/run-deployer-bash-push-code-to-github.png)
 
 ## 设定 GitHub Repository
 
 在 vue-github 仓库页面找到 Settings按钮，点击。
 
-<img :src="$withBase('/images/languages/vue/how-to-deployment-vue-project-to-github-pages/github-repository-setting-01.png')" alt="">
+![](./images/how-to-deployment-vue-project-to-github-pages/github-repository-setting-01.png)
 
 跳转到GitHub Pages配置，选择 master branch 按下 Save。
 
-<img :src="$withBase('/images/languages/vue/how-to-deployment-vue-project-to-github-pages/github-repository-setting-02.png')" alt="">
+![](./images/how-to-deployment-vue-project-to-github-pages/github-repository-setting-02.png)
 
 出现了可访问的网页地址，如果想支持HTTPS，勾选Enforce HTTPS。
 
-<img :src="$withBase('/images/languages/vue/how-to-deployment-vue-project-to-github-pages/github-repository-setting-03.png')" alt="">
+![](./images/how-to-deployment-vue-project-to-github-pages/github-repository-setting-03.png)
 
 顺利将 Vue project 部署到 GitHub Pages 服务，如果无法访问，自行添加`index.html`。
 
-<img :src="$withBase('/images/languages/vue/how-to-deployment-vue-project-to-github-pages/github-repository-setting-04.png')" alt="">
+![](./images/how-to-deployment-vue-project-to-github-pages/github-repository-setting-04.png)
 
 ## 参考地址
 

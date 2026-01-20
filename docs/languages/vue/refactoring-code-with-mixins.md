@@ -13,7 +13,6 @@
 - `ToggleModal.vue`
 
 ```vue
-
 <template>
   <div>
     <button @click="toggleShowStatus">Toggle</button>
@@ -24,14 +23,14 @@
 export default {
   data() {
     return {
-      show: false
+      show: false,
     };
   },
   methods: {
     toggleShowStatus() {
       this.show = !this.show;
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -44,7 +43,6 @@ export default {
 - `ToggleTooltip.vue`
 
 ```vue
-
 <template>
   <div>
     <button @click="toggleShowStatus">Toggle</button>
@@ -55,14 +53,14 @@ export default {
 export default {
   data() {
     return {
-      show: false
+      show: false,
     };
   },
   methods: {
     toggleShowStatus() {
       this.show = !this.show;
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -80,16 +78,16 @@ export default {
 
 ```javascript
 const toggle = {
-    data() {
-        return {
-            show: false
-        };
+  data() {
+    return {
+      show: false,
+    };
+  },
+  methods: {
+    toggleShowStatus() {
+      this.show = !this.show;
     },
-    methods: {
-        toggleShowStatus() {
-            this.show = !this.show;
-        }
-    }
+  },
 };
 export default toggle;
 ```
@@ -97,7 +95,6 @@ export default toggle;
 - `ToggleModal.vue`
 
 ```vue
-
 <template>
   <div>
     <button @click="toggleShowStatus">Toggle</button>
@@ -108,7 +105,7 @@ export default toggle;
 import toggle from "../mixins/toggle.js";
 
 export default {
-  mixins: [toggle]
+  mixins: [toggle],
 };
 </script>
 <style scoped>
@@ -121,7 +118,6 @@ export default {
 - `ToggleTooltip.vue`
 
 ```vue
-
 <template>
   <div>
     <button @click="toggleShowStatus">Toggle</button>
@@ -132,7 +128,7 @@ export default {
 import toggle from "../mixins/toggle.js";
 
 export default {
-  mixins: [toggle]
+  mixins: [toggle],
 };
 </script>
 <style scoped>
@@ -142,7 +138,7 @@ export default {
 </style>
 ```
 
-<img :src="$withBase('/images/languages/vue/refactoring-code-with-mixins/vue-toggle-mixins.gif')" alt="">
+![](./images/refactoring-code-with-mixins/vue-toggle-mixins.gif)
 
 ## 一些常见的混入
 
@@ -151,7 +147,6 @@ export default {
 比如，数据对象在内部会进行递归合并，在和组件的数据发生冲突时以组件数据优先。
 
 ```vue
-
 <template>
   <div>
     <button @click="toggleShowStatus">Toggle</button>
@@ -166,12 +161,12 @@ export default {
   data() {
     return {
       show: true,
-      foo: "bar"
+      foo: "bar",
     };
   },
   created() {
     console.log(this.$data); // {foo: "bar", show: true}
-  }
+  },
 };
 </script>
 <style scope>

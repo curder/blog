@@ -40,11 +40,7 @@ yarn add vee-validate
       "autoprefixer": {}
     }
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
 }
 ```
 
@@ -54,10 +50,14 @@ yarn add vee-validate
 <template>
   <div>
     <div>
-      <input type="text" v-validate="{required: true, email: true}" name="email">
+      <input
+        type="text"
+        v-validate="{ required: true, email: true }"
+        name="email"
+      />
     </div>
     <div>
-      <span>{{ errors.first('email') }}</span>
+      <span>{{ errors.first("email") }}</span>
     </div>
   </div>
 </template>
@@ -67,7 +67,7 @@ import VeeValidate from "vee-validate"; // 引入 vee-validate
 Vue.use(VeeValidate); // 将vee-validate传入vue
 
 export default {
-  name: "DemoForm"
+  name: "DemoForm",
 };
 </script>
 ```
@@ -79,10 +79,12 @@ export default {
 ## 验证
 
 - 验证必须填写
-  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-install-vee-validate-plugin/vee-validate-check-input-required-rule.png')" alt="">
+
+  ![](./images/how-to-install-vee-validate-plugin/vee-validate-check-input-required-rule.png)
 
 - 邮箱格式必须填写正确
-  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-install-vee-validate-plugin/vee-validate-check-input-email-rule.png')" alt="">
+
+  ![](./images/how-to-install-vee-validate-plugin/vee-validate-check-input-email-rule.png)
 
 ## 参考地址
 

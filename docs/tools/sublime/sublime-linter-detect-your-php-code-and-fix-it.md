@@ -19,7 +19,6 @@ SublimeLinter支持许多的语言检测，支持 `JavaScript`、`CSS`、`HTML`�
 
 > 项目[GitHub](https://github.com/SublimeLinter/SublimeLinter-phpcs)地址。需要使用Composer全局安装`composer global require "squizlabs/php_codesniffer=*"`，后面会使用到这个`phpcs`命令。
 
-
 修改之后重启Sublime，如果我们在php代码文件写了不规范的代码，将看到左侧会有红灯标识。
 
 手动去一一修复这些代码格式是没有问题的，但是这是一个费事费力的工作，有没有功能能辅助我们完成呢？答案是：`php cs fixer`。
@@ -64,17 +63,17 @@ return PhpCsFixer\Config::create()
 ;
 ```
 
-> * `@PSR2` 代码满足PSR-2标准
-> * `align_multiline_comment`
-> * `no_trailing_whitespace` 删除非空行尾部的尾部空白
-> * `no_short_echo_tag` 将长格式`<?php echo`语法替换为简写`<?=`
-> * `array_syntax` 所有`array()`的定义都转换成`[]`的方式
-> * `no_unused_imports` PHP类中没有使用的`use`类自动删除
-> * `ordered_imports` 按照长度排序
+> - `@PSR2` 代码满足PSR-2标准
+> - `align_multiline_comment`
+> - `no_trailing_whitespace` 删除非空行尾部的尾部空白
+> - `no_short_echo_tag` 将长格式`<?php echo`语法替换为简写`<?=`
+> - `array_syntax` 所有`array()`的定义都转换成`[]`的方式
+> - `no_unused_imports` PHP类中没有使用的`use`类自动删除
+> - `ordered_imports` 按照长度排序
 
 ### 保存时执行php cs fixer
 
-<img :src="$withBase('/images/tools/sublime/phpcs-fixer.png')" alt="">
+![](./images/phpcs-fixer.png)
 
 路径是`Sublime Text`->`Preferences`->`Package Settings`->`PHP CS Fixer`->`Setting User`。
 

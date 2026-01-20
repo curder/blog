@@ -1,4 +1,4 @@
-<img :src="$withBase('/images/languages/laravel/hiding-api-fields-dynamically-laravel-5-5/hero.png')" alt="">
+![](./images/hiding-api-fields-dynamically-laravel-5-5.png)
 
 # 动态的隐藏API字段 - Laravel5.5
 

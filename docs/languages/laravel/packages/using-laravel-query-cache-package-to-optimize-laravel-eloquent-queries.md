@@ -61,7 +61,7 @@ class YourModel extends Model
 $users = \App\User::get();
 ```
 
-<img :src="$withBase('/images/languages/laravel/packages/using-laravel-query-cache-package-to-optimize-laravel-eloquent-queries/laravel-query-cache.png')" alt="">
+![](./images/laravel-query-cache.png)
 
 再比如获取关联数据缓存
 
@@ -69,7 +69,7 @@ $users = \App\User::get();
 $user = \App\User::with('posts')->find(1);
 ```
 
-<img :src="$withBase('/images/languages/laravel/packages/using-laravel-query-cache-package-to-optimize-laravel-eloquent-queries/laravel-query-cache-relationship-data.png')" alt="">
+![](./images/laravel-query-cache-relationship-data.png)
 
 ## 参考地址
 

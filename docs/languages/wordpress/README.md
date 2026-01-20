@@ -1,3 +1,3 @@
 # WordPress
 
-- [WordPress创建主题](/docs/languages/wordpress/create_theme.md)
+- [WordPress创建主题](./create_theme.md)

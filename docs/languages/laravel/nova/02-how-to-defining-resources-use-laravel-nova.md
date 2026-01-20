@@ -42,10 +42,9 @@ php artisan migrate
 ```bash
 php artisan nova:resource Post
 ```
+![](./how-to-defining-resources-use-laravel-nova/laravel-nova-post-resource-init-index.png)
 
-<img :src="$withBase('/images/languages/laravel/nova/how-to-defining-resources-use-laravel-nova/laravel-nova-post-resource-init-index.png')" alt="">
-
-<img :src="$withBase('/images/languages/laravel/nova/how-to-defining-resources-use-laravel-nova/laravel-nova-post-resource-init-create.png')" alt="">
+![](./how-to-defining-resources-use-laravel-nova/laravel-nova-post-resource-init-create.png)
 
 可以看到，新增页面没有任何的表字段可以添加。
 
@@ -66,7 +65,7 @@ public function fields(Request $request)
 
 再次查看新增页面可以看到如下的输出。
 
-<img :src="$withBase('/images/languages/laravel/nova/how-to-defining-resources-use-laravel-nova/laravel-nova-post-resource-add-fields-for-create.png')" alt="">
+![](./how-to-defining-resources-use-laravel-nova/laravel-nova-post-resource-add-fields-for-create.png)
 
 至此，一个简单的 Posts 管理界面开发完毕，后面再对这些 CURD 界面进行一些定制化开发。
 

@@ -6,13 +6,13 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 双击下载好的`PhpStorm-2018.1.3.dmg`文件，出现下面的界面
 
-<img :src="$withBase('/images/tools/phpstorm/drop-phpstorm-to-install.png')" alt="">
+![](./images/drop-phpstorm-to-install.png)
 
 将PhpStorm拖拽到右边的**Application**文件夹里。
 
 拖拽完成之后，来到`Launchpad`中找到PhpStorm的图标，单击打开它。
 
-<img :src="$withBase('/images/tools/phpstorm/phpstorm-select-free-license.png')" alt="">
+![](./images/phpstorm-select-free-license.png)
 
 如上，这里选择试用30天体验。
 
@@ -30,7 +30,7 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 2. `Preferences` -> `Appearance` -> `Theme`一栏中选择`Darcula`。
 
-<img :src="$withBase('/images/tools/phpstorm/phpstorm-select-darcula-theme.png')" alt="">
+![](./images/phpstorm-select-darcula-theme.png)
 
 ### 隐藏或显示工具栏Toolbar
 
@@ -107,7 +107,6 @@ PhpStorm的下载请到[官方下载地址](https://www.jetbrains.com/phpstorm/d
 
 使用快捷键 `Command + Shift +a` 输入 `show code folding outline` ，切换代码的显示或隐藏折叠。
 
-
-
 ## 终端配置
+
 [参考这里](/tools/phpstorm/terminal.md)

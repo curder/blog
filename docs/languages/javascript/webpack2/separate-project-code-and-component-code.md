@@ -33,6 +33,6 @@ module.exports = config;
 
 将第三方组件代码和本地编写的代码分离后可以看到新生成了一个`vendor.js`文件,如下：
 
-<img :src="$withBase('/images/languages/javascript/webpack2/separate-project-code-and-component-code/separate-project-code-and-component-code.png')" alt="">
+![](./separate-project-code-and-component-code/separate-project-code-and-component-code.png)
 
 如果是自己编写html的话，需要注意在引入`app.js`**之前**引入`vendor.js`文件。

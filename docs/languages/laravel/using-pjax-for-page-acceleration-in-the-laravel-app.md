@@ -99,7 +99,7 @@ Route::group([ 'middleware' => 'pjax' ], function() {
 
 接下来再给项目添加一个页面加载的动画 [rstacruz/nprogress](https://github.com/rstacruz/nprogress)。
 
-<img :src="$withBase('/images/languages/laravel/using-pjax-for-page-acceleration-in-the-laravel-app/nprogress-loading.png')" alt="rstacruz/nprogress加载动画">
+![](./images/using-pjax-for-page-acceleration-in-the-laravel-app-nprogress-loading.png)
 
 ### 下载CSS和JS
 

@@ -10,28 +10,32 @@ VeeValidate 插件自带错误提示语言，但在实际的开发场景中我�
 ## 编写 DemoForm.vue
 
 ```vue
-
 <template>
   <div>
     <div>
-      <input type="text" v-validate="{required: true, email: true}" data-vv-as="邮箱" name="email">
+      <input
+        type="text"
+        v-validate="{ required: true, email: true }"
+        data-vv-as="邮箱"
+        name="email"
+      />
     </div>
     <div>
-      <span>{{ errors.first('email') }}</span>
+      <span>{{ errors.first("email") }}</span>
     </div>
   </div>
 </template>
 <script>
 import Vue from "vue";
-import VeeValidate, {Validator} from "vee-validate";
-import zh_CN from 'vee-validate/dist/locale/zh_CN';
+import VeeValidate, { Validator } from "vee-validate";
+import zh_CN from "vee-validate/dist/locale/zh_CN";
 
 Vue.use(VeeValidate);
-Validator.localize('zh_CN', zh_CN);
+Validator.localize("zh_CN", zh_CN);
 
 /** custom message */
-const required = field => `请输入${field}`;
-const email = '邮箱格式有误';
+const required = (field) => `请输入${field}`;
+const email = "邮箱格式有误";
 const messages = {
   required,
   email,
@@ -46,7 +50,7 @@ const dictionary = {
 
 Validator.localize(dictionary);
 export default {
-  name: "DemoForm"
+  name: "DemoForm",
 };
 </script>
 ```
@@ -68,10 +72,10 @@ export default {
 ## 验证
 
 - 不允许为空的自定义提示
-  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-use-vee-validate-to-customize-error-message/vee-validate-check-input-required-rule-by-custom-message.png')" alt="">
+  ![](./images/how-to-use-vee-validate-to-customize-error-message/vee-validate-check-input-required-rule-by-custom-message.png)
 
 - 邮箱地址不合法的自定义提示
-  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-use-vee-validate-to-customize-error-message/vee-validate-check-input-email-rule-by-custom-message.png')" alt="">
+  ![](./images/how-to-use-vee-validate-to-customize-error-message/vee-validate-check-input-email-rule-by-custom-message.png)
 
 ## 参考地址
 

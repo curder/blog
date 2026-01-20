@@ -1,10 +1,10 @@
 # Vagrant端口转发和文件共享
 
-| 操作 | 解释 |
-| :---: | :--- |
-| 端口转发（[文档地址](https://www.vagrantup.com/docs/networking/forwarded_ports.html "vagrant端口转发文档地址")） | 将本机具体端口转发到指定虚拟机端口 |
-| 共享目录（[文档地址](https://www.vagrantup.com/docs/synced-folders/ "vagrant官网共享目录文档地址")） | 将本机具体目录和虚拟机共享 |
-| 网络配置 | 公有网络、私有网络和Host Only三种网络配置方式 |
+|                                                       操作                                                       | 解释                                          |
+| :--------------------------------------------------------------------------------------------------------------: | :-------------------------------------------- |
+| 端口转发（[文档地址](https://www.vagrantup.com/docs/networking/forwarded_ports.html "vagrant端口转发文档地址")） | 将本机具体端口转发到指定虚拟机端口            |
+|       共享目录（[文档地址](https://www.vagrantup.com/docs/synced-folders/ "vagrant官网共享目录文档地址")）       | 将本机具体目录和虚拟机共享                    |
+|                                                     网络配置                                                     | 公有网络、私有网络和Host Only三种网络配置方式 |
 
 #### 端口转发
 
@@ -20,7 +20,7 @@ config.vm.network "forwarded_port", guest: 8888, host: 8889
 
 我们来到 VirtualBox 中可以在虚拟机的 “设置” => "网络" => "高级" => "端口转发"
 
-<img :src="$withBase('/images/tools/vagrant/forwarded_ports.png')" alt="">
+![](./images/forwarded_ports.png)
 
 #### 共享目录
 
@@ -34,7 +34,7 @@ config.vm.synced_folder "/Users/curder/website", "/var/www/html"
 
 #### 网络配置
 
-* 配置私有网络IP
+- 配置私有网络IP
 
 将下面的代码段写入到vagrant的Vagrantfile配置文件中。
 
@@ -42,7 +42,7 @@ config.vm.synced_folder "/Users/curder/website", "/var/www/html"
 config.vm.network "private_network", ip: "192.168.50.4"
 ```
 
-* 配置共有网络IP
+- 配置共有网络IP
 
 将下面的代码段写入到vagrant的Vagrantfile配置文件中。
 

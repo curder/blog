@@ -8,45 +8,45 @@
 
 目前能直接支持如下项目：
 
-* [Laravel](https://laravel.com/)
-* [Lumen](https://lumen.laravel.com/)
-* [Bedrock](https://roots.io/bedrock/)
-* [CakePHP 3](https://cakephp.org/)
-* [Concrete5](http://www.concrete5.org/)
-* [Contao](https://contao.org/en/)
-* [Craft](https://craftcms.com/)
-* [Drupal](https://www.drupal.org/)
-* [Jigsaw](http://jigsaw.tighten.co/)
-* [Joomla](https://www.joomla.org/)
-* [Katana](https://github.com/themsaid/katana)
-* [Kirby](https://getkirby.com/)
-* [Magento](https://magento.com/)
-* [OctoberCMS](https://octobercms.com/)
-* [Sculpin](https://sculpin.io/)
-* [Slim](https://www.slimframework.com/)
-* [Statamic](https://statamic.com/)
-* Static HTML
-* [Symfony](https://symfony.com/)
-* [WordPress](https://wordpress.org/)
-* [Zend](https://framework.zend.com/)
+- [Laravel](https://laravel.com/)
+- [Lumen](https://lumen.laravel.com/)
+- [Bedrock](https://roots.io/bedrock/)
+- [CakePHP 3](https://cakephp.org/)
+- [Concrete5](http://www.concrete5.org/)
+- [Contao](https://contao.org/en/)
+- [Craft](https://craftcms.com/)
+- [Drupal](https://www.drupal.org/)
+- [Jigsaw](http://jigsaw.tighten.co/)
+- [Joomla](https://www.joomla.org/)
+- [Katana](https://github.com/themsaid/katana)
+- [Kirby](https://getkirby.com/)
+- [Magento](https://magento.com/)
+- [OctoberCMS](https://octobercms.com/)
+- [Sculpin](https://sculpin.io/)
+- [Slim](https://www.slimframework.com/)
+- [Statamic](https://statamic.com/)
+- Static HTML
+- [Symfony](https://symfony.com/)
+- [WordPress](https://wordpress.org/)
+- [Zend](https://framework.zend.com/)
 
 **当然，我们也是可以自己驱动，**[**Custom Valet
 Drivers**](https://laravel.com/docs/5.4/valet#custom-valet-drivers "Custom Valet Drivers")。
 
 ## 安装前的准备
 
-* homebrew
+- homebrew
 
-* php70
+- php70
 
-* composer
+- composer
 
 ```
 brew update
 brew services list
 ```
 
-* 如果没有安装 composer，可以使用命令`brew install composer`进行安装
+- 如果没有安装 composer，可以使用命令`brew install composer`进行安装
 
 ### 安装
 
@@ -81,13 +81,13 @@ PING *.dev (127.0.0.1): 56 data bytes
 
 ## 测试Valet运行Laravel
 
-* 创建文件夹并进入
+- 创建文件夹并进入
 
 ```bash
 mkdir ~/Website && cd ~/Website
 ```
 
-* 运行`valet park`
+- 运行`valet park`
 
 ```bash
 valet park
@@ -95,7 +95,7 @@ valet park
 
 > 这条命令是将上面的目录，也就是`~/Website`目录作为寻找站点的路径。
 
-* 创建Laravel项目
+- 创建Laravel项目
 
 ```bash
 laravel new blog
@@ -103,9 +103,9 @@ laravel new blog
 
 如果不存在 laravel 命令，则运行 `composer global require "laravel/installer"`拿到laravel命令。
 
-* 访问`blog.dev`项目
+- 访问`blog.dev`项目
 
-<img :src="$withBase('/images/tools/valet/valet-install/blog.dev.jpg')" alt="">
+![](./images/valet-install/blog.dev.jpg)
 
 ### 项目别名
 
@@ -120,7 +120,7 @@ valet link test-blog
 
 执行上面命令就可以在本地浏览器通过 [http://test-blog.dev](http://test-blog.dev/) 访问blog项目的站点了。
 
-<img :src="$withBase('/images/tools/valet/valet-install/test-blog.dev.jpg')" alt="">
+![](./images/valet-install/test-blog.dev.jpg)
 
 另外还有了两个比较有用的命令如：
 
@@ -172,11 +172,11 @@ Connections                   ttl     opn     rt1     rt5     p50     p90
 
 #### `Valet`其他命令 {#valet}
 
-| 命令 | 描述 |
-| :--- | :--- |
-| `valet forget` | 在 “对应” 的目录中执行该命令来把其从“对应” 目录列表中删除 |
-| `valet paths` | 查看所有paths路径 |
-| `valet restart` | 重启 Valet 程序 |
-| `valet start` | 启动 Valet 程序 |
-| `valet stop` | 停止 Valet 程序 |
-| `valet uninstall` | 卸载 Valet 程序 |
+| 命令              | 描述                                                      |
+| :---------------- | :-------------------------------------------------------- |
+| `valet forget`    | 在 “对应” 的目录中执行该命令来把其从“对应” 目录列表中删除 |
+| `valet paths`     | 查看所有paths路径                                         |
+| `valet restart`   | 重启 Valet 程序                                           |
+| `valet start`     | 启动 Valet 程序                                           |
+| `valet stop`      | 停止 Valet 程序                                           |
+| `valet uninstall` | 卸载 Valet 程序                                           |

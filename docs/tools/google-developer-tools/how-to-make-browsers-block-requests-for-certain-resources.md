@@ -4,11 +4,10 @@
 
 如下图打开`Request blocking`的添加界面（或者使用`Command Shift P`在提示框中输入`Request blocking`）
 
-
-<img :src="$withBase('/images/tools/google-developer-tools/how-to-make-browsers-block-requests-for-certain-resources-menu-path.png')" alt="">
+![](./images/google-developer-tools/how-to-make-browsers-block-requests-for-certain-resources-menu-path.png)
 
 比如这里为了测试不允许所有的CSS的请求，那么可以写入`*.css`
 
-<img :src="$withBase('/images/tools/google-developer-tools/how-to-make-browsers-block-requests-for-certain-resources-add-rule.png')" alt="">
+![](./images/google-developer-tools/how-to-make-browsers-block-requests-for-certain-resources-add-rule.png)
 
 添加完正则匹配的规则后可以刷新页面查看效果。

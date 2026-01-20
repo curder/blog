@@ -2,13 +2,13 @@
 
 ## 环境依赖
 
-* docker
+- docker
 
-* docker-compose
+- docker-compose
 
-* nginx
+- nginx
 
-* 域名`gogs.domain.com`
+- 域名`gogs.domain.com`
 
 服务器环境使用`CentOS Linux release 7.4.1708 (Core)`。
 
@@ -54,9 +54,8 @@ docker-compose --version
 直接上`docker-compose.yaml`文件内容：
 
 ```yaml
-version: '2'
+version: "2"
 services:
-
   mysql-gogs:
     container_name: mysql-gogs
     image: mysql:5.7.13
@@ -115,6 +114,7 @@ SSH_PORT=10022
 执行命令运行docker。
 
 > 执行命令前安装[阿里云加速器](https://cr.console.aliyun.com/?spm=5176.100239.blogcont57268.20.ik4KA5#/accelerator)来加速安装过程。
+>
 > ```
 > docker-compose up -d
 > ```
@@ -123,9 +123,7 @@ SSH_PORT=10022
 
 第一次在浏览器运行Gogs会需要填写一些初始化数据库配置等参数。如下图：
 
-
-<img :src="$withBase('/images/others/use-docker-deploy-gogs/gogs-install.png')" alt="">
-
+![](./images/use-docker-deploy-gogs/gogs-install.png)
 
 `nginx`配置文件内容
 
@@ -157,4 +155,4 @@ server {
 
 ## 参考链接
 
-* [使用 HTTPS 部署 Gogs](https://github.com/Unknwon/wuwen.org/issues/12)
+- [使用 HTTPS 部署 Gogs](https://github.com/Unknwon/wuwen.org/issues/12)

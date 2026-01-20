@@ -10,29 +10,33 @@ VeeValidate 自带了很多有用的验证规则，但是在实际的开发生�
 ## 编写 DemoForm.vue
 
 ```vue
-
 <template>
   <div>
     <div>
-      <input type="text" v-validate="{required: true, customizeEmailRule: true}" data-vv-as="邮箱" name="email">
+      <input
+        type="text"
+        v-validate="{ required: true, customizeEmailRule: true }"
+        data-vv-as="邮箱"
+        name="email"
+      />
     </div>
     <div>
-      <span>{{ errors.first('email') }}</span>
+      <span>{{ errors.first("email") }}</span>
     </div>
   </div>
 </template>
 <script>
 import Vue from "vue";
-import VeeValidate, {Validator} from "vee-validate";
-import zh_CN from 'vee-validate/dist/locale/zh_CN';
+import VeeValidate, { Validator } from "vee-validate";
+import zh_CN from "vee-validate/dist/locale/zh_CN";
 
 Vue.use(VeeValidate);
-Validator.localize('zh_CN', zh_CN);
+Validator.localize("zh_CN", zh_CN);
 
 /** Custom Validator */
-const getMessage = field => `${field}格式不正确`;
+const getMessage = (field) => `${field}格式不正确`;
 
-const validate = value => {
+const validate = (value) => {
   const regex = /^\w+\.*\w+@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
   return regex.test(value);
 };
@@ -42,10 +46,10 @@ const myValidator = {
   validate,
 };
 /** Custom Rule */
-Validator.extend('customizeEmailRule', myValidator);
+Validator.extend("customizeEmailRule", myValidator);
 
 export default {
-  name: "DemoForm"
+  name: "DemoForm",
 };
 </script>
 ```
@@ -65,7 +69,7 @@ export default {
 ## 验证
 
 - 邮箱地址不合法的自定义提示
-  <img :src="$withBase('/images/languages/vue/vee-validate/how-to-use-vee-validate-to-customize-validation-rules/vee-validate-check-input-email-by-customize-rule.png')" alt="">
+  ![](./images/how-to-use-vee-validate-to-customize-validation-rules/vee-validate-check-input-email-by-customize-rule.png)
 
 ## 参考地址
 

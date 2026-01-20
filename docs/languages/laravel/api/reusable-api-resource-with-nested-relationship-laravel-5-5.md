@@ -1,4 +1,4 @@
-<img :src="$withBase('/images/languages/laravel/reusable-api-resource-with-nested-relationship-laravel-5-5/hero.png')" alt="">
+![](./images/reusable-api-resource-with-nested-relationship-laravel-5-5.png)
 
 # 嵌套关系的可重用API资源 - Laravel5.5
 

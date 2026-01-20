@@ -4,7 +4,6 @@
 
 ## 安装
 
-
 ### 通过Oh-My-Zsh
 
 1. 克隆资源库到 `$ZSH_CUSTOM/plugins` (默认是 `~/.oh-my-zsh/custom/plugins`)
@@ -23,7 +22,6 @@ plugins=(git zsh-autosuggestions)
 
 3. 重新打开终端会话，或者执行 `source ~/.zshrc`也可以更新会话
 
-
 ### 手动安装
 
 1. 克隆资源库到你的计算机. 假设是 `~/.zsh/plugins/zsh-autosuggestions`
@@ -40,7 +38,7 @@ source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 3. 重新打开终端会话
 
-<img :src="$withBase('/images/others/how-to-use-zsh-autosuggestion-plugin/how-to-use-zsh-autosuggestion-plugin')" alt="">
+![](./images/how-to-use-zsh-autosuggestion-plugin/zsh-autosuggestions.png)
 
 > 注意在终端输入命令行的时候后面会有浅色单词提示。
 

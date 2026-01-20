@@ -143,7 +143,8 @@ class UsersController extends Controller
 * `bootstrap.min.js` >= 3.2
 * `bootstrap-confirmation.min.js`
 
-<img :src="$withBase('/images/languages/laravel/laravel5-confirmation-box-to-delete-records-from-mysql-database-example/laravel5-confirmation-box-to-delete-records-from-mysql-database-example.png')" alt="">
+![](./images/laravel5-confirmation-box-to-delete-records-from-mysql-database-example.png)
+
 
 更多的插件参数和事件的使用详情[参考这里](http://bootstrap-confirmation.js.org)。
 

@@ -2,8 +2,8 @@
 
 测试驱动开发（英文：Test-driven development，缩写：TDD）是一种软件开发过程中的应用方法，由极限编程中倡导，以其倡导先写测试程序，然后编码实现其功能得名。
 
-* Laravel `5.6.28`
-* PHPUnit `7.2.7`
+- Laravel `5.6.28`
+- PHPUnit `7.2.7`
 
 ## 准备Laravel测试环境
 
@@ -153,7 +153,7 @@ class ArticleTest extends TestCase
 
 在创建好我们的第一个测试后，执行`phpunit`或者`vendor/bin/phpunit`
 
-<img :src="$withBase('/images/languages/laravel/testing/laravel-tdd-route-not-defined-error.png')" alt="">
+![](./images/laravel-tdd-route-not-defined-error.png)
 
 在终端执行`vendor/bin/phpunit`后测试结果显示失败了，因为在测试驱动开发中是先写测试程序，然后在编码实现功能的。
 
@@ -169,13 +169,13 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api', 'as' => 'api.'], function 
 });
 ```
 
-<img :src="$withBase('/images/languages/laravel/testing/laravel-tdd-response-error-code.png')" alt="">
+![](./images/laravel-tdd-response-error-code.png)
 
 在测试中断言响应会返回`201`状态码但是却返回了`500`，是因为请求的路由指向的处理控制器文件不存在。这个`api/v1/articles` **POST** 路由在应用中并不存在所以针对这个请求应用抛出了`500`错误。
 
 可以进一步调试 **POST** 请求后的输出，如果没有明确地给出提示发生了什么才导致的这个错误，可以打开Laravel应用的日志文件`/storage/logs/laravel.log`里查找详细的错误信息。
 
-<img :src="$withBase('/images/languages/laravel/testing/laravel-tdd-controller-does-not-exists.png')" alt="">
+![](./images/laravel-tdd-controller-does-not-exists.png)
 
 从上图可以看出`App\Http\Controllers\Api\ArticleController`控制器不存在。
 
@@ -202,11 +202,11 @@ class ArticleController extends Controller
 
 再次执行`vendor/bin/phpunit`运行测试，发生如下错误：
 
-<img :src="$withBase('/images/languages/laravel/testing/laravel-tdd-response-201-error-code.png')" alt="">
+![](./images/laravel-tdd-response-201-error-code.png)
 
 打开`storage/logs/laravel.log`查看错误，发现是模型找不到：
 
-<img :src="$withBase('/images/languages/laravel/testing/laravel-tdd-model-does-not-exists.png')" alt="">
+![](./images/laravel-tdd-model-does-not-exists.png)
 
 ## 创建模型
 
@@ -238,7 +238,7 @@ class ArticleController extends Controller
 
 修改完成后，再次执行测试：
 
-<img :src="$withBase('/images/languages/laravel/testing/laravel-tdd-model-fillable.png')" alt="">
+![](./images/laravel-tdd-model-fillable.png)
 
 上面的命令报错是因为没有设置模型的`fillable`属性，修改如下：
 
@@ -256,7 +256,7 @@ class Article extends Model
 
 修改完毕后，再次执行测试：
 
-<img :src="$withBase('/images/languages/laravel/testing/laravel-tdd-table-does-not-exists.png')" alt="">
+![](./images/laravel-tdd-does-not-exists.png)
 
 如上报错，说明数据库表不存在，需要执行迁移文件生成对应的数据表
 
@@ -308,17 +308,17 @@ class CreateArticlesTable extends Migration
 
 当定义好迁移文件后再次执行`vendor/bin/phpunit`，发现成功了。
 
-<img :src="$withBase('/images/languages/laravel/testing/laravel-tdd-success.png')" alt="">
+![](./images/laravel-tdd-success.png)
 
 通过文章总结起来测试驱动开发有三条原则：
 
-* 倡导先写测试程序，再编码实现功能
+- 倡导先写测试程序，再编码实现功能
 
-* 测试程序创建起肯定会测试失败
+- 测试程序创建起肯定会测试失败
 
-* 在让测试程序测试成功的过程中逐步编码实现功能
+- 在让测试程序测试成功的过程中逐步编码实现功能
 
 ## 参考链接
 
-* [英文原文：Simple TDD in Laravel with 11 steps](https://medium.com/@jsdecena/simple-tdd-in-laravel-with-11-steps-c475f8b1b214)
-* [中文翻译：简单的11步在Laravel中实现测试驱动开发](https://segmentfault.com/a/1190000015653724)
+- [英文原文：Simple TDD in Laravel with 11 steps](https://medium.com/@jsdecena/simple-tdd-in-laravel-with-11-steps-c475f8b1b214)
+- [中文翻译：简单的11步在Laravel中实现测试驱动开发](https://segmentfault.com/a/1190000015653724)

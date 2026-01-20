@@ -1,5 +1,7 @@
 # 操作系统
 
-## [Centos](/docs/os/centos/README.md)
-## [Ubuntu](/docs/os/ubuntu/README.md)
-## [Mac OS](/docs/os/mac-os/README.md)
+## [Centos](./centos/README.md)
+
+## [Ubuntu](./ubuntu/README.md)
+
+## [Mac OS](./mac-os/README.md)

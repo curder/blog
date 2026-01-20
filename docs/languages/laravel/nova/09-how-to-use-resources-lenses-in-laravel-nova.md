@@ -8,7 +8,7 @@
 
 听起来挺复杂的，但是不要担心 - 这正是 lenses 旨在解决的场景:
 
-<img :src="$withBase('/images/languages/laravel/nova/how-to-use-resources-lenses-in-laravel-nova/laravel-nova-lenses-show.png')" alt="">
+![](./how-to-use-resources-lenses-in-laravel-nova/laravel-nova-lenses-show.png)
 
 ## 定义 Lenses
 
