@@ -1,0 +1,49 @@
+import{_ as i,M as o,p as d,q as t,R as n,t as a,N as l,a1 as r}from"./framework-64ffeeb4.js";const v="/blog/assets/laravel-nova-composer-update-1f785d26.png",p="/blog/assets/laravel-nova-artisan-migrate-f47c358b.png",u="/blog/assets/laravel-nova-create-user-51421ce0.png",m="/blog/assets/laravel-nova-login-page-e66c41b4.png",c="/blog/assets/laravel-nova-dashboard-3738537f.png",b={},g={href:"https://nova.laravel.com",target:"_blank",rel:"noopener noreferrer"},h={href:"https://nova.laravel.com/licenses",target:"_blank",rel:"noopener noreferrer"},k={href:"https://getcomposer.org/",target:"_blank",rel:"noopener noreferrer"},f={href:"https://nova.laravel.com/releases",target:"_blank",rel:"noopener noreferrer"},x={href:"https://laravel.com/docs/",target:"_blank",rel:"noopener noreferrer"},q={href:"https://nova.laravel.com/docs/",target:"_blank",rel:"noopener noreferrer"},N={href:"https://nova.laravel.com/licenses/",target:"_blank",rel:"noopener noreferrer"},j={href:"https://nova.laravel.com/releases/",target:"_blank",rel:"noopener noreferrer"},L={href:"https://learnku.com/docs/nova/",target:"_blank",rel:"noopener noreferrer"};function B(D,e){const s=o("ExternalLinkIcon");return d(),t("div",null,[e[28]||(e[28]=n("h1",{id:"安装-nova",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#安装-nova","aria-hidden":"true"},"#"),a(" 安装 Nova")],-1)),n("p",null,[n("a",g,[e[0]||(e[0]=a("Laravel nova",-1)),l(s)]),e[1]||(e[1]=a(" 提供了一个优雅的方式快速开发一个漂亮的后台管理系统，它使用 tailwindcss 驱动前端展示界面，后台使用 Laravel 框架。",-1))]),e[29]||(e[29]=n("h2",{id:"安装前的准备",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#安装前的准备","aria-hidden":"true"},"#"),a(" 安装前的准备")],-1)),e[30]||(e[30]=n("h3",{id:"软件依赖",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#软件依赖","aria-hidden":"true"},"#"),a(" 软件依赖")],-1)),e[31]||(e[31]=n("ul",null,[n("li",null,"Composer"),n("li",null,"Laravel Framework 5.8+"),n("li",null,"Laravel Mix"),n("li",null,"Node.js & NPM")],-1)),n("p",null,[e[3]||(e[3]=a("安装 laravel nova 之前，个人用户可能需要支付 ",-1)),e[4]||(e[4]=n("code",null,"$99/项目",-1)),e[5]||(e[5]=a("，团队开发需要支付",-1)),e[6]||(e[6]=n("code",null,"$199/项目",-1)),e[7]||(e[7]=a("来",-1)),n("a",h,[e[2]||(e[2]=a("购买软件",-1)),l(s)]),e[8]||(e[8]=a("。",-1))]),e[32]||(e[32]=r(`<h3 id="安装-laravel-项目" tabindex="-1"><a class="header-anchor" href="#安装-laravel-项目" aria-hidden="true">#</a> 安装 laravel 项目</h3><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">composer</span> global require laravel/installer
+
+laravel new laravel-nova
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,2)),n("blockquote",null,[n("p",null,[e[10]||(e[10]=a("运行完上面的命令，将活得一个新的 laravel 项目源代码。如果当前机器没有",-1)),e[11]||(e[11]=n("code",null,"composer",-1)),e[12]||(e[12]=a("命令，可以",-1)),n("a",k,[e[9]||(e[9]=a("访问这里",-1)),l(s)]),e[13]||(e[13]=a("下载。",-1))])]),e[33]||(e[33]=n("h2",{id:"安装-nova-1",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#安装-nova-1","aria-hidden":"true"},"#"),a(" 安装 nova")],-1)),e[34]||(e[34]=n("h2",{id:"下载-nova-源代码并放入到-laravel-nova-源代码中",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#下载-nova-源代码并放入到-laravel-nova-源代码中","aria-hidden":"true"},"#"),a(" 下载 nova 源代码并放入到 laravel-nova 源代码中")],-1)),n("p",null,[e[15]||(e[15]=a("在",-1)),n("a",f,[e[14]||(e[14]=a("Nova 站点下载",-1)),l(s)]),e[16]||(e[16]=a("最新的 Releases 源代码。比如这里是：",-1)),e[17]||(e[17]=n("code",null,"nova-2.0.0.zip",-1)),e[18]||(e[18]=a("文件，下载完后解压到上面安装的",-1)),e[19]||(e[19]=n("code",null,"laravel-nova",-1)),e[20]||(e[20]=a("项目中，文件夹命名为：",-1)),e[21]||(e[21]=n("code",null,"nova",-1)),e[22]||(e[22]=a("，结构如下：",-1))]),e[35]||(e[35]=r(`<div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>.
+├── app
+├── artisan
+├── bootstrap
+├── composer.json
+├── composer.lock
+├── config
+├── database
+├── node_modules
+├── nova
+├── package.json
+├── phpunit.xml
+├── public
+├── resources
+├── routes
+├── server.php
+├── storage
+├── tests
+├── vendor
+├── webpack.mix.js
+└── yarn.lock
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="将-nova-文件夹添加到-git-忽略中" tabindex="-1"><a class="header-anchor" href="#将-nova-文件夹添加到-git-忽略中" aria-hidden="true">#</a> 将 nova 文件夹添加到 git 忽略中</h2><p>将<code>laravel-nova</code>项目中的<code>.gitignore</code>文件中添加一个行</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>/nova
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="修改项目的-composer-json-文件" tabindex="-1"><a class="header-anchor" href="#修改项目的-composer-json-文件" aria-hidden="true">#</a> 修改项目的 composer.json 文件</h2><p>在 composer.json 文件中添加</p><div class="language-json line-numbers-mode" data-ext="json"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;repositories&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;path&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./nova&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>然后, 在<code>composer.json</code>文件添加 <code>laravel/nova</code> 到<code>require</code>中:</p><div class="language-json line-numbers-mode" data-ext="json"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;require&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;laravel/nova&quot;</span><span class="token operator">:</span> <span class="token string">&quot;*&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="执行项目更新" tabindex="-1"><a class="header-anchor" href="#执行项目更新" aria-hidden="true">#</a> 执行项目更新</h2><p>执行下面的命令更新 composer 依赖。</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">composer</span> update
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="`+v+`" alt=""></p><p>执行成功后，再执行下面的命令发布一些 nova 的文件</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>php artisan nova:install
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>修改项目数据库配置<code>.env</code>内容。</p><div class="language-dotenv line-numbers-mode" data-ext="dotenv"><pre class="language-dotenv"><code>DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>修改完配置以后再执行数据库迁移命令</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>php artisan migrate
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="`+p+`" alt=""></p><h2 id="新增管理员并访问后台" tabindex="-1"><a class="header-anchor" href="#新增管理员并访问后台" aria-hidden="true">#</a> 新增管理员并访问后台</h2><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>php artisan nova:user
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="`+u+'" alt=""></p><p>访问<code>https://laravel-nova.test/nova</code>，出现如下结果:</p><p><img src="'+m+'" alt=""></p><p><img src="'+c+'" alt=""></p><h2 id="参考链接" tabindex="-1"><a class="header-anchor" href="#参考链接" aria-hidden="true">#</a> 参考链接</h2>',27)),n("ul",null,[n("li",null,[n("a",x,[e[23]||(e[23]=a("Laravel Documents",-1)),l(s)])]),n("li",null,[n("a",q,[e[24]||(e[24]=a("Laravel Nova Docs",-1)),l(s)])]),n("li",null,[n("a",N,[e[25]||(e[25]=a("Laravel Nova Licenses",-1)),l(s)])]),n("li",null,[n("a",j,[e[26]||(e[26]=a("Laravel Nova Releases",-1)),l(s)])]),n("li",null,[n("a",L,[e[27]||(e[27]=a("Laravel Nova 中文文档",-1)),l(s)])])])])}const E=i(b,[["render",B],["__file","01-how-to-installation-laravel-nove.html.vue"]]);export{E as default};
