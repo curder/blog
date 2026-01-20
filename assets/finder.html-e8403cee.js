@@ -1,1 +1,0 @@
-import{_ as r,p as t,q as n,R as e,t as a}from"./framework-ff09ffed.js";const c={},d=e("h1",{id:"finder",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#finder","aria-hidden":"true"},"#"),a(" Finder")],-1),s=[d];function o(i,_){return t(),n("div",null,s)}const h=r(c,[["render",o],["__file","finder.html.vue"]]);export{h as default};

@@ -1,0 +1,1 @@
+import{_ as n,p as a,q as r,R as t,t as s}from"./framework-64ffeeb4.js";const o={};function c(d,e){return a(),r("div",null,[...e[0]||(e[0]=[t("h1",{id:"centos",tabindex:"-1"},[t("a",{class:"header-anchor",href:"#centos","aria-hidden":"true"},"#"),s(" CentOS")],-1)])])}const l=n(o,[["render",c],["__file","index.html.vue"]]);export{l as default};

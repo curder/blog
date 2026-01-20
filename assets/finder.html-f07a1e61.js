@@ -1,0 +1,1 @@
+import{_ as n,p as t,q as a,R as r,t as d}from"./framework-64ffeeb4.js";const i={};function s(o,e){return t(),a("div",null,[...e[0]||(e[0]=[r("h1",{id:"finder",tabindex:"-1"},[r("a",{class:"header-anchor",href:"#finder","aria-hidden":"true"},"#"),d(" Finder")],-1)])])}const f=n(i,[["render",s],["__file","finder.html.vue"]]);export{f as default};
