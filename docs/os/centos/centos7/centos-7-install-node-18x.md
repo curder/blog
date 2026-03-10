@@ -1,5 +1,7 @@
 # CentOS 7 中安装 Node.js 18.x
 
+> 也可以到[非官方发布版本网站](https://unofficial-builds.nodejs.org/download/release/v18.18.2/) 下载对应的二进制文件，解压后直接使用。
+
 ## 预先准备
 ```bash
 yum makecache
